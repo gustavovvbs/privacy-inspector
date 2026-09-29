@@ -12,6 +12,11 @@ function newReport(url) {
     thirdParties: {},   // domínio -> { requests, types, tracker, category, blocked }
     requestsTotal: 0,
     requestsThirdParty: 0,
+    cookies: {
+      setHeaders: [],      // cookies injetados via Set-Cookie (HTTP)
+      jsSet: [],           // cookies injetados via document.cookie (JS)
+      summary: null,       // preenchido no snapshot (cookies.getAll)
+    },
   };
 }
 
@@ -60,9 +65,104 @@ browser.webRequest.onBeforeRequest.addListener(
   ['blocking']
 );
 
+// ---------------------------------------------------------------------------
+// Cookies
+// ---------------------------------------------------------------------------
+
+// Interpreta um cabeçalho Set-Cookie: nome, persistência (Expires/Max-Age) e atributos.
+function parseSetCookie(value) {
+  const parts = value.split(';').map((p) => p.trim());
+  const [name] = parts[0].split('=');
+  const attrs = {};
+  for (const p of parts.slice(1)) {
+    const [k, v] = p.split('=');
+    attrs[k.toLowerCase()] = v === undefined ? true : v;
+  }
+  let persistent = false;
+  let expiresIn = null; // segundos
+  if (attrs['max-age'] !== undefined) {
+    const n = parseInt(attrs['max-age'], 10);
+    persistent = n > 0; expiresIn = n;
+  } else if (attrs.expires) {
+    const t = Date.parse(attrs.expires);
+    if (!isNaN(t)) { persistent = t > Date.now(); expiresIn = Math.round((t - Date.now()) / 1000); }
+  }
+  return {
+    name: (name || '').trim(),
+    persistent,
+    expiresIn,
+    domainAttr: attrs.domain || null,
+    sameSite: attrs.samesite || null,
+    secure: !!attrs.secure,
+    httpOnly: !!attrs.httponly,
+  };
+}
+
+browser.webRequest.onHeadersReceived.addListener(
+  (details) => {
+    if (details.tabId < 0) return;
+    const r = reports.get(details.tabId);
+    if (!r) return;
+    const host = hostnameOf(details.url);
+    const third = isThirdParty(details.url, r.url);
+    for (const h of details.responseHeaders || []) {
+      if (h.name.toLowerCase() !== 'set-cookie' || !h.value) continue;
+      // Firefox junta múltiplos Set-Cookie com \n
+      for (const line of h.value.split('\n')) {
+        const c = parseSetCookie(line);
+        if (!c.name) continue;
+        r.cookies.setHeaders.push({
+          ...c, host, domain: baseDomain(host), thirdParty: third,
+          requestType: details.type, url: details.url.split('?')[0], at: Date.now(),
+        });
+      }
+    }
+  },
+  { urls: ['<all_urls>'] },
+  ['responseHeaders']
+);
+
+// Snapshot do cookie jar: cookies de primeira parte (URL da aba) e de terceira parte
+// (domínios de terceiros observados na aba). Classifica sessão × persistente.
+async function snapshotCookies(r) {
+  const summarize = (list, thirdParty) => list.map((c) => ({
+    name: c.name, domain: c.domain.replace(/^\./, ''), path: c.path,
+    thirdParty, session: c.session,
+    expires: c.session ? null : c.expirationDate * 1000,
+    lifetimeDays: c.session ? 0 : Math.round((c.expirationDate * 1000 - Date.now()) / 86400000),
+    secure: c.secure, httpOnly: c.httpOnly, sameSite: c.sameSite,
+    valueLength: (c.value || '').length,
+  }));
+  let first = [];
+  try { first = await browser.cookies.getAll({ url: r.url }); } catch (e) { /* about:, moz-extension: */ }
+  const third = [];
+  for (const dom of Object.keys(r.thirdParties)) {
+    try {
+      const list = await browser.cookies.getAll({ domain: dom });
+      third.push(...list.filter((c) => baseDomain(c.domain.replace(/^\./, '')) === dom));
+    } catch (e) { /* ignore */ }
+  }
+  const all = [...summarize(first, false), ...summarize(third, true)];
+  r.cookies.summary = {
+    total: all.length,
+    firstParty: all.filter((c) => !c.thirdParty).length,
+    thirdParty: all.filter((c) => c.thirdParty).length,
+    session: all.filter((c) => c.session).length,
+    persistent: all.filter((c) => !c.session).length,
+    longLived: all.filter((c) => !c.session && c.lifetimeDays > 365).length,
+    injectedHttp: r.cookies.setHeaders.length,
+    injectedHttpThirdParty: r.cookies.setHeaders.filter((c) => c.thirdParty).length,
+    injectedJs: r.cookies.jsSet.length,
+    list: all,
+  };
+  return r.cookies.summary;
+}
+
 // API para o popup.
 browser.runtime.onMessage.addListener((msg, sender) => {
   if (msg.type === 'getReport') {
-    return Promise.resolve(reports.get(msg.tabId) || null);
+    const r = reports.get(msg.tabId);
+    if (!r) return Promise.resolve(null);
+    return snapshotCookies(r).then(() => r);
   }
 });
