@@ -288,13 +288,13 @@ function trackPolling(r, url, dom) {
 const LOW_RISK_OVERRIDES = new Set(['console.log']); // sites silenciam o console com frequência
 function updateHijackLevel(r) {
   const h = r.hijack;
-  const keyloggersDoc = h.inputListeners.filter((l) => l.thirdParty && l.target === 'document');
+  const keyloggersDoc = h.inputListeners.filter((l) => l.thirdParty && l.target === 'document' && !l.inFrame);
   const trackerKeylogger = keyloggersDoc.some((l) => l.tracker);
   const seriousOverrides = h.overridden.filter((o) => !LOW_RISK_OVERRIDES.has(o.target));
   const ws3p = h.websockets.some((w) => w.thirdParty);
   if (seriousOverrides.length > 0 || trackerKeylogger || (ws3p && h.polling.length > 0)) h.level = 'high';
   else if (ws3p || h.polling.length > 0 || keyloggersDoc.length > 0) h.level = 'medium';
-  else if (h.newGlobalsCount > 40 || h.eventsources.length || h.overridden.length || h.inputListeners.some((l) => l.thirdParty)) h.level = 'low';
+  else if (h.newGlobalsCount > 40 || h.eventsources.length || h.overridden.length || h.inputListeners.some((l) => l.thirdParty && !l.inFrame)) h.level = 'low';
   else h.level = 'none';
 }
 
@@ -482,7 +482,7 @@ function handleFingerprintEvent(r, ev, frameUrl, third) {
   else if (fp.canvas.reads > 0 || fp.webgl.unmasked > 0 || fp.fonts.measureText > 30 || enumMax >= 8) fp.level = 'possible';
 }
 
-function handleHijackEvent(r, ev, frameUrl, third) {
+function handleHijackEvent(r, ev, frameUrl, third, topFrame = true) {
   const d = ev.detail;
   const h = r.hijack;
   const scriptDomain = d.script ? baseDomain(hostnameOf(d.script)) : null;
@@ -501,7 +501,9 @@ function handleHijackEvent(r, ev, frameUrl, third) {
       break;
     }
     case 'input-listener':
-      if (h.inputListeners.length < 200) h.inputListeners.push({ event: d.event, target: d.target, script: d.script || (third ? frameUrl : '(inline)'), scriptDomain, thirdParty: scriptThird, tracker: scriptTracker, at: ev.at });
+      // Um listener registrado dentro de um iframe só recebe teclas digitadas naquele iframe (ex.: player do
+      // YouTube, "Sign in with Google"); só listeners no frame principal podem capturar o que o usuário digita na página.
+      if (h.inputListeners.length < 200) h.inputListeners.push({ event: d.event, target: d.target, script: d.script || (third ? frameUrl : '(inline)'), scriptDomain, thirdParty: scriptThird, tracker: scriptTracker, inFrame: !topFrame, frame: topFrame ? null : baseDomain(hostnameOf(frameUrl)), at: ev.at });
       break;
     case 'motion-listener': {
       const k = d.script || (third ? frameUrl : '(inline)');
@@ -549,9 +551,10 @@ browser.runtime.onMessage.addListener((msg, sender) => {
       return;
     }
   }
+  const topFrame = sender.frameId === 0;
   for (const ev of msg.events) {
     const h = contentHandlers[ev.kind];
-    if (h) h(r, ev, frameUrl, third);
+    if (h) h(r, ev, frameUrl, third, topFrame);
   }
 });
 

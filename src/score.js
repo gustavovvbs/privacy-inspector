@@ -30,7 +30,7 @@ function computeScore(r) {
   const cookies = r.cookies.summary || { thirdParty: 0, longLived: 0 };
   const hasCat = (cat) => trackers.some((t) => t.category === cat);
   const hasOwner = (re) => trackers.some((t) => re.test(t.owner || ''));
-  const keylog = r.hijack.inputListeners.filter((l) => l.thirdParty && l.target === 'document' && l.tracker).length;
+  const keylog = r.hijack.inputListeners.filter((l) => l.thirdParty && l.target === 'document' && l.tracker && !l.inFrame).length;
   const syncStrong = r.cookieSync.events.filter((e) => e.kind === 'cookie-leak' || e.kind === 'shared-id').length;
   const syncWeak = r.cookieSync.events.filter((e) => e.kind === 'sync-param').length + r.cookieSync.redirects.length;
   const storage3p = ['localStorage', 'sessionStorage', 'indexedDB', 'cacheStorage']

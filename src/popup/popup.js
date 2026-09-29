@@ -158,7 +158,8 @@ function render(tab) {
 
   // Hijack
   const h = r.hijack;
-  const keylog = h.inputListeners.filter((l) => l.thirdParty);
+  const keylog = h.inputListeners.filter((l) => l.thirdParty && !l.inFrame);
+  const keylogInFrame = h.inputListeners.filter((l) => l.thirdParty && l.inFrame);
   $('#tab-hijack').innerHTML = `
     <p>Nível: <span class="level ${h.level}">${{ none: 'nenhum indício', low: 'baixo', medium: 'médio', high: 'alto' }[h.level]}</span></p>
     <h3>Canais persistentes</h3>
@@ -172,6 +173,7 @@ function render(tab) {
     <p>${h.newGlobals.slice(0, 60).map((g) => chip(g)).join('')}${h.newGlobalsCount > 60 ? ' …' : ''}</p>
     <h3>Listeners de teclado/entrada por scripts de 3ª parte (${keylog.length})</h3>
     ${table(['Evento', 'Alvo', 'Script'], keylog.slice(0, 40).map((l) => [esc(l.event), l.target === 'document' ? chip('document/window', 'bad') : chip('elemento'), `${esc((l.script || '').replace(/^https?:\/\//, '').slice(0, 70))} ${l.tracker ? chip('rastreador', 'bad') : ''}`]))}
+    <details><summary>Listeners de teclado dentro de iframes de 3ª parte (${keylogInFrame.length}) — só capturam o que é digitado no próprio iframe</summary>${table(['Evento', 'Frame', 'Script'], keylogInFrame.slice(0, 30).map((l) => [esc(l.event), esc(l.frame || ''), esc((l.script || '').replace(/^https?:\/\//, '').slice(0, 70))]))}</details>
     <details><summary>Listeners de movimento (mousemove/scroll) por script</summary>${table(['Script', '#Listeners'], Object.entries(h.motionListeners).map(([s, n]) => [esc(s.replace(/^https?:\/\//, '').slice(0, 90)), n]))}</details>`;
 
   for (const b of document.querySelectorAll('.block-btn')) b.addEventListener('click', () => addToBlocklist(b.dataset.domain));
