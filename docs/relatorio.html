@@ -1,0 +1,313 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>
+body { font: 10.5pt/1.4 -apple-system, Helvetica, Arial, sans-serif; color: #111; margin: 0; }
+h1 { font-size: 18pt; page-break-before: always; border-bottom: 2px solid #2b5bd7; padding-bottom: 4px; }
+h1:first-of-type { page-break-before: auto; }
+h2 { font-size: 13pt; margin-top: 18px; } h3 { font-size: 11pt; }
+table { border-collapse: collapse; width: 100%; font-size: 8.5pt; margin: 8px 0; page-break-inside: auto; }
+th, td { border: 1px solid #bbb; padding: 4px 5px; vertical-align: top; text-align: left; }
+th { background: #eef1f6; } tr { page-break-inside: avoid; }
+code { font-family: Menlo, monospace; font-size: 8pt; background: #f2f3f5; padding: 0 2px; }
+pre { background: #f2f3f5; padding: 8px; font-size: 8pt; white-space: pre-wrap; }
+img { max-width: 100%; border: 1px solid #ddd; page-break-inside: avoid; }
+figure { margin: 10px 0; page-break-inside: avoid; } figcaption { font-size: 8.5pt; color: #555; }
+@page { size: A4; margin: 14mm 12mm; }
+</style></head><body>
+<h1>Privacy Inspector — Relatório</h1>
+<p><strong>Disciplina:</strong> Segurança — Insper
+<strong>Aluno:</strong> Gustavo Valente
+<strong>Repositório:</strong> <em>(preencher com o link após o push)</em>
+<strong>Plugin:</strong> extensão Firefox (Manifest V2), carregada via <code>about:debugging</code> → "Carregar extensão temporária" → <code>src/manifest.json</code>.</p>
+<p>Este relatório contém os entregáveis 2 (DuckDuckGo Privacy Test Pages), 3 (análise de 3 sites reais) e
+4 (pontuação de privacidade). Prints, arquivos HAR e JSONs estão na pasta <code>evidencias/</code> do repositório.</p>
+<h1>Entregável 2 — Execução nas DuckDuckGo Privacy Test Pages</h1>
+<p><strong>Ambiente:</strong> Firefox 156.0.1 (macOS), perfil limpo criado pelo harness <code>tools/capture_ddg.py</code>, com as
+proteções nativas do Firefox desligadas (Enhanced Tracking Protection, partição de cookies/estado de rede,
+query stripping, bounce tracking protection, resistFingerprinting) para que o plugin observe o tráfego
+sem interferência do navegador. Plugin carregado como extensão temporária. Data: 28–29/09/2026.</p>
+<p>Para cada página: o <strong>resultado esperado</strong> é o que a própria página reporta (texto na tela e, quando
+existe, o JSON gerado pelo botão "Download the result", salvo em <code>evidencias/ddg/NN-*-resultado-pagina.json</code>).
+O <strong>resultado do plugin</strong> vem do JSON exportado pelo plugin (<code>evidencias/ddg/NN-*.json</code>). O print
+<code>evidencias/ddg/NN-*.png</code> mostra a página de teste (esquerda) e o relatório do plugin para aquela aba (direita).</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Página</th>
+<th>Resultado esperado (reportado pela página)</th>
+<th>Resultado do plugin</th>
+<th>Divergência e explicação</th>
+<th>Print</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Tracker Reporting — 1 major tracker via <code>&lt;script&gt;</code></td>
+<td>A página carrega um script de <code>doubleclick.net</code>; não há resultado dinâmico, o texto apenas descreve o teste.</td>
+<td>1 domínio de 3ª parte, <code>doubleclick.net</code>, classificado como rastreador (Google / anúncios), tipo <code>script</code>, 1 requisição. Nota 92 (A).</td>
+<td>Sem divergência.</td>
+<td><code>01-tracker-reporting-script.png</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Tracker Reporting — 1 major tracker via <code>&lt;img&gt;</code></td>
+<td>Carrega um pixel de <code>facebook.com/tr</code>.</td>
+<td>1 domínio de 3ª parte, <code>facebook.com</code> (Meta / social), tipo <code>image</code>. A resposta trouxe <code>Set-Cookie: fr=…</code> persistente, contado como <strong>1 cookie de 3ª parte injetado via HTTP</strong>. Nota 88 (A).</td>
+<td>Sem divergência. O cookie <code>fr</code> não faz parte do que a página reporta, mas está no HAR-equivalente do plugin (<code>cookies.setHeaders</code>).</td>
+<td><code>02-tracker-reporting-img.png</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Tracker Reporting — 1 major tracker via <code>fetch</code> (5 s de atraso)</td>
+<td>Após 5 s a página faz <code>fetch</code> para <code>facebook.com</code>.</td>
+<td>1 domínio de 3ª parte, <code>facebook.com</code>, tipo <code>xmlhttprequest</code> (é como o Firefox classifica <code>fetch</code> no webRequest), com <code>Set-Cookie: fr</code>. Nota 88 (A).</td>
+<td>Sem divergência. O harness espera 10 s antes de ler o relatório, cobrindo o atraso de 5 s.</td>
+<td><code>03-tracker-reporting-fetch.png</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Tracker Reporting — 1 major tracker com surrogate</td>
+<td>A página carrega um script de <code>doubleclick.net</code> que o DuckDuckGo substituiria por um <em>surrogate</em> (versão inócua).</td>
+<td>1 domínio de 3ª parte, <code>doubleclick.net</code>, tipo <code>script</code>. Nota 92 (A).</td>
+<td><strong>Divergência esperada:</strong> o plugin apenas observa e reporta; não implementa surrogates. Como o Firefox estava sem proteção, o script real foi carregado e o plugin registrou a requisição a <code>doubleclick.net</code>.</td>
+<td><code>04-tracker-reporting-surrogate.png</code></td>
+</tr>
+<tr>
+<td>5a</td>
+<td>Tracker Blocking (request blocking) — <strong>sem</strong> lista de bloqueio</td>
+<td>JSON da página: 11 mecanismos <code>loaded</code> (script, style, img, picture, object, audio, video, iframe, @import, font, background) e <code>websocket: not loaded</code>.</td>
+<td>11 requisições a <code>bad.third-party.site</code> (script 1, stylesheet 2, object 1, sub_frame 1, image 2, imageset 1, font 1, media 2), domínio classificado como rastreador (lista de teste do DDG). WebSocket <code>wss://bad.third-party.site/block-me/web-socket</code> detectado na aba Hijacking (nível médio: canal persistente para terceiro). Nota 88 (A).</td>
+<td>Os 11 recursos batem 1:1 com os 11 <code>loaded</code> da página. <strong>WebSocket:</strong> a página reporta <code>not loaded</code> mesmo sem bloqueio (o <code>onopen</code> não disparou dentro do timeout do teste), e o <code>webRequest</code> não recebeu evento de tipo <code>websocket</code> para essa conexão; o plugin só a viu pelo hook do construtor <code>WebSocket</code> no content script. Por isso o WebSocket aparece em Hijacking e não na contagem de requisições.</td>
+<td><code>05a-tracker-blocking-sem-bloqueio.png</code></td>
+</tr>
+<tr>
+<td>5b</td>
+<td>Tracker Blocking — <strong>com</strong> <code>bad.third-party.site</code> na lista de bloqueio</td>
+<td>JSON da página: todos os 12 mecanismos deixam de carregar (11 <code>not loaded</code>, <code>background: failed</code>).</td>
+<td>12 bloqueios: 11 requisições canceladas em <code>webRequest.onBeforeRequest</code> (<code>{cancel:true}</code>) + 1 WebSocket recusado no construtor (chip "bloqueado" na aba Hijacking). Contadores da aba Rastreadores mostram 11 req. / 11 bloq.</td>
+<td>Sem divergência de resultado. A diferença de rótulo (<code>not loaded</code> × <code>failed</code>) é da própria página: ela só marca <code>failed</code> quando o elemento dispara <code>error</code>; para requisições canceladas pelo webRequest o Firefox não dispara <code>error</code> na maioria dos elementos, apenas no <code>background-image</code> via CSS.</td>
+<td><code>05b-tracker-blocking-com-bloqueio.png</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Storage blocking</td>
+<td>Texto: "Retrieved data from 23 storage mechanisms (2 failed)". JSON: 54 entradas; 43 com o valor gravado (<code>39</code>), 11 <code>null</code> — as <code>null</code> são APIs não suportadas no Firefox (WebSQL, CookieStore, cookieStore em service worker) e 2 falhas reais (<code>safe third party iframe – sessionStorage</code>, <code>ad third party iframe – first party header cookie</code>).</td>
+<td>66 requisições (52 a terceiros); frames de 3ª parte em <code>good.third-party.site</code>, <code>broken.third-party.site</code> e <code>convert.ad-company.site</code>. Storage: localStorage 4 escritas/4 leituras, sessionStorage 4/4, IndexedDB 6 aberturas, Cache API 8 — todas com chave <code>data</code> e <strong>com uso em frames de 3ª parte</strong>. Cookies: 9 <code>Set-Cookie</code> (8 de terceiros), 14 via <code>document.cookie</code> (9 em frames de terceiros), 24 no cookie jar (17 de 3ª parte, 15 com validade &gt; 1 ano). Nota 68 (C).</td>
+<td>Concordância no essencial: cada mecanismo que a página conseguiu usar tem o evento correspondente no plugin (ex.: <code>top_tracker_headerdata</code> = Set-Cookie de <code>broken.third-party.site</code>; <code>jsdata</code> em frame de <code>ad-company.site</code> = <code>document.cookie</code> de 3ª parte). <strong>Não observados pelo plugin:</strong> <code>window.name</code>, <code>history</code>, <code>memory</code>, "browser cache" e service worker — não são APIs de storage instrumentadas (são canais de persistência indiretos), e a Cache API só é vista no <code>open</code>, não em <code>put/match</code>. <strong>Só o plugin viu:</strong> os 17 cookies de 3ª parte já presentes no jar e a validade de 400 dias dos cookies <code>jsdata</code>, informação que a página não reporta.</td>
+<td><code>06-storage-blocking.png</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Storage partitioning (acessada via <code>www.first-party.site</code>)</td>
+<td>JSON: 12 mecanismos <code>fail</code> (document.cookie, HTTP cookie, Cookie Store, localStorage, sessionStorage, IndexedDB, Cache API, ServiceWorker, BroadcastChannel, SharedWorker, Web Locks), 2 <code>pass</code> (Font cache, HSTS), 1 <code>unsupported</code> (WebSQL), 6 <code>error</code> (caches de fetch/XHR/iframe/imagem/favicon/CSS/prefetch). <code>fail</code> = <strong>não particionado</strong> (o dado gravado em um site foi lido em outro).</td>
+<td>Na aba de <code>www.first-party.site</code>: storage só em frames de 1ª parte (localStorage 3/3, sessionStorage 2, IndexedDB 1, Cache 1 com chave <code>partition_test</code>), 3 requisições de imagem a <code>privacy-test-pages.site</code>, 7 cookies de 3ª parte de <code>privacy-test-pages.site</code> no jar. A aba Bounce/Sync registra <strong>1 popup aberto pela página</strong>: <code>testWindow.html?sessionId=…&amp;isLocalTest=false</code>. Nota 79 (B).</td>
+<td><strong>Divergência esperada, por dois motivos.</strong> (1) Os <code>fail</code> são consequência do perfil: o harness desliga a partição de estado do Firefox (<code>privacy.partition.network_state=false</code>, <code>cookieBehavior=0</code>), então de fato não há partição — a página está certa e o plugin não mede partição, apenas quem acessa storage. (2) A metade <em>cross-site</em> do teste roda em uma <strong>segunda janela</strong> (<code>testWindow.html</code>), que tem <code>tabId</code> próprio; o plugin gera relatório por aba, então os acessos cross-site ficam no relatório da outra aba. O plugin registra a abertura da janela para tornar isso rastreável. Os 7 cookies de 3ª parte de <code>privacy-test-pages.site</code> são os gravados no teste 6 e lidos aqui cross-site — exatamente o que "não particionado" significa.</td>
+<td><code>07-storage-partitioning.png</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Fingerprinting (geral)</td>
+<td>JSON: 124 datapoints coletados (headers, <code>navigator.*</code>, <code>screen.*</code>, canvas, WebGL, áudio, fontes, etc.).</td>
+<td>Nível <strong>provável</strong>: canvas 5 leituras (3 após <code>fillText</code> com área ≥ 16×16), WebGL (<code>getSupportedExtensions</code>, <code>getShaderPrecisionFormat</code>), áudio (6× <code>new OfflineAudioContext</code>), fontes (692 <code>measureText</code>), enumeração de 23 propriedades (<code>navigator.userAgent/hardwareConcurrency/plugins/mimeTypes/…</code>, <code>screen.*</code>, <code>getTimezoneOffset</code>, <code>enumerateDevices</code>, <code>getVoices</code>). Nota 82 (B).</td>
+<td>Concordância: a página é, por construção, um fingerprinter, e o plugin classificou como "provável". <strong>Parcial:</strong> o plugin instrumenta ~25 das 124 propriedades (as de maior entropia e as usadas pela heurística do Blacklight). Não vê headers HTTP, <code>window.inner/outerWidth</code>, <code>devicePixelRatio</code>, <code>performance.memory</code> etc.; é uma escolha de custo/benefício — hooks em accessor por propriedade têm custo e propriedades de baixa entropia não mudam o veredito.</td>
+<td><code>08-fingerprinting.png</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Fingerprinting — canvas verification (<code>?run</code>)</td>
+<td>Tabela de status: bateria de checagens de <em>resistência</em> e <em>performance</em> de canvas (<code>pass</code>/<code>fail</code> para "layering comparison", "random noise", "fp example"…). Em Firefox sem proteção, os testes de resistência dão <code>fail</code> (nenhum ruído aplicado) e os de performance <code>pass</code>.</td>
+<td>Canvas: 125 leituras (<code>getImageData</code> em canvas 2000×2000 e canvas de exemplo de fingerprint), <strong>102 classificadas como fingerprint</strong> (texto desenhado + leitura). Nível provável. Nota 81 (B).</td>
+<td>Concordância: a página executa exatamente o padrão que a heurística detecta (desenha texto/figuras e lê os pixels). As 23 leituras não marcadas como fingerprint são as dos canvas de "random noise" (sem <code>fillText</code>), o que mostra a heurística discriminando.</td>
+<td><code>09-fingerprinting-canvas.png</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Bounce tracking — link "Go to privacy-test-pages.site"</td>
+<td>A página de destino recebe <code>?bounceUIDlocalStorage=&amp;bounceUIDcookie=&amp;isNew=100</code> e mostra "ID didn't exist and was generated – 100": <code>bad.third-party.site</code> gerou um UID, tentou persistir e o repassou pela URL.</td>
+<td>Aba Bounce/Sync: 1 bounce <strong>client-side</strong> por <code>bad.third-party.site</code> (permanência 0,15 s, <code>privacy-test-pages.site → privacy-test-pages.site</code>), parâmetros repassados ao destino (<code>isNew=100</code>, …) e evidência do que a página de passagem fez: <code>document.cookie = bounceUID=100; max-age=5184000</code> (60 dias) e <code>localStorage.bounceUID</code>. Nota 94 (A).</td>
+<td>Sem divergência. Detalhe técnico: o redirecionamento é feito por JavaScript (não 3xx), por isso a "cadeia de redirecionamentos" está vazia e a detecção usa o critério de permanência curta em domínio intermediário. Os eventos da página de passagem chegam ao background depois da navegação (flush no <code>pagehide</code>) e são anexados ao bounce pela URL do frame.</td>
+<td><code>10-bounce-tracking.png</code></td>
+</tr>
+<tr>
+<td>11a</td>
+<td>Query parameters — link com <code>utm_source</code> + parâmetro normal</td>
+<td>Página de destino: <code>"utm_source=something&amp;q=other"</code> (esperado pelo DDG após stripping: <code>"q=other"</code>).</td>
+<td>Parâmetro de rastreamento na URL da página: <code>utm_source</code>. Nota 97 (A).</td>
+<td><strong>Divergência esperada:</strong> o DDG espera que o navegador <em>remova</em> o parâmetro; o plugin não reescreve URLs (é um observador) e o Firefox estava com <code>privacy.query_stripping</code> desligado, então o parâmetro chegou intacto. O plugin sinaliza a presença, que é o que se pode fazer sem alterar a navegação.</td>
+<td><code>11a-query-parameters-utm.png</code></td>
+</tr>
+<tr>
+<td>11b</td>
+<td>Query parameters — link com <code>fbclid</code></td>
+<td>Página de destino: <code>"fbclid=12345&amp;fb_source=someting&amp;u=14"</code> (esperado: <code>"u=14"</code>).</td>
+<td>Parâmetro de rastreamento na URL: <code>fbclid</code>. <code>fb_source</code> não está na lista do plugin. Nota 97 (A).</td>
+<td>Mesma explicação de 11a. <code>fb_source</code> não é reconhecido: a lista do plugin cobre os identificadores de clique (<code>fbclid</code>, <code>gclid</code>, <code>msclkid</code>, <code>utm_*</code>…), não parâmetros de origem sem identificador.</td>
+<td><code>11b-query-parameters-fbclid.png</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td>js-leaks (alterações em objetos globais), referência <code>firefox_92</code></td>
+<td>JSON: 835 propriedades <strong>adicionadas</strong>, 17 <strong>removidas</strong>, 3 <strong>alteradas</strong> (<code>navigator.languages[0]</code>, <code>location.toString</code>, <code>location.valueOf</code>).</td>
+<td>Hijacking: nível nenhum; 0 funções nativas sobrescritas; 2 globais novos (<code>collectedProps</code>, <code>results</code>, criados pela própria página). Fingerprint: "possível" por enumeração de 21 propriedades de <code>navigator</code>/<code>screen</code>. Nota 90 (A).</td>
+<td>Duas leituras. (a) <strong>A página não detecta o plugin:</strong> as 835/17/3 diferenças são todas entre Firefox 92 (perfil de referência do DDG) e Firefox 156 — nenhuma envolve as APIs que o plugin substitui (<code>toDataURL</code>, <code>getImageData</code>, <code>Storage.setItem</code>, <code>document.cookie</code>, <code>addEventListener</code>, <code>WebSocket</code>…). Isso acontece porque os hooks são instalados com <code>exportFunction</code>, que produz funções nativas do ponto de vista da página (<code>Function.prototype.toString</code> retorna <code>[native code]</code>). (b) <strong>O plugin não detecta a página como hijacking</strong>, corretamente: ela só <em>lê</em> o objeto global, não sobrescreve nada. O "possível fingerprinting" é um falso positivo previsível — enumerar <code>window</code> inteiro toca as propriedades que o plugin monitora.</td>
+<td><code>12-js-leaks.png</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Síntese</h2>
+<ul>
+<li><strong>Cobertura:</strong> o plugin reproduziu os resultados da página em todos os testes de rastreadores (1–5), storage (6), fingerprinting (8–9), bounce (10) e query parameters (11), e produziu o comportamento correto em 12.</li>
+<li><strong>Divergências estruturais</strong> (não são erros de detecção): o plugin é um <em>observador</em>, não um <em>bloqueador por padrão</em> — não aplica surrogates (4), não remove query parameters (11) e não particiona storage (7). O bloqueio existe apenas pela lista personalizada (5b).</li>
+<li><strong>Limite de arquitetura:</strong> relatório por aba. Testes que abrem janelas secundárias (7) espalham a evidência em dois relatórios; o plugin registra a janela aberta para permitir a correlação.</li>
+<li><strong>Limite de instrumentação:</strong> WebSocket só é visto pelo hook do construtor quando o handshake não passa pelo <code>webRequest</code> (5a); canais de persistência indiretos (<code>window.name</code>, <code>history</code>, cache HTTP) não são instrumentados (6).</li>
+</ul>evidencias/ddg/NN-*.png
+<h1>Metodologia da pontuação de privacidade</h1>
+<p>A nota parte de <strong>100 pontos</strong> e sofre deduções por critério. Cada critério tem um <strong>teto</strong>, para que um
+único eixo (ex.: um site com 40 domínios de anúncios) não zere a nota sozinho e para que sites com
+problemas em <em>vários</em> eixos sejam penalizados mais que sites com um único problema grande.</p>
+<table>
+<thead>
+<tr>
+<th>Critério</th>
+<th>Dedução</th>
+<th>Teto</th>
+<th>Justificativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rastreadores conhecidos de 3ª parte (lista interna)</td>
+<td>4 por domínio</td>
+<td>32</td>
+<td>É o indicador mais direto de vigilância comercial; corresponde aos "ad trackers" do Blacklight.</td>
+</tr>
+<tr>
+<td>Outros domínios de 3ª parte (não listados)</td>
+<td>1 por domínio</td>
+<td>8</td>
+<td>CDNs e APIs também recebem IP, referrer e user-agent, mas sem intenção declarada de rastrear. Peso baixo.</td>
+</tr>
+<tr>
+<td>Cookies de 3ª parte</td>
+<td>2 por cookie</td>
+<td>16</td>
+<td>Mecanismo clássico de rastreamento entre sites; o Blacklight reporta a mesma contagem.</td>
+</tr>
+<tr>
+<td>Cookies persistentes com validade &gt; 1 ano</td>
+<td>1 por cookie</td>
+<td>6</td>
+<td>Longevidade aumenta a janela de correlação de comportamento.</td>
+</tr>
+<tr>
+<td>Fingerprinting</td>
+<td>15 (provável) / 7 (possível)</td>
+<td>15</td>
+<td>Não pode ser apagado pelo usuário como um cookie; "provável" segue a heurística de Englehardt &amp; Narayanan (texto desenhado + leitura ≥ 16×16), a mesma do Blacklight.</td>
+</tr>
+<tr>
+<td>Gravação de sessão / heatmap</td>
+<td>10</td>
+<td>10</td>
+<td>Captura movimentos, cliques e, por vezes, conteúdo digitado (Hotjar, FullStory, Clarity…). Blacklight: "session recorders".</td>
+</tr>
+<tr>
+<td>Captura de teclado por script de 3ª parte</td>
+<td>10</td>
+<td>10</td>
+<td>Listener de <code>keydown/keyup/input</code> em <code>document</code>/<code>window</code> registrado por script de outro domínio. Blacklight: "key logging".</td>
+</tr>
+<tr>
+<td>Pixel do Facebook/Meta</td>
+<td>6</td>
+<td>6</td>
+<td>Destacado separadamente pelo Blacklight por permitir vincular a navegação a um perfil social real.</td>
+</tr>
+<tr>
+<td>Remarketing Google (DoubleClick / Google Ads)</td>
+<td>4</td>
+<td>4</td>
+<td>Idem, categoria própria no Blacklight ("Google Analytics remarketing").</td>
+</tr>
+<tr>
+<td>Cookie sync / vazamento de identificador</td>
+<td>8 (forte) / 4 (fraco)</td>
+<td>8</td>
+<td>Forte: valor de cookie de 1ª parte enviado a terceiro, ou mesmo ID enviado a ≥ 2 terceiros. Fraco: parâmetro típico de sync (<code>uid</code>, <code>puid</code>…) ou redirecionamento 3xx entre terceiros em pixel.</td>
+</tr>
+<tr>
+<td>Bounce tracking</td>
+<td>6</td>
+<td>6</td>
+<td>Domínio intermediário (3xx ou redirecionamento client-side com permanência &lt; 4 s) que não é origem nem destino da navegação.</td>
+</tr>
+<tr>
+<td>Storage HTML5 em frame de 3ª parte</td>
+<td>4</td>
+<td>4</td>
+<td>Alternativa a cookies de 3ª parte quando estes são bloqueados.</td>
+</tr>
+<tr>
+<td>Indicadores de hijacking</td>
+<td>15 (alto) / 8 (médio) / 3 (baixo)</td>
+<td>15</td>
+<td>Alto: função nativa sobrescrita, keylogger de 3ª parte, ou WebSocket + polling para terceiros. Médio: WebSocket <strong>ou</strong> polling persistente para terceiro. Baixo: muitos globais novos ou EventSource.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conceito:</strong> A ≥ 85 · B ≥ 70 · C ≥ 50 · D ≥ 30 · E &lt; 30.</p>
+<h2>Como comparar com o Blacklight</h2>
+<p>O Blacklight (The Markup) <strong>não emite nota numérica</strong>: ele lista indicadores e compara cada um com a
+média dos 100 mil sites mais populares (Tranco). A comparação, portanto, é feita indicador a indicador:</p>
+<table>
+<thead>
+<tr>
+<th>Blacklight</th>
+<th>Critério equivalente no plugin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ad trackers (N)</td>
+<td>Rastreadores conhecidos (categorias <em>advertising</em>, <em>analytics</em>, <em>identity</em>)</td>
+</tr>
+<tr>
+<td>Third-party cookies (N)</td>
+<td>Cookies de 3ª parte (snapshot do cookie jar)</td>
+</tr>
+<tr>
+<td>Canvas fingerprinting</td>
+<td>Fingerprinting ≥ "provável" com <code>canvas.likely &gt; 0</code></td>
+</tr>
+<tr>
+<td>Session recording</td>
+<td>Rastreador da categoria <em>session-recording</em></td>
+</tr>
+<tr>
+<td>Key logging</td>
+<td>Listener de teclado por script de 3ª parte em <code>document</code></td>
+</tr>
+<tr>
+<td>Facebook pixel</td>
+<td>Rastreador com owner "Meta (Facebook pixel)"</td>
+</tr>
+<tr>
+<td>Google Analytics remarketing</td>
+<td>Domínios doubleclick / googlesyndication / googleadservices</td>
+</tr>
+</tbody>
+</table>
+<p>Fontes esperadas de divergência (a serem explicadas caso a caso no relatório, com referência ao HAR):</p>
+<ol>
+<li><strong>Interação.</strong> O Blacklight rola a página e clica em alguns links; o plugin observa apenas o que o
+   usuário fez. Rastreadores carregados sob demanda podem aparecer só em um dos lados.</li>
+<li><strong>Consentimento (LGPD/GDPR).</strong> O Blacklight não aceita banners de cookies; se o usuário aceitou, o
+   plugin verá mais rastreadores.</li>
+<li><strong>Lista de domínios.</strong> O Blacklight usa a lista do DuckDuckGo Tracker Radar (milhares de domínios);
+   a lista interna do plugin é curada e menor. Domínios "não listados" do plugin podem ser rastreadores
+   para o Blacklight, e vice-versa.</li>
+<li><strong>Localização.</strong> O Blacklight roda a partir dos EUA; anúncios e parceiros de RTB variam por região.</li>
+<li><strong>Momento.</strong> Os scripts de terceiros mudam ao longo dos dias; os dois relatórios devem ser
+   produzidos na mesma data sempre que possível.</li>
+</ol>
+</body></html>
