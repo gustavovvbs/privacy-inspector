@@ -20,6 +20,22 @@ function newReport(url) {
       events: [],
     },
     frames: {},         // frameUrl -> { thirdParty }
+    navigation: {
+      referrerPage: null,   // página anterior nesta aba
+      redirectChain: [],    // hops HTTP (3xx) até esta página
+      bounces: [],          // domínios intermediários suspeitos de bounce tracking
+      dwellMs: null,
+    },
+    cookieSync: {
+      events: [],           // { kind, param, value, fromDomain, toDomain, cookieName }
+      identifiers: {},      // valor -> conjunto de domínios que o receberam
+      redirects: [],        // 3xx entre terceiros em sub-recursos (pixel chains)
+    },
+    queryParams: {
+      onPageUrl: [],        // parâmetros de rastreamento na URL da própria página
+      onRequests: {},       // param -> contagem em requisições de terceiros
+    },
+    _cookieValues: {},      // valor de cookie -> nome (uso interno para cookie sync)
     fingerprint: {
       canvas: { reads: 0, likely: 0, scripts: {}, samples: [] },
       webgl: { calls: 0, unmasked: 0, scripts: {}, methods: {} },
@@ -45,10 +61,87 @@ function getReport(tabId, url) {
   return r;
 }
 
-// Reinicia o relatório a cada navegação de topo (nova página).
-browser.webNavigation.onCommitted.addListener((details) => {
+// ---------------------------------------------------------------------------
+// Navegação: cadeias de redirecionamento e bounce tracking
+// ---------------------------------------------------------------------------
+const pendingChains = new Map(); // tabId -> [{ from, to, status }] durante a navegação de topo
+const lastPage = new Map();      // tabId -> { url, committedAt, referrerPage }
+
+// Parâmetros de query usados para rastreamento entre sites (alvo da página "Query parameters" do DDG).
+const TRACKING_PARAMS = new Set(['fbclid', 'gclid', 'dclid', 'gbraid', 'wbraid', 'msclkid', 'ttclid', 'twclid', 'igshid',
+  'mc_eid', 'mc_cid', 'yclid', 'li_fat_id', 'vero_id', '_hsenc', '_hsmi', 'hsCtaTracking', 'oly_anon_id', 'oly_enc_id',
+  '_openstat', 'wickedid', 's_cid', 'ncid', 'ref_src', 'ref_url', 'rb_clickid', 'utm_source', 'utm_medium',
+  'utm_campaign', 'utm_term', 'utm_content', 'utm_id', 'sc_cid', 'ss_email_id', 'guce_referrer', '_ga', '_gl']);
+// Nomes de parâmetros tipicamente usados em cookie sync entre plataformas de anúncios.
+const SYNC_PARAM_NAMES = /^(uid|user_id|userid|puid|partner_uid|partner_id|external_id|ext_id|google_gid|google_cver|ttd_puid|ttd_id|id5id|idfa|gaid|aaid|ifa|buyeruid|bidder_uid|cid|cuid|dsp_id|ssp_id|sync_id|sid|uuid|ruid|rlid|rtb_id|_fbp|fbp|fbc|em|ph|hem)$/i;
+
+function trackingParamsOf(url) {
+  try { return [...new URL(url).searchParams.keys()].filter((k) => TRACKING_PARAMS.has(k)); } catch (e) { return []; }
+}
+
+browser.webNavigation.onBeforeNavigate.addListener((d) => {
+  if (d.frameId !== 0) return;
+  pendingChains.set(d.tabId, []);
+});
+
+browser.webRequest.onBeforeRedirect.addListener((d) => {
+  if (d.tabId < 0) return;
+  const hop = { from: d.url, to: d.redirectUrl, status: d.statusCode, at: Date.now(),
+    fromDomain: baseDomain(hostnameOf(d.url)), toDomain: baseDomain(hostnameOf(d.redirectUrl)) };
+  if (d.type === 'main_frame') {
+    const chain = pendingChains.get(d.tabId) || [];
+    chain.push(hop); pendingChains.set(d.tabId, chain);
+    return;
+  }
+  // Redirecionamentos entre terceiros em sub-recursos (pixel → pixel) são o mecanismo clássico de cookie sync.
+  const r = reports.get(d.tabId);
+  if (!r) return;
+  if (hop.fromDomain !== hop.toDomain && isThirdParty(d.url, r.url) && isThirdParty(d.redirectUrl, r.url)) {
+    hop.syncParams = [...new URL(d.redirectUrl).searchParams.keys()].filter((k) => SYNC_PARAM_NAMES.test(k));
+    if (r.cookieSync.redirects.length < 100) r.cookieSync.redirects.push(hop);
+  }
+}, { urls: ['<all_urls>'] });
+
+// Reinicia o relatório a cada navegação de topo (nova página) e avalia bounce tracking.
+browser.webNavigation.onCommitted.addListener(async (details) => {
   if (details.frameId !== 0) return;
-  reports.set(details.tabId, newReport(details.url));
+  const now = Date.now();
+  const prev = lastPage.get(details.tabId) || null;
+  const r = newReport(details.url);
+  reports.set(details.tabId, r);
+  r.navigation.redirectChain = pendingChains.get(details.tabId) || [];
+  pendingChains.delete(details.tabId);
+  r.navigation.referrerPage = prev ? prev.url : null;
+  r.navigation.dwellMs = prev ? now - prev.committedAt : null;
+  r.queryParams.onPageUrl = trackingParamsOf(details.url);
+
+  const dest = r.baseDomain;
+  const origin = prev ? baseDomain(hostnameOf(prev.url)) : null;
+  // (a) bounce por HTTP: hop intermediário em domínio ≠ origem e ≠ destino.
+  const chainDomains = r.navigation.redirectChain.map((h) => h.fromDomain);
+  for (const h of r.navigation.redirectChain) {
+    if (h.fromDomain && h.fromDomain !== dest && h.fromDomain !== origin) {
+      r.navigation.bounces.push({ domain: h.fromDomain, kind: 'http-redirect', status: h.status, url: h.from,
+        trackingParams: trackingParamsOf(h.from), from: origin, to: dest });
+    }
+  }
+  // (b) bounce por JS/meta refresh: página anterior em domínio ≠ origem dela e ≠ destino, com permanência curta.
+  if (prev && prev.referrerPage && r.navigation.dwellMs != null && r.navigation.dwellMs < 4000) {
+    const mid = baseDomain(hostnameOf(prev.url));
+    const src = baseDomain(hostnameOf(prev.referrerPage));
+    if (mid && mid !== dest && mid !== src && !chainDomains.includes(mid)) {
+      r.navigation.bounces.push({ domain: mid, kind: 'client-side', dwellMs: r.navigation.dwellMs, url: prev.url,
+        trackingParams: trackingParamsOf(prev.url), from: src, to: dest });
+    }
+  }
+  lastPage.set(details.tabId, { url: details.url, committedAt: now, referrerPage: prev ? prev.url : null });
+
+  // Valores de cookies de 1ª parte já existentes, para detectar vazamento em requisições a terceiros.
+  try {
+    for (const c of await browser.cookies.getAll({ url: details.url })) {
+      if (c.value && c.value.length >= 8) r._cookieValues[c.value] = c.name;
+    }
+  } catch (e) { /* esquemas sem cookies */ }
 });
 
 browser.tabs.onRemoved.addListener((tabId) => reports.delete(tabId));
@@ -72,6 +165,7 @@ function recordRequest(details) {
     const t = classifyTracker(host);
     if (t) { entry.tracker = t.domain; entry.category = t.category; entry.owner = t.owner; }
   }
+  inspectQueryForSync(r, details.url, dom);
   return entry;
 }
 
@@ -80,6 +174,33 @@ browser.webRequest.onBeforeRequest.addListener(
   { urls: ['<all_urls>'] },
   ['blocking']
 );
+
+// ---------------------------------------------------------------------------
+// Cookie sync: identificadores em query strings de requisições a terceiros
+// ---------------------------------------------------------------------------
+const ID_VALUE = /^[A-Za-z0-9_.:-]{8,}$/;
+function inspectQueryForSync(r, url, toDomain) {
+  let u; try { u = new URL(url); } catch (e) { return; }
+  for (const [k, v] of u.searchParams) {
+    if (TRACKING_PARAMS.has(k)) r.queryParams.onRequests[k] = (r.queryParams.onRequests[k] || 0) + 1;
+    if (!v || !ID_VALUE.test(v) || /^\d{1,4}$/.test(v)) continue;
+    // Vazamento de cookie de 1ª parte (valor do cookie enviado a terceiro).
+    const cookieName = r._cookieValues[v];
+    if (cookieName) pushSync(r, { kind: 'cookie-leak', param: k, value: v, cookieName, toDomain, url: url.split('?')[0] });
+    // Mesmo identificador compartilhado com ≥ 2 domínios de terceira parte.
+    const set = r.cookieSync.identifiers[v] || (r.cookieSync.identifiers[v] = { param: k, domains: [] });
+    if (!set.domains.includes(toDomain)) {
+      set.domains.push(toDomain);
+      if (set.domains.length >= 2) pushSync(r, { kind: 'shared-id', param: k, value: v, domains: [...set.domains], toDomain, url: url.split('?')[0] });
+    }
+    if (SYNC_PARAM_NAMES.test(k) && v.length >= 12) pushSync(r, { kind: 'sync-param', param: k, value: v, toDomain, url: url.split('?')[0] });
+  }
+}
+function pushSync(r, ev) {
+  const key = ev.kind + '|' + ev.param + '|' + ev.toDomain;
+  if (r.cookieSync.events.some((e) => e.key === key)) return;
+  if (r.cookieSync.events.length < 200) r.cookieSync.events.push({ ...ev, key, at: Date.now() });
+}
 
 // ---------------------------------------------------------------------------
 // Cookies
@@ -127,6 +248,8 @@ browser.webRequest.onHeadersReceived.addListener(
       for (const line of h.value.split('\n')) {
         const c = parseSetCookie(line);
         if (!c.name) continue;
+        const val = line.split(';')[0].split('=').slice(1).join('=').trim();
+        if (!third && val.length >= 8) r._cookieValues[val] = c.name;
         r.cookies.setHeaders.push({
           ...c, host, domain: baseDomain(host), thirdParty: third,
           requestType: details.type, url: details.url.split('?')[0], at: Date.now(),
