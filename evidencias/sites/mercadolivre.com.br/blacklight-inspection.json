@@ -1,0 +1,778 @@
+{
+  "title": "Blacklight - API Request",
+  "page_title": "Mercado Livre Brasil - Frete Grátis no mesmo dia",
+  "uri_ins": "http://www.mercadolivre.com.br",
+  "uri_dest": "https://www.mercadolivre.com.br/",
+  "uri_redirects": [
+    "http://www.mercadolivre.com.br/"
+  ],
+  "secure_connection": {},
+  "host": "www.mercadolivre.com.br",
+  "config": {
+    "emulateDevice": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
+      "viewport": {
+        "width": 1440,
+        "height": 790,
+        "deviceScaleFactor": 2,
+        "isMobile": false,
+        "hasTouch": false,
+        "isLandscape": true
+      }
+    },
+    "cleareCache": true,
+    "captureHar": true,
+    "captureLinks": false,
+    "enableAdBlock": false,
+    "saveBrowserProfile": false,
+    "numPages": 1,
+    "defaultTimeout": 30000,
+    "defaultWaitUntil": "networkidle2",
+    "headless": true,
+    "headers": {
+      "x-forwarded-for": "201.26.88.8"
+    },
+    "extraChromiumArgs": [
+      "--ash-no-nudges",
+      "--disable-domain-reliability",
+      "--disable-print-preview",
+      "--disk-cache-size=33554432",
+      "--no-default-browser-check",
+      "--no-pings",
+      "--single-process",
+      "--font-render-hinting=none",
+      "--disable-features=AudioServiceOutOfProcess,IsolateOrigins,site-per-process",
+      "--enable-features=SharedArrayBuffer",
+      "--ignore-gpu-blocklist",
+      "--in-process-gpu",
+      "--use-gl=angle",
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader",
+      "--allow-running-insecure-content",
+      "--disable-setuid-sandbox",
+      "--disable-site-isolation-trials",
+      "--disable-web-security",
+      "--headless='shell'",
+      "--no-sandbox",
+      "--no-zygote"
+    ],
+    "extraPuppeteerOptions": {}
+  },
+  "browser": {
+    "name": "Chromium",
+    "version": "HeadlessChrome/138.0.7204.0",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/138.0.7204.0 Safari/537.36",
+    "platform": {
+      "name": "Linux",
+      "version": "5.10.255-268-309.1092.amzn2.x86_64"
+    }
+  },
+  "script": {
+    "host": "169.254.53.55",
+    "version": {
+      "npm": "3.11.0",
+      "commit": "dev"
+    },
+    "node_version": "v22.23.2"
+  },
+  "start_time": "2026-09-29T03:07:19.083Z",
+  "end_time": "2026-09-29T03:07:44.438Z",
+  "location": "us-oh",
+  "browsing_history": [
+    "https://www.mercadolivre.com.br/",
+    "https://www.mercadolivre.com.br/ofertas?price=0.0-100.0&container_id=MLB779362-1&search_mode=collapsed&cart_mode=default&navigationcp_mode=default&bar_left_button_style=back&back_action=close&authentication_mode=optional&webkit-engine=2"
+  ],
+  "hosts": {
+    "requests": {
+      "first_party": [
+        "www.mercadolivre.com.br",
+        "matt.mercadolivre.com.br"
+      ],
+      "third_party": [
+        "http2.mlstatic.com",
+        "print1.mercadoclics.com",
+        "static.hotjar.com",
+        "accounts.google.com",
+        "script.hotjar.com",
+        "api.mercadolibre.com",
+        "placements.mercadolibre.com",
+        "o11y-proxy-otel-frontend.meli.com",
+        "trailer-mpkg-mms-01-vod.play.mlstatic.com"
+      ]
+    }
+  },
+  "reports": {
+    "behaviour_event_listeners": {
+      "MOUSE": {
+        "https://http2.mlstatic.com/frontend-assets/sp-offers-frontend/desktopView.b460e7b3.js": [
+          "click"
+        ],
+        "https://http2.mlstatic.com/frontend-assets/web-monitoring/1.6.0/web_vitals.min.js": [
+          "click"
+        ],
+        "https://http2.mlstatic.com/storage/melidata-js-sdk/js/3/0.7.8/melidata.min.js": [
+          "click"
+        ],
+        "https://http2.mlstatic.com/frontend-assets/ml-web-navigation/widgets/7.45.0/searchbox.js": [
+          "mousedown"
+        ],
+        "https://http2.mlstatic.com/frontend-assets/homes-palpatine/1735.35df32ce.js": [
+          "click"
+        ],
+        "https://script.hotjar.com/modules.e762be2b6b709245aabb.js": [
+          "scroll",
+          "mousemove",
+          "click"
+        ],
+        "https://accounts.google.com/gsi/client": [
+          "click"
+        ]
+      },
+      "KEYBOARD": {
+        "https://http2.mlstatic.com/frontend-assets/sp-offers-frontend/desktopView.b460e7b3.js": [
+          "keyup",
+          "keydown"
+        ],
+        "https://http2.mlstatic.com/frontend-assets/cookies-consent-banner-builder/1.2.1/cookie-consent-banner-opt-out/script.js": [
+          "keydown"
+        ],
+        "https://http2.mlstatic.com/frontend-assets/web-monitoring/1.6.0/web_vitals.min.js": [
+          "keydown"
+        ],
+        "https://http2.mlstatic.com/storage/melidata-js-sdk/js/3/0.7.8/melidata.min.js": [
+          "keydown"
+        ],
+        "https://http2.mlstatic.com/frontend-assets/homes-palpatine/1735.35df32ce.js": [
+          "keyup",
+          "keydown"
+        ],
+        "https://script.hotjar.com/modules.e762be2b6b709245aabb.js": [
+          "keypress"
+        ],
+        "https://www.mercadolivre.com.br/": [
+          "keydown"
+        ]
+      }
+    },
+    "canvas_fingerprinters": {
+      "data_url": {},
+      "fingerprinters": [],
+      "styles": {},
+      "texts": {}
+    },
+    "canvas_font_fingerprinters": {
+      "canvas_font": {},
+      "text_measure": {}
+    },
+    "cookies": [
+      {
+        "name": "_d2id",
+        "value": "d500cbef-0cea-4bcf-a5b0-34118c49a950-n",
+        "domain": "mercadoclics.com",
+        "path": "/",
+        "expires": "2027-09-29T03:07:32.710Z",
+        "size": 43,
+        "httpOnly": false,
+        "secure": true,
+        "session": false,
+        "sameSite": "None",
+        "priority": "Medium",
+        "sameParty": false,
+        "sourceScheme": "Secure",
+        "sourcePort": 443,
+        "type": "unknown",
+        "third_party": true
+      },
+      {
+        "name": "_csrf",
+        "value": "CvUAX0Wc-Sm1xd5jZhDCEEEI",
+        "domain": "www.mercadolivre.com.br",
+        "path": "/",
+        "expires": -1,
+        "size": 29,
+        "httpOnly": true,
+        "secure": true,
+        "session": true,
+        "sameSite": "None",
+        "priority": "Medium",
+        "sameParty": false,
+        "sourceScheme": "Secure",
+        "sourcePort": 443,
+        "type": "unknown",
+        "third_party": false
+      },
+      {
+        "name": "_mldataSessionId",
+        "value": "1bbcfbd4-124e-4a82-a55a-2b3d1a93853d",
+        "domain": "mercadolivre.com.br",
+        "path": "/",
+        "expires": "2026-09-29T03:37:36.000Z",
+        "size": 52,
+        "httpOnly": false,
+        "secure": true,
+        "session": false,
+        "sameSite": "None",
+        "priority": "Medium",
+        "sameParty": false,
+        "sourceScheme": "Secure",
+        "sourcePort": 443,
+        "type": "js",
+        "third_party": false
+      },
+      {
+        "name": "c_ontg",
+        "value": "1",
+        "domain": "www.mercadolivre.com.br",
+        "path": "/",
+        "expires": "2026-10-29T03:07:33.152Z",
+        "size": 7,
+        "httpOnly": true,
+        "secure": true,
+        "session": false,
+        "sameSite": "None",
+        "priority": "Medium",
+        "sameParty": false,
+        "sourceScheme": "Secure",
+        "sourcePort": 443,
+        "type": "unknown",
+        "third_party": false
+      },
+      {
+        "name": "cp",
+        "value": "05016090",
+        "domain": "mercadolivre.com.br",
+        "path": "/",
+        "expires": "2026-10-29T03:07:33.153Z",
+        "size": 10,
+        "httpOnly": true,
+        "secure": true,
+        "session": false,
+        "sameSite": "None",
+        "priority": "Medium",
+        "sameParty": false,
+        "sourceScheme": "Secure",
+        "sourcePort": 443,
+        "type": "unknown",
+        "third_party": false
+      },
+      {
+        "name": "inferredZipcode",
+        "value": "true",
+        "domain": "mercadolivre.com.br",
+        "path": "/",
+        "expires": "2026-10-29T03:07:33.153Z",
+        "size": 19,
+        "httpOnly": true,
+        "secure": true,
+        "session": false,
+        "sameSite": "None",
+        "priority": "Medium",
+        "sameParty": false,
+        "sourceScheme": "Secure",
+        "sourcePort": 443,
+        "type": "unknown",
+        "third_party": false
+      },
+      {
+        "name": "_d2id",
+        "value": "636fcbf5-0ab0-47c9-9f1b-b9371f8e5b69-n",
+        "domain": "mercadolibre.com",
+        "path": "/",
+        "expires": "2027-09-29T03:07:33.490Z",
+        "size": 43,
+        "httpOnly": false,
+        "secure": true,
+        "session": false,
+        "sameSite": "None",
+        "priority": "Medium",
+        "sameParty": false,
+        "sourceScheme": "Secure",
+        "sourcePort": 443,
+        "type": "unknown",
+        "third_party": true
+      },
+      {
+        "name": "_d2id",
+        "value": "d1e09762-18e5-4d4f-a0f3-132d97ff824e-n",
+        "domain": "o11y-proxy-otel-frontend.meli.com",
+        "path": "/",
+        "expires": "2027-09-29T03:07:33.574Z",
+        "size": 43,
+        "httpOnly": false,
+        "secure": true,
+        "session": false,
+        "sameSite": "None",
+        "priority": "Medium",
+        "sameParty": false,
+        "sourceScheme": "Secure",
+        "sourcePort": 443,
+        "type": "unknown",
+        "third_party": true
+      },
+      {
+        "name": "_d2id",
+        "value": "6f72f502-dc3a-4d36-bfcf-793d8ef8494c",
+        "domain": "mercadolivre.com.br",
+        "path": "/",
+        "expires": "2027-11-03T03:07:42.314Z",
+        "size": 41,
+        "httpOnly": false,
+        "secure": true,
+        "session": false,
+        "sameSite": "None",
+        "priority": "Medium",
+        "sameParty": false,
+        "sourceScheme": "Secure",
+        "sourcePort": 443,
+        "type": "js",
+        "third_party": false
+      }
+    ],
+    "fb_pixel_events": [],
+    "tiktok_pixel_events": [],
+    "twitter_pixel_events": [],
+    "google_analytics_events": [],
+    "key_logging": {},
+    "session_recorders": {
+      "script.hotjar.com": [
+        "script.hotjar.com/browser-perf.8417c6bba72228fa2e29.js",
+        "script.hotjar.com/modules.e762be2b6b709245aabb.js"
+      ],
+      "static.hotjar.com": [
+        "static.hotjar.com/c/hotjar-720738.js"
+      ]
+    },
+    "third_party_trackers": [
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "ORkiexP3sTj_LOmD8hU8t2OBSaQlH4_I8RRMI-_7O1NgrvIcJCzzywLjt2qW06XC-0xdRGMh0qOGPtZ3TDkVPS9riZ2samRHUBGbDqjNhv05bzaS-H4tWAdblORUPkioBQOO3spGW9_pSGJ8rLyyeeXjC-Hs1p5OQqzTt7g4KVrpAGIXdYgOw1ScbOWo1JLuVtT-39mD7EHI5ZCcnarqbS-aiXH31o1batyLGFFEMWY70-jFk_C3jkh0l-Cr133FBImQr7Jct1iNGGlywuOKmzViM6SeQj-mjC2eA0FjCjImR1p4PNIm_6THoB_6MQ-SgDThbYXQFXqEv2tyo4urr-JOHeS6IMWTxSOSfDTsdW6-Pn_geCs1LBA6HTdygrNvrhDo_4BCuJHcVF5U0M-A4JojgYwvwTxC2aKtrPEPKVYIrybi2MrYym_I6C4cbGCk0TiEt-uOJlYh9zaD_2DWjjdbXtNMyqzVrPUR8_DKxS7efRCJRFJ56ektOnyM-pp315ZnzvmZUgb5TxDPfyvIIzFw95aogoZaXw9e5Ns5upPrEgpcUkARzAp60QjclDMme8wEG3dqL8k2d4tcmIafh_lVJyRd1rivTt9E6iO5NVwQcKSiuvp68J_yHqsXtHwSmdoELOEp3vUxdQyrfD37YnPE6lAqoOCuHxgSStxQfUK8vqlaGBB2OJHr-cNW2Q7iigM3glczs0CRPI98NRylz2n8h2t9acDJ_1KmViQ4IWBCw1giwZVxWvkWimY8VuiMisnFk0ADfzSu5cIbzeA6GwrY_v4ezizQW_MaCvaXATsQNjg54pjzuk1-MVxhd_YhUi4qC7zfdjvYfCV3L6eUUCAeQZ_dBR4Uoa_1rAJ_3N-rVujEYEIaCSEZofJLCxHVLSWxIgxjfA2lOn9SXsNQ0LYkv3i787pGKxPrAI-IwuliUYg59AuoQMN2RPdcLjQzh1Kj_BOIxn891AD_KGgSqZlZoTIEA2t2YqzJpnkyyXSofrR_WjpzLT5hZCgt1NRIGtoURY-o47VUo7FNSxHQx0auW1h0YRnGXprM-4Sh9ILd7vaRMMgYdpmY1HHASAihTPEa6v0sh17xnOcXoWRdR-JYffV2OW5zAcUVG3osOGBriqT-t8cgtSGVSGP-tMaDsl4mVW_8_1HjEk_HvqGNGROrbOTGL9ruxalZwSu8l8qTOx2G_4LtzLT_016wjqNdehOhC4KuNkYqiGL5p7MVjWAVdD4LfYcVcQiJTfd7VucnmeLWR4u_7IMgUv2BzTKyxNl3UC8qaY9XzWoYXJCOr9nj97GGBaR4wipwLj5j7rVPMVhBCPBIg2ucz_l_KBDQ8K23vhosoCDawPpOszRWit_hIceEoyul030Bd78RIUnDgUoEv7pKm7CE5ntFGpxb95OG3Hn6SIh4EU0rBa2LCwAI6Pwm-MpCifcuIsHlTAK5pQ1ArJx7O9_ok8mSnXghwejW_rVnRPcbyIUj2LRKRQhU-y2rtePLr7iEwGcZhq7TGXSYA0MKoznUgEmnsjaaUzgr9VMdrRnPMyKbqs8vlcPd2qwmQQ8FwBh2qrGh_5ivQGfizX-Sx_S5-VWzZezM9qXSjhI4P9O5nIZrBXaDDBj2m96KrGAJEHmczzs5bY1AiAwdPRb0gddPp46153gImLpqyA577kW5rw5WI9d9IYiDF07gLyLJpfufaStblgzmVUyRoJ_nYWpW_612hoNwKid9dBUQEPFvo02RegwL7YI_NR7rK6RS8LWFB0x9xtTh47Dz6VvCbWOkCcFfsgIHwpZa4dfEyNY9kX2fJq2wEDgcPYZXOPi1npuj-_bQXjl2C2RMfzWu3cMxc_on9u3L6nIxi-iH8_aKfDlntPEYmvteQNIGuy4ZGSOppGZMEk06c1pAQe6MphvB-S8ZmMyDJge4Fwf2VOdj3ELfDr9C00NDOyAeLmnec5JqEbq7WnhFmHgsH28eaCEUJNJHF9fEkuYU8fCqmssuluRjDIcPnO7MxPySR0YlK1maAw895KNdkhPyA-DWAVacqbQFa3uKglNH_houUm7CgypjxFxaQngKCdrSD5gJy5y5ce9yxF1YIp2GAiMExlEmEz63Yt6_RZlGWBHLJmAl6aDHzlEC3tYSMKcH-PqiwpSaYQdgJAL8ojyyLB7bXLh1bSC88xoHhx9Q_YADUSLvtJ3Jax0YF29u6A1DQ6AUTcvbG9z1oyeE0ZX973tdSpLaMXa4BLLIg1rv_NaU_3UCpijaRG32klg_FH6kMtXZ9VxVXvhpLxcMAD65LJfVn13q4q2EZwlLdJdjhaW3DTHLOpIE6afXIRjCgIJacZSb-KocBzA2w7z-j_87YIC6Sm_hXaW_bDWn-gzMweTXldDSd1Rrwvl53nvf30eml4eIgVaIgd-nKc9O-ve8xprd-gOb4DdlrSbNZvagSwkllOOSfVUqgA6InoLECFANGsvtC5H8deUJzE6t4iFsoAhy_5GWMz1NT6pUKRVdpBlcUfbjdxRlMecB0qim0hjC2BB7YpYilV83hb-XSZnRrbudCHtbmOHLtHKndyOR4jf9IXd-7RCrwTZ5RAk6BJX09k6B7q6t6XDfHFoQtxFclM7521YYvkQeS7bcbVlo3tfMqhZnqtVaZbBhi7S5dFNBs6aP_oln5wyG6sLitIkMRAj7n33ZNKNpkyqGr3hTwYmPce6Mz2i2nz1xoCw51N2zOVL2frXWLvQIHH3CM0_BtHtkZ0yerg9IK4U6o28gqbUcXsrpSeHwZY3tW32k-TvhLAeCbs3IiMB31i9r6AbOV0dGQMsaLK1GlejOnKowjW5noJ-Pu3DJlNnzsn9mZEvnOjV18W0nz8EE_G8_jTAUm-OGm0nlm2fuzZSa"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/ofertas?price=0.0-100.0&container_id=MLB779362-1&search_mode=collapsed&cart_mode=default&navigationcp_mode=default&bar_left_button_style=back&back_action=close&authentication_mode=optional&webkit-engine=2",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=ORkiexP3sTj_LOmD8hU8t2OBSaQlH4_I8RRMI-_7O1NgrvIcJCzzywLjt2qW06XC-0xdRGMh0qOGPtZ3TDkVPS9riZ2samRHUBGbDqjNhv05bzaS-H4tWAdblORUPkioBQOO3spGW9_pSGJ8rLyyeeXjC-Hs1p5OQqzTt7g4KVrpAGIXdYgOw1ScbOWo1JLuVtT-39mD7EHI5ZCcnarqbS-aiXH31o1batyLGFFEMWY70-jFk_C3jkh0l-Cr133FBImQr7Jct1iNGGlywuOKmzViM6SeQj-mjC2eA0FjCjImR1p4PNIm_6THoB_6MQ-SgDThbYXQFXqEv2tyo4urr-JOHeS6IMWTxSOSfDTsdW6-Pn_geCs1LBA6HTdygrNvrhDo_4BCuJHcVF5U0M-A4JojgYwvwTxC2aKtrPEPKVYIrybi2MrYym_I6C4cbGCk0TiEt-uOJlYh9zaD_2DWjjdbXtNMyqzVrPUR8_DKxS7efRCJRFJ56ektOnyM-pp315ZnzvmZUgb5TxDPfyvIIzFw95aogoZaXw9e5Ns5upPrEgpcUkARzAp60QjclDMme8wEG3dqL8k2d4tcmIafh_lVJyRd1rivTt9E6iO5NVwQcKSiuvp68J_yHqsXtHwSmdoELOEp3vUxdQyrfD37YnPE6lAqoOCuHxgSStxQfUK8vqlaGBB2OJHr-cNW2Q7iigM3glczs0CRPI98NRylz2n8h2t9acDJ_1KmViQ4IWBCw1giwZVxWvkWimY8VuiMisnFk0ADfzSu5cIbzeA6GwrY_v4ezizQW_MaCvaXATsQNjg54pjzuk1-MVxhd_YhUi4qC7zfdjvYfCV3L6eUUCAeQZ_dBR4Uoa_1rAJ_3N-rVujEYEIaCSEZofJLCxHVLSWxIgxjfA2lOn9SXsNQ0LYkv3i787pGKxPrAI-IwuliUYg59AuoQMN2RPdcLjQzh1Kj_BOIxn891AD_KGgSqZlZoTIEA2t2YqzJpnkyyXSofrR_WjpzLT5hZCgt1NRIGtoURY-o47VUo7FNSxHQx0auW1h0YRnGXprM-4Sh9ILd7vaRMMgYdpmY1HHASAihTPEa6v0sh17xnOcXoWRdR-JYffV2OW5zAcUVG3osOGBriqT-t8cgtSGVSGP-tMaDsl4mVW_8_1HjEk_HvqGNGROrbOTGL9ruxalZwSu8l8qTOx2G_4LtzLT_016wjqNdehOhC4KuNkYqiGL5p7MVjWAVdD4LfYcVcQiJTfd7VucnmeLWR4u_7IMgUv2BzTKyxNl3UC8qaY9XzWoYXJCOr9nj97GGBaR4wipwLj5j7rVPMVhBCPBIg2ucz_l_KBDQ8K23vhosoCDawPpOszRWit_hIceEoyul030Bd78RIUnDgUoEv7pKm7CE5ntFGpxb95OG3Hn6SIh4EU0rBa2LCwAI6Pwm-MpCifcuIsHlTAK5pQ1ArJx7O9_ok8mSnXghwejW_rVnRPcbyIUj2LRKRQhU-y2rtePLr7iEwGcZhq7TGXSYA0MKoznUgEmnsjaaUzgr9VMdrRnPMyKbqs8vlcPd2qwmQQ8FwBh2qrGh_5ivQGfizX-Sx_S5-VWzZezM9qXSjhI4P9O5nIZrBXaDDBj2m96KrGAJEHmczzs5bY1AiAwdPRb0gddPp46153gImLpqyA577kW5rw5WI9d9IYiDF07gLyLJpfufaStblgzmVUyRoJ_nYWpW_612hoNwKid9dBUQEPFvo02RegwL7YI_NR7rK6RS8LWFB0x9xtTh47Dz6VvCbWOkCcFfsgIHwpZa4dfEyNY9kX2fJq2wEDgcPYZXOPi1npuj-_bQXjl2C2RMfzWu3cMxc_on9u3L6nIxi-iH8_aKfDlntPEYmvteQNIGuy4ZGSOppGZMEk06c1pAQe6MphvB-S8ZmMyDJge4Fwf2VOdj3ELfDr9C00NDOyAeLmnec5JqEbq7WnhFmHgsH28eaCEUJNJHF9fEkuYU8fCqmssuluRjDIcPnO7MxPySR0YlK1maAw895KNdkhPyA-DWAVacqbQFa3uKglNH_houUm7CgypjxFxaQngKCdrSD5gJy5y5ce9yxF1YIp2GAiMExlEmEz63Yt6_RZlGWBHLJmAl6aDHzlEC3tYSMKcH-PqiwpSaYQdgJAL8ojyyLB7bXLh1bSC88xoHhx9Q_YADUSLvtJ3Jax0YF29u6A1DQ6AUTcvbG9z1oyeE0ZX973tdSpLaMXa4BLLIg1rv_NaU_3UCpijaRG32klg_FH6kMtXZ9VxVXvhpLxcMAD65LJfVn13q4q2EZwlLdJdjhaW3DTHLOpIE6afXIRjCgIJacZSb-KocBzA2w7z-j_87YIC6Sm_hXaW_bDWn-gzMweTXldDSd1Rrwvl53nvf30eml4eIgVaIgd-nKc9O-ve8xprd-gOb4DdlrSbNZvagSwkllOOSfVUqgA6InoLECFANGsvtC5H8deUJzE6t4iFsoAhy_5GWMz1NT6pUKRVdpBlcUfbjdxRlMecB0qim0hjC2BB7YpYilV83hb-XSZnRrbudCHtbmOHLtHKndyOR4jf9IXd-7RCrwTZ5RAk6BJX09k6B7q6t6XDfHFoQtxFclM7521YYvkQeS7bcbVlo3tfMqhZnqtVaZbBhi7S5dFNBs6aP_oln5wyG6sLitIkMRAj7n33ZNKNpkyqGr3hTwYmPce6Mz2i2nz1xoCw51N2zOVL2frXWLvQIHH3CM0_BtHtkZ0yerg9IK4U6o28gqbUcXsrpSeHwZY3tW32k-TvhLAeCbs3IiMB31i9r6AbOV0dGQMsaLK1GlejOnKowjW5noJ-Pu3DJlNnzsn9mZEvnOjV18W0nz8EE_G8_jTAUm-OGm0nlm2fuzZSa&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "ORkiexP3sTj_LOmD8hU8t5FlpBVjKrHtycqI3IFcQsYbTnzwkwBwcBCPvYJkDBYosVQZ6UPTpMOhWfQIUhcyP9VpJ9QmfEkT8BEvSKONmAH8OrFYz1N4gMRYA5ytozIDpepESXakqCIHpPcpXEECIEEiODf1sQHxI5bGY9KfLyPiHfMNFb63d2S2JLiXdT7OgNKBiaxT62JqYLwUoNgJS7V0A084saM2LrqZ8LgDQ7Hz1bVCY2kkbFNq7emD4Rz3TjvbtHKDJflF0PUCH85OtpbAMdd7ENAmWeQZc_cwE2RR1RLE5p3PIFhb2haWdwn1xBeW7DOqhvpOGwqVtnWFOvlPm5Elz80xz1bGlG4k6tGbTfQ7dWafg1R91ZL0iuBZzrwWmhpv2DldI0f0t5x7VpoiHLvEDm0in1ir_MnWoqBORAjJN6VrK9nxYQz8NnrCCUOGGzlm9q1A-kSEHNbE5r3K2Qrtk88A1qnjS6_TpNy1Rrr0DJeoCEGzeTX3LrhYeXKxzxdsg2diYBOIBG75dnvXsi7d1qGzmZbOyPmKN3Hw8Ezh4wktY-gwHVHMtbT4ZNI1zgyc6noiHGJKCKfY8LXQVv_xRMvmfkmCdCKNSqVyVAAMvoYKphQATcJV5TQXAmDMVQnPxBNCBE2gI0Q8bbgod0feIAF2jhZ8Ce4rsKruy6VrTXokrpO8Daiq7NDSaXMfK-LUFGjq1P4tC494G95UWxgZeMei-b9NY_Z4xnVoJsEODQt5oZMHySzTjuOKZvsuOLwHiwC8y6dM8THTYtEdQWs_YOb5wGJlDj8X6-wDBE61P5sBO5TgwhY1dOOa1MM72tvDy5DE55VpfnDmPniKPJvZgdXAB9FqegNZ81z-196zVbnsUTXzlMK1_o64xZc7XWmMqq9_j0hPV40hKzzm00eQRHAbZu7XW0Ns-fBBK92Y6zlSg_8Ai0f4rVcwNg-7nMQkrEw5LKEEYBBosTJPeRNo9x-YOcm3fM2HI1KY3qStpmMWdLTZzQkuWRUfNSpF0pNPzH8ykG2IriE9tdknra4cTEwGRP9AxYIMfIA5Xj9ZW2R3uca83dzySy6XXtwhwLs5ELDV6UnJoVdvTLMdL_-07wUn8PfcMkYdE2HcK6XsXo-KioloKvj96x5U85hxTvtmGJ9WrEny7eHqPLND6j6yNdfbv3IRLICXCjEaOxlxw5q4H7qaWAc1hjMhVeHt-vqabAnDA2kzVhPWMCX8A6pVAjqbsFEaqx1v-1CXw69tU5C2mQ4GUFQphONNVrUCuTDwndw3r1v5iDXTy5MHtLdqqgPfyxpAKFSXSpnNaWvuPmjaRI_Bb_ppdez0BQMklso_cfs5fE27HUEZf2ir5sfrY9I0xgA97-OqNFb7Sq_GLhoRNQks7XsVkvowow5wWl8HK599YpYM43oMLQhvR9qfY6qU_Cj5qvZuwEM9ZHptxm5Vx6Gt-O6VOoVmqN6-OP4ohzRgRlRJii1ottB1xG3O7OcBtdVwERLDOz3kA9xlZTEvoZxYyZIJdl7ovz-a6twcyideuSVIunqrfRlSByv1Qn1KSG-G6yHCaQcQh4kZkVB0hWdd-dT6Qx77yb026_KFyI4Dyt1owlIm0re_F-SOEFM1H5fxdS5QwfmTXs635WhfEf74T8AZTzUNtARmHsjawklN-WOhXt35vd0W2jBG8YehBBaI7GAHQd-S5NR_KdpHygeQSFPkpCmt6yvMjk3-QZxdn2IrpntwaD3RGgllO1crs9ie5pgItTVaxxqB-FIbnV7LWOV4fSdZcinsQmepUdGgb3ZvFQNLnTGEgWNbsKi7Fi7sQav8vomc7VknXcfAI1U7Bf0lU0wvypnAjl5ECA22hH6y9HgDq2rSSyGtG63u8O5B5ZdoG294QyPyGQUjC0ebQmNAO90eAGD7NEt9MlEXVJ_HubBxXDxKK25GBYReXjck0POYb2qq6P9MU0YETxX95dCIVufSopCtmhSFRO2nLGbofyTBy5vBiqdo3_Se3Ko_7SlsDc2t0pEZnbJD2-pKPLGsLYOqTHTuvk--VD3n48AhgaIscuF_ps-bzp12Z31t_gCA75ArYBmRol4Bz20faM9pN4IJx4wIjWT0KIiU40icBDm8HoqqOSPLjwruRLdfiQAilh6q3kWQa0u2j6tMy3vpir3Y-QtZCmw_GM4fVuPDa5ANINIvA4T3hCqEZqE0ScKGvBErsTYnWq1tvRLZrDTVbJU9BYi6jOEku7cbwmki058U0HrA0ziQn6SShWvYHHInGdT_6-476Py6jvusvO-hWIMF3ROxOB11Rkp6XHJcLkslym6RnHOMOIhkTOPC66V9Efd2qy8C6KCBsnlDDxTp6OFkMjvmeatxq_hcaSMxJH_pcOTTeNJeUJgadsCyqEnHKPswpei2rSz2HPxQEDOvLyO8uBNjJ07zQb92DnW0IAuVK4JaFmkZIC_PqnJL3bDcfQxhPAvNJqHw0Otwpy2rwoDn_2ah-yhuVYTwyTQ9C9ziKJFjy0-Shq-FIxYNp-NXwNOLIji7k9bjKESdHh9ojOjWKvVLF2ptbks-v8bfsPp2rLSr6m4HXDebc7ZOamB4z8Zv_PQmM0Pu_8LOqyhAkWAT7ojo4fSlXlpLAklCXnMHSOHkb29jKv2t_iiqFcOS0R79USyIuxcxJ5zOlwQ24Yk3aSOX_tlB0JYL9GFf1CYloROWaKYlcNLHW4C4DAhv3xd7U8D41nny8FtQAXwqMwUYGbiSa8vQpvPuggOGZTVB7KrNB7eV8VopaBXQ-mwKYkY_8Ns1cZYUEfgLPuSlMdTq5utzf8AXiitgATFwrD4dYrmWVvM3pwb04b8CpRUNLE4"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=ORkiexP3sTj_LOmD8hU8t5FlpBVjKrHtycqI3IFcQsYbTnzwkwBwcBCPvYJkDBYosVQZ6UPTpMOhWfQIUhcyP9VpJ9QmfEkT8BEvSKONmAH8OrFYz1N4gMRYA5ytozIDpepESXakqCIHpPcpXEECIEEiODf1sQHxI5bGY9KfLyPiHfMNFb63d2S2JLiXdT7OgNKBiaxT62JqYLwUoNgJS7V0A084saM2LrqZ8LgDQ7Hz1bVCY2kkbFNq7emD4Rz3TjvbtHKDJflF0PUCH85OtpbAMdd7ENAmWeQZc_cwE2RR1RLE5p3PIFhb2haWdwn1xBeW7DOqhvpOGwqVtnWFOvlPm5Elz80xz1bGlG4k6tGbTfQ7dWafg1R91ZL0iuBZzrwWmhpv2DldI0f0t5x7VpoiHLvEDm0in1ir_MnWoqBORAjJN6VrK9nxYQz8NnrCCUOGGzlm9q1A-kSEHNbE5r3K2Qrtk88A1qnjS6_TpNy1Rrr0DJeoCEGzeTX3LrhYeXKxzxdsg2diYBOIBG75dnvXsi7d1qGzmZbOyPmKN3Hw8Ezh4wktY-gwHVHMtbT4ZNI1zgyc6noiHGJKCKfY8LXQVv_xRMvmfkmCdCKNSqVyVAAMvoYKphQATcJV5TQXAmDMVQnPxBNCBE2gI0Q8bbgod0feIAF2jhZ8Ce4rsKruy6VrTXokrpO8Daiq7NDSaXMfK-LUFGjq1P4tC494G95UWxgZeMei-b9NY_Z4xnVoJsEODQt5oZMHySzTjuOKZvsuOLwHiwC8y6dM8THTYtEdQWs_YOb5wGJlDj8X6-wDBE61P5sBO5TgwhY1dOOa1MM72tvDy5DE55VpfnDmPniKPJvZgdXAB9FqegNZ81z-196zVbnsUTXzlMK1_o64xZc7XWmMqq9_j0hPV40hKzzm00eQRHAbZu7XW0Ns-fBBK92Y6zlSg_8Ai0f4rVcwNg-7nMQkrEw5LKEEYBBosTJPeRNo9x-YOcm3fM2HI1KY3qStpmMWdLTZzQkuWRUfNSpF0pNPzH8ykG2IriE9tdknra4cTEwGRP9AxYIMfIA5Xj9ZW2R3uca83dzySy6XXtwhwLs5ELDV6UnJoVdvTLMdL_-07wUn8PfcMkYdE2HcK6XsXo-KioloKvj96x5U85hxTvtmGJ9WrEny7eHqPLND6j6yNdfbv3IRLICXCjEaOxlxw5q4H7qaWAc1hjMhVeHt-vqabAnDA2kzVhPWMCX8A6pVAjqbsFEaqx1v-1CXw69tU5C2mQ4GUFQphONNVrUCuTDwndw3r1v5iDXTy5MHtLdqqgPfyxpAKFSXSpnNaWvuPmjaRI_Bb_ppdez0BQMklso_cfs5fE27HUEZf2ir5sfrY9I0xgA97-OqNFb7Sq_GLhoRNQks7XsVkvowow5wWl8HK599YpYM43oMLQhvR9qfY6qU_Cj5qvZuwEM9ZHptxm5Vx6Gt-O6VOoVmqN6-OP4ohzRgRlRJii1ottB1xG3O7OcBtdVwERLDOz3kA9xlZTEvoZxYyZIJdl7ovz-a6twcyideuSVIunqrfRlSByv1Qn1KSG-G6yHCaQcQh4kZkVB0hWdd-dT6Qx77yb026_KFyI4Dyt1owlIm0re_F-SOEFM1H5fxdS5QwfmTXs635WhfEf74T8AZTzUNtARmHsjawklN-WOhXt35vd0W2jBG8YehBBaI7GAHQd-S5NR_KdpHygeQSFPkpCmt6yvMjk3-QZxdn2IrpntwaD3RGgllO1crs9ie5pgItTVaxxqB-FIbnV7LWOV4fSdZcinsQmepUdGgb3ZvFQNLnTGEgWNbsKi7Fi7sQav8vomc7VknXcfAI1U7Bf0lU0wvypnAjl5ECA22hH6y9HgDq2rSSyGtG63u8O5B5ZdoG294QyPyGQUjC0ebQmNAO90eAGD7NEt9MlEXVJ_HubBxXDxKK25GBYReXjck0POYb2qq6P9MU0YETxX95dCIVufSopCtmhSFRO2nLGbofyTBy5vBiqdo3_Se3Ko_7SlsDc2t0pEZnbJD2-pKPLGsLYOqTHTuvk--VD3n48AhgaIscuF_ps-bzp12Z31t_gCA75ArYBmRol4Bz20faM9pN4IJx4wIjWT0KIiU40icBDm8HoqqOSPLjwruRLdfiQAilh6q3kWQa0u2j6tMy3vpir3Y-QtZCmw_GM4fVuPDa5ANINIvA4T3hCqEZqE0ScKGvBErsTYnWq1tvRLZrDTVbJU9BYi6jOEku7cbwmki058U0HrA0ziQn6SShWvYHHInGdT_6-476Py6jvusvO-hWIMF3ROxOB11Rkp6XHJcLkslym6RnHOMOIhkTOPC66V9Efd2qy8C6KCBsnlDDxTp6OFkMjvmeatxq_hcaSMxJH_pcOTTeNJeUJgadsCyqEnHKPswpei2rSz2HPxQEDOvLyO8uBNjJ07zQb92DnW0IAuVK4JaFmkZIC_PqnJL3bDcfQxhPAvNJqHw0Otwpy2rwoDn_2ah-yhuVYTwyTQ9C9ziKJFjy0-Shq-FIxYNp-NXwNOLIji7k9bjKESdHh9ojOjWKvVLF2ptbks-v8bfsPp2rLSr6m4HXDebc7ZOamB4z8Zv_PQmM0Pu_8LOqyhAkWAT7ojo4fSlXlpLAklCXnMHSOHkb29jKv2t_iiqFcOS0R79USyIuxcxJ5zOlwQ24Yk3aSOX_tlB0JYL9GFf1CYloROWaKYlcNLHW4C4DAhv3xd7U8D41nny8FtQAXwqMwUYGbiSa8vQpvPuggOGZTVB7KrNB7eV8VopaBXQ-mwKYkY_8Ns1cZYUEfgLPuSlMdTq5utzf8AXiitgATFwrD4dYrmWVvM3pwb04b8CpRUNLE4&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "ISUELi1zfIMWqbBdk9ueMohvG8tBNY05V4UZIyDZIexZQiL89IMvtHos_x2J0ACmXQ_robaIuigfF7rf7Q8xFPwjbs3-wcgqRMLgMgVF3CQqjbl9LhwbMdf4hUToM5UzkK2uc9yDLfOUweFR24hcOvorMiqjIco14Z80lggVmaEWmKWmkvI3Gy_h3q5ctxZYzwaZ0Bii16Godi22ZvxOr9jZsnsMV92ZJofTwKv0kaLKiN-ahuDgHl-Qd41LdhuwXJKPKWWYrGs2nYspi4sYakd2gjVqQy4kHDddrRVHIpQqPvWTfuwqM5j9sKFCqDWlngyBflFFT-DIi6-2GfsQ54jmM-AZiId3G50lKc1CTgdROqX_WmZ15WxtkH8Tc_RVA-szD9kfmMZN4lcPh0lk8QXYj_c_gixF6HFaStzmAmXTqFsD3SsCPSvkpnDefgnrg0O1hXGVc-rJSaZr9V4bdY5eWrvn5xigNoMqArQ0zwT83XdCq8Apx9ZbGZKqF1oabw4OTBUmNqEPtLjuWcP-OwKRaFcVqybRCCVyCo5koVjO4-zDmBsVqixFoGJAcXaB0kG0IfaRgde3jvEt9LEwFRHLWCiA4AtSq3R0t1BaD-NzJenWis-XKBDkhwvyvmGJbqUArW5NgHOFTH6AtD-m2UXAhIwTad9yErypi0ynRuLJslZz_MlBL_uz0tpNs1DXvUhcXwchyYdTIaEbgvDgmm51PNxvpdRZy21BvL_i4x0r04md1G-8mScFo-jOkL6dm5EUc9uqFEbymapMXo5yX9e4F5Z2RMui0b9Yrj0LlfMFy6YHlKh1edVyfWJd0UrFEOJDJPmHCMgkf77FpUEKqCiU1zen43Heu-po6X3sxHOLRrhnm0gKe40au0cVy2o2NptJU1H-F1MxMOP-I6cQq9WIIlvo9AWUJdFV0gqc018EvyY2ji3PKewvr4CMvcTsxcsX7Q0YARLU51RA2gAe5NW5sFArT9fS4w8FiVQttuX8ljL1f2RMM6bKlQGyk1C5dYAHVHPruU3ZQRzld5v3upnNxOssx8F_Hq5kFR4oSnQumUsZRXGTTTAdam8kBTQvQxVkmvMrLT_6sGnFWZg1UEFwnry4N5yIsqM9bxwdGVwLS9fjh8REv6OPum6v8Hy8l1T2J1rdwr17P40iR7KRh6dckWhHrjVHdUGG7aiLtaEg5HYUzKHCgzc0139Lf4E243iwlw67nBgD7Po_ALgY80cflS_kuIBxw36gK_z3bf6IAJ_5AoOOoHWJ6PaqfwPSfq1HH7VK0wi6GD_uHJDgm7zy_GxGiilBkBBmHg5ffL_YpsDyzS0PYZE8pMrthQqAOTyBn4dOcpgz0rx22hAEUiFbRWILFmoHjozLPoKrhEINWpZaMfJpZYNKiqdUoR6gttv8nplo91idJpdYHL3Rlgr9EGl19auRFl5M1DEzxAS93WPyjiDBRDyQFBMdzVWEK8BE-qO7iWH9Tt91FHPnv-OC5Hlq_X66j18um-NBVHA68NWh8nOmW54HBnj2InC-HUBc5rmiENPcMk7UhXuf0kY7xdLx2yztJ6srhZUu8qorpM_PUIODWiC5x0wnY9SKujcu1AdCNFrGLZdVbwfSK4VO9UTFe6Mmu0_sKiOGp5gyoN4cT-CrqQ2JQsrwtvcVXlDxOaK3CLaEb2LqrJqQoz6wdOJjidMc_Ij3Pi7Bgla5SrQUzWbTX-q_70-PmrVGHiWsPb9hYdidspUIAeMVqCSgSdTqVRRBCMC7gKuRupPYJRg0b3QiGzbsOENhcMycWyRdWreBx-ErvDS8N3HYG5hbmCYz3vLdNdB3dW_sWrVg7xCWlM9JbMo_rYYs8_K_GCq6cZy0Dd34bEUsY2vb0-r47rjpPpBnBSyG1NAsnTYfvatrT7DXJnUhTluRet9bOHuuwZOChRUkWtRNOk0iBNk_8LTYcktNpE5EsgmvW3k54a_2b80BlMHTPmZGXL-ylWVTF-YCRrWVz-mXdTcTWcpijL6-5Od9nKhHZ9c9WtZL8ZBHIPjbe3ZzSaAxEkRVAW8DIvSGnMnZqvvPpMdj9kjyPpjtqvFK4Ci43rlzX3IdwO-kyqITd0jeRLtw86tisESkGa5K3eR7qF4GAUBkWSi2WdisBqsOc710XiLCAJ93rl0dFWoZ7l7RiEAqet6xP1GSllNMEOT40vnExp39NUeUzHrFb73fmC7X1pU8vsPRE5iXvyrDTDOXso3OSMuPxxOjw7KLlecnXi2OFr3efhHs3oM2xRsSRi2yXEAqMtdxVHbFJBoV1UCNAqwbeGsw0eoQimckf_B_TmOnrH7a-4WPF2uo0YtOV_yhevc2ib2IWGROuvmnZuu3vb069XHLZjyB8Mj7K-uT1pRw2i_zCJRnWV93b57oPVMUTSrTk0soLZ5L8BK6t0f5XbwEkrLqJ5OZMl1xAiM9Vt2HoYTg9GSKIc_G3AHv8KHPQkLp-d6h7UdTRPgijwkXLNCNqbGtrsTo93Imd_koNfyppNZ1p7Zh8-TRi4i8RFvG35orouQKlz_J1zHcCtu691A79qYeP19dIOSyLFfEjxwRU14lbYCbefc7Mj4iGffSTjJtikyTsTmSV3g7S5imKd17TSwUK_HX4ujekrDKJ6mf384e96y57LiTMs0iUZ8uJb-bYiBif9imGt3N578LrvoDXeP0nLP8XE8BS8iF1FH16fG9KwzJPEgkXQn_ipD5aA5XdrV9yUn_ClqQHEnt_fBnW8FRXM7rHGzMAcc1tNzfEX4fW0k3tTkcxmEgFkF9Ak28yXegAVWEFjMYnBzop5CohikP49VRav6yqrOcxwFxaQGahg"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=ISUELi1zfIMWqbBdk9ueMohvG8tBNY05V4UZIyDZIexZQiL89IMvtHos_x2J0ACmXQ_robaIuigfF7rf7Q8xFPwjbs3-wcgqRMLgMgVF3CQqjbl9LhwbMdf4hUToM5UzkK2uc9yDLfOUweFR24hcOvorMiqjIco14Z80lggVmaEWmKWmkvI3Gy_h3q5ctxZYzwaZ0Bii16Godi22ZvxOr9jZsnsMV92ZJofTwKv0kaLKiN-ahuDgHl-Qd41LdhuwXJKPKWWYrGs2nYspi4sYakd2gjVqQy4kHDddrRVHIpQqPvWTfuwqM5j9sKFCqDWlngyBflFFT-DIi6-2GfsQ54jmM-AZiId3G50lKc1CTgdROqX_WmZ15WxtkH8Tc_RVA-szD9kfmMZN4lcPh0lk8QXYj_c_gixF6HFaStzmAmXTqFsD3SsCPSvkpnDefgnrg0O1hXGVc-rJSaZr9V4bdY5eWrvn5xigNoMqArQ0zwT83XdCq8Apx9ZbGZKqF1oabw4OTBUmNqEPtLjuWcP-OwKRaFcVqybRCCVyCo5koVjO4-zDmBsVqixFoGJAcXaB0kG0IfaRgde3jvEt9LEwFRHLWCiA4AtSq3R0t1BaD-NzJenWis-XKBDkhwvyvmGJbqUArW5NgHOFTH6AtD-m2UXAhIwTad9yErypi0ynRuLJslZz_MlBL_uz0tpNs1DXvUhcXwchyYdTIaEbgvDgmm51PNxvpdRZy21BvL_i4x0r04md1G-8mScFo-jOkL6dm5EUc9uqFEbymapMXo5yX9e4F5Z2RMui0b9Yrj0LlfMFy6YHlKh1edVyfWJd0UrFEOJDJPmHCMgkf77FpUEKqCiU1zen43Heu-po6X3sxHOLRrhnm0gKe40au0cVy2o2NptJU1H-F1MxMOP-I6cQq9WIIlvo9AWUJdFV0gqc018EvyY2ji3PKewvr4CMvcTsxcsX7Q0YARLU51RA2gAe5NW5sFArT9fS4w8FiVQttuX8ljL1f2RMM6bKlQGyk1C5dYAHVHPruU3ZQRzld5v3upnNxOssx8F_Hq5kFR4oSnQumUsZRXGTTTAdam8kBTQvQxVkmvMrLT_6sGnFWZg1UEFwnry4N5yIsqM9bxwdGVwLS9fjh8REv6OPum6v8Hy8l1T2J1rdwr17P40iR7KRh6dckWhHrjVHdUGG7aiLtaEg5HYUzKHCgzc0139Lf4E243iwlw67nBgD7Po_ALgY80cflS_kuIBxw36gK_z3bf6IAJ_5AoOOoHWJ6PaqfwPSfq1HH7VK0wi6GD_uHJDgm7zy_GxGiilBkBBmHg5ffL_YpsDyzS0PYZE8pMrthQqAOTyBn4dOcpgz0rx22hAEUiFbRWILFmoHjozLPoKrhEINWpZaMfJpZYNKiqdUoR6gttv8nplo91idJpdYHL3Rlgr9EGl19auRFl5M1DEzxAS93WPyjiDBRDyQFBMdzVWEK8BE-qO7iWH9Tt91FHPnv-OC5Hlq_X66j18um-NBVHA68NWh8nOmW54HBnj2InC-HUBc5rmiENPcMk7UhXuf0kY7xdLx2yztJ6srhZUu8qorpM_PUIODWiC5x0wnY9SKujcu1AdCNFrGLZdVbwfSK4VO9UTFe6Mmu0_sKiOGp5gyoN4cT-CrqQ2JQsrwtvcVXlDxOaK3CLaEb2LqrJqQoz6wdOJjidMc_Ij3Pi7Bgla5SrQUzWbTX-q_70-PmrVGHiWsPb9hYdidspUIAeMVqCSgSdTqVRRBCMC7gKuRupPYJRg0b3QiGzbsOENhcMycWyRdWreBx-ErvDS8N3HYG5hbmCYz3vLdNdB3dW_sWrVg7xCWlM9JbMo_rYYs8_K_GCq6cZy0Dd34bEUsY2vb0-r47rjpPpBnBSyG1NAsnTYfvatrT7DXJnUhTluRet9bOHuuwZOChRUkWtRNOk0iBNk_8LTYcktNpE5EsgmvW3k54a_2b80BlMHTPmZGXL-ylWVTF-YCRrWVz-mXdTcTWcpijL6-5Od9nKhHZ9c9WtZL8ZBHIPjbe3ZzSaAxEkRVAW8DIvSGnMnZqvvPpMdj9kjyPpjtqvFK4Ci43rlzX3IdwO-kyqITd0jeRLtw86tisESkGa5K3eR7qF4GAUBkWSi2WdisBqsOc710XiLCAJ93rl0dFWoZ7l7RiEAqet6xP1GSllNMEOT40vnExp39NUeUzHrFb73fmC7X1pU8vsPRE5iXvyrDTDOXso3OSMuPxxOjw7KLlecnXi2OFr3efhHs3oM2xRsSRi2yXEAqMtdxVHbFJBoV1UCNAqwbeGsw0eoQimckf_B_TmOnrH7a-4WPF2uo0YtOV_yhevc2ib2IWGROuvmnZuu3vb069XHLZjyB8Mj7K-uT1pRw2i_zCJRnWV93b57oPVMUTSrTk0soLZ5L8BK6t0f5XbwEkrLqJ5OZMl1xAiM9Vt2HoYTg9GSKIc_G3AHv8KHPQkLp-d6h7UdTRPgijwkXLNCNqbGtrsTo93Imd_koNfyppNZ1p7Zh8-TRi4i8RFvG35orouQKlz_J1zHcCtu691A79qYeP19dIOSyLFfEjxwRU14lbYCbefc7Mj4iGffSTjJtikyTsTmSV3g7S5imKd17TSwUK_HX4ujekrDKJ6mf384e96y57LiTMs0iUZ8uJb-bYiBif9imGt3N578LrvoDXeP0nLP8XE8BS8iF1FH16fG9KwzJPEgkXQn_ipD5aA5XdrV9yUn_ClqQHEnt_fBnW8FRXM7rHGzMAcc1tNzfEX4fW0k3tTkcxmEgFkF9Ak28yXegAVWEFjMYnBzop5CohikP49VRav6yqrOcxwFxaQGahg&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "Cgh-VrZrG5K50a8Alv4gELBGS-FcGI1_cmkruzKY0qg5GE19Dn6JqB61gf6FU_IL00wQizGxV_rvITFhm9ozqYoXoeR3v1nLi7mZMuuxg7hlUTtJna33LU7DdjwVoB9mZjMJCCXF_FhztHW5t1wRpzS1Z0wy7d0wHlnx3GwtQv5nRlCYOdf_O09YpIaX0WtpPOHfAboUtYk0ZpbWsu5xvTiXpHHo3bzi9i4ZXyRiL0xGpMXvbadmPgYhKyQ6OG3pmSA3PiUwpKyEY05kFFThSUR6Ya8HZ2zNubEWSfE7wSiU-U2BNJdYD6_RZ6N8obnSM3DRYgfEWOEhzQaMlKj5EDraSCl9HiXP0MYug2QnGejuYTHH2kjkblDzfyZAj87oJOrsaAeImPvIHxyQl4YuuyOKgWXSjI9Zvi93BCod56hwY9Pr6_6mcjRZhLbpQkzPSshuL-_lCGVjCd8jm4sYlHlGC05ch_X7rGit-yixVixP-7lzyR12RVLejps0qydlxL6T2ZSipTsQgb4QaFyvrcpIqK21jzfRPNdm1zrRuy_99n41lEHITddO-JYsimWGAdxLLM-zAnSF1tkoThNIFniIllC4ok-tCLZkqNSBpguR6JjY4KF_qqjPVpCHkdMNpaasz2WcLAAdUnZZxT3I3Y2SVUr5SqLOOG7xYJKERvic38vyQrccFwi4ZFHAAQqENboHC2p0Fmg-BJ2u4kwXbHOJL6SkOhW9Nxni-ASHx14DixulGmKsx1QV9jpGtFrpNjS8CVkdKrAceiQZtOn9u-dd7ZfXDgvB-xDhXyCCtBAhWFMm54CsRnjoOIQrRFlrxZp1FFGm5sWxlYtpmI5Fb760Z1RgFBae0ybvrFq0ZKPoRonLmcz3SuFomD2mDrDEr0UlCjBsY0OsoWurgQDH8KsRxSsozUNbqHvJ4buScf1foLPSMWXRG6lRDR3_60Q-"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "about:blank",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/views/MLB/count?d=Cgh-VrZrG5K50a8Alv4gELBGS-FcGI1_cmkruzKY0qg5GE19Dn6JqB61gf6FU_IL00wQizGxV_rvITFhm9ozqYoXoeR3v1nLi7mZMuuxg7hlUTtJna33LU7DdjwVoB9mZjMJCCXF_FhztHW5t1wRpzS1Z0wy7d0wHlnx3GwtQv5nRlCYOdf_O09YpIaX0WtpPOHfAboUtYk0ZpbWsu5xvTiXpHHo3bzi9i4ZXyRiL0xGpMXvbadmPgYhKyQ6OG3pmSA3PiUwpKyEY05kFFThSUR6Ya8HZ2zNubEWSfE7wSiU-U2BNJdYD6_RZ6N8obnSM3DRYgfEWOEhzQaMlKj5EDraSCl9HiXP0MYug2QnGejuYTHH2kjkblDzfyZAj87oJOrsaAeImPvIHxyQl4YuuyOKgWXSjI9Zvi93BCod56hwY9Pr6_6mcjRZhLbpQkzPSshuL-_lCGVjCd8jm4sYlHlGC05ch_X7rGit-yixVixP-7lzyR12RVLejps0qydlxL6T2ZSipTsQgb4QaFyvrcpIqK21jzfRPNdm1zrRuy_99n41lEHITddO-JYsimWGAdxLLM-zAnSF1tkoThNIFniIllC4ok-tCLZkqNSBpguR6JjY4KF_qqjPVpCHkdMNpaasz2WcLAAdUnZZxT3I3Y2SVUr5SqLOOG7xYJKERvic38vyQrccFwi4ZFHAAQqENboHC2p0Fmg-BJ2u4kwXbHOJL6SkOhW9Nxni-ASHx14DixulGmKsx1QV9jpGtFrpNjS8CVkdKrAceiQZtOn9u-dd7ZfXDgvB-xDhXyCCtBAhWFMm54CsRnjoOIQrRFlrxZp1FFGm5sWxlYtpmI5Fb760Z1RgFBae0ybvrFq0ZKPoRonLmcz3SuFomD2mDrDEr0UlCjBsY0OsoWurgQDH8KsRxSsozUNbqHvJ4buScf1foLPSMWXRG6lRDR3_60Q-&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "8ZjJ6iFPNtVTW4GXD3CT0CMoz7UsOfSQAza2v6t9xNc8JUjH8UnkJQkRC5GJXy_KA-gPX9dDIre3EAQ12eHY7xNE-xPk2cW2Zf0aD2Dk4DATJWeuqd5NPaESanifYUlo62xr1pBTzouD6iDSuP8MifYka21yc2EPU5bE5nE3PeCrOvyRIh5HNqCYpIHU8UL0TP2Q4WRnwDSD6iDYO3m40gMuC2ft3zj8m8XEe7QxvdeMElwgeddFboAq8ryUIc8-8Zz6PMNM9mHcS4kgzfwEl3NO0SCBzFH88poSjwoHAQwbe4DLy41JXKuqwV7gYv84-mnCFoWMadWlgI1AYD9GZN9n_4zj7Y4zABFbXsPN1Vl3ooKgtnxPkHIbAU8u6TojcxFW_SJSeWDzKSPQ_7A5IvWzqAJL7XY18tdotOI_VJ4aKp4VIpKWAlx7Slfq0q127N1HQsW_f9i-RRMztrCpeGf8_7YuE-66KAYPztDo2GsUoZxXYZFyt_jxXHbkPmVDxmpNXW0YdNvrJGF8su3UYmWvi4zJbmPBTrKC-oCbgmS-WS7kWFCOathIXb6GHxxXBgIBjpgMtBCQ1Cj2jh5MWE6z2I-rWbCwH4qS66cPxxZ-zv52V9osUh78cMiiQPpszsB7ALhWc-v4PxqkV1VXmYJEx2px1Zcf66BMupb--28MT3gzb5cTgluA5IV-x1NVoundefU2AoFKr9V-WytcM7z4feXh6pxTr4Cmcd722yePDNsjttmGCHbHJqkSo0l5PJeKAzPzRiToF4CKW8j2QwBLu3n-tsWe7I3s_SEn-xQ6H37BeSaY_7Zz--QFHoXUSF0gzvRa9Cy-duIqWzibyiX7NDUdYGI4iQtrZfDSbUEoKkWVP_2y22V83zjNGxi1OGq7JIqtQLNUkppjRliGx9TgQr1WRDesVc99p-FqvVizDalSpkx-eRWJ6RM2Onsb"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "about:blank",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/views/MLB/count?d=8ZjJ6iFPNtVTW4GXD3CT0CMoz7UsOfSQAza2v6t9xNc8JUjH8UnkJQkRC5GJXy_KA-gPX9dDIre3EAQ12eHY7xNE-xPk2cW2Zf0aD2Dk4DATJWeuqd5NPaESanifYUlo62xr1pBTzouD6iDSuP8MifYka21yc2EPU5bE5nE3PeCrOvyRIh5HNqCYpIHU8UL0TP2Q4WRnwDSD6iDYO3m40gMuC2ft3zj8m8XEe7QxvdeMElwgeddFboAq8ryUIc8-8Zz6PMNM9mHcS4kgzfwEl3NO0SCBzFH88poSjwoHAQwbe4DLy41JXKuqwV7gYv84-mnCFoWMadWlgI1AYD9GZN9n_4zj7Y4zABFbXsPN1Vl3ooKgtnxPkHIbAU8u6TojcxFW_SJSeWDzKSPQ_7A5IvWzqAJL7XY18tdotOI_VJ4aKp4VIpKWAlx7Slfq0q127N1HQsW_f9i-RRMztrCpeGf8_7YuE-66KAYPztDo2GsUoZxXYZFyt_jxXHbkPmVDxmpNXW0YdNvrJGF8su3UYmWvi4zJbmPBTrKC-oCbgmS-WS7kWFCOathIXb6GHxxXBgIBjpgMtBCQ1Cj2jh5MWE6z2I-rWbCwH4qS66cPxxZ-zv52V9osUh78cMiiQPpszsB7ALhWc-v4PxqkV1VXmYJEx2px1Zcf66BMupb--28MT3gzb5cTgluA5IV-x1NVoundefU2AoFKr9V-WytcM7z4feXh6pxTr4Cmcd722yePDNsjttmGCHbHJqkSo0l5PJeKAzPzRiToF4CKW8j2QwBLu3n-tsWe7I3s_SEn-xQ6H37BeSaY_7Zz--QFHoXUSF0gzvRa9Cy-duIqWzibyiX7NDUdYGI4iQtrZfDSbUEoKkWVP_2y22V83zjNGxi1OGq7JIqtQLNUkppjRliGx9TgQr1WRDesVc99p-FqvVizDalSpkx-eRWJ6RM2Onsb&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "RiK1NxcxPAPFxahRYfJ2cyhxSXvx79PSrlYtW8W7ljC5uULgcSMQmEgb0yHpc7V_ZQZ2FAsJLbP7elwAXfl21RkcP9hRoB7FJt5ruTTA7-EMYMdqfuUEu62m9ybxBC63yd8ketLQVDppju_80Pqbn-BWj9E-I4Z5vdyKyOl35Dy657ld7wLYSgo_DhYboY1SdStECd9jIlXJzh_msff_0jvSXsJVdEM9Ok-Azbdp8uZOkmtjmbxmCjZmRNJnu-SK6FJ80MkSWT46ljIv3OVNlffm8hPjazEdvrmsQgIJ2dmr-PqA1hxFAZAMtvkKf0scDc2wRpQaD_ZyMoKJAWgcDiZtRkXY2e1drcZbGu81wWZ4WUFDWCXucM70zdZqRu5YmFlaWYAWl66H7TQspJMijJVOfFvf102OyuF8adDkasAQWB7b5aKIPoXEfBT8QhwOIl8T9HaKlx9dUzrGtcwK6O5E2QvshJXEt3spBzGllDE1Wr3AvnoxaFG6474kTAnI1inHkH_6PCCmG0cH6c2ETstDAZJINYuTeRf1RL2Cx9Vk325nu7ST2vNDBrmi4qnISwDLzIT3OVBj3oxnLt5DZvJ13lWpTg3ltcI9XpjJIXcARo4WyMziJFo-Nwms8asdNMFrIHln55_AmkzrWCKWwJHWsqutjkz1QI0hoI7FNK6TeCQzVvNmuPucIdagG3FdrG3hCSwMbAzcasPozfJ6sm2KMZnipifoCqL9QCNByN_Vr4MPWp3LuSUF4lkCOK6wydrtfbvlB3dlNefxMu5S9YO6Ax_vJ8XVNGnHce-9WiRAKQmFdUodGEYLZky-2LYawI0a3wOXhoZQix4hdE3s9jFbionb3Fy5MB4SJ4TDAH7U3Wbz9OpMhov15vBpms0n-LR6wOlws3C0Z1WrZHi9MDMRsiAxdhYlBT-reJ2wfCAQgN9wZzK21UJxfw9rAtoY"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "about:blank",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/views/MLB/count?d=RiK1NxcxPAPFxahRYfJ2cyhxSXvx79PSrlYtW8W7ljC5uULgcSMQmEgb0yHpc7V_ZQZ2FAsJLbP7elwAXfl21RkcP9hRoB7FJt5ruTTA7-EMYMdqfuUEu62m9ybxBC63yd8ketLQVDppju_80Pqbn-BWj9E-I4Z5vdyKyOl35Dy657ld7wLYSgo_DhYboY1SdStECd9jIlXJzh_msff_0jvSXsJVdEM9Ok-Azbdp8uZOkmtjmbxmCjZmRNJnu-SK6FJ80MkSWT46ljIv3OVNlffm8hPjazEdvrmsQgIJ2dmr-PqA1hxFAZAMtvkKf0scDc2wRpQaD_ZyMoKJAWgcDiZtRkXY2e1drcZbGu81wWZ4WUFDWCXucM70zdZqRu5YmFlaWYAWl66H7TQspJMijJVOfFvf102OyuF8adDkasAQWB7b5aKIPoXEfBT8QhwOIl8T9HaKlx9dUzrGtcwK6O5E2QvshJXEt3spBzGllDE1Wr3AvnoxaFG6474kTAnI1inHkH_6PCCmG0cH6c2ETstDAZJINYuTeRf1RL2Cx9Vk325nu7ST2vNDBrmi4qnISwDLzIT3OVBj3oxnLt5DZvJ13lWpTg3ltcI9XpjJIXcARo4WyMziJFo-Nwms8asdNMFrIHln55_AmkzrWCKWwJHWsqutjkz1QI0hoI7FNK6TeCQzVvNmuPucIdagG3FdrG3hCSwMbAzcasPozfJ6sm2KMZnipifoCqL9QCNByN_Vr4MPWp3LuSUF4lkCOK6wydrtfbvlB3dlNefxMu5S9YO6Ax_vJ8XVNGnHce-9WiRAKQmFdUodGEYLZky-2LYawI0a3wOXhoZQix4hdE3s9jFbionb3Fy5MB4SJ4TDAH7U3Wbz9OpMhov15vBpms0n-LR6wOlws3C0Z1WrZHi9MDMRsiAxdhYlBT-reJ2wfCAQgN9wZzK21UJxfw9rAtoY&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "TxDCc9TgfyEWoMQFz1HueiQLPjjA21q1bTryE-4VnizHM7Af_o2ZWj8x1SWSCGk1UusEj8BBlcXiqEU3r7h7SbdnE-ApKBBzFb2cnuFmgDM1CmHgHJNOicP9we7fudf7LvbE1M6wP5-X2YG71FSrPSP9qPaf0V0536lqOU6erG4_oGt0zcwTcb94XvwMPAuor1g_iOpfdek0a9IpKI4xSwYTOK2Ru8owT4h0VrM3FXzAQN5leZ76iV7P50B_LYzfI9lLqiBvnkYEUQVbBkDOlv1d58fKt85Rcwk27fWtUB4Z-hnEnt3Rz6JOZUQPgD5u9muGhzWCOjTkbt_0Ax7T5s7EmOODfWVe91eUghoaOIsSvHzhZqorlt67PxSfmjg4alZhtUt5nqlpCyO2Oo4ACG3NPCigGaCPDx4QEmefPWXpGYIyJOiKHSGxQZ9z0Ef84TEq0ITFdWDqVyRQOMo4ZejkiOxJaG_s_jVNoLyUCllJHkxy85PtUK_hLCYaxAdbvZoYxcmooE6IH-7BAfi7fNw0FF4-4XP10P2yO5dA2DScIbWHcGj8pOyifdWO5Jof1hEcDL11mGKv-8tG9ZVIVliarKf2OZBQFPh4E8wbA8iFD9mqx4zl4YBiIdzU_kQPyeV-wavRKYWNFjjkxDMUcd8ZTzYV7gAYjfY3aqMKWTkVM7vXbs7OmX0RhW2OgKHmKY7WPpytQShIXGgVUtzdxb---B9NkIrHp1r4w0zKLj26RsdiNLRnXpn3X0XkO1hNEAFxgVHo-qQd-K48xB5wJhJYhKmPVPCZH0QW8iE3kBMp6ku7SfJN42qA6y5jfZ0_-czeL-cmQK0FkCMd-xSBsn3nVjchhEKKNcIYYCwqH94XoSU1OKDK1zAQwhw7pxnx"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "about:blank",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/views/MLB/count?d=TxDCc9TgfyEWoMQFz1HueiQLPjjA21q1bTryE-4VnizHM7Af_o2ZWj8x1SWSCGk1UusEj8BBlcXiqEU3r7h7SbdnE-ApKBBzFb2cnuFmgDM1CmHgHJNOicP9we7fudf7LvbE1M6wP5-X2YG71FSrPSP9qPaf0V0536lqOU6erG4_oGt0zcwTcb94XvwMPAuor1g_iOpfdek0a9IpKI4xSwYTOK2Ru8owT4h0VrM3FXzAQN5leZ76iV7P50B_LYzfI9lLqiBvnkYEUQVbBkDOlv1d58fKt85Rcwk27fWtUB4Z-hnEnt3Rz6JOZUQPgD5u9muGhzWCOjTkbt_0Ax7T5s7EmOODfWVe91eUghoaOIsSvHzhZqorlt67PxSfmjg4alZhtUt5nqlpCyO2Oo4ACG3NPCigGaCPDx4QEmefPWXpGYIyJOiKHSGxQZ9z0Ef84TEq0ITFdWDqVyRQOMo4ZejkiOxJaG_s_jVNoLyUCllJHkxy85PtUK_hLCYaxAdbvZoYxcmooE6IH-7BAfi7fNw0FF4-4XP10P2yO5dA2DScIbWHcGj8pOyifdWO5Jof1hEcDL11mGKv-8tG9ZVIVliarKf2OZBQFPh4E8wbA8iFD9mqx4zl4YBiIdzU_kQPyeV-wavRKYWNFjjkxDMUcd8ZTzYV7gAYjfY3aqMKWTkVM7vXbs7OmX0RhW2OgKHmKY7WPpytQShIXGgVUtzdxb---B9NkIrHp1r4w0zKLj26RsdiNLRnXpn3X0XkO1hNEAFxgVHo-qQd-K48xB5wJhJYhKmPVPCZH0QW8iE3kBMp6ku7SfJN42qA6y5jfZ0_-czeL-cmQK0FkCMd-xSBsn3nVjchhEKKNcIYYCwqH94XoSU1OKDK1zAQwhw7pxnx&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "cll_7WRTSJudYQMSJiF0Mkdr2cjAabHorMUufHujFybj9OgcobPDp9yVMIXqby2NVSPF10Mw0IC_94OgOfQcbWMzj9TJ701ba3iIuZs7mAvILKpi5-Bs-39QCmcolXOEfpY_AtyJ5YwJxjZaFzQ5UuYlJqQif64cLKe7EFRZ3tmI0Q7ncnEDdEUCdJV5zCQwetfCEERSWO2kB2l5BMSYV-YayYiFjKQDMzFWfa3BfXx8gFnhCsvg6B9t0SCamUVuW6ZeAq8h2jfgr1MXAHXzN6vldcucqIRSi6_qeh_70Ct1VvCW5wiW82EqBqjOZqgibHqDkI_RzfajIiPy9wWYPsf8KyjZ2AlHyXR79jfh5xP2WwNjVHT7OD_k4F2Ph0fedLlUiyCXuz6vpXIjlo3KrZsvqP5Z-FkyVOmVSxp3rmnTcESjrurjPZGh8kh-dcyRgc4p9pm9NmvsPIzDJrkH-UBPxVbbAYWgwxm3-Y7uXwvQ4TkI_Uo8KXRf2rL2z01a7XA1G-QMU6mKz2jdPggBvkFvrzr76NEXa_-GW_a1fuOrSFGjU9rOH1qESEI7uZPUxH_I2u1EAT0E2zrO-lGrybYgqeTl1KNr5idZi1BO7L3qx7rV6Aud_WPMKGpFjN3P9INNKu0Z9W_cv4tKb8qKLjstKO7DrVapdwD-z0M7QJRLlj3fHhkcBqn7FvnrJUwf9CZgUOSBbmzUiPgAp2T7p6rlneQTZTkxKwpo3YVORgHjNUdpEgEMIEs-ApzXYSJ7Kc8npFurEuH3AI7x9PYDglC6LJrBUKeBQsLHzFbHhv784crHgcET_XxYRpPqOGYlYsvfp65BbkCEpxgzz59tElXitHcOTT0y_5azS86feJ5KQ0tfnXIpOj0WyWrOWFuLrHh7nk0FS14fqgJ4QpdF3hSwmqsDOL1Vv6i3QsrbtpoPSMxGTyr3Qw4EOc-KgiPb9a3qdEHMO2o76gub7YI46QFFWlk_TfbDVTq1rK9SqoB80ox_lG6Cr3--ndc2Q8EDxaFmAIqER6R__U6JI1k4ppGJduO2BE13_EjhWtGJdTN_0aHqz93jN4TxM4XdLivYjejQoPYvk3PxfJl9rdh7MYOImynclhe2yRJCMDu8Qf67o2r9BM8ctDhakrJgSnvIPrIRuzpo_fQx18VR_x7Bm1RVkkZdtLW7lnaJPkHDio5djAykR_Hs4ecjacIaVLPf_j080kbuZaYme_l9fqSQ7-T5Ir463CK7GHKNYJ7KPjmU1lHQy4aCDrlrmL39czsQviAz2KWyIivAy5Z8TRsEwyRNAJJsfx1gTJHhEDKcZoJqwZFnWbhZQTNaSJodJTTe68UgvM5Wx0P7-UFsGByQb6wfR8BH7KL5h8drDLIX7zM6RWw2GXdKkPZnQHpUiarfStWVstWz-OPOh9NEHeyKBY0IpDjyRNJY45sgs3ETWRGcFj9xkC1eFLR2DZyzlriNJA3ZRYUKpy5ISFVcq0PVlVo0OXXjcSMOqM2sK4jg06zYHXod0z9ShUV9wrBZkhhNb1HorppuxQNj1NdOn8FKkuV3-XO-7lx0AL9vnfMb-xpc4FKu5jelO3uYKWtccRMhRu9yfYVIva0TstqVapwdw7mHnILJpOpgPqLS1u5h5kKWgV5b11N7Zdc-Yo-gENmisEXXQ6Qz0JD59C-qyTtXKW__LpkOQdeIrBf14egPoyTNTv3w_qk0yrGzMkaBqsTjSQ0QLUf78Zuhkuyw3KMmSHzZo392Z_wKOUXuwkUdAFDHeT0LXbQrffiMK6zDbsZJMsNEQOJQ92YEoQjW9XtzTdzPrceidO_UtrkgiAPqeurEWwq0PWwCE0byJuI91-mDcCO3yjp45c8WFFSlKSFGeQT7844Voft9MXHh4JwjxZDfpcCre7nODzrd3sI7SXIWGNu0UZQza6qcdrqHZNnPteDfbOtT-LrQCtNbsiaGBk0RWb5Sx4qQSbgBHVTNyHTQ_yMTR6Pr4pgst-coVj89HwrdhzTgOHafCuNevLOY_RdCMNkp4m5s4j6aKzTLfwBgxgf_7gVJnRF32x2qJsR2SoJR0ySLEF47whl2-PGek9DtqQoMKNoNJ6Pa4bQA1n2XVxm75JgCol81O0IeTImpMHRa2inPq3d7u8v9NLQ2Sq4LgRvPFPa6h47ULnTIll8_zCtWlBUzMs_DOj3qB92nP6Hg1-Ci_Jc6JAAFbQ-7x9LBxNMjOQP_DH7_VJ6yNFwCXzC4A6juj6Lz05kuq_tQuuMkgHb9gFRqBD3vMNLu94JzNZPLOb_FEj4HcLSZfn2_iubpUFROp_C2vsnrG6ilsWVY4H8mOx3AcY4czVOZh5UCmluSCB1U-PmR4kSICe5PbWHxpzIZvgQIwvmUNLwD2u7253pI9b164-y_vN11YFquBtACOCpKdRor5jqJNcGvjutxPt4sl0P7jjWVabVAqmFkHzLV_hlMTmMjSgQMvNYVQ9VltuBMNlGmaQ44P3v5gksBuJXt3rjhW7lAXe9fpjxZ4cUCzKwQBThzmc_sk0VR6ei3koIpdBd-TfXAVzpPpksVLZQ2P9bGYz_YEmBmHlNL4c4PT0JUNHIu0X0xTXl3aOBg1MVxWPvvnNmdlay7w9EXAYBCDoDvpSj0z8kCqgpg0zoCFYqFrC_vZDOnqsK7fGoN3b7Zzhpcbv7a_1T9yM4mVqe9dzdjn7V8bBgfa_jexuJ_aK4GdCTd5vlHGgRFaK6hJze_OQMc69DYPveM3UIdtGb5a0rtuptPFMJzOg"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=cll_7WRTSJudYQMSJiF0Mkdr2cjAabHorMUufHujFybj9OgcobPDp9yVMIXqby2NVSPF10Mw0IC_94OgOfQcbWMzj9TJ701ba3iIuZs7mAvILKpi5-Bs-39QCmcolXOEfpY_AtyJ5YwJxjZaFzQ5UuYlJqQif64cLKe7EFRZ3tmI0Q7ncnEDdEUCdJV5zCQwetfCEERSWO2kB2l5BMSYV-YayYiFjKQDMzFWfa3BfXx8gFnhCsvg6B9t0SCamUVuW6ZeAq8h2jfgr1MXAHXzN6vldcucqIRSi6_qeh_70Ct1VvCW5wiW82EqBqjOZqgibHqDkI_RzfajIiPy9wWYPsf8KyjZ2AlHyXR79jfh5xP2WwNjVHT7OD_k4F2Ph0fedLlUiyCXuz6vpXIjlo3KrZsvqP5Z-FkyVOmVSxp3rmnTcESjrurjPZGh8kh-dcyRgc4p9pm9NmvsPIzDJrkH-UBPxVbbAYWgwxm3-Y7uXwvQ4TkI_Uo8KXRf2rL2z01a7XA1G-QMU6mKz2jdPggBvkFvrzr76NEXa_-GW_a1fuOrSFGjU9rOH1qESEI7uZPUxH_I2u1EAT0E2zrO-lGrybYgqeTl1KNr5idZi1BO7L3qx7rV6Aud_WPMKGpFjN3P9INNKu0Z9W_cv4tKb8qKLjstKO7DrVapdwD-z0M7QJRLlj3fHhkcBqn7FvnrJUwf9CZgUOSBbmzUiPgAp2T7p6rlneQTZTkxKwpo3YVORgHjNUdpEgEMIEs-ApzXYSJ7Kc8npFurEuH3AI7x9PYDglC6LJrBUKeBQsLHzFbHhv784crHgcET_XxYRpPqOGYlYsvfp65BbkCEpxgzz59tElXitHcOTT0y_5azS86feJ5KQ0tfnXIpOj0WyWrOWFuLrHh7nk0FS14fqgJ4QpdF3hSwmqsDOL1Vv6i3QsrbtpoPSMxGTyr3Qw4EOc-KgiPb9a3qdEHMO2o76gub7YI46QFFWlk_TfbDVTq1rK9SqoB80ox_lG6Cr3--ndc2Q8EDxaFmAIqER6R__U6JI1k4ppGJduO2BE13_EjhWtGJdTN_0aHqz93jN4TxM4XdLivYjejQoPYvk3PxfJl9rdh7MYOImynclhe2yRJCMDu8Qf67o2r9BM8ctDhakrJgSnvIPrIRuzpo_fQx18VR_x7Bm1RVkkZdtLW7lnaJPkHDio5djAykR_Hs4ecjacIaVLPf_j080kbuZaYme_l9fqSQ7-T5Ir463CK7GHKNYJ7KPjmU1lHQy4aCDrlrmL39czsQviAz2KWyIivAy5Z8TRsEwyRNAJJsfx1gTJHhEDKcZoJqwZFnWbhZQTNaSJodJTTe68UgvM5Wx0P7-UFsGByQb6wfR8BH7KL5h8drDLIX7zM6RWw2GXdKkPZnQHpUiarfStWVstWz-OPOh9NEHeyKBY0IpDjyRNJY45sgs3ETWRGcFj9xkC1eFLR2DZyzlriNJA3ZRYUKpy5ISFVcq0PVlVo0OXXjcSMOqM2sK4jg06zYHXod0z9ShUV9wrBZkhhNb1HorppuxQNj1NdOn8FKkuV3-XO-7lx0AL9vnfMb-xpc4FKu5jelO3uYKWtccRMhRu9yfYVIva0TstqVapwdw7mHnILJpOpgPqLS1u5h5kKWgV5b11N7Zdc-Yo-gENmisEXXQ6Qz0JD59C-qyTtXKW__LpkOQdeIrBf14egPoyTNTv3w_qk0yrGzMkaBqsTjSQ0QLUf78Zuhkuyw3KMmSHzZo392Z_wKOUXuwkUdAFDHeT0LXbQrffiMK6zDbsZJMsNEQOJQ92YEoQjW9XtzTdzPrceidO_UtrkgiAPqeurEWwq0PWwCE0byJuI91-mDcCO3yjp45c8WFFSlKSFGeQT7844Voft9MXHh4JwjxZDfpcCre7nODzrd3sI7SXIWGNu0UZQza6qcdrqHZNnPteDfbOtT-LrQCtNbsiaGBk0RWb5Sx4qQSbgBHVTNyHTQ_yMTR6Pr4pgst-coVj89HwrdhzTgOHafCuNevLOY_RdCMNkp4m5s4j6aKzTLfwBgxgf_7gVJnRF32x2qJsR2SoJR0ySLEF47whl2-PGek9DtqQoMKNoNJ6Pa4bQA1n2XVxm75JgCol81O0IeTImpMHRa2inPq3d7u8v9NLQ2Sq4LgRvPFPa6h47ULnTIll8_zCtWlBUzMs_DOj3qB92nP6Hg1-Ci_Jc6JAAFbQ-7x9LBxNMjOQP_DH7_VJ6yNFwCXzC4A6juj6Lz05kuq_tQuuMkgHb9gFRqBD3vMNLu94JzNZPLOb_FEj4HcLSZfn2_iubpUFROp_C2vsnrG6ilsWVY4H8mOx3AcY4czVOZh5UCmluSCB1U-PmR4kSICe5PbWHxpzIZvgQIwvmUNLwD2u7253pI9b164-y_vN11YFquBtACOCpKdRor5jqJNcGvjutxPt4sl0P7jjWVabVAqmFkHzLV_hlMTmMjSgQMvNYVQ9VltuBMNlGmaQ44P3v5gksBuJXt3rjhW7lAXe9fpjxZ4cUCzKwQBThzmc_sk0VR6ei3koIpdBd-TfXAVzpPpksVLZQ2P9bGYz_YEmBmHlNL4c4PT0JUNHIu0X0xTXl3aOBg1MVxWPvvnNmdlay7w9EXAYBCDoDvpSj0z8kCqgpg0zoCFYqFrC_vZDOnqsK7fGoN3b7Zzhpcbv7a_1T9yM4mVqe9dzdjn7V8bBgfa_jexuJ_aK4GdCTd5vlHGgRFaK6hJze_OQMc69DYPveM3UIdtGb5a0rtuptPFMJzOg&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "cll_7WRTSJudYQMSJiF0Mi6W1MmUvF85XbehPdpPS4UBQYakb108udtuJD7s0WPZvdkqIRpP-_YyHSxZwqp5-WlVMIAqH4tAPj6B8w9tuZZUrYINFWMsUuxIhHAHCSBQdeNlX0bCpz83OCZIZTLr-eOZcsOSA28ENz_KkzzFxoLZ_sEpz1yB_uXbNH3opcyV8Uvu85QvYS8KmpnYivc76b9QDCZy-eqPgc6gGltgll4HZcdZP2mcLy_BAuyhmtxzFlCYgprqFFZwEgG3sqWN-ZsHhfYjTsINB1vr1TYFzPlcUIk1Ai36qH7mC9VbDSLweOJmENsHBjHqx4_Jt5AglC5Dek5wDQTolr3-mP02SF5phtuYUHABXV2oJruAORAu6TABNyFbQaRlJe0lc5xplvD_-ZlzQpUaPWYuFIqhCXJBrgvHmaqtZXQ69UnV2DhehNg6gTHnUMbAqWw2xNp3pjCtWm2tkR0m8UmMe65WGFQOI_tFV11ZtoUibi82gV-ow1H3luyI2qw-UjpvAw00sks31IoMJaY4ktSZNEcTdfLerBWok_l-SbURu4R84IrYxUyfeaTzXJhXM-uzYTsPNDRBV_WP5QEc4jTijlJA-dsX8ZYH1XrgPbU5C8EwZxEJpfjRALAQUgYyNWEqAQzzCg2j394jKcwU7DISBNlCc3kBPhJ61zL9WIOU6X8X9OEYZVvxkcTBsEWxZens9WgaFqx5zoYwOQJDpGWI3pcmjzUpgi3SddUJFWTepXs3JPVTRvtnkWzgeH_p2N5w1J7NnjTQwU_WIGpx7uIvixGKUF9cF78xi3mS8aVhbfVZNQokoM7ykfyMJivI0YmzOnFWK4GwV-VnkUbtczZAteLu6epN4Ngj4LspH_UzFT-BAOvJW44EO7CNoA2cLeRVb4KN0tiUWdp-ericzu-ZdbP1s_dtY5HdiXUKHcWdEjENeA24eyZX6ab-ID2u_EgQ5UvyzHbbkMUArUbAnQYf6jgGyEiqkrgvt5fpmYJlqrpZGcFk652Gq4D0C2p7rZqYfl06oHDyFXqYC-To5ejtWxBM7EdhsvyOmQsHiNhdLI06rE5axaBi3HuzkbZX8LUoDAhEKbkaLG7z4gGOCSb5v7Z4brZrlwKZpHWnc7Gkg3NZFWFLqitf841-jD11gx0flyaHlM3kJOoIJhR6PvSKbFIT8T5Bt73BDVloXZc7swxhOblnSUCeuBKlI4KSPn0Amj2jZashfEz1vtm4Xi2OI6mHmUbhOjg4uMOV5Q1OixOIXoldwO0AF2wqssuySvvYM0Y2I_1p3kzHmRRv8yoQf5qaSBrMbbkcYtk1YSas1oueiXuJEQIYsJbcyxF1yKe1Fxfg52gAGTetZ45LHLQdiu5nz4guFq6ODpCDTfnv4D9rhxhqpO6GBxNebFGjgNhAWz73VjjCKO42FSJkm_KueNA3E0fhTwevS5o4CtJv1cEshdlCfJ43gf5aiVRnm2B_mWRgt7UjhWZ4zClFwdpOlkPn0Gwg9HEWUcoQM1pFAfJ70pyH126ZllNF_MNCoe48nvCYD5X9OHZOCb6f3E0Fp7eebdgaG08At6KS5pRahdHx-NCJ0EJ5o8nf1Q9vq6Tdt2YuSBZ_ipzT9kDGPlaWAvUYQT3A_uDKtRSsntN9O0WnWOSeTKKxxBSFbrSiBENK73F8FLiOop64oR5qrweXrKrhtAKJ-9HfIHvqZmWDqKccESXWSmBC_27uMPJYd6l4eG2wMP7GdW7JIIEalj7H_EE05E9_rB6bO7W6DWYOoa9yDllFoT4aj84A_TcNzJik71C3Lx53OpU5en2dK5QrvoYWLZIT7mWojH4Ya0PIPcb0qswt8Ih5nSGmFgTbBS-EXkTu82ntSt64yVSF7VURTwM0xTcBSU1fQODpPuYO3U6ixVAbtWGTl52CPN1FMfhBg5q9mID0zIHI-g4YGS1SYtpGdoq81DCaaGfV8qxUABo4zSFE40AivhIvQKM-e-jgpqBNAUbI_coHvLS1Vtb4dKmyt2INKmcg4BBoRy0RLFV5LKDoy6zGi-grSAsGGP-Fv1iTBSZ7jw1mKBAApqZuYJemfQO_rgaueHtOqESloxPsUhjgpat_6iIw_0f7HnOWJ6o4PEJN4tQAKK0JetIbqhVzjhVus-hUMM_-XY2SR85RdFWVnT8Hiy1TV2Zz3X8I-tjMb0ElLUNUzAVbVDMGetGZ9UBhqxWhVPcly2p6VHvl4xWzCPhah-ihC1GaFwp-Uu9-smnfrzun7RJknbbayVah1R5fPcUuhQxQayKiz-r6qvrGJ5H-SkbXCIL3ZaR9e3taXtUshVYrBPPw4et3hqDSDB5g9UfXXprO3hq-O0GPmBKY3hSFEwEoRCwu_YqoxS3cMhX_roXlaNxFdBGNuc7HDAueT6LiwOah1kUed2UaS2Kw65dYwF_DV31BRvhleJ6ptNLAU-d5VjPwx2rZ9EzOEn2P8n2azLzND4vGPAaqRz5Om7gmULuKL0a-IUxCcrRDWjx8oC0wJU09dGjGq67-6RQRLOrggX5M-yKg9Xfbh8TyTXeUpl0N0zVZTQdSGdshorbBxn_eaO8G-7WTobVIcXGwSF-0uX71RmZ_HIt374iVIxsfQX93OZ-bOUifg47CH48VbRpQ10U6j8UkVxEFMDDLgAPK9QP0a4Pe8nOJkpfC6vXJ1-tvJdVHPt3SrWme_hbG8OJTMt0NL2k3vTuw80E1JK_g1zbmhZyd_FE17JwNhe2hGjvyezVNHacuaeU0UA"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=cll_7WRTSJudYQMSJiF0Mi6W1MmUvF85XbehPdpPS4UBQYakb108udtuJD7s0WPZvdkqIRpP-_YyHSxZwqp5-WlVMIAqH4tAPj6B8w9tuZZUrYINFWMsUuxIhHAHCSBQdeNlX0bCpz83OCZIZTLr-eOZcsOSA28ENz_KkzzFxoLZ_sEpz1yB_uXbNH3opcyV8Uvu85QvYS8KmpnYivc76b9QDCZy-eqPgc6gGltgll4HZcdZP2mcLy_BAuyhmtxzFlCYgprqFFZwEgG3sqWN-ZsHhfYjTsINB1vr1TYFzPlcUIk1Ai36qH7mC9VbDSLweOJmENsHBjHqx4_Jt5AglC5Dek5wDQTolr3-mP02SF5phtuYUHABXV2oJruAORAu6TABNyFbQaRlJe0lc5xplvD_-ZlzQpUaPWYuFIqhCXJBrgvHmaqtZXQ69UnV2DhehNg6gTHnUMbAqWw2xNp3pjCtWm2tkR0m8UmMe65WGFQOI_tFV11ZtoUibi82gV-ow1H3luyI2qw-UjpvAw00sks31IoMJaY4ktSZNEcTdfLerBWok_l-SbURu4R84IrYxUyfeaTzXJhXM-uzYTsPNDRBV_WP5QEc4jTijlJA-dsX8ZYH1XrgPbU5C8EwZxEJpfjRALAQUgYyNWEqAQzzCg2j394jKcwU7DISBNlCc3kBPhJ61zL9WIOU6X8X9OEYZVvxkcTBsEWxZens9WgaFqx5zoYwOQJDpGWI3pcmjzUpgi3SddUJFWTepXs3JPVTRvtnkWzgeH_p2N5w1J7NnjTQwU_WIGpx7uIvixGKUF9cF78xi3mS8aVhbfVZNQokoM7ykfyMJivI0YmzOnFWK4GwV-VnkUbtczZAteLu6epN4Ngj4LspH_UzFT-BAOvJW44EO7CNoA2cLeRVb4KN0tiUWdp-ericzu-ZdbP1s_dtY5HdiXUKHcWdEjENeA24eyZX6ab-ID2u_EgQ5UvyzHbbkMUArUbAnQYf6jgGyEiqkrgvt5fpmYJlqrpZGcFk652Gq4D0C2p7rZqYfl06oHDyFXqYC-To5ejtWxBM7EdhsvyOmQsHiNhdLI06rE5axaBi3HuzkbZX8LUoDAhEKbkaLG7z4gGOCSb5v7Z4brZrlwKZpHWnc7Gkg3NZFWFLqitf841-jD11gx0flyaHlM3kJOoIJhR6PvSKbFIT8T5Bt73BDVloXZc7swxhOblnSUCeuBKlI4KSPn0Amj2jZashfEz1vtm4Xi2OI6mHmUbhOjg4uMOV5Q1OixOIXoldwO0AF2wqssuySvvYM0Y2I_1p3kzHmRRv8yoQf5qaSBrMbbkcYtk1YSas1oueiXuJEQIYsJbcyxF1yKe1Fxfg52gAGTetZ45LHLQdiu5nz4guFq6ODpCDTfnv4D9rhxhqpO6GBxNebFGjgNhAWz73VjjCKO42FSJkm_KueNA3E0fhTwevS5o4CtJv1cEshdlCfJ43gf5aiVRnm2B_mWRgt7UjhWZ4zClFwdpOlkPn0Gwg9HEWUcoQM1pFAfJ70pyH126ZllNF_MNCoe48nvCYD5X9OHZOCb6f3E0Fp7eebdgaG08At6KS5pRahdHx-NCJ0EJ5o8nf1Q9vq6Tdt2YuSBZ_ipzT9kDGPlaWAvUYQT3A_uDKtRSsntN9O0WnWOSeTKKxxBSFbrSiBENK73F8FLiOop64oR5qrweXrKrhtAKJ-9HfIHvqZmWDqKccESXWSmBC_27uMPJYd6l4eG2wMP7GdW7JIIEalj7H_EE05E9_rB6bO7W6DWYOoa9yDllFoT4aj84A_TcNzJik71C3Lx53OpU5en2dK5QrvoYWLZIT7mWojH4Ya0PIPcb0qswt8Ih5nSGmFgTbBS-EXkTu82ntSt64yVSF7VURTwM0xTcBSU1fQODpPuYO3U6ixVAbtWGTl52CPN1FMfhBg5q9mID0zIHI-g4YGS1SYtpGdoq81DCaaGfV8qxUABo4zSFE40AivhIvQKM-e-jgpqBNAUbI_coHvLS1Vtb4dKmyt2INKmcg4BBoRy0RLFV5LKDoy6zGi-grSAsGGP-Fv1iTBSZ7jw1mKBAApqZuYJemfQO_rgaueHtOqESloxPsUhjgpat_6iIw_0f7HnOWJ6o4PEJN4tQAKK0JetIbqhVzjhVus-hUMM_-XY2SR85RdFWVnT8Hiy1TV2Zz3X8I-tjMb0ElLUNUzAVbVDMGetGZ9UBhqxWhVPcly2p6VHvl4xWzCPhah-ihC1GaFwp-Uu9-smnfrzun7RJknbbayVah1R5fPcUuhQxQayKiz-r6qvrGJ5H-SkbXCIL3ZaR9e3taXtUshVYrBPPw4et3hqDSDB5g9UfXXprO3hq-O0GPmBKY3hSFEwEoRCwu_YqoxS3cMhX_roXlaNxFdBGNuc7HDAueT6LiwOah1kUed2UaS2Kw65dYwF_DV31BRvhleJ6ptNLAU-d5VjPwx2rZ9EzOEn2P8n2azLzND4vGPAaqRz5Om7gmULuKL0a-IUxCcrRDWjx8oC0wJU09dGjGq67-6RQRLOrggX5M-yKg9Xfbh8TyTXeUpl0N0zVZTQdSGdshorbBxn_eaO8G-7WTobVIcXGwSF-0uX71RmZ_HIt374iVIxsfQX93OZ-bOUifg47CH48VbRpQ10U6j8UkVxEFMDDLgAPK9QP0a4Pe8nOJkpfC6vXJ1-tvJdVHPt3SrWme_hbG8OJTMt0NL2k3vTuw80E1JK_g1zbmhZyd_FE17JwNhe2hGjvyezVNHacuaeU0UA&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "xxzBLiNKS4jtq1-U80rDlu85U03isPpj3FLIt2Z7zRPR2AdC_26olcFfdBGC9H9QZviggwKRWxi12N9wU2UF9hciZI7fSEDlYI25ht-711sD-4s4QN2LL7vXrERI_vdvROPNV5-j-Kkp7VCnHtrj-k4x6E_y9nMcLK07TZz_K1Wrif0qqIoh0qRSpU4pfiKgtejG03G_tfMfCr8cKpUFkTbh8RM5h5j89n41WRFVR5fZTsttBKd1hzK88S939iJ85TCRsosCoq5NfBIkXsDdwDvUHtAxeVSTBDS4lZLnp5AzqgfzmQ9QrkVgHDKWbqHAoo4On1MXh0htHhMkGa2kWIltg7dsuVDUFwgGxmJWlR9SQkISsGwE6PWGVb2Sct71NOsxxQ_SIxgmEiv1O-bVuYf5sElMxF28wI8PDPURXu7ghzaD_VlChz6OZkLLqCIJaSCiKvJGCCr2f-DcQWIFhmaOpeknC39PZ3ZsTocr8POlHlU9mgb-FjGbFSm1r8fmuaPN1upXu25Gp9xWGogmvK4s64ekkR_p4Mjy_i5BIdVrE7lbCoCuKaD_mhsPOg2uFRW4OPZ2lS6SQesKE0ntyXmf9pXx8YKaq1RfKK0KMgFj42eHmskChWCHng_POMhhm-wIiRHIOYUUBzIXURPDehKERInc2XAk_Q_EHjBwTtWFgxIDiLBr0f3bZCIbWWr1JtkmFtQELtxi3og5N9KQCrzd3caonaoXM976dp5pPtuwfloePWto0XNz8JIuAEk1ivLWurrMbg8S6JVFep3Y8kiv-rsq71YPCbxUF8HWfowPA54V9kXHDhgTw0p0U1Ob6ondNfffzZiAQxPwr-l-CqI9hk-UaBpC9wwgjBmR8yt27uR4aCX48hyxJP_1DKRFmu5xZx0ezpg3qXHEPWHY2cUT6eSpfVc2011xVv1HVJvDk2tXnhW_wOIx-Ec1qUeX_-fdUmAjxGLpM3NcKaJLsEg_YT36cKt6vajRm_kM_FuK-0B25fREQztto-yO7bG9lsf_QV3rSfLEVWBAqEM0gbuPNnlm8Wojfgh7x1KfDkfR3j3VZZgAF97o_OpSytJOnSLVFybBwmG5SfgDABYwm5heYnz_i9k18zfofcF2rS48kKUfuB6y4WxlVLgjPkQKeQVWsecZuuMGk_s9aLtclmoHr1vm5MCVk7TKkvuOTkNLz2gQlo4WPaCWT7Feoe6PscYARZfl5ZdCmF467H14sZqA4aN2rUn2eC1oEC5rG5Q2BrTBVH2hohK87he5wkELQoIsYYEIliN9eGsb2krCPKqDZlmRB2qhqfM5BSMv6qzhcGbGfA0rUcl6MAtRN_SL59Kr_kriz3yoHmU4ic9PJ_m3IdA7UxiNLWn8QSGXnjHKKU-7KuvYWJf8a0YfcdqWjrr3TTiB2f5_wcKrdY52ApT6lTW89wSfeRcrIJYendXNJ_BScEIzGGjVFAuQz-fMrtwKLZ9xf7pj_eXs5FJlLbcm_HYwW3IwxQ_h6JH3TKBmZnpRgfxjGeOSYtKzOH0vAYoXr4YcIiONYOOEtpdq4PDZL69taC_l1Sj69lvDKjjuyfy0eJmmHXjfwVJ-fxrcAZkCPixZ6hQgs7Wi3Hs_0AjahG9Rc00nXlslUCbrQMyEtoxqBmh_52LBEXRS9LFXRLDvRXJXwzta_wB09p1hFL9GRN9TWZbfnZi03OxQObqMIdyFCAefSm8Kz1uWtMz6K0_auPX5qohrZvdGiVgmVCCg0OiioEhIaTE4MxE5Yasby-9yJQFk5K0Lw7ea-MxptVnSigAmWDWd0uEZTFb7rxhzFGQatLeR7Y4C1CWDD3JG9c349xxvd49cGPXlh3O1iMl60-rdVYUjSRxUjZv3UjmA28RH551n6LgGRZb-TPBzCs-vwVQuFN7b7rWjnwWvrnw4SMe2wL1FlkjfQYcSmg7vZ-AF0bKSE5BHtWJgNpD-KZoTzg3oP4d5huYbXtN3M5vDujhgEp3ROY7_yXPXQHYe02eVmff9glLLMq00Pf9yAiw2hLbsHV5DVJUZ1RCbKwwY5iE-Bb-UQzwHvnXH58NX97vrSNL5vBEz1S5SK2StH1DJw7KnvN9vVl0-CStPcjcOarLyi-ZRI9XrI_5DI_lTYB5uJq00FoLOpFJ3xGl8sJDr0WMIMlO1KAjCx7YiA6RIwVKgprXz6TrB4k83WvDQJIla7I-pbavLEIpkEvwHT1ORqRkX_47fVrK3idFm4wjVITtWyGI1oqj8U-z9asDryu2wH2SRwb-zTZuuGEmy2bs7xp_MmTalpZYiugVUeoXVb1YyF6fP93jSoNkrvMf1hLXoyvuULdbzDK_J3qrDkwDeHxMj56_cLbu_WTvultYK8SSQDXuVJXFESRx77byXPjoSpUjdxypRi-DLCRcN0Z06nrnUBhDUsjvJEf52cj3tlaBX328Gl1qdj0Ry91kplTtamrDD58u4bXTfDWjePQ6hn2Rwwg_W1GCnvjAHyTAeWxAddX9IE47H0Ry6uOt20QBpc4h30Uqf8_THR1EzgO3HX5CncRrVTPMS_fxfQ8hI1AKaYIfluwLUpMRqQahrYKwK-E82uS5bjSJjPw2JhKuWw5Y8n3k5Ci72SWHNA6ZfnD0KJF2a3BMoa-u_si8LahhsOYUIXHWlnAC8j7lrFv4077rtiJ2H7tTl4fwJ3l4qpkoF3dIY6Dd9KpycJIaWOamcIAQCUALkLvIdhm0skfGdRs7a3l4EZIjSNgSHcHHBHac_RSJuvLuU9kPG6w"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=xxzBLiNKS4jtq1-U80rDlu85U03isPpj3FLIt2Z7zRPR2AdC_26olcFfdBGC9H9QZviggwKRWxi12N9wU2UF9hciZI7fSEDlYI25ht-711sD-4s4QN2LL7vXrERI_vdvROPNV5-j-Kkp7VCnHtrj-k4x6E_y9nMcLK07TZz_K1Wrif0qqIoh0qRSpU4pfiKgtejG03G_tfMfCr8cKpUFkTbh8RM5h5j89n41WRFVR5fZTsttBKd1hzK88S939iJ85TCRsosCoq5NfBIkXsDdwDvUHtAxeVSTBDS4lZLnp5AzqgfzmQ9QrkVgHDKWbqHAoo4On1MXh0htHhMkGa2kWIltg7dsuVDUFwgGxmJWlR9SQkISsGwE6PWGVb2Sct71NOsxxQ_SIxgmEiv1O-bVuYf5sElMxF28wI8PDPURXu7ghzaD_VlChz6OZkLLqCIJaSCiKvJGCCr2f-DcQWIFhmaOpeknC39PZ3ZsTocr8POlHlU9mgb-FjGbFSm1r8fmuaPN1upXu25Gp9xWGogmvK4s64ekkR_p4Mjy_i5BIdVrE7lbCoCuKaD_mhsPOg2uFRW4OPZ2lS6SQesKE0ntyXmf9pXx8YKaq1RfKK0KMgFj42eHmskChWCHng_POMhhm-wIiRHIOYUUBzIXURPDehKERInc2XAk_Q_EHjBwTtWFgxIDiLBr0f3bZCIbWWr1JtkmFtQELtxi3og5N9KQCrzd3caonaoXM976dp5pPtuwfloePWto0XNz8JIuAEk1ivLWurrMbg8S6JVFep3Y8kiv-rsq71YPCbxUF8HWfowPA54V9kXHDhgTw0p0U1Ob6ondNfffzZiAQxPwr-l-CqI9hk-UaBpC9wwgjBmR8yt27uR4aCX48hyxJP_1DKRFmu5xZx0ezpg3qXHEPWHY2cUT6eSpfVc2011xVv1HVJvDk2tXnhW_wOIx-Ec1qUeX_-fdUmAjxGLpM3NcKaJLsEg_YT36cKt6vajRm_kM_FuK-0B25fREQztto-yO7bG9lsf_QV3rSfLEVWBAqEM0gbuPNnlm8Wojfgh7x1KfDkfR3j3VZZgAF97o_OpSytJOnSLVFybBwmG5SfgDABYwm5heYnz_i9k18zfofcF2rS48kKUfuB6y4WxlVLgjPkQKeQVWsecZuuMGk_s9aLtclmoHr1vm5MCVk7TKkvuOTkNLz2gQlo4WPaCWT7Feoe6PscYARZfl5ZdCmF467H14sZqA4aN2rUn2eC1oEC5rG5Q2BrTBVH2hohK87he5wkELQoIsYYEIliN9eGsb2krCPKqDZlmRB2qhqfM5BSMv6qzhcGbGfA0rUcl6MAtRN_SL59Kr_kriz3yoHmU4ic9PJ_m3IdA7UxiNLWn8QSGXnjHKKU-7KuvYWJf8a0YfcdqWjrr3TTiB2f5_wcKrdY52ApT6lTW89wSfeRcrIJYendXNJ_BScEIzGGjVFAuQz-fMrtwKLZ9xf7pj_eXs5FJlLbcm_HYwW3IwxQ_h6JH3TKBmZnpRgfxjGeOSYtKzOH0vAYoXr4YcIiONYOOEtpdq4PDZL69taC_l1Sj69lvDKjjuyfy0eJmmHXjfwVJ-fxrcAZkCPixZ6hQgs7Wi3Hs_0AjahG9Rc00nXlslUCbrQMyEtoxqBmh_52LBEXRS9LFXRLDvRXJXwzta_wB09p1hFL9GRN9TWZbfnZi03OxQObqMIdyFCAefSm8Kz1uWtMz6K0_auPX5qohrZvdGiVgmVCCg0OiioEhIaTE4MxE5Yasby-9yJQFk5K0Lw7ea-MxptVnSigAmWDWd0uEZTFb7rxhzFGQatLeR7Y4C1CWDD3JG9c349xxvd49cGPXlh3O1iMl60-rdVYUjSRxUjZv3UjmA28RH551n6LgGRZb-TPBzCs-vwVQuFN7b7rWjnwWvrnw4SMe2wL1FlkjfQYcSmg7vZ-AF0bKSE5BHtWJgNpD-KZoTzg3oP4d5huYbXtN3M5vDujhgEp3ROY7_yXPXQHYe02eVmff9glLLMq00Pf9yAiw2hLbsHV5DVJUZ1RCbKwwY5iE-Bb-UQzwHvnXH58NX97vrSNL5vBEz1S5SK2StH1DJw7KnvN9vVl0-CStPcjcOarLyi-ZRI9XrI_5DI_lTYB5uJq00FoLOpFJ3xGl8sJDr0WMIMlO1KAjCx7YiA6RIwVKgprXz6TrB4k83WvDQJIla7I-pbavLEIpkEvwHT1ORqRkX_47fVrK3idFm4wjVITtWyGI1oqj8U-z9asDryu2wH2SRwb-zTZuuGEmy2bs7xp_MmTalpZYiugVUeoXVb1YyF6fP93jSoNkrvMf1hLXoyvuULdbzDK_J3qrDkwDeHxMj56_cLbu_WTvultYK8SSQDXuVJXFESRx77byXPjoSpUjdxypRi-DLCRcN0Z06nrnUBhDUsjvJEf52cj3tlaBX328Gl1qdj0Ry91kplTtamrDD58u4bXTfDWjePQ6hn2Rwwg_W1GCnvjAHyTAeWxAddX9IE47H0Ry6uOt20QBpc4h30Uqf8_THR1EzgO3HX5CncRrVTPMS_fxfQ8hI1AKaYIfluwLUpMRqQahrYKwK-E82uS5bjSJjPw2JhKuWw5Y8n3k5Ci72SWHNA6ZfnD0KJF2a3BMoa-u_si8LahhsOYUIXHWlnAC8j7lrFv4077rtiJ2H7tTl4fwJ3l4qpkoF3dIY6Dd9KpycJIaWOamcIAQCUALkLvIdhm0skfGdRs7a3l4EZIjSNgSHcHHBHac_RSJuvLuU9kPG6w&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "cll_7WRTSJudYQMSJiF0Ms9kRBpCpLBdOI4Ij6RJqEuAwkKj5dZP7brm29EjBsaTNoDseL66FrIBFOPaKk8h395mep4QQX1w-cf0rV1lP-r0iFaX7tP6vmXvyMgA1qDR8YeDNHbNmavotk8eo63qcVit_h9V0121QOhIYAd2UgdlM1HKtxo9M2GZC9scSh34YXgVBPApBB5gh2vk_PCd8VFkqKmDer2WoercFzCPpCOFftPAO866vt9g8rYPmk956rxRe1kA4c5DHM1uMF5GmuJVDxY3_QsYH4uqAbTzRbH_Jsnis_ctnOvma3CUcyAs3jpWDAQ-33ZiKVrQozVY_qTCWXCq7-IZXmkFa4W099iuxLaU9SuhGxp2pWEcmAeY-azwrOC71c1M13RCQNynOEQkcmuhSlGRC-FWI_e-8wjbZHpr-OBG-yF3Z7q5KR6DdJONjyESHsePBywVyZvLZ7JtHS_nVLObKNBFGQ0rB-qRQ2lw5PYlR2IApdMz-FeE8BDR8BrrnBvzeds7p6vXbDXP13dKKrRDvEPblG5ZJEdfh9d2laZ0JC5mntigM5K6F41ZpL7Gjygv0UqwcBK-YR7eyyLNRO-9Mcu8wfiGAD7krR5dIu9mCDItyOfQWIg5_853DwEXZyFCn5qlZTiTflcsLW-EmDxer0VEZLexZJGpPU3xsn6Q8vW2aL1GmiXkG8H3WQt8WAdjD7B8LTsEx9Q660GzgSueJVdyDmIBsbB2DyPh9R8Wq8TpT0DkREVucyvLwSobQ70cjZqANsgKpNrJ88kzQKNVWXU0AlhkbmxT9YD8mUgm-WnuiryGzppFoGT4on1EKZEfICxsqbjvGrZyOckLbC4TdlHYZYP9SD2tGpVjFUeD__qBQqF9UWGx2rFok8J3g96zA5iOM6JZGwT3jVcDni4ufQbSND3rR9hJ_k92VOi4MK2C_CAlUx1qXjPh1iKUyRtCWLucWDQ0PQ-anxtzP5UCQbogiF4gec03uGOeH9KWefhchkqHQ1vIm2ubRJc2VHY1D9m-v9abxDfcjmnUb9lCtX54hWoWfLWe7YqCsvVe-JKtCqEUgh-RXyFeRCf4DBHZ4Yj-hNUtpNE1Aq72sIV5fF6BdiHPbvF7g9S8JLQLUNM8Lo6y0lgQoKKMA0bOeztGPw47EFf3lnL-UlFHA0-wNkY8id9v4P0ya_GM6hYhZTt_RJysiC6vfRbBlvuy4S_lBDrwKOL1TClbk6PGqlYfImxYz9Uzm_lCGN7gICJlazANrV3NBEEeiH8P7DpI-xp8AzJSOxS2iJlAzBZW4kbRmWqUDL57gLh5eyb638Ne3NKbW5-LtVY1Z0Xy2iPkwx_jvjahMYvrua4ZRMsgoUmD1ze37khoB1g02LLVmKMzhfEpEU_uRf4FnZMgzM3VwgzDArd4J90hFBrakquxuw0D9DF34XRtViC1GX3GB8YbuZBiFDtlTv4fWvAb_xJI3aajyhqGbs3fgbSc13I79SKrRDpnv3W6Vq0WvMrxW_Ac4aT3bUgexxctBA5-sQKFUd-f626h7SPGSbsli0zGxu5850EspuekVs7wD_dueI1CKkvoABfpKx3J2ZUosUgxN0GGhXqL7lB-K9ZLdQBSiFei_T0k0VJ60itMGUXHDvbzo3fBzOjPppci7WELQlEJ-XjOSDLrEOQDHw2KN0WfwOIqzEUq--1xANso1mxWIP-z8cFGUt0MwZtbgBIhoIYseh8n93gTswW-GB82pz9Cd_tEzQED5Y6brjvk24MuOLcYqNjHO7NmLDdU70KKcuw2h0iRknqa36r3m55a2cnZ8IXY1Jzfvbx5m6pxRVoWgq-vfve_fFqFukdVJ-MdU6bXhGtqfIzS6b318cXuSWivZNwNeActeNGXreeN8HDVDzoLOMQqJlD6WnPbK3DVuw9xF8DHxnnKP5wok7YojJjzXeemZUutlVH_V2WEc4GleHgSXqwJBc7GvFWwX0enXQ6W35EDniBVpfJUXvXVuzmcAIddL4pm5YKutYsAplqDSef4cn9bX7JD4muGA9Oft-saLkBBJI23IznSS4fcLr_YgmqBHjQKWD1YBTP-OCJkkM5Sav0rS-g-VmP2pmDqzA44HZDlhucXlHt7AB1-jcubWnZqmE5_LLihB7uYl2Z35aBPBojs9gf2iYlT98JSVf5rXw-CmiM7A_HNWy_3HDSEh4PBHrN0qq6HyetZPkQ4H0t6mgBSbRX4TaJRzuuexJEvX_EdZYKgp_Cvxl1rYi3uqSifs7mMzIYUmOGCOXJAkaCzfSEX9InaV78N-Tqg7ui0S50cjn8WNqFoXeSOtPEhZZhZXx3KAmIp2xhjxmYf50TN-tvV3cELqhFshLsDVjejDsL_wsaRsE1M1clRge4ECm0ruG19Xz5CuVva4DRnf3oV2IIMWcSkDmcOgNkvqqn9S1YlTq_FRYhu9SnSnGoB-U6sfuwFsQGQ4uBHHr-8mMTxpuNT5aSUJ8IXCKeuYBnqktsiF6661AJap-6KUcmj0wkkTxskrQOKZqN4V0sglbN5ndFYA32T2-OR6Y1m7vUea7e_wRgkfiBdrBP9bw83ThZKUm-jN0GCSCgahfNo_OW67p02NgvmsUA0Brw_I_oFNj0BCREpqnu6wIrfBI5i2zcGe9hLn-WrGF79PP-E-VgqdbrBKbbARJxED9NiYwucHerthIsIau58ExWcJxjalyMEEsHM8zWOCTkp_XbZEKL52BXI2-IuALNNfajV-omiqgcM9Ks_pmRgVw"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=cll_7WRTSJudYQMSJiF0Ms9kRBpCpLBdOI4Ij6RJqEuAwkKj5dZP7brm29EjBsaTNoDseL66FrIBFOPaKk8h395mep4QQX1w-cf0rV1lP-r0iFaX7tP6vmXvyMgA1qDR8YeDNHbNmavotk8eo63qcVit_h9V0121QOhIYAd2UgdlM1HKtxo9M2GZC9scSh34YXgVBPApBB5gh2vk_PCd8VFkqKmDer2WoercFzCPpCOFftPAO866vt9g8rYPmk956rxRe1kA4c5DHM1uMF5GmuJVDxY3_QsYH4uqAbTzRbH_Jsnis_ctnOvma3CUcyAs3jpWDAQ-33ZiKVrQozVY_qTCWXCq7-IZXmkFa4W099iuxLaU9SuhGxp2pWEcmAeY-azwrOC71c1M13RCQNynOEQkcmuhSlGRC-FWI_e-8wjbZHpr-OBG-yF3Z7q5KR6DdJONjyESHsePBywVyZvLZ7JtHS_nVLObKNBFGQ0rB-qRQ2lw5PYlR2IApdMz-FeE8BDR8BrrnBvzeds7p6vXbDXP13dKKrRDvEPblG5ZJEdfh9d2laZ0JC5mntigM5K6F41ZpL7Gjygv0UqwcBK-YR7eyyLNRO-9Mcu8wfiGAD7krR5dIu9mCDItyOfQWIg5_853DwEXZyFCn5qlZTiTflcsLW-EmDxer0VEZLexZJGpPU3xsn6Q8vW2aL1GmiXkG8H3WQt8WAdjD7B8LTsEx9Q660GzgSueJVdyDmIBsbB2DyPh9R8Wq8TpT0DkREVucyvLwSobQ70cjZqANsgKpNrJ88kzQKNVWXU0AlhkbmxT9YD8mUgm-WnuiryGzppFoGT4on1EKZEfICxsqbjvGrZyOckLbC4TdlHYZYP9SD2tGpVjFUeD__qBQqF9UWGx2rFok8J3g96zA5iOM6JZGwT3jVcDni4ufQbSND3rR9hJ_k92VOi4MK2C_CAlUx1qXjPh1iKUyRtCWLucWDQ0PQ-anxtzP5UCQbogiF4gec03uGOeH9KWefhchkqHQ1vIm2ubRJc2VHY1D9m-v9abxDfcjmnUb9lCtX54hWoWfLWe7YqCsvVe-JKtCqEUgh-RXyFeRCf4DBHZ4Yj-hNUtpNE1Aq72sIV5fF6BdiHPbvF7g9S8JLQLUNM8Lo6y0lgQoKKMA0bOeztGPw47EFf3lnL-UlFHA0-wNkY8id9v4P0ya_GM6hYhZTt_RJysiC6vfRbBlvuy4S_lBDrwKOL1TClbk6PGqlYfImxYz9Uzm_lCGN7gICJlazANrV3NBEEeiH8P7DpI-xp8AzJSOxS2iJlAzBZW4kbRmWqUDL57gLh5eyb638Ne3NKbW5-LtVY1Z0Xy2iPkwx_jvjahMYvrua4ZRMsgoUmD1ze37khoB1g02LLVmKMzhfEpEU_uRf4FnZMgzM3VwgzDArd4J90hFBrakquxuw0D9DF34XRtViC1GX3GB8YbuZBiFDtlTv4fWvAb_xJI3aajyhqGbs3fgbSc13I79SKrRDpnv3W6Vq0WvMrxW_Ac4aT3bUgexxctBA5-sQKFUd-f626h7SPGSbsli0zGxu5850EspuekVs7wD_dueI1CKkvoABfpKx3J2ZUosUgxN0GGhXqL7lB-K9ZLdQBSiFei_T0k0VJ60itMGUXHDvbzo3fBzOjPppci7WELQlEJ-XjOSDLrEOQDHw2KN0WfwOIqzEUq--1xANso1mxWIP-z8cFGUt0MwZtbgBIhoIYseh8n93gTswW-GB82pz9Cd_tEzQED5Y6brjvk24MuOLcYqNjHO7NmLDdU70KKcuw2h0iRknqa36r3m55a2cnZ8IXY1Jzfvbx5m6pxRVoWgq-vfve_fFqFukdVJ-MdU6bXhGtqfIzS6b318cXuSWivZNwNeActeNGXreeN8HDVDzoLOMQqJlD6WnPbK3DVuw9xF8DHxnnKP5wok7YojJjzXeemZUutlVH_V2WEc4GleHgSXqwJBc7GvFWwX0enXQ6W35EDniBVpfJUXvXVuzmcAIddL4pm5YKutYsAplqDSef4cn9bX7JD4muGA9Oft-saLkBBJI23IznSS4fcLr_YgmqBHjQKWD1YBTP-OCJkkM5Sav0rS-g-VmP2pmDqzA44HZDlhucXlHt7AB1-jcubWnZqmE5_LLihB7uYl2Z35aBPBojs9gf2iYlT98JSVf5rXw-CmiM7A_HNWy_3HDSEh4PBHrN0qq6HyetZPkQ4H0t6mgBSbRX4TaJRzuuexJEvX_EdZYKgp_Cvxl1rYi3uqSifs7mMzIYUmOGCOXJAkaCzfSEX9InaV78N-Tqg7ui0S50cjn8WNqFoXeSOtPEhZZhZXx3KAmIp2xhjxmYf50TN-tvV3cELqhFshLsDVjejDsL_wsaRsE1M1clRge4ECm0ruG19Xz5CuVva4DRnf3oV2IIMWcSkDmcOgNkvqqn9S1YlTq_FRYhu9SnSnGoB-U6sfuwFsQGQ4uBHHr-8mMTxpuNT5aSUJ8IXCKeuYBnqktsiF6661AJap-6KUcmj0wkkTxskrQOKZqN4V0sglbN5ndFYA32T2-OR6Y1m7vUea7e_wRgkfiBdrBP9bw83ThZKUm-jN0GCSCgahfNo_OW67p02NgvmsUA0Brw_I_oFNj0BCREpqnu6wIrfBI5i2zcGe9hLn-WrGF79PP-E-VgqdbrBKbbARJxED9NiYwucHerthIsIau58ExWcJxjalyMEEsHM8zWOCTkp_XbZEKL52BXI2-IuALNNfajV-omiqgcM9Ks_pmRgVw&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "RiK1NxcxPAPFxahRYfJ2c0AHrbF14sx2kXu1_mUk9t0lwAQ-hvQBV4-VSQrcUIsxCjpFxbhC9gvlOd7R9GCaO166r44hgIP3msMSt8bjRogPcZ6UDma3QbHB8ymVV2nS53_w_RKTZW2gJAUEgGD6ExN_t1_RAcdXuTa94RoBcssY8EkOJhFssFEvawoOvHsYgUE-csmnCeII7KsxHl8RVVRicpR5DkQkKecw1VUlg9i_joZWc-SfEO48Thrtjp9tUByKJ8vYnCGjAtT0HVpQDWVFu5KdqrHijxAWzb8p-tBCMi6Oj3fYFVh01B59heNP1b4XSzGBkrOj0VahHLGMNAiW4tMYDHkALS0ohjkgNkib2cI3ALBLjYDN8k52EOHvSlQ2M5rEtUfoPI8uB5t_SRgH_KrjGsh6VYd7ty3alfPz5Ho2rj4cJE-gV_wxHNXKSbuE_pqJozJPqnhpTLrpRXPaV0exm1eCEPVj7wvSTQDG3gN9WofHWeJ6EgLuRUAT2JLQtqwy-qVrCC2oqEBJp8FScjbw53_TFJ19eXjoZzEkXPBMFa-rWpFzpfjS-HrCSfx3T6rca9JOD_zBXONxLkSjqvSMhiJdHK3M0beerDEf1z6FwYoW-xo6OQEYOz6dUynfQT5-8ZNpruEzOfhF2rPKqKOUGgvZLz0YwZaes7HL-kUIF3xvvUGEhuasgyrY_XZovW18D6VM9Sj-i_pj8u6RixxqkInafqwP6B5SZhBdvJ8rJ7yw1ueE4w1S4wFYIjwBxd1Nx3dw9FyyQIHQucQOwxo5ePh4oN0GXadww_SKim-4nh9CvLBmYbm4K8B7vMoFWQ39VuN1KlICW699spdgymUUMWpOTImYV9wcKPdiiU34grarppbH7ZgFPY_WK_lElkfRE46L2-H38_epA7THj__fkhvAnXfANVG1QFW_xNnv0z7ZPBaINmXach3Vwe-C5Ejoif3BxxHziDQ70WPHMWHjbjx7g8njVku8F2dE7kfpNdHv_2ss34_NORLGyYERRsz42xPz7MykoGN57Mfowb9KDnFCZuUqPNo9zsBQwSpWvt7Y0YqeU2YL1AmPO0-nDIBMOH_pNhdaA78dXpKwbWnQPXJF80hhH2W90p7leKiYKr0B0rJ0mhaC2LBttV2eUaTIbV1CS-YqJCNIYIHEy_0qt2kttdcDMPAEF_laQ6n_qIzNlJm4LSl5Zq8ZygTeTL2NhkrRwaoKfM6ua1kyYYpi3uOhWUnUv8jNGNevyYJ4n4GT5EwUfrui_TcMFipUR7Dt0dkhJ6d76x4z05lS3vZzy7uVf0NSfZ-ZnxJiY1Ml8I6uX85mLC9GwoNWaseG4HmTnXJV1CDhrUezkLQmLaNxEI_5BxPMRN0yHCxNlDnFSOwbhEmXEj-0deiMCs5HYxoBHmuIbR8pNpaMOp7396idZL0_VnPFpVYK-EDzih6r0I7Ux2UHuqhkLdb5u1LvbhWII_GbP6KdNMnwDgI_6jicwUIvRyrHEmKTf5g6pEq2phJe_NcoXMji3Ev6tDuXQUuxCvb1pnznU9ASVqnGgV_EkLKOaKaKO1pi4QocSrG-QabdlKkAP3fPoQJddfbgwR3BHTTOszq6ryF0VUxurPRxpmdcWRUwL7F_geJIEvrSrf83OMOfI9_j7uClpg8eBd5WexpdsuT1AUiQBR6F1qBes0sNXkyiIUvFDWh1xb_WBHjyb_WpxuctQDC0Xju1VEMQONlZJCGAVZYK33C2gwuBvc47OT6zHMgIq-Km4scBi-GxGPXExMvYQxrw4d4Kmhnt_NZ0V_Hf-6X5GOc_veOeIKYr-B_eLnn7QzhqErCHPq0QI1nMz78xM3OjL6WvXJ_VT82RJwJGUfMgyHnVCmAKxpALWSWZ_-glqosbW2xdClgoqxkWLLVUGyKCAQZ-ywysS6l45V-Q9H0qYhgKznBCvG0uXuHmwsimLmu_fYFl_d-EHHKXQOWtN4UHbukc1AEc00zB1P4GhXk1nL60NKa7Ldk4hBz_78HpKgbmbtqwyTGfPtvnrpyWPmc8xLHSJ8L5RPmRyjtA4m5wmeT79r4RXUh3DoK2DY2oUH3s8WuXo2LI-ufICSyuaz8sBnPqBaP7R1Dr9GePSuvocqAKsI9ii5Wr6Ha0aHlt_EAYF-HSY0mZHBuoV_xFaE4KCqV-HIb5fAcERlNHApzBrUaCgqmifJ6yifwJD2xPQORLLHw4FjesiyxBUyRO298IXZLSp3r6jRmlueklywhrY1mhhM7x29390Q6dWd0EAzxAkV88bmjkKYsN4QcUoFrFJyINQqQeio6thXdBpHDPGf1m5-N3Jz_ce2aec6ONLQ7lOD6WCMubudCoqQDWFd1kJ74YUzC9Z16u3P_AteH6bKTXjotoz3yiN_N1IqAzPiTpnsd8-hsd6hdqQnJtpGcpwq1xhyHtYxUXZfLu569ToeONatCnMKUWJ2uOaV4HUiqHSmOPCLsZk3RjoVQlcAsLGpJiD8Rys1Sb7q5Z3L_uwvNBHF43b2FiTU44-rW4Pn4thbwmE8meWQNs05LIU3jNkWBjM3dQiApkscJxrf4tPRTujx75IwOMWdhjgsdSxSz_9hj-bG2GyZhzCSbZtcS-ny9nsty5h0mWjIh1JHk7TJndt_txl21DIhjHAlMuADQ6iGpXwOD9fowOSOiwicJxxHrw70EoKZ804Ww1pyk6-87kQUQ8wGFuZptNgdwYhi1jysomom029IXhjoDAvziRPQFmhaJ_DbVoohLn4K6ytg"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=RiK1NxcxPAPFxahRYfJ2c0AHrbF14sx2kXu1_mUk9t0lwAQ-hvQBV4-VSQrcUIsxCjpFxbhC9gvlOd7R9GCaO166r44hgIP3msMSt8bjRogPcZ6UDma3QbHB8ymVV2nS53_w_RKTZW2gJAUEgGD6ExN_t1_RAcdXuTa94RoBcssY8EkOJhFssFEvawoOvHsYgUE-csmnCeII7KsxHl8RVVRicpR5DkQkKecw1VUlg9i_joZWc-SfEO48Thrtjp9tUByKJ8vYnCGjAtT0HVpQDWVFu5KdqrHijxAWzb8p-tBCMi6Oj3fYFVh01B59heNP1b4XSzGBkrOj0VahHLGMNAiW4tMYDHkALS0ohjkgNkib2cI3ALBLjYDN8k52EOHvSlQ2M5rEtUfoPI8uB5t_SRgH_KrjGsh6VYd7ty3alfPz5Ho2rj4cJE-gV_wxHNXKSbuE_pqJozJPqnhpTLrpRXPaV0exm1eCEPVj7wvSTQDG3gN9WofHWeJ6EgLuRUAT2JLQtqwy-qVrCC2oqEBJp8FScjbw53_TFJ19eXjoZzEkXPBMFa-rWpFzpfjS-HrCSfx3T6rca9JOD_zBXONxLkSjqvSMhiJdHK3M0beerDEf1z6FwYoW-xo6OQEYOz6dUynfQT5-8ZNpruEzOfhF2rPKqKOUGgvZLz0YwZaes7HL-kUIF3xvvUGEhuasgyrY_XZovW18D6VM9Sj-i_pj8u6RixxqkInafqwP6B5SZhBdvJ8rJ7yw1ueE4w1S4wFYIjwBxd1Nx3dw9FyyQIHQucQOwxo5ePh4oN0GXadww_SKim-4nh9CvLBmYbm4K8B7vMoFWQ39VuN1KlICW699spdgymUUMWpOTImYV9wcKPdiiU34grarppbH7ZgFPY_WK_lElkfRE46L2-H38_epA7THj__fkhvAnXfANVG1QFW_xNnv0z7ZPBaINmXach3Vwe-C5Ejoif3BxxHziDQ70WPHMWHjbjx7g8njVku8F2dE7kfpNdHv_2ss34_NORLGyYERRsz42xPz7MykoGN57Mfowb9KDnFCZuUqPNo9zsBQwSpWvt7Y0YqeU2YL1AmPO0-nDIBMOH_pNhdaA78dXpKwbWnQPXJF80hhH2W90p7leKiYKr0B0rJ0mhaC2LBttV2eUaTIbV1CS-YqJCNIYIHEy_0qt2kttdcDMPAEF_laQ6n_qIzNlJm4LSl5Zq8ZygTeTL2NhkrRwaoKfM6ua1kyYYpi3uOhWUnUv8jNGNevyYJ4n4GT5EwUfrui_TcMFipUR7Dt0dkhJ6d76x4z05lS3vZzy7uVf0NSfZ-ZnxJiY1Ml8I6uX85mLC9GwoNWaseG4HmTnXJV1CDhrUezkLQmLaNxEI_5BxPMRN0yHCxNlDnFSOwbhEmXEj-0deiMCs5HYxoBHmuIbR8pNpaMOp7396idZL0_VnPFpVYK-EDzih6r0I7Ux2UHuqhkLdb5u1LvbhWII_GbP6KdNMnwDgI_6jicwUIvRyrHEmKTf5g6pEq2phJe_NcoXMji3Ev6tDuXQUuxCvb1pnznU9ASVqnGgV_EkLKOaKaKO1pi4QocSrG-QabdlKkAP3fPoQJddfbgwR3BHTTOszq6ryF0VUxurPRxpmdcWRUwL7F_geJIEvrSrf83OMOfI9_j7uClpg8eBd5WexpdsuT1AUiQBR6F1qBes0sNXkyiIUvFDWh1xb_WBHjyb_WpxuctQDC0Xju1VEMQONlZJCGAVZYK33C2gwuBvc47OT6zHMgIq-Km4scBi-GxGPXExMvYQxrw4d4Kmhnt_NZ0V_Hf-6X5GOc_veOeIKYr-B_eLnn7QzhqErCHPq0QI1nMz78xM3OjL6WvXJ_VT82RJwJGUfMgyHnVCmAKxpALWSWZ_-glqosbW2xdClgoqxkWLLVUGyKCAQZ-ywysS6l45V-Q9H0qYhgKznBCvG0uXuHmwsimLmu_fYFl_d-EHHKXQOWtN4UHbukc1AEc00zB1P4GhXk1nL60NKa7Ldk4hBz_78HpKgbmbtqwyTGfPtvnrpyWPmc8xLHSJ8L5RPmRyjtA4m5wmeT79r4RXUh3DoK2DY2oUH3s8WuXo2LI-ufICSyuaz8sBnPqBaP7R1Dr9GePSuvocqAKsI9ii5Wr6Ha0aHlt_EAYF-HSY0mZHBuoV_xFaE4KCqV-HIb5fAcERlNHApzBrUaCgqmifJ6yifwJD2xPQORLLHw4FjesiyxBUyRO298IXZLSp3r6jRmlueklywhrY1mhhM7x29390Q6dWd0EAzxAkV88bmjkKYsN4QcUoFrFJyINQqQeio6thXdBpHDPGf1m5-N3Jz_ce2aec6ONLQ7lOD6WCMubudCoqQDWFd1kJ74YUzC9Z16u3P_AteH6bKTXjotoz3yiN_N1IqAzPiTpnsd8-hsd6hdqQnJtpGcpwq1xhyHtYxUXZfLu569ToeONatCnMKUWJ2uOaV4HUiqHSmOPCLsZk3RjoVQlcAsLGpJiD8Rys1Sb7q5Z3L_uwvNBHF43b2FiTU44-rW4Pn4thbwmE8meWQNs05LIU3jNkWBjM3dQiApkscJxrf4tPRTujx75IwOMWdhjgsdSxSz_9hj-bG2GyZhzCSbZtcS-ny9nsty5h0mWjIh1JHk7TJndt_txl21DIhjHAlMuADQ6iGpXwOD9fowOSOiwicJxxHrw70EoKZ804Ww1pyk6-87kQUQ8wGFuZptNgdwYhi1jysomom029IXhjoDAvziRPQFmhaJ_DbVoohLn4K6ytg&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "RiK1NxcxPAPFxahRYfJ2c6IiCJnjPgw583L7Aycwo9dXqc2_KZ9p9k9xN4UHU9FtKqvmRkTeTRYvplMApWDE6EJ8HSkaoe1cpi_8YcfdEQJwYoEoVMd_C_1cnx1ZLDPxvSz0CFUsc_qvjOZliLedwe9BDlWBufU5nDVYBi5SHKcL8uGILJ4YT_9s24Ba4XyHaboBVMcVY3240mKGyIMyHvOvxM4rFKVkgk7GvrWm1KAoTg4onNKesM-74yM96VT241_gokPSRtp8pwIUG314tFcEJhsd-Sts7qMuMFQHcQu3nVjZyoP97ukENbZ7bofM03V0xEZz3sEybLhlWxMc_eH7KmiPhFSi9eTWnLfSOsa6cKUPAxcx5Y7BzKuFJe4AQTO1ee2gNy61QAaRdIadkSnKe4C2yF8QQZ91l-LQoMinlS3_UOG6opXCb85xQwzZDABsytSt-dxl7loW_4z0ieFVf7H-BZuM0ABJnHJ-DufoHuv_OLqOjqo0MpgC9pzQemJfldtQ3YgIrXNnpESOFNSpOkCcAuvN1_xybIPYgCZGcq8DbxhtKPvRjSPeWq9ImAGQrmepSj89fm5Xg0_IDj2NJ98yNsU3LDSbb-2MqwFT44-RRzHcUoH6yMpP6JatJYmBWDL7idMR7z1XGPjaZ2Wpph35kX1KVpUxDrxckHoUJgeJyba5HNt5pkP68JJrIdUvncZTR3SfvGJu9y2OLtNIN5a5F4u6hhQIFAp8-Er0CWHwvvu5S-iPZBhBzLQSPokXphHxAAa_wYP7BYJyiXvJwMa5VxGBp6dcSO76VSMTYAnI2hvCGdXWUWcPYb4cU0WRpaiFVMD0xp6o4SA3aeN3sV8l7YN4JGP2xoC2lBZzR6LM-yn4ix00vtNhc7xDhENMqIXYQCViLw2LGwgC3DryG_o7Jq2uv4UPjEz1EUa6l0zSw7UpGfzAb4ZsSJCvjGJk5ZdnuDUPbqU-KLX7HNnJUnHnBdlOnbKi4uzyxO-eZU5hwJMl2LjZKazH4-jAmbalfynqJxotjuxmeayug3GVbMnjzWnbKbBlP3Lizog1K6b60pYH8xcdXsYFy6wBXRqXIFC3hdDGVimtgdi0q5DE5mTE0sX8WyqPMOb6b80yLCc8qRV86Gy5lrhdCt7dKKhyU3SfsWeLpgcgDOViUuT4Kme_wxGGaCg92sgI1g_XEf689w3DW-iEuBpj2PDc6Ull7yaCyPiEKcM1UdlresZ6WgJrw50-SV3zTdUJKj4Y5wyUdiSplwYuwWXNyWPyuHqeGAIUf0zlhC9Xvg2Wee4G6FZhA1gjBxTSG6y7Ko4pmVCw7BttOHVX-DMVUb0Vg8iZXpWaqwvzLpDI9y7He6a6aK6SQsXO3nTeDgIkpj0Z0udX3JixtL-GrtW-J4aNZaExTVYmAwRcHFVAxwselC4vSMz4qtzjV7wbtRFfP1LQkhK_RBnI5_gBME6KWlvAA009Gmge97U_fQcCJZmkligZSe9eI4SyqlNuN_bz3Sbb3upieXc8gMzjbQNHNkA50N_ZXHqnVFc8oGulQcLL4bS7tOtJppYS9mGTsZIOOgCTtzoj7QjSNuis-FR61XJYZ9Dsz9-ZaEWibRzPmgzbsQKSuw7WVVJQ1_GGDn2KFQa5o3XdqwS-V1_Qi9m5AdQmYNvR-fddwWT1mMc_a_iEEid6_TVC3MC_OMSAY1HTv17LjIgpNbl_7ND8cvgps18MIQ-EF-1CHY7ZCb6IJEFH48yxIxk2bgOo689H0Q9GPOt_TXjfFB6RP_6dJlaQl-Ck0RGgB3TQe21rVZsHUbQu21dXnu8fkQFDftZVYZii8ihHv5i4DWJ-EElpmMLzaHPR0g5EgBLtGkD8Qq6kj7ErtchLnsiATia69MC0m2ZPZd91-fKc_jnRa0T8ctmUyNFKHNX-7D_7l3AJW3V7wcMwQIEHOtw03RBIhh-G_fW1UgVhVZYfyTjXyvVcXs5Fh1dqr27f7VYu6Bowkds-olwwedi9rQdeTNJVW57TD4_cSK99PbEgxd9X3kERS4bzdPL1dm4Ci5qeufYkNDKoycxC8gqoccPqLbfaMbt0WipbXJdAWFZMLdldky9C4H4lcXjiRhLgIusw6g1vUxCXwa3LzEJtP_S1dlHHoy1PJjEbOYGBCmgPt6E2JN0MzBuJgSi4pQn4EwWB621tQTBYQrlHanAEtUfpjyYpyjqNL_Uzo0m_CfwHgMKp26Zw22z1BJJUqsY1PvhrNAlzyOiARg1Fh4Y_2P_PFYKczrGGpyKvujjga7fOKeIaA1Ryq5EPHDZldiOv-qGOqygd8HA5C3-x1J6vUA22emiPhu6ntnuuEGhElNVoVH90ySMNQdY3_lDIZL0HT1pcJuQRnRkTS8ZL6-oH-ZFBM1QGks1_Anns-Ynu-Pip99R5qIuT7rIDj3pz1twvmWgLG7YiYxsCSf3NG2z2FMyxgoE_5lBk1pS9sG4zR2QJtfp2R1OVWX75CbnQcec_N3-r6Ji5ia8rXrfcs1ENYU_on2W7ASUzHD2NNzyXNNz8fmBBBZStPtmQgFBUzDUoKKSFTzEy1dctwLNwSsWhppbIIKOHfgaPE1S-6vNSc6EOJljQAkQWHwGiK6CCxYYRjznGaTy_GOb6OjSGec1RF-jiPR9r6G5-U4yuq8zXRzEu06Kek6ygk6PUcWQ5lSSHw1svUan2GqpPqIXdPL7AfpPfKWYcfZRCx_i7w1LWBF4P07QI3WrBvcBFEvJevdrGVuV3MqKdPScnrA0qlw"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=RiK1NxcxPAPFxahRYfJ2c6IiCJnjPgw583L7Aycwo9dXqc2_KZ9p9k9xN4UHU9FtKqvmRkTeTRYvplMApWDE6EJ8HSkaoe1cpi_8YcfdEQJwYoEoVMd_C_1cnx1ZLDPxvSz0CFUsc_qvjOZliLedwe9BDlWBufU5nDVYBi5SHKcL8uGILJ4YT_9s24Ba4XyHaboBVMcVY3240mKGyIMyHvOvxM4rFKVkgk7GvrWm1KAoTg4onNKesM-74yM96VT241_gokPSRtp8pwIUG314tFcEJhsd-Sts7qMuMFQHcQu3nVjZyoP97ukENbZ7bofM03V0xEZz3sEybLhlWxMc_eH7KmiPhFSi9eTWnLfSOsa6cKUPAxcx5Y7BzKuFJe4AQTO1ee2gNy61QAaRdIadkSnKe4C2yF8QQZ91l-LQoMinlS3_UOG6opXCb85xQwzZDABsytSt-dxl7loW_4z0ieFVf7H-BZuM0ABJnHJ-DufoHuv_OLqOjqo0MpgC9pzQemJfldtQ3YgIrXNnpESOFNSpOkCcAuvN1_xybIPYgCZGcq8DbxhtKPvRjSPeWq9ImAGQrmepSj89fm5Xg0_IDj2NJ98yNsU3LDSbb-2MqwFT44-RRzHcUoH6yMpP6JatJYmBWDL7idMR7z1XGPjaZ2Wpph35kX1KVpUxDrxckHoUJgeJyba5HNt5pkP68JJrIdUvncZTR3SfvGJu9y2OLtNIN5a5F4u6hhQIFAp8-Er0CWHwvvu5S-iPZBhBzLQSPokXphHxAAa_wYP7BYJyiXvJwMa5VxGBp6dcSO76VSMTYAnI2hvCGdXWUWcPYb4cU0WRpaiFVMD0xp6o4SA3aeN3sV8l7YN4JGP2xoC2lBZzR6LM-yn4ix00vtNhc7xDhENMqIXYQCViLw2LGwgC3DryG_o7Jq2uv4UPjEz1EUa6l0zSw7UpGfzAb4ZsSJCvjGJk5ZdnuDUPbqU-KLX7HNnJUnHnBdlOnbKi4uzyxO-eZU5hwJMl2LjZKazH4-jAmbalfynqJxotjuxmeayug3GVbMnjzWnbKbBlP3Lizog1K6b60pYH8xcdXsYFy6wBXRqXIFC3hdDGVimtgdi0q5DE5mTE0sX8WyqPMOb6b80yLCc8qRV86Gy5lrhdCt7dKKhyU3SfsWeLpgcgDOViUuT4Kme_wxGGaCg92sgI1g_XEf689w3DW-iEuBpj2PDc6Ull7yaCyPiEKcM1UdlresZ6WgJrw50-SV3zTdUJKj4Y5wyUdiSplwYuwWXNyWPyuHqeGAIUf0zlhC9Xvg2Wee4G6FZhA1gjBxTSG6y7Ko4pmVCw7BttOHVX-DMVUb0Vg8iZXpWaqwvzLpDI9y7He6a6aK6SQsXO3nTeDgIkpj0Z0udX3JixtL-GrtW-J4aNZaExTVYmAwRcHFVAxwselC4vSMz4qtzjV7wbtRFfP1LQkhK_RBnI5_gBME6KWlvAA009Gmge97U_fQcCJZmkligZSe9eI4SyqlNuN_bz3Sbb3upieXc8gMzjbQNHNkA50N_ZXHqnVFc8oGulQcLL4bS7tOtJppYS9mGTsZIOOgCTtzoj7QjSNuis-FR61XJYZ9Dsz9-ZaEWibRzPmgzbsQKSuw7WVVJQ1_GGDn2KFQa5o3XdqwS-V1_Qi9m5AdQmYNvR-fddwWT1mMc_a_iEEid6_TVC3MC_OMSAY1HTv17LjIgpNbl_7ND8cvgps18MIQ-EF-1CHY7ZCb6IJEFH48yxIxk2bgOo689H0Q9GPOt_TXjfFB6RP_6dJlaQl-Ck0RGgB3TQe21rVZsHUbQu21dXnu8fkQFDftZVYZii8ihHv5i4DWJ-EElpmMLzaHPR0g5EgBLtGkD8Qq6kj7ErtchLnsiATia69MC0m2ZPZd91-fKc_jnRa0T8ctmUyNFKHNX-7D_7l3AJW3V7wcMwQIEHOtw03RBIhh-G_fW1UgVhVZYfyTjXyvVcXs5Fh1dqr27f7VYu6Bowkds-olwwedi9rQdeTNJVW57TD4_cSK99PbEgxd9X3kERS4bzdPL1dm4Ci5qeufYkNDKoycxC8gqoccPqLbfaMbt0WipbXJdAWFZMLdldky9C4H4lcXjiRhLgIusw6g1vUxCXwa3LzEJtP_S1dlHHoy1PJjEbOYGBCmgPt6E2JN0MzBuJgSi4pQn4EwWB621tQTBYQrlHanAEtUfpjyYpyjqNL_Uzo0m_CfwHgMKp26Zw22z1BJJUqsY1PvhrNAlzyOiARg1Fh4Y_2P_PFYKczrGGpyKvujjga7fOKeIaA1Ryq5EPHDZldiOv-qGOqygd8HA5C3-x1J6vUA22emiPhu6ntnuuEGhElNVoVH90ySMNQdY3_lDIZL0HT1pcJuQRnRkTS8ZL6-oH-ZFBM1QGks1_Anns-Ynu-Pip99R5qIuT7rIDj3pz1twvmWgLG7YiYxsCSf3NG2z2FMyxgoE_5lBk1pS9sG4zR2QJtfp2R1OVWX75CbnQcec_N3-r6Ji5ia8rXrfcs1ENYU_on2W7ASUzHD2NNzyXNNz8fmBBBZStPtmQgFBUzDUoKKSFTzEy1dctwLNwSsWhppbIIKOHfgaPE1S-6vNSc6EOJljQAkQWHwGiK6CCxYYRjznGaTy_GOb6OjSGec1RF-jiPR9r6G5-U4yuq8zXRzEu06Kek6ygk6PUcWQ5lSSHw1svUan2GqpPqIXdPL7AfpPfKWYcfZRCx_i7w1LWBF4P07QI3WrBvcBFEvJevdrGVuV3MqKdPScnrA0qlw&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "RiK1NxcxPAPFxahRYfJ2cyhxSXvx79PSrlYtW8W7ljC5uULgcSMQmEgb0yHpc7V_ZQZ2FAsJLbP7elwAXfl21RkcP9hRoB7FJt5ruTTA7-EMYMdqfuUEu62m9ybxBC63yd8ketLQVDppju_80Pqbn-BWj9E-I4Z5vdyKyOl35Dy657ld7wLYSgo_DhYboY1SdStECd9jIlXJzh_msff_0jvSXsJVdEM9Ok-Azbdp8uaYK3ECI4YpEErw_l_0SM3AuOBsfXuJIA-EAxeppZNtCUNCaxwQ15LUfwhGlR46DGz6P1iWP8NigJuAgEdfwGkWoG5hPwY2mqHaeKAc8oOVePBEBj90loW1SEOf1w_GfSb6MIIFnRYMnl4s6MJpfj4y-fz5LwzK4Tnu1QszaUtVs6ShGLqlf4sTLAOxp1nvRhCWOI2qvsfKHcZWeGjolS0acY_G1NLBVb1_thscNRLGdTqg_Pz5oJcB4hsaqONi_JV_R8slwnD5S-Ba1YOc7z3lbBgmI1EbbLEaJPhFNjZW8IhyqGYP7UqY3BAmI26c6AJd6nbRaHnFk7jYkxgZ-P09f3PoxkcpMI7AaO8CnKJdYQP1k8QmC04uWCGFXSXj9wla3iDWkKWxEa-ucxCjElweSMB_LmTvpVnlyYmVimCNUJW6LOkeJ_PtUNW6yKKxrfqhdwm5BZlpOn__8onFy-e-o3OYaVcJo4_oFDHbj-X2_4CJni9TpjQ-sMPUBoae_dtWN7VIAs2eoGMxFCp5QhcZRSFC9QkhbQcU5WqrQgAxBlK0zkE9_VsVtyiP0mnd8JCSfSbej-G8EPPZSaDlXA1fUGG_N7VJ-BL8fZEXiyQvrY6yWOGUixZiR9NiyYkSxMXxdjB0bkklXBy2kyRvJ3dixjML99yhZwyxH7WrSbsu8SONBwDNoIEYAzlrXaDqpFobXyTvFxcCWFw_4pjhjREyvqhYxA6nis7oFrv-Uyo1r-_peIrSD5h0v-nKp2oOljOkYZ9FrVaD8LGN_UHD7JyaGq3WnmViR4pelX3vl2USJUupu9v_kRAbmXXsJm5ekhFI4MbjJN29W0Qrhj7iArp0LvOExtQn5tSTZfUErsCdKP_S2eoLDEyfZLymbRGh6MxrhHn4POHwN9GUUGugZOR2uJ5swk2mrEBtBU2STAf4J8gsmRaDxyJarL-eMNi_D9KdlbtEXB7-QdRQx0woPIb7M1YYKHjJ1CgHM76lQPy5vkmiseY1SQQJ21AR4_WnnP8PFzKGKfHtgYXwP4GODaWEi9c670R1Mi5NF-5YAqgPurKxYmeRSgH4JhONKIVhRqeoUjUcn0xVHRmuvH8bOqmjDRENSnczthMqDfJCEvrRsN_P350JdWmzZJ33mr9C4c_jbjQJ1c4PIFewUa7HGM0GAU-1OD30DjA9iCY4ulD7LthTkbH-yfcVhnnfdgiTQkskQmiVuhVFXtVMlqSNlqJzFOgvpjTvbcViHx_T9LrE50ALngseXILbTbxVMRqdVX5KA5PU1KrXSzUWIaw9bNXBBGd5m6dwBmUIHmtpj9KZgGSN8Eb_tSmFeLcfCYMJBjDWcoKwq1uukguksf48eV8lpuXxwh74BmbHHgMfugj06t8fgp57pC2godm2-hPb4xbfBR-zWb1hvEIocPGLk9ET8F847ozSpLd_qoOyOLO_j3nguRlwjS_MkMg9ZI0VSKQHKby9AvCwOEHrH0q3WI6Zta6UEuuZlksiK5ukI13eedb3gbds_KyQaXnMEFW9o1b2wGwO8DlxmZfHoeBRlKE1X_Hw-AbSERAVpBdXDqVmS329HOfsFIgoEzf11T_qZVpTxA-ZXvgu03TWBz6PpyHsvQq5CuiVX3RtVschPmp4RIbh1mfjMGgK2RudwnFw_xolfb6PkRajqTX_8r4cwl5LymqVSdAQAo-Hni42A9uzwJ790HKwhUqAF0hxK-TZSaiCRg2vSJh5cxRnQhjxmN5Az8pstS-Q2rHFDkHUgtq6z7GqNAfXfGp-VBrBcgUIPaYaaJCZQdTLWdc-WQbkSHMae8XTwMhKTj4MjNoGhdLaOTedB9cS95z7AYTM_wYDJt3uku-9pqih5ngGNIFKatARALuAe2P07WNwBbXlCt0TE9SDE9eo67zMStCgf0KDIhtsdSmAmfB10Ztb0ILpPqAzHk8QY_01FMzw9tk2M_beiNKuS-WWDhKfbeNOZ_REC6JwsnPzYASY-5mLF6OmcqHMCOkBGqpz6qvg4epGDioLmMOz6OuJKVN3PAm34sudN_3WDgkyTz2Qdriu08__NDxC4nWP1SR6NOpQYeqaZI6plYDcjv_gBJtCXKbjZFv6sU1YffQ_4dQByfjDw3yn8CZsZ_2ytDkAkjEcXkVd0GACcNfEIcmnaV0gxhw7LwWTNPij7Z9835V6YZZcwz64LSTk6A6qAeUwIwFVF0NgWmtLCayAwQsEV0KD5uNdu5mrp-wdb61xobjlPegRZxIwmoQ6TBdcSpwHlF1mo-owTRcFjtgjHKTZGwNTTKKeY7uBfVQw57PXpELNLMipRDpUfsgiO08ft8ab7XqPnDP0CxgOaVHgrkF2TtYfEk1osauwlaa1Z06QNcigUiOSBB5UftG6mZRBLZzmhDw1H0cIDJeYW9SlWxUfyMaJeYGVy0i8kjaUw0EBpkY7dEMWme3I3KknN1g_rZxRF2vcQVHiL2yW7Z22P8e-BlahNXnA8oEUaJLj6ac3kILhx1M1VpsSx6zkT8qLuPjH8jTT3M3_O2UenQ"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=RiK1NxcxPAPFxahRYfJ2cyhxSXvx79PSrlYtW8W7ljC5uULgcSMQmEgb0yHpc7V_ZQZ2FAsJLbP7elwAXfl21RkcP9hRoB7FJt5ruTTA7-EMYMdqfuUEu62m9ybxBC63yd8ketLQVDppju_80Pqbn-BWj9E-I4Z5vdyKyOl35Dy657ld7wLYSgo_DhYboY1SdStECd9jIlXJzh_msff_0jvSXsJVdEM9Ok-Azbdp8uaYK3ECI4YpEErw_l_0SM3AuOBsfXuJIA-EAxeppZNtCUNCaxwQ15LUfwhGlR46DGz6P1iWP8NigJuAgEdfwGkWoG5hPwY2mqHaeKAc8oOVePBEBj90loW1SEOf1w_GfSb6MIIFnRYMnl4s6MJpfj4y-fz5LwzK4Tnu1QszaUtVs6ShGLqlf4sTLAOxp1nvRhCWOI2qvsfKHcZWeGjolS0acY_G1NLBVb1_thscNRLGdTqg_Pz5oJcB4hsaqONi_JV_R8slwnD5S-Ba1YOc7z3lbBgmI1EbbLEaJPhFNjZW8IhyqGYP7UqY3BAmI26c6AJd6nbRaHnFk7jYkxgZ-P09f3PoxkcpMI7AaO8CnKJdYQP1k8QmC04uWCGFXSXj9wla3iDWkKWxEa-ucxCjElweSMB_LmTvpVnlyYmVimCNUJW6LOkeJ_PtUNW6yKKxrfqhdwm5BZlpOn__8onFy-e-o3OYaVcJo4_oFDHbj-X2_4CJni9TpjQ-sMPUBoae_dtWN7VIAs2eoGMxFCp5QhcZRSFC9QkhbQcU5WqrQgAxBlK0zkE9_VsVtyiP0mnd8JCSfSbej-G8EPPZSaDlXA1fUGG_N7VJ-BL8fZEXiyQvrY6yWOGUixZiR9NiyYkSxMXxdjB0bkklXBy2kyRvJ3dixjML99yhZwyxH7WrSbsu8SONBwDNoIEYAzlrXaDqpFobXyTvFxcCWFw_4pjhjREyvqhYxA6nis7oFrv-Uyo1r-_peIrSD5h0v-nKp2oOljOkYZ9FrVaD8LGN_UHD7JyaGq3WnmViR4pelX3vl2USJUupu9v_kRAbmXXsJm5ekhFI4MbjJN29W0Qrhj7iArp0LvOExtQn5tSTZfUErsCdKP_S2eoLDEyfZLymbRGh6MxrhHn4POHwN9GUUGugZOR2uJ5swk2mrEBtBU2STAf4J8gsmRaDxyJarL-eMNi_D9KdlbtEXB7-QdRQx0woPIb7M1YYKHjJ1CgHM76lQPy5vkmiseY1SQQJ21AR4_WnnP8PFzKGKfHtgYXwP4GODaWEi9c670R1Mi5NF-5YAqgPurKxYmeRSgH4JhONKIVhRqeoUjUcn0xVHRmuvH8bOqmjDRENSnczthMqDfJCEvrRsN_P350JdWmzZJ33mr9C4c_jbjQJ1c4PIFewUa7HGM0GAU-1OD30DjA9iCY4ulD7LthTkbH-yfcVhnnfdgiTQkskQmiVuhVFXtVMlqSNlqJzFOgvpjTvbcViHx_T9LrE50ALngseXILbTbxVMRqdVX5KA5PU1KrXSzUWIaw9bNXBBGd5m6dwBmUIHmtpj9KZgGSN8Eb_tSmFeLcfCYMJBjDWcoKwq1uukguksf48eV8lpuXxwh74BmbHHgMfugj06t8fgp57pC2godm2-hPb4xbfBR-zWb1hvEIocPGLk9ET8F847ozSpLd_qoOyOLO_j3nguRlwjS_MkMg9ZI0VSKQHKby9AvCwOEHrH0q3WI6Zta6UEuuZlksiK5ukI13eedb3gbds_KyQaXnMEFW9o1b2wGwO8DlxmZfHoeBRlKE1X_Hw-AbSERAVpBdXDqVmS329HOfsFIgoEzf11T_qZVpTxA-ZXvgu03TWBz6PpyHsvQq5CuiVX3RtVschPmp4RIbh1mfjMGgK2RudwnFw_xolfb6PkRajqTX_8r4cwl5LymqVSdAQAo-Hni42A9uzwJ790HKwhUqAF0hxK-TZSaiCRg2vSJh5cxRnQhjxmN5Az8pstS-Q2rHFDkHUgtq6z7GqNAfXfGp-VBrBcgUIPaYaaJCZQdTLWdc-WQbkSHMae8XTwMhKTj4MjNoGhdLaOTedB9cS95z7AYTM_wYDJt3uku-9pqih5ngGNIFKatARALuAe2P07WNwBbXlCt0TE9SDE9eo67zMStCgf0KDIhtsdSmAmfB10Ztb0ILpPqAzHk8QY_01FMzw9tk2M_beiNKuS-WWDhKfbeNOZ_REC6JwsnPzYASY-5mLF6OmcqHMCOkBGqpz6qvg4epGDioLmMOz6OuJKVN3PAm34sudN_3WDgkyTz2Qdriu08__NDxC4nWP1SR6NOpQYeqaZI6plYDcjv_gBJtCXKbjZFv6sU1YffQ_4dQByfjDw3yn8CZsZ_2ytDkAkjEcXkVd0GACcNfEIcmnaV0gxhw7LwWTNPij7Z9835V6YZZcwz64LSTk6A6qAeUwIwFVF0NgWmtLCayAwQsEV0KD5uNdu5mrp-wdb61xobjlPegRZxIwmoQ6TBdcSpwHlF1mo-owTRcFjtgjHKTZGwNTTKKeY7uBfVQw57PXpELNLMipRDpUfsgiO08ft8ab7XqPnDP0CxgOaVHgrkF2TtYfEk1osauwlaa1Z06QNcigUiOSBB5UftG6mZRBLZzmhDw1H0cIDJeYW9SlWxUfyMaJeYGVy0i8kjaUw0EBpkY7dEMWme3I3KknN1g_rZxRF2vcQVHiL2yW7Z22P8e-BlahNXnA8oEUaJLj6ac3kILhx1M1VpsSx6zkT8qLuPjH8jTT3M3_O2UenQ&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "TxDCc9TgfyEWoMQFz1HueiQLPjjA21q1bTryE-4VnizHM7Af_o2ZWj8x1SWSCGk1UusEj8BBlcXiqEU3r7h7SbdnE-ApKBBzFb2cnuFmgDM1CmHgHJNOicP9we7fudf7LvbE1M6wP5-X2YG71FSrPSP9qPaf0V0536lqOU6erG4_oGt0zcwTcb94XvwMPAuor1g_iOpfdek0a9IpKI4xSwYTOK2Ru8owT4h0VrM3FXzAQN5leZ76iV7P50B_LYzfI9lLqiBvnkYEUQVbBkDOlv1d58fKt85Rcwk27fWtUB4Z-hnEnt3Rz6JOZUQPgD5u9muGhzWCOjTkbt_0Ax7T5s7EmOODfWVe91eUghoaOIsSvHzhZqorlt67PxSfmjg4alZhtUt5nqlpCyO2Oo4ACG3NPCigGaCPDx4QEmefPWXpGYIyJOiKHSGxQZ9z0Ef84TEq0ITFdWDqVyRQOMo4ZejkiOxJaG_s_jVNoLyUCllJHkxy85PtUK_hLCYaxAdbXIxSoyLRHsW6bc8hw4cMINkEsjjjZKKZAFJnKAPIRpTYCwI-9iDSoj3mi9Z7bGv5pdVSiP2o9WRz50fUQxvqBcgN2ilp97s7D1QiEPrvLl5MK0t-pCpRxjaL357N3olNPAscIMOL8oM6-M_-tT9cTF0Mp4_w0W3EcEVuDtaRM1Sr87_Wn6WEQ8cVFIkBduwcZjneXz0HZB1k_tVUZLnXvVf6EpIpgUywq7h3d6ENZDehW498FpwEQRYVbehbgMxFpWMabZvwF0IuLtut_1SUlUJDufQE9g3TOOCKVWfFzUreBaa51j98GH8vAKfzU7cn"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=TxDCc9TgfyEWoMQFz1HueiQLPjjA21q1bTryE-4VnizHM7Af_o2ZWj8x1SWSCGk1UusEj8BBlcXiqEU3r7h7SbdnE-ApKBBzFb2cnuFmgDM1CmHgHJNOicP9we7fudf7LvbE1M6wP5-X2YG71FSrPSP9qPaf0V0536lqOU6erG4_oGt0zcwTcb94XvwMPAuor1g_iOpfdek0a9IpKI4xSwYTOK2Ru8owT4h0VrM3FXzAQN5leZ76iV7P50B_LYzfI9lLqiBvnkYEUQVbBkDOlv1d58fKt85Rcwk27fWtUB4Z-hnEnt3Rz6JOZUQPgD5u9muGhzWCOjTkbt_0Ax7T5s7EmOODfWVe91eUghoaOIsSvHzhZqorlt67PxSfmjg4alZhtUt5nqlpCyO2Oo4ACG3NPCigGaCPDx4QEmefPWXpGYIyJOiKHSGxQZ9z0Ef84TEq0ITFdWDqVyRQOMo4ZejkiOxJaG_s_jVNoLyUCllJHkxy85PtUK_hLCYaxAdbXIxSoyLRHsW6bc8hw4cMINkEsjjjZKKZAFJnKAPIRpTYCwI-9iDSoj3mi9Z7bGv5pdVSiP2o9WRz50fUQxvqBcgN2ilp97s7D1QiEPrvLl5MK0t-pCpRxjaL357N3olNPAscIMOL8oM6-M_-tT9cTF0Mp4_w0W3EcEVuDtaRM1Sr87_Wn6WEQ8cVFIkBduwcZjneXz0HZB1k_tVUZLnXvVf6EpIpgUywq7h3d6ENZDehW498FpwEQRYVbehbgMxFpWMabZvwF0IuLtut_1SUlUJDufQE9g3TOOCKVWfFzUreBaa51j98GH8vAKfzU7cn&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||hotjar.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {}
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://script.hotjar.com/browser-perf.8417c6bba72228fa2e29.js"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||hotjar.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {}
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://script.hotjar.com/modules.e762be2b6b709245aabb.js"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "8ORtWWUIqDfEMJ9LWiPeDCy1D2-IyPvPsEQSmoMXLb5JWR8GCSWOPViidSTOkFDbWnLqPXTJ3cfQMYCFlo_RxYHEV2fw8oaZjjc_PFJOabimbUYHD9Bukv1gtgpBPsEcAyk2AAiGReXyYToAmNkiboR4hLEdF3PwYtIrA2Saxg0EH-SfrAhCP3kLMftKF_9oBAqZ2ExfFkqtHD5BkzUmBThAFcsIBztDFaLyJuuXH1r3slK8HyzWtTQJkM6QHriJGZ41AA7ceEkL6IaehY__M-gzaAlR7TzBGxarmn0XzmZJnVceaFNsLpJkWlh2Ft4My-pHJF_pOXZZuML4m3JETIOzZvPfgGKomeTYoGj-b_gii-w6UhCCZ0GxrqL46wAHZ-jkpfZR-jVZnBsVWaMuXyKxQnWtdF_fcs7unNfTx2g94eU1-BS8LEz8t8nYAws8SwUSMl0GeaJotKPDXE_qddXCzmINeiHtPah4YQxE3qhM7GExkeA3bpomn3W06XBtoEX-BSlfvfUKIBkKM85AD89sqYXJHJgTVAobNSAfPshyZc3OE2R2c8QRkzorI1m-ihQJa86P5y0PXrU3rk8gB2rV3jMSfUN6iIxgOfRfsG4PfPMFr2Pr1L3ZRQUzukbdABv3d8fRL826oAcdISdA2Fyg11neyLPWaFgM-RdVHw0"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=8ORtWWUIqDfEMJ9LWiPeDCy1D2-IyPvPsEQSmoMXLb5JWR8GCSWOPViidSTOkFDbWnLqPXTJ3cfQMYCFlo_RxYHEV2fw8oaZjjc_PFJOabimbUYHD9Bukv1gtgpBPsEcAyk2AAiGReXyYToAmNkiboR4hLEdF3PwYtIrA2Saxg0EH-SfrAhCP3kLMftKF_9oBAqZ2ExfFkqtHD5BkzUmBThAFcsIBztDFaLyJuuXH1r3slK8HyzWtTQJkM6QHriJGZ41AA7ceEkL6IaehY__M-gzaAlR7TzBGxarmn0XzmZJnVceaFNsLpJkWlh2Ft4My-pHJF_pOXZZuML4m3JETIOzZvPfgGKomeTYoGj-b_gii-w6UhCCZ0GxrqL46wAHZ-jkpfZR-jVZnBsVWaMuXyKxQnWtdF_fcs7unNfTx2g94eU1-BS8LEz8t8nYAws8SwUSMl0GeaJotKPDXE_qddXCzmINeiHtPah4YQxE3qhM7GExkeA3bpomn3W06XBtoEX-BSlfvfUKIBkKM85AD89sqYXJHJgTVAobNSAfPshyZc3OE2R2c8QRkzorI1m-ihQJa86P5y0PXrU3rk8gB2rV3jMSfUN6iIxgOfRfsG4PfPMFr2Pr1L3ZRQUzukbdABv3d8fRL826oAcdISdA2Fyg11neyLPWaFgM-RdVHw0&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||hotjar.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "sv": 5
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://static.hotjar.com/c/hotjar-720738.js?sv=5"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "jA-kuei17dsA2QDjCeJc7xBzd61-QlgwJ-iiANTlzZxIhkyp9ymObDL2kmZ3V3MmL8d8kLJbL-DEd8AwfzeMvv4GvDp1akpFBx05Ookzpq6K0q9OjEsjTSA4PndAsxlsx4UGJiQ8hDBpzwJlrTTuu8PdzmAoK2I8i_FGxQOexibT6IbUqLUtM46WXlGMv13t4SHa8tbL7d26GSsNLwUdogJgDyQiUBevVWGKU_JGPSB4VS9mXhkdbr44P8gtVhpw5NtKz53JAdsSo0r2GI8Vs-0ZHVpSoC4GkOzOBPWpYLdmNrstQBOk2lDkPPaO0-oRVOGHBG-w40wzWjf35JuIG_8gK3WdbkikKt90wrBFCej6T25AC4uoL-AH_3nK3s5XPkP-ofIMx_7f2AnZClz19vI8IhdmlGQaxEqWfRFCC8Qg5DBGQ1P9_fZCSCBsKfq0vL8cJovN2TBnCzlNEesQAQCNlywixbvpbPlPkU11mxBLQZ5wKHB5B78fcayWRdb2q3MMqyPiMvrcBeMlZwWvKJnDZF9aaPriXPHRY77RJeXRq5xmxQppmxWjGGz_WgKJoxbTMMZeWuWvXdlIgEFadidp764KuEXkEMNoQ94FMCDxqPOnS3dFwpccy9BSgLRldgemAQHMUbXas15uNBacIV8L7zYc85z2cApd_aQheeRLIXY3JQHx4oJUy8QnzwsX-s2qZm9vr6G2FS385jhKaY1XJhqV-TgKud9o3OBQzfS1_usQRvLi-t1n5nuiSTWzBDtzUpN7L18sWYoxT-C7Tu0MyqAPbBIIh4wBk-XYin7Np0PSIgWuBKW_NYby9LL7aH1UD2AqiOKeWauzVaOG1uqi9yzXV6kvMoYM_eNVT-NWIALSxdsawcObK17wIQ2imeunwqCzDIHLYUZMM0gl_Xv6vvGEPAEs_53ndrNgyvCTnhC91qs121gkglKszHycq8c1ASqTO6dNZj3BJd_of7EURyObtSetEtxWqNjJ8d9TB6lQrUqIPXgTrLJZDiv3WLG1Fr-C_b4H3UEWjEGuyHXS2WBcWCwC3Y-vl_kMUCYn4wx0JPlgOriz6gkLEyK2uIWUAv1XI_iv-wy_5pQl1GkDI63fzMKCyO5EiPM6GnJLxk0fD9p5GCRNYUFpsBDHEv23gopWofREB4kJh9pcpGnk4hJT1y5Z4inZxF6qbsDE-nh4mj_jp5seIALyJIXgPbN93t888own8uHR6SBhdQxOg3HYcHXDGIFJk1VIl1BFdHt5jU8WIAulGrgJ6xlzqL5Rb7WGGGizVGVO173v6RxurDvvAYOfrqc7u-aFZOkAcf-jXpzZ-sfebnaaqSUHyLm91OLxY5saMVVysYuAuzRUgQcJYLl7jKEviMuhO3QTpy8YaJ1mfj4R7M1QgmR6G_tsuTSyheBbWu-sTthF63DqAjNjaXHPiottzt3iF7bQq2NZYKjJBLleze4acdgfqZ2sm8091rCZ8mOwchf5Drinc5W8Xyc0igHahiD57jIxlTT3APjY_CJbB62_bF7hbEG_kCNWJjK8YkkzZY1t_6sV9WiQHno_kiza4l-0GalwdPIg0gae_o0Q9dcfQX7eI7ZHf-jro2kyG8MzOu4TS1Dsxy9yPoG2iV4EeCgCqVbR7inIs1OibnjIzHk8o-nvfLu0w0E46_16pm3AoJtP3zvqSvNymfCb_zKE_t3CpucFWG6hL9EncU4iMAjRpJJnlcBGyAGgtbej20FV9hlgv-G6CMsAYRUlJ1GBDCugiQIXHE5jeH4vX7X6sf5J4zoq67aVYMkKuxs1EedftvvezWsenhlDz9R44ttrEQBYefI_tKZrkVUBdi7gEuuoLtWpii73frNEn0_siMen4y1wzT8uTtZmntfPAhIXt9aJDaKkbLCSKhhMch2_nxDoqSTD-vejyG_siQeOTl24TfKjo_D5S4TtVjOZudTufSGREv0W2jzPJ4IkjgCrdmW4esVwh4thGZPxshvqzMG5CfxM23k1BvMA_U2mhYAt175J3mWzQLbW9rmEvfYzvdXlDbCwupQEaDq6ikjQw4E2lw4UG7vs932UbRCbFyB3itEhPzu-IcOGL2Ob-Xf7jbKFFyXrIhipeY4_w5Z5cULuS9VYYmBpwIJ4E2IqOC6TTwSizU-6hd9Y4BEclLHsLkHzMqgvO2SN8NEgFfRmimRS4tJzjxaCI36ina4aKWiLp0jbOV1-zJyJxk1wGdAJJqobCEGRALhYxjdaN0RrqC-Y7OecbuQAY6JVTB0lPKhF2KB4WCIqwbd6IN0cfoxofFqz2jYFnHRywTQpiG18e9k3VEWW-ID84xgVnk-Kb36vVtQhfqObHFNX61P_9EfALtbMzTF8AqMWkOpd2N0thF-7DcrcCDYQbzbLpVe0jbPO0OxM1iJHePoAR2tZTEhoiXmADMZ9HCVTiGOncBMd9BIA_2I309wS9VE6n8nn74iklbXQNmUcCU8jRlLVV5oFnkGQFlmzEm1QYbjL_XhNWWIculH8rao1eK4pWqVt71S7lxyOgWwVlqcyeJpRdRFRpm0NgQWR_hInHiRtjkv8rksKegzxyDICeyHnTssR807bbXstK2X-gRXjAGReytnlJMQIawSbxnC68BXBQ0TJj48Z92kApIpTNCv0k_O4ZK-QFyx49VWeTj3Mn6JTuXY-pOvRJDfqL9qiBwSAJrCTWrykyrYHsxz0ZYVPdKR5reEoKdc912JHL4fg1fQh6LgGaZNYNZy1_EhgGlt6mEZEgWw-kNW4Vl6neYdZSlfoxEoyCuI3H_ez9XamhT6RLjr8ODIuUA8V"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=jA-kuei17dsA2QDjCeJc7xBzd61-QlgwJ-iiANTlzZxIhkyp9ymObDL2kmZ3V3MmL8d8kLJbL-DEd8AwfzeMvv4GvDp1akpFBx05Ookzpq6K0q9OjEsjTSA4PndAsxlsx4UGJiQ8hDBpzwJlrTTuu8PdzmAoK2I8i_FGxQOexibT6IbUqLUtM46WXlGMv13t4SHa8tbL7d26GSsNLwUdogJgDyQiUBevVWGKU_JGPSB4VS9mXhkdbr44P8gtVhpw5NtKz53JAdsSo0r2GI8Vs-0ZHVpSoC4GkOzOBPWpYLdmNrstQBOk2lDkPPaO0-oRVOGHBG-w40wzWjf35JuIG_8gK3WdbkikKt90wrBFCej6T25AC4uoL-AH_3nK3s5XPkP-ofIMx_7f2AnZClz19vI8IhdmlGQaxEqWfRFCC8Qg5DBGQ1P9_fZCSCBsKfq0vL8cJovN2TBnCzlNEesQAQCNlywixbvpbPlPkU11mxBLQZ5wKHB5B78fcayWRdb2q3MMqyPiMvrcBeMlZwWvKJnDZF9aaPriXPHRY77RJeXRq5xmxQppmxWjGGz_WgKJoxbTMMZeWuWvXdlIgEFadidp764KuEXkEMNoQ94FMCDxqPOnS3dFwpccy9BSgLRldgemAQHMUbXas15uNBacIV8L7zYc85z2cApd_aQheeRLIXY3JQHx4oJUy8QnzwsX-s2qZm9vr6G2FS385jhKaY1XJhqV-TgKud9o3OBQzfS1_usQRvLi-t1n5nuiSTWzBDtzUpN7L18sWYoxT-C7Tu0MyqAPbBIIh4wBk-XYin7Np0PSIgWuBKW_NYby9LL7aH1UD2AqiOKeWauzVaOG1uqi9yzXV6kvMoYM_eNVT-NWIALSxdsawcObK17wIQ2imeunwqCzDIHLYUZMM0gl_Xv6vvGEPAEs_53ndrNgyvCTnhC91qs121gkglKszHycq8c1ASqTO6dNZj3BJd_of7EURyObtSetEtxWqNjJ8d9TB6lQrUqIPXgTrLJZDiv3WLG1Fr-C_b4H3UEWjEGuyHXS2WBcWCwC3Y-vl_kMUCYn4wx0JPlgOriz6gkLEyK2uIWUAv1XI_iv-wy_5pQl1GkDI63fzMKCyO5EiPM6GnJLxk0fD9p5GCRNYUFpsBDHEv23gopWofREB4kJh9pcpGnk4hJT1y5Z4inZxF6qbsDE-nh4mj_jp5seIALyJIXgPbN93t888own8uHR6SBhdQxOg3HYcHXDGIFJk1VIl1BFdHt5jU8WIAulGrgJ6xlzqL5Rb7WGGGizVGVO173v6RxurDvvAYOfrqc7u-aFZOkAcf-jXpzZ-sfebnaaqSUHyLm91OLxY5saMVVysYuAuzRUgQcJYLl7jKEviMuhO3QTpy8YaJ1mfj4R7M1QgmR6G_tsuTSyheBbWu-sTthF63DqAjNjaXHPiottzt3iF7bQq2NZYKjJBLleze4acdgfqZ2sm8091rCZ8mOwchf5Drinc5W8Xyc0igHahiD57jIxlTT3APjY_CJbB62_bF7hbEG_kCNWJjK8YkkzZY1t_6sV9WiQHno_kiza4l-0GalwdPIg0gae_o0Q9dcfQX7eI7ZHf-jro2kyG8MzOu4TS1Dsxy9yPoG2iV4EeCgCqVbR7inIs1OibnjIzHk8o-nvfLu0w0E46_16pm3AoJtP3zvqSvNymfCb_zKE_t3CpucFWG6hL9EncU4iMAjRpJJnlcBGyAGgtbej20FV9hlgv-G6CMsAYRUlJ1GBDCugiQIXHE5jeH4vX7X6sf5J4zoq67aVYMkKuxs1EedftvvezWsenhlDz9R44ttrEQBYefI_tKZrkVUBdi7gEuuoLtWpii73frNEn0_siMen4y1wzT8uTtZmntfPAhIXt9aJDaKkbLCSKhhMch2_nxDoqSTD-vejyG_siQeOTl24TfKjo_D5S4TtVjOZudTufSGREv0W2jzPJ4IkjgCrdmW4esVwh4thGZPxshvqzMG5CfxM23k1BvMA_U2mhYAt175J3mWzQLbW9rmEvfYzvdXlDbCwupQEaDq6ikjQw4E2lw4UG7vs932UbRCbFyB3itEhPzu-IcOGL2Ob-Xf7jbKFFyXrIhipeY4_w5Z5cULuS9VYYmBpwIJ4E2IqOC6TTwSizU-6hd9Y4BEclLHsLkHzMqgvO2SN8NEgFfRmimRS4tJzjxaCI36ina4aKWiLp0jbOV1-zJyJxk1wGdAJJqobCEGRALhYxjdaN0RrqC-Y7OecbuQAY6JVTB0lPKhF2KB4WCIqwbd6IN0cfoxofFqz2jYFnHRywTQpiG18e9k3VEWW-ID84xgVnk-Kb36vVtQhfqObHFNX61P_9EfALtbMzTF8AqMWkOpd2N0thF-7DcrcCDYQbzbLpVe0jbPO0OxM1iJHePoAR2tZTEhoiXmADMZ9HCVTiGOncBMd9BIA_2I309wS9VE6n8nn74iklbXQNmUcCU8jRlLVV5oFnkGQFlmzEm1QYbjL_XhNWWIculH8rao1eK4pWqVt71S7lxyOgWwVlqcyeJpRdRFRpm0NgQWR_hInHiRtjkv8rksKegzxyDICeyHnTssR807bbXstK2X-gRXjAGReytnlJMQIawSbxnC68BXBQ0TJj48Z92kApIpTNCv0k_O4ZK-QFyx49VWeTj3Mn6JTuXY-pOvRJDfqL9qiBwSAJrCTWrykyrYHsxz0ZYVPdKR5reEoKdc912JHL4fg1fQh6LgGaZNYNZy1_EhgGlt6mEZEgWw-kNW4Vl6neYdZSlfoxEoyCuI3H_ez9XamhT6RLjr8ODIuUA8V&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "Cgh-VrZrG5K50a8Alv4gELBGS-FcGI1_cmkruzKY0qg5GE19Dn6JqB61gf6FU_IL00wQizGxV_rvITFhm9ozqYoXoeR3v1nLi7mZMuuxg7hlUTtJna33LU7DdjwVoB9mZjMJCCXF_FhztHW5t1wRpzS1Z0wy7d0wHlnx3GwtQv5nRlCYOdf_O09YpIaX0WtpPOHfAboUtYk0ZpbWsu5xvTiXpHHo3bzi9i4ZXyRiL0wQ3f_qW01IMYytqHvNzj1QKWILDHhwfr2ZREKePcKYvyWfmig-4TxetPl-HCvJScdbh6NlmADowQ05EgdSDoW3ETAYgWYho5FiHn7gKFgCXrczdxXqSzq8esI0wKudrF6ha4ULn3ahRnRBhCKtL8XhpsZpYPbiHITbUBA5htTxpsMQobKqYvJnE-tU_cAWJ-gG4xlNrR8xcLeGPKbDj1Lu0nUnyzkJux9ULuY-HORg_j2aSrE0X-f2WQVKwOMq9uDNYtQHtsLUde5u1jC1r2qui4EEl0cExptG1Eihto6zzwp7AkK6mJc1oHtxuyiExuCyZH4zwshe0gubJjjWpc6V4GaPNR5B64eMjuwa6hUIlMvj1fHnZbs4MNvklIu_rcGd6V7Xthi0mYATZbrplDGMcF1f1gnKbZ61ShJlgwWlNaRr3VIw7ZXkEMBdBj78n9eMeXpa9-nzQ-dAkDsZyqzQVanLL0Pphi2O65aq1dsJJZ1aYqaWjrK6swk9XlYWdDnelpWlPaoCsVRH4ThFXurSWFzbiwjU5P5QSKlm8AnkD0VzojBifFBKebr-5ZNOKXV1a4Z2lUtfdWiyxgDXg_RNWVUE88t-DOogWHbf4ho2mPsLfduYiDFzGiC2qCVn-XcZwib5j3tmB6h2T_z8ZnSzzBpB1H66hkZhvz2_p87wS5L1yVaRjn1s_ftKRn9ek-jjVOZ1z8dGAQEQOmbFXxgHSrTAjpVTAmh10FvgPkW35GNO9oZTrhxM6D8lTZbYEqdzg72nzu3DcVvWJUXFXkNZjtaR5s-KiIsw7YLMT7gHbQkbmz4BDSNKaC_Ur0UUSf12DRyFAQLnd_8dPudwY_9MMO3yQ-1AVXFX21ZGXkRMK3SiOMF6QQJdLs_7yTb4mrELC5mfeXFDnpX5ZQb_SLKt3Lp4-Odd-hgJhFw2YIa3mLkguD4Yf_ucG6cspl9oKel8qnHC-D7X6ClKck5Vwb5eJrtjEdTqbwZLZkkY_DvOoix4FSFysYlULvPn7rPEEnjYNLT0nVgdw4KF-XBs4atnGc8ArBZgCUsy_3ckoWDslpSkBWQYuDfLHIyJ-pWWd18Kyze5vVSATh_4s53dMC7-f267IPCs8WjyZbaKSouR8jVWQ_jDdQibHD3oFgfD-fgzLeOSO4C6Ms7z_KHD7gT783u7qQ69QbK1plM6dC3UUUaVSb3ge9p9TXuiN3qT8u7TdExdbsDBdjTXDnv_C8502U8iPSYjW-k-1Yvb2u11tipLwE-NwRIAvpqcK8LGsiW84ozePuNjSkE8uPDk21XBXH35ocTmvXHh4bLMIy-mCd0FrMA4cV13nnpaoA4cfu9JbquPGOHQgnJLcXVhVwugfvzhOdTf_6SzivbqM91uSWmUyUEGeqew-gu9KCeNSL-GDc7AIBZbOfdhSoliUk9mVedcdVgOTmfKCGMIzncaiKSiydeMwp2iDdtU8R7j_sgKEhFOzP4FVB1otPxmUUo0Y1Z_slTNODazL9kTZdhv_I8sCWIiQWtx4XoN2siwIrRs0f342GtPsDQCqk6VnCjoSE7qp0U32wxJ613M9GrxfczFJRY0aRpM9IaTnpQgq5XCQhHFrOt9AtE5xN-zxyRDl3J-YODK3Rjx5in782bNLhF8CZoxZq7A2D4kixOYgjF2pkNnBrwsvFyZQwZtLRW2TSW56uhAIxYQvbLGfN95RhYuYVGQGNp4wlycx9Pm6URBVaakgm9fXgTTq3y-TDDP6g8Nh5F1R6Y6mtPe9_V3RSRS_lJW_0g4QdAIBapF8EtyYAgrCHWeWld5XlgAVOYajcsT9P3kHKaYdf7SEDu4ApGa4UjyglWUaFFxaYj3XAfkopoN9jEQ-S6U92ArxJnCIFYLoZY5qPf_y9sE5FYQXeYNK4IACJEjubnhWNwIq3HcvwEylS9WPjW--65OtG1OR1P-arE07AMeUJKigcGP1Qm1qqb8sh7Q-CZMjfjkC4-SOXKtrfcAwS-pxQYd5OzL_g9H7ZnkZGIILQiYNMSIS-9-S42Yr9T0BYu-Tr8Em2GZz821SW_ffhpAOSXJWCjkANosR77nIDgs2HI0gATgxRDmyfNAm3VZTTzUkaRGk6b4zC-MkXT7kg57K1QS9_0doJbvlpc4H7DZ-li9PbVyP4K217X-hqFzz_H0ALhikWNCd8W3vfEp4ECv3aIbsCw2j29YJYp8xI4TNAT4nTF-lym-WnlyBFxNcYJRxwJGEtSSVzq-tYQW-ff0vq12N2QcKlti5kmd4vrpKL20j5ItjIpxXciYrZmOYwVoxzXVgGBqctYixkRGm3locMXGxhTVK4LXiHlnTLBqu5zYWD40QnLOw8r5GcnRNFxcqYnmqvp6ehMyIOUVvhTq198mmZJtxFSAxiR0QX7tUncvubv0LGcZUALQ47HgeXJVVfxXyak8EyGUAUSbau8N7p726-OknIZrFZYCfymDQ8DsylxAJl_f7frMez0ZccPvxjb17Uap_xvYNIIhdqsS3urCd1OlmVgx2I4zTlm89m1K4t2Vy-VIEiNB2zcDe37bg64qYdmUYPGCRsF9f9wcGrNSWbyw"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=Cgh-VrZrG5K50a8Alv4gELBGS-FcGI1_cmkruzKY0qg5GE19Dn6JqB61gf6FU_IL00wQizGxV_rvITFhm9ozqYoXoeR3v1nLi7mZMuuxg7hlUTtJna33LU7DdjwVoB9mZjMJCCXF_FhztHW5t1wRpzS1Z0wy7d0wHlnx3GwtQv5nRlCYOdf_O09YpIaX0WtpPOHfAboUtYk0ZpbWsu5xvTiXpHHo3bzi9i4ZXyRiL0wQ3f_qW01IMYytqHvNzj1QKWILDHhwfr2ZREKePcKYvyWfmig-4TxetPl-HCvJScdbh6NlmADowQ05EgdSDoW3ETAYgWYho5FiHn7gKFgCXrczdxXqSzq8esI0wKudrF6ha4ULn3ahRnRBhCKtL8XhpsZpYPbiHITbUBA5htTxpsMQobKqYvJnE-tU_cAWJ-gG4xlNrR8xcLeGPKbDj1Lu0nUnyzkJux9ULuY-HORg_j2aSrE0X-f2WQVKwOMq9uDNYtQHtsLUde5u1jC1r2qui4EEl0cExptG1Eihto6zzwp7AkK6mJc1oHtxuyiExuCyZH4zwshe0gubJjjWpc6V4GaPNR5B64eMjuwa6hUIlMvj1fHnZbs4MNvklIu_rcGd6V7Xthi0mYATZbrplDGMcF1f1gnKbZ61ShJlgwWlNaRr3VIw7ZXkEMBdBj78n9eMeXpa9-nzQ-dAkDsZyqzQVanLL0Pphi2O65aq1dsJJZ1aYqaWjrK6swk9XlYWdDnelpWlPaoCsVRH4ThFXurSWFzbiwjU5P5QSKlm8AnkD0VzojBifFBKebr-5ZNOKXV1a4Z2lUtfdWiyxgDXg_RNWVUE88t-DOogWHbf4ho2mPsLfduYiDFzGiC2qCVn-XcZwib5j3tmB6h2T_z8ZnSzzBpB1H66hkZhvz2_p87wS5L1yVaRjn1s_ftKRn9ek-jjVOZ1z8dGAQEQOmbFXxgHSrTAjpVTAmh10FvgPkW35GNO9oZTrhxM6D8lTZbYEqdzg72nzu3DcVvWJUXFXkNZjtaR5s-KiIsw7YLMT7gHbQkbmz4BDSNKaC_Ur0UUSf12DRyFAQLnd_8dPudwY_9MMO3yQ-1AVXFX21ZGXkRMK3SiOMF6QQJdLs_7yTb4mrELC5mfeXFDnpX5ZQb_SLKt3Lp4-Odd-hgJhFw2YIa3mLkguD4Yf_ucG6cspl9oKel8qnHC-D7X6ClKck5Vwb5eJrtjEdTqbwZLZkkY_DvOoix4FSFysYlULvPn7rPEEnjYNLT0nVgdw4KF-XBs4atnGc8ArBZgCUsy_3ckoWDslpSkBWQYuDfLHIyJ-pWWd18Kyze5vVSATh_4s53dMC7-f267IPCs8WjyZbaKSouR8jVWQ_jDdQibHD3oFgfD-fgzLeOSO4C6Ms7z_KHD7gT783u7qQ69QbK1plM6dC3UUUaVSb3ge9p9TXuiN3qT8u7TdExdbsDBdjTXDnv_C8502U8iPSYjW-k-1Yvb2u11tipLwE-NwRIAvpqcK8LGsiW84ozePuNjSkE8uPDk21XBXH35ocTmvXHh4bLMIy-mCd0FrMA4cV13nnpaoA4cfu9JbquPGOHQgnJLcXVhVwugfvzhOdTf_6SzivbqM91uSWmUyUEGeqew-gu9KCeNSL-GDc7AIBZbOfdhSoliUk9mVedcdVgOTmfKCGMIzncaiKSiydeMwp2iDdtU8R7j_sgKEhFOzP4FVB1otPxmUUo0Y1Z_slTNODazL9kTZdhv_I8sCWIiQWtx4XoN2siwIrRs0f342GtPsDQCqk6VnCjoSE7qp0U32wxJ613M9GrxfczFJRY0aRpM9IaTnpQgq5XCQhHFrOt9AtE5xN-zxyRDl3J-YODK3Rjx5in782bNLhF8CZoxZq7A2D4kixOYgjF2pkNnBrwsvFyZQwZtLRW2TSW56uhAIxYQvbLGfN95RhYuYVGQGNp4wlycx9Pm6URBVaakgm9fXgTTq3y-TDDP6g8Nh5F1R6Y6mtPe9_V3RSRS_lJW_0g4QdAIBapF8EtyYAgrCHWeWld5XlgAVOYajcsT9P3kHKaYdf7SEDu4ApGa4UjyglWUaFFxaYj3XAfkopoN9jEQ-S6U92ArxJnCIFYLoZY5qPf_y9sE5FYQXeYNK4IACJEjubnhWNwIq3HcvwEylS9WPjW--65OtG1OR1P-arE07AMeUJKigcGP1Qm1qqb8sh7Q-CZMjfjkC4-SOXKtrfcAwS-pxQYd5OzL_g9H7ZnkZGIILQiYNMSIS-9-S42Yr9T0BYu-Tr8Em2GZz821SW_ffhpAOSXJWCjkANosR77nIDgs2HI0gATgxRDmyfNAm3VZTTzUkaRGk6b4zC-MkXT7kg57K1QS9_0doJbvlpc4H7DZ-li9PbVyP4K217X-hqFzz_H0ALhikWNCd8W3vfEp4ECv3aIbsCw2j29YJYp8xI4TNAT4nTF-lym-WnlyBFxNcYJRxwJGEtSSVzq-tYQW-ff0vq12N2QcKlti5kmd4vrpKL20j5ItjIpxXciYrZmOYwVoxzXVgGBqctYixkRGm3locMXGxhTVK4LXiHlnTLBqu5zYWD40QnLOw8r5GcnRNFxcqYnmqvp6ehMyIOUVvhTq198mmZJtxFSAxiR0QX7tUncvubv0LGcZUALQ47HgeXJVVfxXyak8EyGUAUSbau8N7p726-OknIZrFZYCfymDQ8DsylxAJl_f7frMez0ZccPvxjb17Uap_xvYNIIhdqsS3urCd1OlmVgx2I4zTlm89m1K4t2Vy-VIEiNB2zcDe37bg64qYdmUYPGCRsF9f9wcGrNSWbyw&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "8ZjJ6iFPNtVTW4GXD3CT0CMoz7UsOfSQAza2v6t9xNc8JUjH8UnkJQkRC5GJXy_KA-gPX9dDIre3EAQ12eHY7xNE-xPk2cW2Zf0aD2Dk4DATJWeuqd5NPaESanifYUlo62xr1pBTzouD6iDSuP8MifYka21yc2EPU5bE5nE3PeCrOvyRIh5HNqCYpIHU8UL0TP2Q4WRnwDSD6iDYO3m40gMuC2ft3zj8m8XEe7QxvdfV-JjUP7hz1CDMfyGN27GeGfHwfJ2Q3osrdRR120YFDzk1gREIUactzY-3YF3wGOWa8BtP53APBvLWt_JeLZrKrJ4PKpamND0SEAQ91ON5_YqmwM-OvUX03iQbj8Hg8vDKlB8bHIry-x4HlHikzvQxhmuWzrBaCO6Ym6C9tN0790yxue-CaeItqYc0CB8OVgqO1DJmUzrEo-It1K3q3gRHuTNJBdZQuVaAESc25A6v741Evg8Pe0ZbRxQT7QLfPpkoaxrIytzPTQzSpjnroO-xvOTP3ibwVskZszQrhza2pVF5VOaX9CgxZVf-215v6WLhuNwffbw5vPjNWxHAjtal3X-C2E8x43dtyAkR747SwQLjr0S3Joee8mgLy8fyVqtAJgdtHnPf0jn5twf4fdCqM2E589tmghYC8lU_i-xj51nuamFaA8h0JQoi13bfkEuqGRHS5boK9LBCASRd-Z5ZPKyX0GWIGJn5DH3KzlsFPFjkReK7D-9cWvBe15FlIQO9LHBw1JB0WWe8yAf65yMMnz1-TP73X2NyTd1aHQeHxmUvMBnByKk5nXL48m2VZv1lFpweeBjzToGpb4eVJCJG1xQpHz2fDhkyiaoDzUwA9a8ma0MXpsAm5fbcQtHpsXgQJevEu1NlBOvBrMaZnRakC8-pCry8VNVLOQJ-pjCtlbK_8PilUsUHVbfqFJviXlX7-kzQF1Rn5p10-EY_ovhK_sxPm8G6lVji3d2sNZhGnthC6D1iuBe0z-rsEi2xvypk5YADyg3DIabKEuqHcizmMyj_iJXfvNzAqi95DDfesIz9tXi_iLweTjqBxILbBPGFYQGByWIOyjJus_oVhAO0JpfKnH1E8_TW5xU4PBUEEAa54ahxlhpKZAaBDc1yZDW6obKidUjv-8Zsal4RfX1oKRHv0-BxhzdW1MQA8hmKJgd2u9MI86xuK3Pj86EgYH8Rg-43Qt-tVjuoW9EQQ1DtPy1Ml8IoW_L8n8dGbiOVZp75KqlrzlzhTJyTPWqYCGBl2G2gMoUvSLroTiocxvcb0J4lFTnxdnocl4F5kFCFQFMrELhya-VLYKV8Fs-_OCOBg8FDidD0fliAO5jdgA8yrtrCPfITqj3myF21Dm3Pu7rzF-yuIzJT1KmAmK0kcwIuy8yhNrGSprsjxQlNFoke9o_x8T4OirdXFGCLAQfDMihcYw0JySf3qYJ7voOiySAjiRSFdvsXl337pDNq-sbpR_kMYMsfBjPy9PNqSUhf0o9WWO_23O8j-SfuOxbCn6Xni-tPkr0SQb3hRtlCneFPV_Dvx8JurJNfm_F02AEV1-6EtrmFiGynSuUZfw7bWLyDi0tjLGRf7HNblCxg611IaCctojyxYZv0mDGrb2hWQfOASyaoxD4Wk_1B5Xz-K8AxVynN6NRg-MSAFz9gc-5KzblV_6KN8Z68QD9bmwRKDPpvioeGnig4Yc3_dxeIPRU8B4UE2EGJ7zjiVEBDB8nxh09RQDkcNdMSnSWYbEcHmcReaAffaqme9vfOK3SjSJLYefmLEeX7XKEiR-1QHgtAWz4byzk6Cl9rqkPitA8PYvu4h7clRGagMh0JhbVK04CPjBZwXMHAE76DWE3BczG4d7cy_BysV84_k3IcO2FaXWzsf-z6AMomuUN0SZM_fPntDPDb92vEs4L-tLF6ag6Gq_RV2-qGJ-Wv37aY0oXf0Sw9iB59rERVW7_uF0HHGHZmx3qkZhs0WGXvdlfZ7_lVli0pdcSQYZEc6beJH53Uga7K9NW5aCLXWW3beWUsPbhO8amrnTqgCU4EHQZ_Ex4XWzhipCdTLZo8JPsjr2JO32jrT6caHSxX0858Yh720X42L9Nx_Zk_FiY8lEz7xqxSbrhWoP820PNNS_2RGH8fLZFIHQRHcwBfAQ8l-zMvPg-UFdfrZgxPKexfBQRGIovbtpIYBxfeeemFZOPC6l4KaWnTivDgY0tVoHx_rSKMiEkNyuPL4l4JAG0LTrRVTxdRtb6tM4sJz6hyG9buohgSCDrBwilf-VYhPbQqA8LvRttdVfc8C3urjSTX32c5d41n12fPeHv4GjN8zTKjnwDwdGkN8ZqCnU54jwJswtpMgzx9q7faBHLb9VsLM-B8vFdNw3dxZJqU66lM2Nepq9PGykgGc6zgQkEIIlX2RBETOgH0xQgMXBAVks75cCD9-YQb0z0AeTtHHPqxASuXZGRXsVjjJ-HBSYdz2R5EtbqOBcCmf1ULtegfYPohP7t8r7Z3GGAph-ZtmBiViP7uomJzxSGNSqovSbgX--Yd7uCM7u7BmaeBwAIFkwyPlPYnIGA1chjqQORtuOxWdBMvAkhGcITCrxBvuJWltOqJmtXr20ytdWPdtgJqTeWj6GKGYn161ne64IGsJw285unNdhBsDBT8t09HEzSZVAhURCzGts5ht98CBGnrbRnd0JUQwL3P2-yeNOFroLpfeF0NpY7VCGQ7-f7i9Y0wk9xFH5FVN12e5cyL2Zr103blkoP9D53lLlk0trm2w_J7-yJGclYYhauJYqnpBvTgBscYB2DlNyY"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=8ZjJ6iFPNtVTW4GXD3CT0CMoz7UsOfSQAza2v6t9xNc8JUjH8UnkJQkRC5GJXy_KA-gPX9dDIre3EAQ12eHY7xNE-xPk2cW2Zf0aD2Dk4DATJWeuqd5NPaESanifYUlo62xr1pBTzouD6iDSuP8MifYka21yc2EPU5bE5nE3PeCrOvyRIh5HNqCYpIHU8UL0TP2Q4WRnwDSD6iDYO3m40gMuC2ft3zj8m8XEe7QxvdfV-JjUP7hz1CDMfyGN27GeGfHwfJ2Q3osrdRR120YFDzk1gREIUactzY-3YF3wGOWa8BtP53APBvLWt_JeLZrKrJ4PKpamND0SEAQ91ON5_YqmwM-OvUX03iQbj8Hg8vDKlB8bHIry-x4HlHikzvQxhmuWzrBaCO6Ym6C9tN0790yxue-CaeItqYc0CB8OVgqO1DJmUzrEo-It1K3q3gRHuTNJBdZQuVaAESc25A6v741Evg8Pe0ZbRxQT7QLfPpkoaxrIytzPTQzSpjnroO-xvOTP3ibwVskZszQrhza2pVF5VOaX9CgxZVf-215v6WLhuNwffbw5vPjNWxHAjtal3X-C2E8x43dtyAkR747SwQLjr0S3Joee8mgLy8fyVqtAJgdtHnPf0jn5twf4fdCqM2E589tmghYC8lU_i-xj51nuamFaA8h0JQoi13bfkEuqGRHS5boK9LBCASRd-Z5ZPKyX0GWIGJn5DH3KzlsFPFjkReK7D-9cWvBe15FlIQO9LHBw1JB0WWe8yAf65yMMnz1-TP73X2NyTd1aHQeHxmUvMBnByKk5nXL48m2VZv1lFpweeBjzToGpb4eVJCJG1xQpHz2fDhkyiaoDzUwA9a8ma0MXpsAm5fbcQtHpsXgQJevEu1NlBOvBrMaZnRakC8-pCry8VNVLOQJ-pjCtlbK_8PilUsUHVbfqFJviXlX7-kzQF1Rn5p10-EY_ovhK_sxPm8G6lVji3d2sNZhGnthC6D1iuBe0z-rsEi2xvypk5YADyg3DIabKEuqHcizmMyj_iJXfvNzAqi95DDfesIz9tXi_iLweTjqBxILbBPGFYQGByWIOyjJus_oVhAO0JpfKnH1E8_TW5xU4PBUEEAa54ahxlhpKZAaBDc1yZDW6obKidUjv-8Zsal4RfX1oKRHv0-BxhzdW1MQA8hmKJgd2u9MI86xuK3Pj86EgYH8Rg-43Qt-tVjuoW9EQQ1DtPy1Ml8IoW_L8n8dGbiOVZp75KqlrzlzhTJyTPWqYCGBl2G2gMoUvSLroTiocxvcb0J4lFTnxdnocl4F5kFCFQFMrELhya-VLYKV8Fs-_OCOBg8FDidD0fliAO5jdgA8yrtrCPfITqj3myF21Dm3Pu7rzF-yuIzJT1KmAmK0kcwIuy8yhNrGSprsjxQlNFoke9o_x8T4OirdXFGCLAQfDMihcYw0JySf3qYJ7voOiySAjiRSFdvsXl337pDNq-sbpR_kMYMsfBjPy9PNqSUhf0o9WWO_23O8j-SfuOxbCn6Xni-tPkr0SQb3hRtlCneFPV_Dvx8JurJNfm_F02AEV1-6EtrmFiGynSuUZfw7bWLyDi0tjLGRf7HNblCxg611IaCctojyxYZv0mDGrb2hWQfOASyaoxD4Wk_1B5Xz-K8AxVynN6NRg-MSAFz9gc-5KzblV_6KN8Z68QD9bmwRKDPpvioeGnig4Yc3_dxeIPRU8B4UE2EGJ7zjiVEBDB8nxh09RQDkcNdMSnSWYbEcHmcReaAffaqme9vfOK3SjSJLYefmLEeX7XKEiR-1QHgtAWz4byzk6Cl9rqkPitA8PYvu4h7clRGagMh0JhbVK04CPjBZwXMHAE76DWE3BczG4d7cy_BysV84_k3IcO2FaXWzsf-z6AMomuUN0SZM_fPntDPDb92vEs4L-tLF6ag6Gq_RV2-qGJ-Wv37aY0oXf0Sw9iB59rERVW7_uF0HHGHZmx3qkZhs0WGXvdlfZ7_lVli0pdcSQYZEc6beJH53Uga7K9NW5aCLXWW3beWUsPbhO8amrnTqgCU4EHQZ_Ex4XWzhipCdTLZo8JPsjr2JO32jrT6caHSxX0858Yh720X42L9Nx_Zk_FiY8lEz7xqxSbrhWoP820PNNS_2RGH8fLZFIHQRHcwBfAQ8l-zMvPg-UFdfrZgxPKexfBQRGIovbtpIYBxfeeemFZOPC6l4KaWnTivDgY0tVoHx_rSKMiEkNyuPL4l4JAG0LTrRVTxdRtb6tM4sJz6hyG9buohgSCDrBwilf-VYhPbQqA8LvRttdVfc8C3urjSTX32c5d41n12fPeHv4GjN8zTKjnwDwdGkN8ZqCnU54jwJswtpMgzx9q7faBHLb9VsLM-B8vFdNw3dxZJqU66lM2Nepq9PGykgGc6zgQkEIIlX2RBETOgH0xQgMXBAVks75cCD9-YQb0z0AeTtHHPqxASuXZGRXsVjjJ-HBSYdz2R5EtbqOBcCmf1ULtegfYPohP7t8r7Z3GGAph-ZtmBiViP7uomJzxSGNSqovSbgX--Yd7uCM7u7BmaeBwAIFkwyPlPYnIGA1chjqQORtuOxWdBMvAkhGcITCrxBvuJWltOqJmtXr20ytdWPdtgJqTeWj6GKGYn161ne64IGsJw285unNdhBsDBT8t09HEzSZVAhURCzGts5ht98CBGnrbRnd0JUQwL3P2-yeNOFroLpfeF0NpY7VCGQ7-f7i9Y0wk9xFH5FVN12e5cyL2Zr103blkoP9D53lLlk0trm2w_J7-yJGclYYhauJYqnpBvTgBscYB2DlNyY&cipher=v2"
+      },
+      {
+        "data": {
+          "body": {},
+          "filter": "||mercadoclics.com^$third-party",
+          "listName": "easyprivacy.txt",
+          "query": {
+            "cipher": "v2",
+            "d": "Cgh-VrZrG5K50a8Alv4gELBGS-FcGI1_cmkruzKY0qg5GE19Dn6JqB61gf6FU_IL00wQizGxV_rvITFhm9ozqYoXoeR3v1nLi7mZMuuxg7hlUTtJna33LU7DdjwVoB9mZjMJCCXF_FhztHW5t1wRpzS1Z0wy7d0wHlnx3GwtQv5nRlCYOdf_O09YpIaX0WtpPOHfAboUtYk0ZpbWsu5xvTiXpHHo3bzi9i4ZXyRiL0wQ3f_qW01IMYytqHvNzj1QKWILDHhwfr2ZREKePcKYvyWfmig-4TxetPl-HCvJScdbh6NlmADowQ05EgdSDoW3ETAYgWYho5FiHn7gKFgCXrczdxXqSzq8esI0wKudrF6ha4ULn3ahRnRBhCKtL8XhpsZpYPbiHITbUBA5htTxpsMQobKqYvJnE-tU_cAWJ-gG4xlNrR8xcLeGPKbDj1LuFKOa0U3zUQCMD7npexH-dRih0q-EynjAgNvrLW1veyPStrolUmzLPIRWcEO8cH8iyUtl7bc5ngLu4tLwddeqQp0Ra3EGtTe7CpYi7PQmxFCbrIBV0iASfDZQmVMspyO3PZThNtV5MxwNPaYjZZ81K6afdT__OOFumMyQrA-6vagIujWVC-5IPMRVgNWku2jzugIEufONpf8XojxCuGJmEedrg7JRvHjoSyexo51M5vbN0xVqC5v9LeU-F7U9kBXZN48mrbzd6gpY68PIqmS7ITn10HxWbIQXZoKhw5L4UFp8PUWqevkISTUHRhUUgdogCxuXP_4WkhwZM6Y5g6xEnslFxcmnNmzCKTjrwMqv9HaNp3UFEJ7xmt5j3GN61wqnO4Ho_iFLEY-3b4H4hFCI9K5yaHhQ1vdnKkVC9U-mz5LFIOy1i1Eg27sBau07tHCOS1jbGMVxMzbEeLaO3-QbcD0OLrE20Xj206VXiUbQrntqxgPxtNMrJf52G_6_JthCMHwncAQosDXGb2QkafrwLYRqN19BbFoKTwCoAzjCK1O6x3sB33hj1JBRTe9K2q0dg0Evk_VEigdFFyyEChNZVKv4DpXUGFsewt3o475WxU5wHg1YVNvvf148MUbBvV1VU7wbVrmLTm6P30Sh884L96Su9-tsTPIxRz_h4hhqIB3I_MmSJ5iWetDzMS8EImJM45JTCJyP3_NrZ1k5UTUBMJ6SxNsqcaPKuSK0rEwmQvHRwWRWWUBj5itOJ_GvKMCkvqcSDuo_mUOXUYtJum5eqghFlvVa2u7vweUYbRxPvO59ilyllDlCsgQPpVsEnwIgWdVJEVrwmfFHJTEEyKwVlJRuGm3BlyAC-n8bmswY0OnhHrWdtKjNxB5K767C7TDZx33zD3lSoEONJ4Jo2McNIS40VX7wcrUtd2q7GYOTKk4dNegzypO2slrMDrNCuTh3NZoS07uJ2Gb4mJtWHkSK3fIEAiTwKzRa4Vi46x45mcfG-dLGd5P5KFDqeAeNIYZNcUTu0ywWX0Sxq2RRTYwTg5K10pwCO8-GFXpR-RYrLDKj9ZFYSaU7R2RlMO18sc_ehBlFqSHEAz0EygGqhPrkvbZzVbFoMUL2ZG2eXZejN19bHZ6yLaDAKq75X4SGQ89x8gaWlL-SWx7PU7ShRVqd9fAbJR3M50h1bG3DEzyjSo7z2T8_hiUtba0i1kh4WPGA5nz8Au5uGlR8_CTkLwfBeoxfuoXt-fzZ7pyWk0lLhowAZvilCS18YRWrRt1VnVnFQ0H2hdCvb3z96BojbBAH6HSlzwVqnCsYYZtKcJDDUV8e4cP8kLyvpun8JXirkX265weUonutvavta_ToUXprKcOt8zr_eQ1kflqWAFk9hWPgb2pCafij3dW-NOaxXr4FP07Xhd_9VxdkVoXIP542uvpixSb7219SEICd19HkhVb_zlSL_GfORDrBZvCCnYP-Q0SUsfrbEx76TNEP2fmX4qLHCzoUBfQY5joXyf7AEr2kEMiMIbW7RG98FP1J_Nw-XIPCmWRuAdm3TUjfJrQBOZfexvgwE-FN_EDhgV7iPWVFOW9-FZs7Tr0YCfBYWf0DMF27qkO_prvX2SO57X-epjj25-rUfxOOKluZuaSR6hrm4kUvFkDzZkk0jDUj1PfFSQqdMJIBDDxR3GaGdv3hvVQkEQAAvY0qLNOxZxi__ijybIcGH7SRYRLDmhown3-cNErcEH2Lvq4fSsygyJQgsi0hFXl6rM4yH7h5oIwdI7QmZcHjHAEEZL54cmhaEZUMIxPauVRne4rdO8wcYgZ3e4XwT5nWWns5bsV7ADkocwrG1qVteW61T8GomE2Gk_Cenp5WY-DvlmrUXz-iCmDOkhMlAd-dqDTLfPRl7XjpS485TY8f00qDYUh8ah950gaarerY3RzFmqAWpgtbf2XGgU-L5xqgYRIE2r9tk7aINMhaKCDxgo1mJFERXcc6DKVNT2wzBBvJUdH2P1h5_7aGftqhOO0F0rNZh23w2sxVeOvkhsNmrODWzng0NB2Pl9mvzpwPdY1fAbBKPkzIBlBf1pVshZy_cQbrDL1rovU90LtUIFIodS5HF3TXyDAbvB0vFjZ3Xz7yUpKn1Gri8QlQ5yO3wGVZF8B-ZBF-PnUTA_5nRtgxwKo_AxcP9GtxHdYXD5WnuBfijoR4b2G3ooKBOHrXDzmhFc9Ki77V8aH5AeesVaTBBPGI9wUdiyP9J399-Uh0mzcdT3f7dbsPrvvwu_YdVfr5aYRwEHCbXzpAxyQBZkLXodXbvz__xMbTidJgK7Q2s_tgA6VBaL-1c0HDw5qBUp0MeJ0CBslOAWy8JAw"
+          }
+        },
+        "stack": [
+          {
+            "fileName": "https://www.mercadolivre.com.br/",
+            "source": "ThirdPartyTracker RequestHandler"
+          }
+        ],
+        "type": "TrackingRequest",
+        "url": "https://print1.mercadoclics.com/display/prints/MLB/count?d=Cgh-VrZrG5K50a8Alv4gELBGS-FcGI1_cmkruzKY0qg5GE19Dn6JqB61gf6FU_IL00wQizGxV_rvITFhm9ozqYoXoeR3v1nLi7mZMuuxg7hlUTtJna33LU7DdjwVoB9mZjMJCCXF_FhztHW5t1wRpzS1Z0wy7d0wHlnx3GwtQv5nRlCYOdf_O09YpIaX0WtpPOHfAboUtYk0ZpbWsu5xvTiXpHHo3bzi9i4ZXyRiL0wQ3f_qW01IMYytqHvNzj1QKWILDHhwfr2ZREKePcKYvyWfmig-4TxetPl-HCvJScdbh6NlmADowQ05EgdSDoW3ETAYgWYho5FiHn7gKFgCXrczdxXqSzq8esI0wKudrF6ha4ULn3ahRnRBhCKtL8XhpsZpYPbiHITbUBA5htTxpsMQobKqYvJnE-tU_cAWJ-gG4xlNrR8xcLeGPKbDj1LuFKOa0U3zUQCMD7npexH-dRih0q-EynjAgNvrLW1veyPStrolUmzLPIRWcEO8cH8iyUtl7bc5ngLu4tLwddeqQp0Ra3EGtTe7CpYi7PQmxFCbrIBV0iASfDZQmVMspyO3PZThNtV5MxwNPaYjZZ81K6afdT__OOFumMyQrA-6vagIujWVC-5IPMRVgNWku2jzugIEufONpf8XojxCuGJmEedrg7JRvHjoSyexo51M5vbN0xVqC5v9LeU-F7U9kBXZN48mrbzd6gpY68PIqmS7ITn10HxWbIQXZoKhw5L4UFp8PUWqevkISTUHRhUUgdogCxuXP_4WkhwZM6Y5g6xEnslFxcmnNmzCKTjrwMqv9HaNp3UFEJ7xmt5j3GN61wqnO4Ho_iFLEY-3b4H4hFCI9K5yaHhQ1vdnKkVC9U-mz5LFIOy1i1Eg27sBau07tHCOS1jbGMVxMzbEeLaO3-QbcD0OLrE20Xj206VXiUbQrntqxgPxtNMrJf52G_6_JthCMHwncAQosDXGb2QkafrwLYRqN19BbFoKTwCoAzjCK1O6x3sB33hj1JBRTe9K2q0dg0Evk_VEigdFFyyEChNZVKv4DpXUGFsewt3o475WxU5wHg1YVNvvf148MUbBvV1VU7wbVrmLTm6P30Sh884L96Su9-tsTPIxRz_h4hhqIB3I_MmSJ5iWetDzMS8EImJM45JTCJyP3_NrZ1k5UTUBMJ6SxNsqcaPKuSK0rEwmQvHRwWRWWUBj5itOJ_GvKMCkvqcSDuo_mUOXUYtJum5eqghFlvVa2u7vweUYbRxPvO59ilyllDlCsgQPpVsEnwIgWdVJEVrwmfFHJTEEyKwVlJRuGm3BlyAC-n8bmswY0OnhHrWdtKjNxB5K767C7TDZx33zD3lSoEONJ4Jo2McNIS40VX7wcrUtd2q7GYOTKk4dNegzypO2slrMDrNCuTh3NZoS07uJ2Gb4mJtWHkSK3fIEAiTwKzRa4Vi46x45mcfG-dLGd5P5KFDqeAeNIYZNcUTu0ywWX0Sxq2RRTYwTg5K10pwCO8-GFXpR-RYrLDKj9ZFYSaU7R2RlMO18sc_ehBlFqSHEAz0EygGqhPrkvbZzVbFoMUL2ZG2eXZejN19bHZ6yLaDAKq75X4SGQ89x8gaWlL-SWx7PU7ShRVqd9fAbJR3M50h1bG3DEzyjSo7z2T8_hiUtba0i1kh4WPGA5nz8Au5uGlR8_CTkLwfBeoxfuoXt-fzZ7pyWk0lLhowAZvilCS18YRWrRt1VnVnFQ0H2hdCvb3z96BojbBAH6HSlzwVqnCsYYZtKcJDDUV8e4cP8kLyvpun8JXirkX265weUonutvavta_ToUXprKcOt8zr_eQ1kflqWAFk9hWPgb2pCafij3dW-NOaxXr4FP07Xhd_9VxdkVoXIP542uvpixSb7219SEICd19HkhVb_zlSL_GfORDrBZvCCnYP-Q0SUsfrbEx76TNEP2fmX4qLHCzoUBfQY5joXyf7AEr2kEMiMIbW7RG98FP1J_Nw-XIPCmWRuAdm3TUjfJrQBOZfexvgwE-FN_EDhgV7iPWVFOW9-FZs7Tr0YCfBYWf0DMF27qkO_prvX2SO57X-epjj25-rUfxOOKluZuaSR6hrm4kUvFkDzZkk0jDUj1PfFSQqdMJIBDDxR3GaGdv3hvVQkEQAAvY0qLNOxZxi__ijybIcGH7SRYRLDmhown3-cNErcEH2Lvq4fSsygyJQgsi0hFXl6rM4yH7h5oIwdI7QmZcHjHAEEZL54cmhaEZUMIxPauVRne4rdO8wcYgZ3e4XwT5nWWns5bsV7ADkocwrG1qVteW61T8GomE2Gk_Cenp5WY-DvlmrUXz-iCmDOkhMlAd-dqDTLfPRl7XjpS485TY8f00qDYUh8ah950gaarerY3RzFmqAWpgtbf2XGgU-L5xqgYRIE2r9tk7aINMhaKCDxgo1mJFERXcc6DKVNT2wzBBvJUdH2P1h5_7aGftqhOO0F0rNZh23w2sxVeOvkhsNmrODWzng0NB2Pl9mvzpwPdY1fAbBKPkzIBlBf1pVshZy_cQbrDL1rovU90LtUIFIodS5HF3TXyDAbvB0vFjZ3Xz7yUpKn1Gri8QlQ5yO3wGVZF8B-ZBF-PnUTA_5nRtgxwKo_AxcP9GtxHdYXD5WnuBfijoR4b2G3ooKBOHrXDzmhFc9Ki77V8aH5AeesVaTBBPGI9wUdiyP9J399-Uh0mzcdT3f7dbsPrvvwu_YdVfr5aYRwEHCbXzpAxyQBZkLXodXbvz__xMbTidJgK7Q2s_tgA6VBaL-1c0HDw5qBUp0MeJ0CBslOAWy8JAw&cipher=v2"
+      }
+    ]
+  }
+}

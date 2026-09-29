@@ -10,4 +10,4 @@ Go to privacy-test-pages.site
 
 Go to www.publisher-company.site
 
-ID didn't exist and was generated - "100".
+ID didn't exist and was generated - "96".

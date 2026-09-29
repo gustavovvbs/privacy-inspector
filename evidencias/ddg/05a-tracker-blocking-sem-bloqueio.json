@@ -2,7 +2,7 @@
   "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
   "hostname": "privacy-test-pages.site",
   "baseDomain": "privacy-test-pages.site",
-  "startedAt": 1790648305457,
+  "startedAt": 1790651171150,
   "thirdParties": {
     "bad.third-party.site": {
       "domain": "bad.third-party.site",
@@ -23,11 +23,13 @@
       "tracker": "bad.third-party.site",
       "category": "test",
       "blocked": 0,
+      "affiliated": false,
       "owner": "DDG Privacy Test Pages"
     }
   },
   "requestsTotal": 14,
   "requestsThirdParty": 11,
+  "requestsAffiliated": 0,
   "storage": {
     "localStorage": {
       "reads": 0,
@@ -119,7 +121,7 @@
         "EventTarget.addEventListener"
       ]
     },
-    "https://bad.third-party.site/privacy-protections/request-blocking/block-me/frame.html?0.05327382442612405": {
+    "https://bad.third-party.site/privacy-protections/request-blocking/block-me/frame.html?0.5913029793354032": {
       "thirdParty": true,
       "hooked": [
         "Storage.setItem",
@@ -184,7 +186,7 @@
         "EventTarget.addEventListener"
       ]
     },
-    "https://bad.third-party.site/privacy-protections/request-blocking/block-me/object.png?0.05327382442612405": {
+    "https://bad.third-party.site/privacy-protections/request-blocking/block-me/object.png?0.5913029793354032": {
       "thirdParty": true,
       "hooked": [
         "Storage.setItem",
@@ -254,7 +256,7 @@
     "referrerPage": "https://privacy-test-pages.site/tracker-reporting/1major-with-surrogate.html",
     "redirectChain": [],
     "bounces": [],
-    "dwellMs": 16573
+    "dwellMs": 16358
   },
   "cookieSync": {
     "events": [],
@@ -274,7 +276,7 @@
         "script": "https://privacy-test-pages.site/privacy-protections/request-blocking/main.js",
         "via": "content",
         "blocked": false,
-        "at": 1790648307877
+        "at": 1790651173561
       }
     ],
     "eventsources": [],

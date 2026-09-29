@@ -1,0 +1,1720 @@
+{
+  "url": "https://www.terra.com.br/",
+  "hostname": "www.terra.com.br",
+  "baseDomain": "terra.com.br",
+  "startedAt": 1790652271415,
+  "thirdParties": {
+    "trrsf.com": {
+      "domain": "trrsf.com",
+      "hosts": {
+        "s1.trrsf.com": 121,
+        "p2.trrsf.com": 53,
+        "p1-cloud.trrsf.com": 2
+      },
+      "requests": 176,
+      "types": {
+        "font": 4,
+        "script": 18,
+        "stylesheet": 20,
+        "image": 54,
+        "imageset": 47,
+        "xmlhttprequest": 33
+      },
+      "tracker": null,
+      "category": null,
+      "blocked": 0,
+      "affiliated": true
+    },
+    "doubleclick.net": {
+      "domain": "doubleclick.net",
+      "hosts": {
+        "securepubads.g.doubleclick.net": 1
+      },
+      "requests": 1,
+      "types": {
+        "script": 1
+      },
+      "tracker": "doubleclick.net",
+      "category": "advertising",
+      "blocked": 0,
+      "affiliated": false,
+      "owner": "Google"
+    },
+    "googletagmanager.com": {
+      "domain": "googletagmanager.com",
+      "hosts": {
+        "www.googletagmanager.com": 1
+      },
+      "requests": 1,
+      "types": {
+        "script": 1
+      },
+      "tracker": "googletagmanager.com",
+      "category": "analytics",
+      "blocked": 0,
+      "affiliated": false,
+      "owner": "Google Analytics"
+    },
+    "tailtarget.com": {
+      "domain": "tailtarget.com",
+      "hosts": {
+        "tags.t.tailtarget.com": 1
+      },
+      "requests": 1,
+      "types": {
+        "script": 1
+      },
+      "tracker": "tailtarget.com",
+      "category": "advertising",
+      "blocked": 0,
+      "affiliated": false,
+      "owner": "Tail (BR)"
+    },
+    "scorecardresearch.com": {
+      "domain": "scorecardresearch.com",
+      "hosts": {
+        "sb.scorecardresearch.com": 1
+      },
+      "requests": 1,
+      "types": {
+        "script": 1
+      },
+      "tracker": "scorecardresearch.com",
+      "category": "analytics",
+      "blocked": 0,
+      "affiliated": false,
+      "owner": "comScore"
+    },
+    "privacymanager.io": {
+      "domain": "privacymanager.io",
+      "hosts": {
+        "launchpad-wrapper.privacymanager.io": 1,
+        "launchpad.privacymanager.io": 1,
+        "geo.privacymanager.io": 3,
+        "ats-wrapper.privacymanager.io": 1
+      },
+      "requests": 6,
+      "types": {
+        "script": 3,
+        "xmlhttprequest": 3
+      },
+      "tracker": "privacymanager.io",
+      "category": "identity",
+      "blocked": 0,
+      "affiliated": false,
+      "owner": "LiveRamp ATS / Privacy Manager"
+    },
+    "chartbeat.com": {
+      "domain": "chartbeat.com",
+      "hosts": {
+        "static.chartbeat.com": 1
+      },
+      "requests": 1,
+      "types": {
+        "script": 1
+      },
+      "tracker": "chartbeat.com",
+      "category": "analytics",
+      "blocked": 0,
+      "affiliated": false,
+      "owner": "Chartbeat"
+    },
+    "criteo.com": {
+      "domain": "criteo.com",
+      "hosts": {
+        "gum.criteo.com": 2
+      },
+      "requests": 2,
+      "types": {
+        "xmlhttprequest": 2
+      },
+      "tracker": "criteo.com",
+      "category": "advertising",
+      "blocked": 0,
+      "affiliated": false,
+      "owner": "Criteo"
+    },
+    "rlcdn.com": {
+      "domain": "rlcdn.com",
+      "hosts": {
+        "api.rlcdn.com": 1
+      },
+      "requests": 1,
+      "types": {
+        "xmlhttprequest": 1
+      },
+      "tracker": "rlcdn.com",
+      "category": "identity",
+      "blocked": 0,
+      "affiliated": false,
+      "owner": "LiveRamp"
+    },
+    "trrsf.com.br": {
+      "domain": "trrsf.com.br",
+      "hosts": {
+        "p1-cloud.trrsf.com.br": 11,
+        "p1.trrsf.com.br": 2
+      },
+      "requests": 13,
+      "types": {
+        "xmlhttprequest": 10,
+        "script": 3
+      },
+      "tracker": null,
+      "category": null,
+      "blocked": 0,
+      "affiliated": true
+    },
+    "amazon-adsystem.com": {
+      "domain": "amazon-adsystem.com",
+      "hosts": {
+        "c.amazon-adsystem.com": 1
+      },
+      "requests": 1,
+      "types": {
+        "script": 1
+      },
+      "tracker": "amazon-adsystem.com",
+      "category": "advertising",
+      "blocked": 0,
+      "affiliated": false,
+      "owner": "Amazon"
+    },
+    "taboola.com": {
+      "domain": "taboola.com",
+      "hosts": {
+        "cdn.taboola.com": 1
+      },
+      "requests": 1,
+      "types": {
+        "script": 1
+      },
+      "tracker": "taboola.com",
+      "category": "advertising",
+      "blocked": 0,
+      "affiliated": false,
+      "owner": "Taboola"
+    },
+    "google.com": {
+      "domain": "google.com",
+      "hosts": {
+        "accounts.google.com": 1
+      },
+      "requests": 1,
+      "types": {
+        "script": 1
+      },
+      "tracker": null,
+      "category": null,
+      "blocked": 0,
+      "affiliated": false
+    }
+  },
+  "requestsTotal": 223,
+  "requestsThirdParty": 206,
+  "requestsAffiliated": 189,
+  "storage": {
+    "localStorage": {
+      "reads": 37,
+      "writes": 12,
+      "keys": {
+        "FPD": 6,
+        "mdivo-segmento": 1,
+        "_pbjs_id_optout": 1,
+        "cto_bundle": 1,
+        "cto_dna_bundle": 1,
+        "cto_bidid": 1,
+        "prebid.cookieTest": 3,
+        "_lr_env": 1,
+        "geo-location": 2,
+        "terrauserinfo-idperm": 1,
+        "adsWallStatus": 1,
+        "zaz-user-stalker_br": 3,
+        "mod-notifications-br": 18,
+        "mdivo-md5": 3,
+        "mdivo-cpid": 1,
+        "mdivo-id": 2,
+        "zaz-user-googleSignInData": 1,
+        "terrauserinfo-emh": 1,
+        "user-lgpd-accept": 1
+      },
+      "thirdPartyFrames": {}
+    },
+    "sessionStorage": {
+      "reads": 4,
+      "writes": 0,
+      "keys": {
+        "fpd_user_customer_terra_services": 1,
+        "__pbjs_debugging__": 1,
+        "terrauserinfo-updated": 1,
+        "reportidperm-updated": 1
+      },
+      "thirdPartyFrames": {}
+    },
+    "indexedDB": {
+      "opens": 0,
+      "databases": {},
+      "thirdPartyFrames": {}
+    },
+    "cacheStorage": {
+      "opens": 1,
+      "caches": {
+        "infinite-v1": 1
+      },
+      "thirdPartyFrames": {}
+    },
+    "events": [
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "FPD",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js",
+        "frame": "1ª parte",
+        "at": 1790652271876
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "FPD",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js",
+        "frame": "1ª parte",
+        "at": 1790652271877
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mdivo-segmento",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js",
+        "frame": "1ª parte",
+        "at": 1790652271877
+      },
+      {
+        "api": "sessionStorage",
+        "op": "getItem",
+        "key": "fpd_user_customer_terra_services",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js",
+        "frame": "1ª parte",
+        "at": 1790652271877
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "FPD",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js",
+        "frame": "1ª parte",
+        "at": 1790652271877
+      },
+      {
+        "api": "sessionStorage",
+        "op": "getItem",
+        "key": "__pbjs_debugging__",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+        "frame": "1ª parte",
+        "at": 1790652271900
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "_pbjs_id_optout",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+        "frame": "1ª parte",
+        "at": 1790652271909
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "cto_bundle",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+        "frame": "1ª parte",
+        "at": 1790652271911
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "cto_dna_bundle",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+        "frame": "1ª parte",
+        "at": 1790652271911
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "cto_bidid",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+        "frame": "1ª parte",
+        "at": 1790652271911
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "prebid.cookieTest",
+        "valueLength": 1,
+        "script": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+        "frame": "1ª parte",
+        "at": 1790652271911
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "prebid.cookieTest",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+        "frame": "1ª parte",
+        "at": 1790652271911
+      },
+      {
+        "api": "localStorage",
+        "op": "removeItem",
+        "key": "prebid.cookieTest",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+        "frame": "1ª parte",
+        "at": 1790652271911
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "_lr_env",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+        "frame": "1ª parte",
+        "at": 1790652271912
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "geo-location",
+        "valueLength": null,
+        "script": "https://launchpad.privacymanager.io/latest/launchpad.bundle.js",
+        "frame": "1ª parte",
+        "at": 1790652271994
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "geo-location",
+        "valueLength": 72,
+        "script": "https://launchpad.privacymanager.io/latest/launchpad.bundle.js",
+        "frame": "1ª parte",
+        "at": 1790652272044
+      },
+      {
+        "api": "sessionStorage",
+        "op": "getItem",
+        "key": "terrauserinfo-updated",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1776957313/fe/zaz-mod-t360-customer/_js/mod-t360-customer.min.js",
+        "frame": "1ª parte",
+        "at": 1790652272098
+      },
+      {
+        "api": "sessionStorage",
+        "op": "getItem",
+        "key": "reportidperm-updated",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1776957313/fe/zaz-mod-t360-customer/_js/mod-t360-customer.min.js",
+        "frame": "1ª parte",
+        "at": 1790652272099
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "terrauserinfo-idperm",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1776957313/fe/zaz-mod-t360-customer/_js/mod-t360-customer.min.js",
+        "frame": "1ª parte",
+        "at": 1790652272099
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "adsWallStatus",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1790365514/fe/zaz-ui-t360-home/_js/context.min.js",
+        "frame": "1ª parte",
+        "at": 1790652272209
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "FPD",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js",
+        "frame": "1ª parte",
+        "at": 1790652272209
+      },
+      {
+        "api": "cacheStorage",
+        "op": "open",
+        "key": "infinite-v1",
+        "script": "https://s1.trrsf.com/update-1790365514/fe/zaz-ui-t360-home/_js/context.min.js",
+        "frame": "1ª parte",
+        "at": 1790652272215
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "zaz-user-stalker_br",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652272684
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "zaz-user-stalker_br",
+        "valueLength": 148,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273183
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mod-notifications-br",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273526
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "mod-notifications-br",
+        "valueLength": 2,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273526
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mod-notifications-br",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273526
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mod-notifications-br",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273526
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "mod-notifications-br",
+        "valueLength": 550,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273526
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mod-notifications-br",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273526
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "mod-notifications-br",
+        "valueLength": 880,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273526
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mod-notifications-br",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273526
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "mod-notifications-br",
+        "valueLength": 1743,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273526
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mod-notifications-br",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273526
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "mod-notifications-br",
+        "valueLength": 2245,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273527
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mod-notifications-br",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273527
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "mod-notifications-br",
+        "valueLength": 2640,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273527
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mdivo-md5",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1776957313/fe/zaz-mod-t360-customer/_js/mod-t360-customer.min.js",
+        "frame": "1ª parte",
+        "at": 1790652273897
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mdivo-cpid",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1789154714/fe/zaz-ui-t360/_js/context.min.js",
+        "frame": "1ª parte",
+        "at": 1790652273970
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mdivo-id",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1789154714/fe/zaz-ui-t360/_js/context.min.js",
+        "frame": "1ª parte",
+        "at": 1790652273970
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "zaz-user-googleSignInData",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273970
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mdivo-id",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1789154714/fe/zaz-ui-t360/_js/context.min.js",
+        "frame": "1ª parte",
+        "at": 1790652273970
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "terrauserinfo-emh",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1789154714/fe/zaz-ui-t360/_js/context.min.js",
+        "frame": "1ª parte",
+        "at": 1790652273970
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "zaz-user-stalker_br",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273970
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mod-notifications-br",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273970
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "mod-notifications-br",
+        "valueLength": 2938,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273970
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mod-notifications-br",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273970
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "mod-notifications-br",
+        "valueLength": 3303,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652273970
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mod-notifications-br",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js",
+        "frame": "1ª parte",
+        "at": 1790652274426
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mdivo-md5",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1776957313/fe/zaz-mod-t360-customer/_js/mod-t360-customer.min.js",
+        "frame": "1ª parte",
+        "at": 1790652274902
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "user-lgpd-accept",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1786557910/fe/zaz-app-t360-navbar-notifications/_js/app-t360-navbar-notifications.min.js",
+        "frame": "1ª parte",
+        "at": 1790652274906
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "mdivo-md5",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1776957313/fe/zaz-mod-t360-customer/_js/mod-t360-customer.min.js",
+        "frame": "1ª parte",
+        "at": 1790652275930
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "FPD",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js",
+        "frame": "1ª parte",
+        "at": 1790652283824
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "FPD",
+        "valueLength": null,
+        "script": "https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js",
+        "frame": "1ª parte",
+        "at": 1790652285330
+      }
+    ]
+  },
+  "frames": {
+    "https://www.terra.com.br/": {
+      "thirdParty": false,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    },
+    "about:blank": {
+      "thirdParty": false,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    },
+    "https://montador.terra.com.br/": {
+      "thirdParty": false,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    }
+  },
+  "navigation": {
+    "referrerPage": "about:blank",
+    "redirectChain": [],
+    "bounces": [],
+    "dwellMs": 3572
+  },
+  "cookieSync": {
+    "events": [],
+    "identifiers": {
+      "GTM-T4ZBMQJ5": {
+        "param": "id",
+        "domains": [
+          "googletagmanager.com"
+        ]
+      },
+      "dataLayer": {
+        "param": "l",
+        "domains": [
+          "googletagmanager.com"
+        ]
+      },
+      "www.terra.com.br": {
+        "param": "domain",
+        "domains": [
+          "criteo.com"
+        ]
+      }
+    },
+    "redirects": []
+  },
+  "queryParams": {
+    "onPageUrl": [],
+    "onRequests": {}
+  },
+  "hijack": {
+    "websockets": [
+      {
+        "url": "wss://rt-cloud.terra.com.br/client/hubs/Portal?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL3JlYWx0aW1lLXRlcnJhLXByb2Qud2VicHVic3ViLmF6dXJlLmNvbS9jbGllbnQvaHVicy9Qb3J0YWwiLCJ",
+        "domain": "terra.com.br",
+        "thirdParty": false,
+        "script": "https://s1.trrsf.com/update-1742411108/fe/zaz-mod-t360-realtime/_js/mod-t360-realtime.min.js",
+        "via": "content",
+        "blocked": false,
+        "at": 1790652273099
+      }
+    ],
+    "eventsources": [],
+    "polling": [],
+    "inputListeners": [
+      {
+        "event": "keydown",
+        "target": "document",
+        "script": "https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js",
+        "scriptDomain": "trrsf.com",
+        "thirdParty": false,
+        "tracker": false,
+        "inFrame": false,
+        "frame": null,
+        "at": 1790652271855
+      },
+      {
+        "event": "keyup",
+        "target": "document",
+        "script": "https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js",
+        "scriptDomain": "trrsf.com",
+        "thirdParty": false,
+        "tracker": false,
+        "inFrame": false,
+        "frame": null,
+        "at": 1790652271856
+      }
+    ],
+    "motionListeners": {
+      "https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js": 1,
+      "https://s1.trrsf.com/update-1790365514/fe/zaz-ui-t360-home/_js/context.min.js": 1,
+      "https://s1.trrsf.com/update-1786478720/fe/zaz-app-t360-navbar/_js/app-t360-navbar.min.js": 1,
+      "https://s1.trrsf.com/update-1781873125/fe/zaz-app-t360-carousel-news/_js/app-t360-carousel-news.min.js": 1
+    },
+    "overridden": [
+      {
+        "target": "console.log",
+        "source": "function(){var args=Array.prototype.slice.call(arguments,0),scp=verifyScope(this,args),q=[scp||\"global\"];if(PRIVATE.queue.logs[q]||(PRIVATE.queue.logs[q]=[]),pe"
+      }
+    ],
+    "newGlobals": [
+      "0",
+      "1",
+      "2",
+      "zaz",
+      "tgmKey",
+      "terra_info_channeldetail",
+      "terra_info_id",
+      "terra_info_service",
+      "terra_info_type",
+      "terra_info_clssfctn",
+      "terra_info_pagetype",
+      "terra_stats_dvctype",
+      "terra_size_version",
+      "terraVersion",
+      "info_path",
+      "trr",
+      "regexLoadAds",
+      "css",
+      "style",
+      "applyTheme",
+      "applyUserTheme",
+      "terraPremium",
+      "__gamThreadYield",
+      "feedLive",
+      "tempTgm",
+      "tagmanAreas",
+      "tgmkeys",
+      "hostNames",
+      "includerComponents",
+      "contextData",
+      "ApplicationError",
+      "nunjucks",
+      "osThemeColor",
+      "tga",
+      "gaTerra",
+      "_ttconversion",
+      "_comscore",
+      "AdManager",
+      "googletag",
+      "dataLayer",
+      "gtag",
+      "keywords",
+      "blockedPages",
+      "isBlockedPage",
+      "keywordsii",
+      "pbjs",
+      "searchInStringByArray",
+      "getAudCookie",
+      "getAdRelevantWords",
+      "keyGen",
+      "sizeGen",
+      "keyword",
+      "customCriteria",
+      "_ttprofilescache",
+      "customCriteriaArray2",
+      "_sf_async_config",
+      "pbjsChunk",
+      "_pbjsGlobals",
+      "GlobalStorage",
+      "launchPad",
+      "launchPadConfiguration",
+      "nodeScript",
+      "__launchpad",
+      "__core-js_shared__",
+      "__tickerListenerEvent",
+      "adSizes",
+      "slotSize",
+      "adserver",
+      "reloadKey",
+      "reloadTime",
+      "reloadViewable",
+      "mediatype",
+      "googleTag",
+      "googleTag_area",
+      "bidders",
+      "Datetime",
+      "vttjs",
+      "WebVTT",
+      "videojs",
+      "default_gsi",
+      "_F_toggles_default_gsi",
+      "google",
+      "closure_lm_617361",
+      "clearImmediate",
+      "setImmediate",
+      "atsenvelopemodule",
+      "ats",
+      "envelopeModuleReady"
+    ],
+    "newGlobalsCount": 88,
+    "level": "low",
+    "integrityPhase": "load+3s"
+  },
+  "openedTabs": [],
+  "fingerprint": {
+    "canvas": {
+      "reads": 0,
+      "likely": 0,
+      "scripts": {},
+      "samples": []
+    },
+    "webgl": {
+      "calls": 0,
+      "unmasked": 0,
+      "scripts": {},
+      "methods": {}
+    },
+    "audio": {
+      "calls": 0,
+      "scripts": {},
+      "methods": {}
+    },
+    "fonts": {
+      "measureText": 0,
+      "scripts": {}
+    },
+    "enumeration": {
+      "props": {
+        "navigator.userAgent": 3,
+        "navigator.language": 2,
+        "navigator.platform": 1,
+        "screen.width": 1,
+        "screen.height": 1,
+        "navigator.cookieEnabled": 3,
+        "navigator.doNotTrack": 3,
+        "navigator.maxTouchPoints": 1,
+        "navigator.languages": 2,
+        "navigator.vendor": 1
+      },
+      "scripts": {
+        "https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js": {
+          "navigator.userAgent": 3,
+          "navigator.language": 1,
+          "navigator.platform": 1,
+          "screen.width": 1,
+          "screen.height": 1
+        },
+        "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js": {
+          "navigator.cookieEnabled": 2
+        },
+        "https://launchpad.privacymanager.io/latest/launchpad.bundle.js": {
+          "navigator.doNotTrack": 2,
+          "navigator.cookieEnabled": 1
+        },
+        "https://s1.trrsf.com/update-1731440948/fe/zaz-mod-datetime/zaz-datetime.min.js": {
+          "navigator.language": 1
+        },
+        "https://s1.trrsf.com/update-1789668313/fe/zaz-3rd/videojs/video.min.js": {
+          "navigator.maxTouchPoints": 1,
+          "navigator.languages": 2
+        },
+        "https://ats-wrapper.privacymanager.io/ats-modules/250901ac-8d44-4723-b4a2-2453f279569a/ats.js": {
+          "navigator.doNotTrack": 1,
+          "navigator.vendor": 1
+        }
+      }
+    },
+    "level": "none"
+  },
+  "cookies": {
+    "setHeaders": [
+      {
+        "name": "ApplicationGatewayAffinityCORS",
+        "persistent": false,
+        "expiresIn": null,
+        "domainAttr": null,
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": false,
+        "host": "api.terra.com.br",
+        "domain": "terra.com.br",
+        "thirdParty": false,
+        "affiliated": false,
+        "requestType": "xmlhttprequest",
+        "url": "https://api.terra.com.br/terrauserinfo/info",
+        "at": 1790652272680
+      },
+      {
+        "name": "ApplicationGatewayAffinity",
+        "persistent": false,
+        "expiresIn": null,
+        "domainAttr": null,
+        "sameSite": null,
+        "secure": false,
+        "httpOnly": false,
+        "host": "api.terra.com.br",
+        "domain": "terra.com.br",
+        "thirdParty": false,
+        "affiliated": false,
+        "requestType": "xmlhttprequest",
+        "url": "https://api.terra.com.br/terrauserinfo/info",
+        "at": 1790652272680
+      },
+      {
+        "name": "ak_bmsc",
+        "persistent": true,
+        "expiresIn": 7200,
+        "domainAttr": ".terra.com.br",
+        "sameSite": null,
+        "secure": false,
+        "httpOnly": true,
+        "host": "api.terra.com.br",
+        "domain": "terra.com.br",
+        "thirdParty": false,
+        "affiliated": false,
+        "requestType": "xmlhttprequest",
+        "url": "https://api.terra.com.br/terrauserinfo/info",
+        "at": 1790652272680
+      },
+      {
+        "name": "bm_sz",
+        "persistent": true,
+        "expiresIn": 14400,
+        "domainAttr": ".terra.com.br",
+        "sameSite": null,
+        "secure": false,
+        "httpOnly": false,
+        "host": "api.terra.com.br",
+        "domain": "terra.com.br",
+        "thirdParty": false,
+        "affiliated": false,
+        "requestType": "xmlhttprequest",
+        "url": "https://api.terra.com.br/terrauserinfo/info",
+        "at": 1790652272680
+      },
+      {
+        "name": "X-XAct-ID",
+        "persistent": true,
+        "expiresIn": 323642127,
+        "domainAttr": "terra.com.br",
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": false,
+        "host": "montador.terra.com.br",
+        "domain": "terra.com.br",
+        "thirdParty": false,
+        "affiliated": false,
+        "requestType": "sub_frame",
+        "url": "https://montador.terra.com.br/",
+        "at": 1790652272680
+      },
+      {
+        "name": "trrgeo",
+        "persistent": true,
+        "expiresIn": 86399,
+        "domainAttr": "terra.com.br",
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": false,
+        "host": "montador.terra.com.br",
+        "domain": "terra.com.br",
+        "thirdParty": false,
+        "affiliated": false,
+        "requestType": "sub_frame",
+        "url": "https://montador.terra.com.br/",
+        "at": 1790652272680
+      },
+      {
+        "name": "X-XAct-ID",
+        "persistent": true,
+        "expiresIn": 323642127,
+        "domainAttr": "terra.com.br",
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": false,
+        "host": "www.terra.com.br",
+        "domain": "terra.com.br",
+        "thirdParty": false,
+        "affiliated": false,
+        "requestType": "xmlhttprequest",
+        "url": "https://www.terra.com.br/",
+        "at": 1790652272971
+      },
+      {
+        "name": "trrgeo",
+        "persistent": true,
+        "expiresIn": 86399,
+        "domainAttr": "terra.com.br",
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": false,
+        "host": "www.terra.com.br",
+        "domain": "terra.com.br",
+        "thirdParty": false,
+        "affiliated": false,
+        "requestType": "xmlhttprequest",
+        "url": "https://www.terra.com.br/",
+        "at": 1790652272971
+      },
+      {
+        "name": "ApplicationGatewayAffinityCORS",
+        "persistent": false,
+        "expiresIn": null,
+        "domainAttr": null,
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": false,
+        "host": "api.terra.com.br",
+        "domain": "terra.com.br",
+        "thirdParty": false,
+        "affiliated": false,
+        "requestType": "xmlhttprequest",
+        "url": "https://api.terra.com.br/realtime-api/events",
+        "at": 1790652273089
+      },
+      {
+        "name": "ApplicationGatewayAffinity",
+        "persistent": false,
+        "expiresIn": null,
+        "domainAttr": null,
+        "sameSite": null,
+        "secure": false,
+        "httpOnly": false,
+        "host": "api.terra.com.br",
+        "domain": "terra.com.br",
+        "thirdParty": false,
+        "affiliated": false,
+        "requestType": "xmlhttprequest",
+        "url": "https://api.terra.com.br/realtime-api/events",
+        "at": 1790652273089
+      },
+      {
+        "name": "ak_bmsc",
+        "persistent": true,
+        "expiresIn": 7199,
+        "domainAttr": ".terra.com.br",
+        "sameSite": null,
+        "secure": false,
+        "httpOnly": true,
+        "host": "api.terra.com.br",
+        "domain": "terra.com.br",
+        "thirdParty": false,
+        "affiliated": false,
+        "requestType": "xmlhttprequest",
+        "url": "https://api.terra.com.br/realtime-api/events",
+        "at": 1790652273089
+      },
+      {
+        "name": "bm_sz",
+        "persistent": true,
+        "expiresIn": 14399,
+        "domainAttr": ".terra.com.br",
+        "sameSite": null,
+        "secure": false,
+        "httpOnly": false,
+        "host": "api.terra.com.br",
+        "domain": "terra.com.br",
+        "thirdParty": false,
+        "affiliated": false,
+        "requestType": "xmlhttprequest",
+        "url": "https://api.terra.com.br/realtime-api/events",
+        "at": 1790652273089
+      }
+    ],
+    "jsSet": [
+      {
+        "name": "_rdc1790652271909",
+        "persistent": true,
+        "raw": "_rdc1790652271909=writeable ;expires=Tue, 29 Sep 2026 03:24:41 GMT; path=/; SameSite=Lax",
+        "script": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+        "thirdParty": false,
+        "affiliated": false,
+        "frame": "terra.com.br",
+        "at": 1790652271910
+      },
+      {
+        "name": "_rdc1790652271909",
+        "persistent": true,
+        "raw": "_rdc1790652271909= ;expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/",
+        "script": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+        "thirdParty": false,
+        "affiliated": false,
+        "frame": "terra.com.br",
+        "at": 1790652271911
+      },
+      {
+        "name": "_lr_retry_request",
+        "persistent": true,
+        "raw": "_lr_retry_request=true ;expires=Tue, 29 Sep 2026 04:24:31 GMT; path=/",
+        "script": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+        "thirdParty": false,
+        "affiliated": false,
+        "frame": "terra.com.br",
+        "at": 1790652271912
+      },
+      {
+        "name": "_lr_env_src_ats",
+        "persistent": true,
+        "raw": "_lr_env_src_ats=false ;expires=Thu, 29 Oct 2026 03:24:31 GMT; path=/",
+        "script": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+        "thirdParty": false,
+        "affiliated": false,
+        "frame": "terra.com.br",
+        "at": 1790652271912
+      },
+      {
+        "name": "_lr_geo_location_state",
+        "persistent": true,
+        "raw": "_lr_geo_location_state=SP;max-age=172800;expires=Thu, 01 Oct 2026 03:24:33 GMT;path=/",
+        "script": "https://ats-wrapper.privacymanager.io/ats-modules/250901ac-8d44-4723-b4a2-2453f279569a/ats.js",
+        "thirdParty": false,
+        "affiliated": false,
+        "frame": "terra.com.br",
+        "at": 1790652273897
+      },
+      {
+        "name": "_lr_geo_location",
+        "persistent": true,
+        "raw": "_lr_geo_location=BR;max-age=172800;expires=Thu, 01 Oct 2026 03:24:33 GMT;path=/",
+        "script": "https://ats-wrapper.privacymanager.io/ats-modules/250901ac-8d44-4723-b4a2-2453f279569a/ats.js",
+        "thirdParty": false,
+        "affiliated": false,
+        "frame": "terra.com.br",
+        "at": 1790652273897
+      },
+      {
+        "name": "_lr_geo_location_state",
+        "persistent": true,
+        "raw": "_lr_geo_location_state=SP;max-age=172800;expires=Thu, 01 Oct 2026 03:24:33 GMT;path=/",
+        "script": "https://ats-wrapper.privacymanager.io/ats-modules/250901ac-8d44-4723-b4a2-2453f279569a/ats.js",
+        "thirdParty": false,
+        "affiliated": false,
+        "frame": "terra.com.br",
+        "at": 1790652273897
+      },
+      {
+        "name": "_lr_geo_location",
+        "persistent": true,
+        "raw": "_lr_geo_location=BR;max-age=172800;expires=Thu, 01 Oct 2026 03:24:33 GMT;path=/",
+        "script": "https://ats-wrapper.privacymanager.io/ats-modules/250901ac-8d44-4723-b4a2-2453f279569a/ats.js",
+        "thirdParty": false,
+        "affiliated": false,
+        "frame": "terra.com.br",
+        "at": 1790652273897
+      },
+      {
+        "name": "zaz-user-info-stalker",
+        "persistent": true,
+        "raw": "zaz-user-info-stalker=%7B%7D;max-age=604800;secure",
+        "script": "https://s1.trrsf.com/update-1789154714/fe/zaz-ui-t360/_js/context.min.js",
+        "thirdParty": false,
+        "affiliated": false,
+        "frame": "terra.com.br",
+        "at": 1790652273970
+      }
+    ],
+    "summary": {
+      "total": 9,
+      "firstParty": 9,
+      "thirdParty": 0,
+      "session": 0,
+      "persistent": 9,
+      "longLived": 1,
+      "injectedHttp": 12,
+      "injectedHttpThirdParty": 0,
+      "injectedJs": 9,
+      "list": [
+        {
+          "name": "_lr_retry_request",
+          "domain": "www.terra.com.br",
+          "path": "/",
+          "thirdParty": false,
+          "affiliated": false,
+          "session": false,
+          "expires": 1790655871000,
+          "lifetimeDays": 0,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 4
+        },
+        {
+          "name": "_lr_env_src_ats",
+          "domain": "www.terra.com.br",
+          "path": "/",
+          "thirdParty": false,
+          "affiliated": false,
+          "session": false,
+          "expires": 1793244271000,
+          "lifetimeDays": 30,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 5
+        },
+        {
+          "name": "ak_bmsc",
+          "domain": "terra.com.br",
+          "path": "/",
+          "thirdParty": false,
+          "affiliated": false,
+          "session": false,
+          "expires": 1790659472667,
+          "lifetimeDays": 0,
+          "secure": false,
+          "httpOnly": true,
+          "sameSite": "unspecified",
+          "valueLength": 464
+        },
+        {
+          "name": "bm_sz",
+          "domain": "terra.com.br",
+          "path": "/",
+          "thirdParty": false,
+          "affiliated": false,
+          "session": false,
+          "expires": 1790666672667,
+          "lifetimeDays": 0,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 421
+        },
+        {
+          "name": "X-XAct-ID",
+          "domain": "terra.com.br",
+          "path": "/",
+          "thirdParty": false,
+          "affiliated": false,
+          "session": false,
+          "expires": 1825212272967,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "no_restriction",
+          "valueLength": 36
+        },
+        {
+          "name": "trrgeo",
+          "domain": "terra.com.br",
+          "path": "/",
+          "thirdParty": false,
+          "affiliated": false,
+          "session": false,
+          "expires": 1790738672967,
+          "lifetimeDays": 1,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "no_restriction",
+          "valueLength": 52
+        },
+        {
+          "name": "_lr_geo_location_state",
+          "domain": "www.terra.com.br",
+          "path": "/",
+          "thirdParty": false,
+          "affiliated": false,
+          "session": false,
+          "expires": 1790825073897,
+          "lifetimeDays": 2,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 2
+        },
+        {
+          "name": "_lr_geo_location",
+          "domain": "www.terra.com.br",
+          "path": "/",
+          "thirdParty": false,
+          "affiliated": false,
+          "session": false,
+          "expires": 1790825073897,
+          "lifetimeDays": 2,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 2
+        },
+        {
+          "name": "zaz-user-info-stalker",
+          "domain": "www.terra.com.br",
+          "path": "/",
+          "thirdParty": false,
+          "affiliated": false,
+          "session": false,
+          "expires": 1791257073969,
+          "lifetimeDays": 7,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 6
+        }
+      ]
+    }
+  },
+  "score": {
+    "score": 59,
+    "grade": "C",
+    "breakdown": [
+      {
+        "id": "trackers",
+        "label": "Rastreadores conhecidos (3ª parte)",
+        "penalty": 32,
+        "cap": 32
+      },
+      {
+        "id": "thirdParties",
+        "label": "Outros domínios de 3ª parte",
+        "penalty": 1,
+        "cap": 8
+      },
+      {
+        "id": "thirdPartyCookies",
+        "label": "Cookies de 3ª parte",
+        "penalty": 0,
+        "cap": 16
+      },
+      {
+        "id": "longLivedCookies",
+        "label": "Cookies persistentes > 1 ano",
+        "penalty": 1,
+        "cap": 6
+      },
+      {
+        "id": "fingerprinting",
+        "label": "Fingerprinting (provável 15 / possível 7)",
+        "penalty": 0,
+        "cap": 15
+      },
+      {
+        "id": "sessionRecording",
+        "label": "Gravação de sessão / heatmap",
+        "penalty": 0,
+        "cap": 10
+      },
+      {
+        "id": "keyLogging",
+        "label": "Captura de teclado por 3ª parte",
+        "penalty": 0,
+        "cap": 10
+      },
+      {
+        "id": "facebookPixel",
+        "label": "Pixel do Facebook/Meta",
+        "penalty": 0,
+        "cap": 6
+      },
+      {
+        "id": "googleAds",
+        "label": "Remarketing Google (DoubleClick/Ads)",
+        "penalty": 4,
+        "cap": 4
+      },
+      {
+        "id": "cookieSync",
+        "label": "Cookie sync / vazamento de identificador",
+        "penalty": 0,
+        "cap": 8
+      },
+      {
+        "id": "bounceTracking",
+        "label": "Bounce tracking",
+        "penalty": 0,
+        "cap": 6
+      },
+      {
+        "id": "thirdPartyStorage",
+        "label": "Storage HTML5 em frames de 3ª parte",
+        "penalty": 0,
+        "cap": 4
+      },
+      {
+        "id": "hijacking",
+        "label": "Indicadores de hijacking (alto 15 / médio 8 / baixo 3)",
+        "penalty": 3,
+        "cap": 15
+      }
+    ],
+    "counts": {
+      "trackers": 10,
+      "thirdParties": 11,
+      "thirdPartyCookies": 0,
+      "longLived": 1,
+      "keylog": 0,
+      "syncStrong": 0,
+      "syncWeak": 0,
+      "storage3p": 0
+    }
+  },
+  "settings": {
+    "blocklist": [],
+    "blockKnownTrackers": false
+  }
+}

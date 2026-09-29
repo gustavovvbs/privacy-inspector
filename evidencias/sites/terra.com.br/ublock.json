@@ -1,0 +1,245 @@
+{
+  "site": "https://www.terra.com.br",
+  "blocked": [
+    {
+      "filter": "/log?format=",
+      "type": "xhr",
+      "method": "post",
+      "url": "https://play.google.com/log?format=json&hasfast=true&authuser=0",
+      "host": "play.google.com",
+      "redirected": false
+    },
+    {
+      "filter": "/tagman/*$from=~abelssoft.de",
+      "type": "script",
+      "method": "get",
+      "url": "https://p1-cloud.trrsf.com.br/api/tagman/v2/ShowArea?key=br.homepage.home360.scoverage&area=scoverage&direct=1",
+      "host": "p1-cloud.trrsf.com.br",
+      "redirected": false
+    },
+    {
+      "filter": "||tailtarget.com^$3p",
+      "type": "image",
+      "method": "get",
+      "url": "https://c.t.tailtarget.com/clk/TT-10969-0/QGO5QLRPY4/track",
+      "host": "c.t.tailtarget.com",
+      "redirected": false
+    },
+    {
+      "filter": "||tailtarget.com^$3p",
+      "type": "image",
+      "method": "get",
+      "url": "https://c.t.tailtarget.com/view/TT-10969-0/QGO5QLRPY4/track",
+      "host": "c.t.tailtarget.com",
+      "redirected": false
+    },
+    {
+      "filter": "/tagman/*$from=~abelssoft.de",
+      "type": "script",
+      "method": "get",
+      "url": "https://p1-cloud.trrsf.com.br/api/tagman/v2/ShowArea?key=br.homepage.home360.user_area&area=user_area&direct=1",
+      "host": "p1-cloud.trrsf.com.br",
+      "redirected": false
+    },
+    {
+      "filter": "/tagman/*$from=~abelssoft.de",
+      "type": "script",
+      "method": "get",
+      "url": "https://p1-cloud.trrsf.com.br/api/tagman/v2/ShowArea?key=br.homepage.home360.s2&area=s2&direct=1",
+      "host": "p1-cloud.trrsf.com.br",
+      "redirected": false
+    },
+    {
+      "filter": "||taboola.com^",
+      "type": "script",
+      "method": "get",
+      "url": "https://cdn.taboola.com/libtrc/terrabr/loader.js",
+      "host": "cdn.taboola.com",
+      "redirected": false
+    },
+    {
+      "filter": "||amazon-adsystem.com/*apstag.js^$redirect-rule=amazon_apstag.js:5,from=~republicbharat.com|~thelallantop.com",
+      "type": "script",
+      "method": "get",
+      "url": "https://c.amazon-adsystem.com/aax2/apstag.js",
+      "host": "c.amazon-adsystem.com",
+      "redirected": true
+    },
+    {
+      "filter": "||amazon-adsystem.com^",
+      "type": "script",
+      "method": "get",
+      "url": "https://c.amazon-adsystem.com/aax2/apstag.js",
+      "host": "c.amazon-adsystem.com",
+      "redirected": false
+    },
+    {
+      "filter": "/tagman/*$from=~abelssoft.de",
+      "type": "script",
+      "method": "get",
+      "url": "https://p1-cloud.trrsf.com.br/api/tagman/v2/ShowArea?key=br.homepage.home360.floater&area=floater&direct=1",
+      "host": "p1-cloud.trrsf.com.br",
+      "redirected": false
+    },
+    {
+      "filter": "||trrsf.com/*/mod-stalker.min.js",
+      "type": "xhr",
+      "method": "get",
+      "url": "https://s1.trrsf.com/update-1764705914/fe/zaz-mod-stalker/_js/mod-stalker.min.js",
+      "host": "s1.trrsf.com",
+      "redirected": false
+    },
+    {
+      "filter": "/analytics-helper.js",
+      "type": "script",
+      "method": "get",
+      "url": "https://s1.trrsf.com/fe/zaz-ui-t360/_js/sw-helper/analytics-helper.js",
+      "host": "s1.trrsf.com",
+      "redirected": false
+    },
+    {
+      "filter": "||static.chartbeat.com/js/chartbeat.js$script,redirect-rule=chartbeat.js",
+      "type": "script",
+      "method": "get",
+      "url": "https://static.chartbeat.com/js/chartbeat.js",
+      "host": "static.chartbeat.com",
+      "redirected": true
+    },
+    {
+      "filter": "||chartbeat.com^$3p",
+      "type": "script",
+      "method": "get",
+      "url": "https://static.chartbeat.com/js/chartbeat.js",
+      "host": "static.chartbeat.com",
+      "redirected": false
+    },
+    {
+      "filter": "||taboola.com^",
+      "type": "script",
+      "method": "get",
+      "url": "https://c2.taboola.com/nr/terrabr/newsroom.js",
+      "host": "c2.taboola.com",
+      "redirected": false
+    },
+    {
+      "filter": "/prebid/*$script",
+      "type": "script",
+      "method": "get",
+      "url": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+      "host": "s1.trrsf.com",
+      "redirected": false
+    },
+    {
+      "filter": "||scorecardresearch.com^",
+      "type": "script",
+      "method": "get",
+      "url": "https://sb.scorecardresearch.com/cs/3000033/beacon.js",
+      "host": "sb.scorecardresearch.com",
+      "redirected": false
+    },
+    {
+      "filter": "||tailtarget.com^$3p",
+      "type": "script",
+      "method": "get",
+      "url": "https://tags.t.tailtarget.com/t3m.js?i=TT-10969-0/CT-411",
+      "host": "tags.t.tailtarget.com",
+      "redirected": false
+    },
+    {
+      "filter": "/prebid/*$script",
+      "type": "script",
+      "method": "get",
+      "url": "https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js",
+      "host": "s1.trrsf.com",
+      "redirected": false
+    },
+    {
+      "filter": "||googletagmanager.com/gtm.js$script,redirect-rule=googletagmanager_gtm.js:5,from=~nerc.com",
+      "type": "script",
+      "method": "get",
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-T4ZBMQJ5&l=dataLayer",
+      "host": "www.googletagmanager.com",
+      "redirected": true
+    },
+    {
+      "filter": "||googletagmanager.com^",
+      "type": "script",
+      "method": "get",
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-T4ZBMQJ5&l=dataLayer",
+      "host": "www.googletagmanager.com",
+      "redirected": false
+    },
+    {
+      "filter": "||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect-rule=googletagservices_gpt.js:5",
+      "type": "script",
+      "method": "get",
+      "url": "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+      "host": "securepubads.g.doubleclick.net",
+      "redirected": true
+    },
+    {
+      "filter": "||doubleclick.net^",
+      "type": "script",
+      "method": "get",
+      "url": "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+      "host": "securepubads.g.doubleclick.net",
+      "redirected": false
+    }
+  ],
+  "blockedCount": 23,
+  "allowedCount": 318,
+  "exceptionsCount": 1,
+  "blockedByDomain": {
+    "trrsf.com.br": 4,
+    "trrsf.com": 4,
+    "tailtarget.com": 3,
+    "taboola.com": 2,
+    "amazon-adsystem.com": 2,
+    "chartbeat.com": 2,
+    "googletagmanager.com": 2,
+    "doubleclick.net": 2,
+    "google.com": 1,
+    "scorecardresearch.com": 1
+  },
+  "ublockVersion": "1.75.0",
+  "lists": "padrão (uBlock filters, EasyList, EasyPrivacy, Peter Lowe, malware)",
+  "redirectedCount": 4,
+  "scriptlets": [
+    {
+      "filter": "#@#+js(prevent-clipboard-write, /^ms(hta|iexec)(\\.exe)? |^(bash <<<|curl -kfsSL) \\$\\(echo .+? base64 -d\\b|^cmd \\/c .*?\\b",
+      "context": "https://accounts.google.com/gsi/button?theme=outline&text=signin_with&size=large"
+    },
+    {
+      "filter": "##div[data-ad-placeholder]",
+      "context": "https://www.terra.com.br/"
+    },
+    {
+      "filter": "##+js(prevent-clipboard-write, /^mshta |^msiexec |^(bash <<<|curl -kfsSL) \\$\\(echo .+? base64 -d\\b|^cmd \\/c .*?\\bcurl .+",
+      "context": "https://www.terra.com.br/"
+    },
+    {
+      "filter": "##+js(remove-cookie, X-XAct-ID)",
+      "context": "https://www.terra.com.br/"
+    },
+    {
+      "filter": "##.table-ad",
+      "context": "https://www.terra.com.br/"
+    },
+    {
+      "filter": "##.card-ad",
+      "context": "https://www.terra.com.br/"
+    },
+    {
+      "filter": "##+js(prevent-clipboard-write, /^mshta |^msiexec |^(bash <<<|curl -kfsSL) \\$\\(echo .+? base64 -d\\b|^cmd \\/c .*?\\bcurl .+",
+      "context": "https://www.terra.com.br/"
+    },
+    {
+      "filter": "##+js(remove-cookie, X-XAct-ID)",
+      "context": "https://www.terra.com.br/"
+    },
+    {
+      "filter": "##+js(prevent-clipboard-write, /^mshta |^msiexec |^(bash <<<|curl -kfsSL) \\$\\(echo .+? base64 -d\\b|^cmd \\/c .*?\\bcurl .+",
+      "context": "about:blank"
+    }
+  ]
+}

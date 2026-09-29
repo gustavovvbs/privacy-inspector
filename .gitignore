@@ -6,3 +6,4 @@ web-ext-artifacts/
 .venv/
 evidencias/_downloads/
 evidencias/_har/
+evidencias/_tools/

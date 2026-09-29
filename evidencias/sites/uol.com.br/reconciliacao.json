@@ -1,0 +1,4537 @@
+{
+  "site": "uol.com.br",
+  "plugin": {
+    "score": {
+      "score": 0,
+      "grade": "E",
+      "breakdown": [
+        {
+          "id": "trackers",
+          "label": "Rastreadores conhecidos (3ª parte)",
+          "penalty": 32,
+          "cap": 32
+        },
+        {
+          "id": "thirdParties",
+          "label": "Outros domínios de 3ª parte",
+          "penalty": 4,
+          "cap": 8
+        },
+        {
+          "id": "thirdPartyCookies",
+          "label": "Cookies de 3ª parte",
+          "penalty": 16,
+          "cap": 16
+        },
+        {
+          "id": "longLivedCookies",
+          "label": "Cookies persistentes > 1 ano",
+          "penalty": 1,
+          "cap": 6
+        },
+        {
+          "id": "fingerprinting",
+          "label": "Fingerprinting (provável 15 / possível 7)",
+          "penalty": 7,
+          "cap": 15
+        },
+        {
+          "id": "sessionRecording",
+          "label": "Gravação de sessão / heatmap",
+          "penalty": 0,
+          "cap": 10
+        },
+        {
+          "id": "keyLogging",
+          "label": "Captura de teclado por 3ª parte",
+          "penalty": 10,
+          "cap": 10
+        },
+        {
+          "id": "facebookPixel",
+          "label": "Pixel do Facebook/Meta",
+          "penalty": 0,
+          "cap": 6
+        },
+        {
+          "id": "googleAds",
+          "label": "Remarketing Google (DoubleClick/Ads)",
+          "penalty": 4,
+          "cap": 4
+        },
+        {
+          "id": "cookieSync",
+          "label": "Cookie sync / vazamento de identificador",
+          "penalty": 8,
+          "cap": 8
+        },
+        {
+          "id": "bounceTracking",
+          "label": "Bounce tracking",
+          "penalty": 0,
+          "cap": 6
+        },
+        {
+          "id": "thirdPartyStorage",
+          "label": "Storage HTML5 em frames de 3ª parte",
+          "penalty": 4,
+          "cap": 4
+        },
+        {
+          "id": "hijacking",
+          "label": "Indicadores de hijacking (alto 15 / médio 8 / baixo 3)",
+          "penalty": 15,
+          "cap": 15
+        }
+      ],
+      "counts": {
+        "trackers": 15,
+        "thirdParties": 19,
+        "thirdPartyCookies": 10,
+        "longLived": 1,
+        "keylog": 3,
+        "syncStrong": 2,
+        "syncWeak": 0,
+        "storage3p": 4
+      }
+    },
+    "requestsTotal": 221,
+    "thirdPartyDomains": [
+      "doubleclick.net",
+      "permutive.app",
+      "scorecardresearch.com",
+      "mrf.io",
+      "youtube.com",
+      "privacymanager.io",
+      "amazon-adsystem.com",
+      "adnxs.com",
+      "google.com",
+      "googletagmanager.com",
+      "prmutv.co",
+      "permutive.com",
+      "gstatic.com",
+      "newsroom.bi",
+      "chartbeat.com",
+      "googleapis.com",
+      "tinypass.com",
+      "turner.com",
+      "ytimg.com"
+    ],
+    "affiliatedDomains": [
+      "jsuol.com.br",
+      "jsuol.com",
+      "imguol.com.br",
+      "uol.com"
+    ],
+    "trackers": [
+      "doubleclick.net",
+      "permutive.app",
+      "scorecardresearch.com",
+      "mrf.io",
+      "youtube.com",
+      "privacymanager.io",
+      "amazon-adsystem.com",
+      "adnxs.com",
+      "googletagmanager.com",
+      "prmutv.co",
+      "permutive.com",
+      "newsroom.bi",
+      "chartbeat.com",
+      "tinypass.com",
+      "ytimg.com"
+    ],
+    "cookies": {
+      "total": 18,
+      "firstParty": 8,
+      "thirdParty": 10,
+      "session": 3,
+      "persistent": 15,
+      "longLived": 1,
+      "injectedHttp": 49,
+      "injectedHttpThirdParty": 48,
+      "injectedJs": 86
+    },
+    "fingerprint": "possible",
+    "hijack": "high",
+    "keylog3p": [
+      [
+        "keydown",
+        "document",
+        "mrf.io",
+        true
+      ],
+      [
+        "keyup",
+        "document",
+        "mrf.io",
+        true
+      ],
+      [
+        "keydown",
+        "document",
+        "mrf.io",
+        true
+      ],
+      [
+        "keydown",
+        "document",
+        "youtube.com",
+        true
+      ],
+      [
+        "keyup",
+        "document",
+        "youtube.com",
+        true
+      ],
+      [
+        "keydown",
+        "document",
+        "youtube.com",
+        true
+      ],
+      [
+        "keydown",
+        "document",
+        "google.com",
+        false
+      ],
+      [
+        "keypress",
+        "document",
+        "google.com",
+        false
+      ],
+      [
+        "keyup",
+        "document",
+        "google.com",
+        false
+      ],
+      [
+        "input",
+        "document",
+        "google.com",
+        false
+      ],
+      [
+        "paste",
+        "document",
+        "google.com",
+        false
+      ],
+      [
+        "change",
+        "document",
+        "google.com",
+        false
+      ],
+      [
+        "keydown",
+        "document",
+        "youtube.com",
+        true
+      ],
+      [
+        "keyup",
+        "document",
+        "youtube.com",
+        true
+      ],
+      [
+        "keydown",
+        "document",
+        "youtube.com",
+        true
+      ],
+      [
+        "keydown",
+        "document",
+        "google.com",
+        false
+      ],
+      [
+        "keypress",
+        "document",
+        "google.com",
+        false
+      ],
+      [
+        "keyup",
+        "document",
+        "google.com",
+        false
+      ],
+      [
+        "input",
+        "document",
+        "google.com",
+        false
+      ],
+      [
+        "paste",
+        "document",
+        "google.com",
+        false
+      ],
+      [
+        "change",
+        "document",
+        "google.com",
+        false
+      ]
+    ],
+    "polling": [
+      [
+        "https://events.newsroom.bi/multimedia.php",
+        5
+      ]
+    ],
+    "websockets": [],
+    "cookieSync": [
+      [
+        "shared-id",
+        "k",
+        "permutive.com"
+      ],
+      [
+        "shared-id",
+        "k",
+        "doubleclick.net"
+      ]
+    ]
+  },
+  "blacklight": {
+    "adTrackersPage": 88,
+    "thirdPartyCookiesPage": 271,
+    "trackerDomains": {
+      "rubiconproject.com": 123,
+      "googlesyndication.com": 69,
+      "doubleclick.net": 66,
+      "amazon-adsystem.com": 57,
+      "jsuol.com.br": 48,
+      "adnxs.com": 43,
+      "doubleverify.com": 42,
+      "smartadserver.com": 36,
+      "scorecardresearch.com": 34,
+      "seedtag.com": 29,
+      "newsroom.bi": 27,
+      "permutive.com": 19,
+      "2mdn.net": 19,
+      "google.com": 16,
+      "bidswitch.net": 16,
+      "id5-sync.com": 14,
+      "clarity.ms": 11,
+      "dotomi.com": 11,
+      "yahoo.com": 11,
+      "pubmatic.com": 11,
+      "adsrvr.org": 10,
+      "chartbeat.com": 10,
+      "tapad.com": 9,
+      "semasio.net": 9,
+      "yellowblue.io": 9,
+      "cxense.com": 9,
+      "bidr.io": 8,
+      "adform.net": 8,
+      "openx.net": 8,
+      "connectad.io": 8,
+      "bfmio.com": 8,
+      "sharethrough.com": 7,
+      "creativecdn.com": 7,
+      "permutive.app": 7,
+      "gstatic.com": 7,
+      "contextweb.com": 6,
+      "lijit.com": 6,
+      "twitter.com": 6,
+      "sonobi.com": 6,
+      "googleapis.com": 6,
+      "chartbeat.net": 5,
+      "everesttech.net": 5,
+      "loopme.me": 5,
+      "media.net": 5,
+      "1rx.io": 5,
+      "sitescout.com": 5,
+      "criteo.com": 5,
+      "stackadapt.com": 5,
+      "t.co": 5,
+      "rlcdn.com": 5,
+      "360yield.com": 5,
+      "youtube.com": 5,
+      "turn.com": 4,
+      "ipredictive.com": 4,
+      "quantserve.com": 4,
+      "simpli.fi": 4,
+      "connatix.com": 4,
+      "crwdcntrl.net": 4,
+      "facebook.net": 4,
+      "googletagmanager.com": 4,
+      "cognitivlabs.com": 3,
+      "inmobi.com": 3,
+      "gumgum.com": 3,
+      "deepintent.com": 3,
+      "outbrain.com": 3,
+      "onetag-sys.com": 3,
+      "3lift.com": 3,
+      "smaato.net": 3,
+      "im-apps.net": 3,
+      "adtrafficquality.google": 2,
+      "bidtheatre.com": 2,
+      "tribalfusion.com": 2,
+      "rfihub.com": 2,
+      "yieldmo.com": 2,
+      "kargo.com": 2,
+      "acuityplatform.com": 2,
+      "unrulymedia.com": 2,
+      "adgrx.com": 2,
+      "blismedia.com": 2,
+      "liadm.com": 2,
+      "google-analytics.com": 2,
+      "33across.com": 2,
+      "minutemedia-prebid.com": 2,
+      "linkedin.com": 2,
+      "demdex.net": 2,
+      "technoratimedia.com": 2,
+      "betweendigital.com": 2,
+      "casalemedia.com": 2,
+      "creative-serving.com": 2,
+      "richaudience.com": 2,
+      "admanmedia.com": 2,
+      "facebook.com": 2,
+      "ads-twitter.com": 2,
+      "criteo.net": 2,
+      "openxcdn.net": 2,
+      "gvt1.com": 2,
+      "imguol.com.br": 2,
+      "sascdn.com": 1,
+      "bing.com": 1,
+      "smilewanted.com": 1,
+      "appier.net": 1,
+      "brand-display.com": 1,
+      "company-target.com": 1,
+      "eqads.com": 1,
+      "storygize.net": 1,
+      "aralego.com": 1,
+      "serverbid.com": 1,
+      "agkn.com": 1,
+      "onaudience.com": 1,
+      "aniview.com": 1,
+      "undertone.com": 1,
+      "mxptint.net": 1,
+      "mediavine.com": 1,
+      "adition.com": 1,
+      "omnitagjs.com": 1,
+      "pinterest.com": 1,
+      "t13.io": 1,
+      "primis.tech": 1,
+      "springserve.com": 1,
+      "a-mo.net": 1,
+      "bttrack.com": 1,
+      "mathtag.com": 1,
+      "mgid.com": 1,
+      "fwmrm.net": 1,
+      "emxdgt.com": 1,
+      "dv.tech": 1,
+      "turner.com": 1,
+      "ctnsnet.com": 1
+    },
+    "cookies3pByDomain": {
+      "sonobi.com": 20,
+      "pubmatic.com": 17,
+      "bfmio.com": 9,
+      "smartadserver.com": 7,
+      "startappnetwork.com": 7,
+      "smaato.net": 6,
+      "syncingbridge.com": 6,
+      "a-mo.net": 6,
+      "clarity.ms": 5,
+      "twitter.com": 5,
+      "rubiconproject.com": 5,
+      "contextweb.com": 5,
+      "intentiq.com": 5,
+      "newsroom.bi": 4,
+      "seedtag.com": 4,
+      "adnxs.com": 4,
+      "stackadapt.com": 4,
+      "betweendigital.com": 4,
+      "360yield.com": 4,
+      "media.net": 3,
+      "yahoo.com": 3,
+      "richaudience.com": 3,
+      "bidswitch.net": 3,
+      "creative-serving.com": 3,
+      "casalemedia.com": 3,
+      "tapad.com": 3,
+      "linkedin.com": 3,
+      "rfihub.com": 3,
+      "nextmillmedia.com": 3,
+      "dotomi.com": 3,
+      "bing.com": 3,
+      "t.co": 2,
+      "scorecardresearch.com": 2,
+      "criteo.com": 2,
+      "amazon-adsystem.com": 2,
+      "bidr.io": 2,
+      "connectad.io": 2,
+      "creativecdn.com": 2,
+      "yieldmo.com": 2,
+      "admanmedia.com": 2,
+      "lijit.com": 2,
+      "openx.net": 2,
+      "adsrvr.org": 2,
+      "shb-sync.com": 2,
+      "adform.net": 2,
+      "sitescout.com": 2,
+      "krushmedia.com": 2,
+      "id5-sync.com": 2,
+      "deepintent.com": 2,
+      "acuityplatform.com": 2,
+      "demdex.net": 2,
+      "pmbmonetize.live": 2,
+      "rlcdn.com": 2,
+      "adgrx.com": 2,
+      "quantserve.com": 2,
+      "aniview.com": 2,
+      "company-target.com": 2,
+      "cognitivlabs.com": 2,
+      "inmobi.com": 2,
+      "taboola.com": 2,
+      "bidtheatre.com": 2,
+      "jsuol.com.br": 1,
+      "facebook.com": 1,
+      "crwdcntrl.net": 1,
+      "mygaru.com": 1,
+      "everesttech.net": 1,
+      "loopme.me": 1,
+      "simpli.fi": 1,
+      "outbrain.com": 1,
+      "doubleclick.net": 1,
+      "cadent.com": 1,
+      "tinypass.com": 1,
+      "kargo.com": 1,
+      "turn.com": 1,
+      "1rx.io": 1,
+      "unrulymedia.com": 1,
+      "sharethrough.com": 1,
+      "gumgum.com": 1,
+      "trustedstack.com": 1,
+      "yellowblue.io": 1,
+      "3lift.com": 1,
+      "taptapnetworks.com": 1,
+      "opera.com": 1,
+      "fwmrm.net": 1,
+      "minutemedia-prebid.com": 1,
+      "piano.io": 1,
+      "ipredictive.com": 1,
+      "connatix.com": 1,
+      "semasio.net": 1,
+      "blismedia.com": 1,
+      "technoratimedia.com": 1,
+      "mathtag.com": 1,
+      "cxense.com": 1,
+      "bttrack.com": 1,
+      "primis.tech": 1,
+      "33across.com": 1,
+      "omnitagjs.com": 1,
+      "t13.io": 1,
+      "mxptint.net": 1,
+      "tribalfusion.com": 1,
+      "cootlogix.com": 1,
+      "serverbid.com": 1,
+      "tracookiepixel.xyz": 1,
+      "aralego.com": 1,
+      "ex.co": 1,
+      "eqads.com": 1,
+      "amspbs.com": 1,
+      "brand-display.com": 1,
+      "appier.net": 1
+    },
+    "cookies3pCount": 271,
+    "canvasFingerprinters": [],
+    "fontFingerprinting": false,
+    "keyLogging": [],
+    "sessionRecorders": [],
+    "fbPixel": true,
+    "gaRemarketing": true,
+    "thirdPartyHosts": [
+      "h.jsuol.com.br",
+      "tm.jsuol.com.br",
+      "securepubads.g.doubleclick.net",
+      "conteudo.jsuol.com.br",
+      "me.jsuol.com.br",
+      "4b91477e-f67b-4d81-86db-a9742bd41e9c.edge.permutive.app",
+      "me.jsuol.com",
+      "conteudo.imguol.com.br",
+      "sb.scorecardresearch.com",
+      "sdk.mrf.io",
+      "stc.uol.com",
+      "img.youtube.com",
+      "www.googletagmanager.com",
+      "fundingchoicesmessages.google.com",
+      "launchpad-wrapper.privacymanager.io",
+      "c.amazon-adsystem.com",
+      "ib.adnxs.com",
+      "s.seedtag.com",
+      "prg.smartadserver.com",
+      "fastlane.rubiconproject.com",
+      "events.newsroom.bi",
+      "pagead2.googlesyndication.com",
+      "launchpad.privacymanager.io",
+      "config.aps.amazon-adsystem.com",
+      "web-banner.ads.aps.amazon-adsystem.com",
+      "cm.g.doubleclick.net",
+      "tags.crwdcntrl.net",
+      "cdn.mgaru.dev",
+      "invstatic101.creativecdn.com",
+      "cdn.id5-sync.com",
+      "oa.openxcdn.net",
+      "dmp.im-apps.net",
+      "connectid.analytics.yahoo.com",
+      "ads.pubmatic.com",
+      "static.criteo.net",
+      "static.chartbeat.com",
+      "www.google.com",
+      "analytics.google.com",
+      "stats.g.doubleclick.net",
+      "imasdk.googleapis.com",
+      "www.youtube.com",
+      "geoip.home.uol.com",
+      "cdn.tinypass.com",
+      "icu.newsroom.bi",
+      "a7b601602c3642ea5093d7f31e4bbf65.safeframe.googlesyndication.com",
+      "marfeelexperimentsexperienceengine.mrf.io",
+      "geo.privacymanager.io",
+      "41a42350ab2ac792f953d8072db03c6c.safeframe.googlesyndication.com",
+      "experiences.newsroom.bi",
+      "4b91477e-f67b-4d81-86db-a9742bd41e9c.prmutv.co",
+      "api.permutive.com",
+      "cdn.permutive.app",
+      "tpc.googlesyndication.com",
+      "i.ctnsnet.com",
+      "c1.adform.net",
+      "rtb-csync.smartadserver.com",
+      "cms.quantserve.com",
+      "match.sharethrough.com",
+      "px.ads.linkedin.com",
+      "e.imguol.com",
+      "cdn.cxense.com",
+      "c2.piano.io",
+      "mab.chartbeat.com",
+      "ping.chartbeat.net",
+      "s.cdn.turner.com",
+      "id.cxense.com",
+      "comcluster.cxense.com",
+      "fonts.gstatic.com",
+      "buy.tinypass.com",
+      "www.google-analytics.com",
+      "googleads.g.doubleclick.net",
+      "static.doubleclick.net",
+      "s0.2mdn.net",
+      "i.ytimg.com",
+      "ep1.adtrafficquality.google",
+      "pubads.g.doubleclick.net",
+      "ep2.adtrafficquality.google",
+      "csi.gstatic.com",
+      "jnn-pa.googleapis.com",
+      "redirector.gvt1.com",
+      "r4---sn-vgqsrn66.gvt1.com",
+      "tpsc-video.doubleverify.com",
+      "c.jsuol.com.br",
+      "static.ads-twitter.com",
+      "connect.facebook.net",
+      "www.clarity.ms",
+      "scripts.clarity.ms",
+      "t.co",
+      "analytics.twitter.com",
+      "pub.doubleverify.com",
+      "widgets.outbrain.com",
+      "gum.criteo.com",
+      "api.rlcdn.com",
+      "k6-e4e4123be8e54363900a90353991ca93.ecs.us-west-1.on.aws",
+      "www.facebook.com",
+      "widget-pixels.outbrain.com",
+      "b.clarity.ms",
+      "prebid-server.rubiconproject.com",
+      "accounts.google.com",
+      "sync6.im-apps.net",
+      "id5-sync.com",
+      "bcp.crwdcntrl.net",
+      "ident.mygaru.com",
+      "esp.rtbhouse.com",
+      "image6.pubmatic.com",
+      "db30b70da81d1e676b1bc801bbef2b93.safeframe.googlesyndication.com",
+      "s.amazon-adsystem.com",
+      "sync-tm.everesttech.net",
+      "csync.loopme.me",
+      "cs.media.net",
+      "onetag-sys.com",
+      "um.simpli.fi",
+      "b1sync.outbrain.com",
+      "creativecdn.com",
+      "match.prod.bidr.io",
+      "bidline-us-east.bidswitch.net",
+      "cdn.doubleverify.com",
+      "cs.startappnetwork.com",
+      "sync.connectad.io",
+      "vtrk.dv.tech",
+      "013cdac941b4a52b4242a6dfa06f55b6.safeframe.googlesyndication.com",
+      "sync.bfmio.com",
+      "cs.admanmedia.com",
+      "e1.emxdgt.com",
+      "s.ad.smaato.net",
+      "sync-amz.ads.yieldmo.com",
+      "e1.ssp.cadent.com",
+      "pcs.ssp.cadent.com",
+      "ups.analytics.yahoo.com",
+      "us-east-sync.richaudience.com",
+      "sync.1rx.io",
+      "crb.kargo.com",
+      "ap.lijit.com",
+      "image8.pubmatic.com",
+      "us-u.openx.net",
+      "syncingbridge.com",
+      "ce.lijit.com",
+      "match.adsrvr.org",
+      "sync.srv.stackadapt.com",
+      "pixel-sync.sitescout.com",
+      "ad.turn.com",
+      "x.bidswitch.net",
+      "us.shb-sync.com",
+      "sync.richaudience.com",
+      "i.liadm.com",
+      "image2.pubmatic.com",
+      "ads.yieldmo.com",
+      "check.analytics.rlcdn.com",
+      "sync.targeting.unrulymedia.com",
+      "ads.creative-serving.com",
+      "image4.pubmatic.com",
+      "rtb.gumgum.com",
+      "eus.rubiconproject.com",
+      "sync-pm.ads.yieldmo.com",
+      "acdn.adnxs.com",
+      "hb.trustedstack.com",
+      "dsum-sec.casalemedia.com",
+      "news.google.com",
+      "cs-server-s2s.yellowblue.io",
+      "pixel.tapad.com",
+      "t.adx.opera.com",
+      "cs.krushmedia.com",
+      "us4.shb-sync.com",
+      "eb2.3lift.com",
+      "sonata-notifications.taptapnetworks.com",
+      "www.temu.com",
+      "user-sync.fwmrm.net",
+      "ad-cdn.technoratimedia.com",
+      "cs-tam.minutemedia-prebid.com",
+      "pixel.rubiconproject.com",
+      "t.oa.opera.com",
+      "ads.betweendigital.com",
+      "gumgum-match.dotomi.com",
+      "bh.contextweb.com",
+      "sync.ipredictive.com",
+      "match.deepintent.com",
+      "ad.360yield.com",
+      "ssbsync.smartadserver.com",
+      "usersync.gumgum.com",
+      "r.bidswitch.net",
+      "contextual.media.net",
+      "secure.adnxs.com",
+      "cs.yellowblue.io",
+      "sync.go.sonobi.com",
+      "ssbsync-us.smartadserver.com",
+      "u.openx.net",
+      "cm.adform.net",
+      "dsp.360yield.com",
+      "ut.pubmatic.com",
+      "capi.connatix.com",
+      "secure-assets.rubiconproject.com",
+      "tps.doubleverify.com",
+      "uipglob.semasio.net",
+      "amazon-tam-match.dotomi.com",
+      "tr.blismedia.com",
+      "token.rubiconproject.com",
+      "cs-tam.yellowblue.io",
+      "pulsepoint-match.dotomi.com",
+      "sync.technoratimedia.com",
+      "ums.acuityplatform.com",
+      "cm.mgid.com",
+      "rtb.adstanding.com",
+      "sync.mathtag.com",
+      "pixel-us-east.rubiconproject.com",
+      "sync.pmbmonetize.live",
+      "simage2.pubmatic.com",
+      "dis.criteo.com",
+      "idsync.rlcdn.com",
+      "dpm.demdex.net",
+      "ice.360yield.com",
+      "simage4.pubmatic.com",
+      "sync.crwdcntrl.net",
+      "id.rlcdn.com",
+      "aax-eu.amazon-adsystem.com",
+      "pbs.yahoo.com",
+      "bttrack.com",
+      "sync.a-mo.net",
+      "sync.springserve.com",
+      "live.primis.tech",
+      "ssc-cms.33across.com",
+      "cs.minutemedia-prebid.com",
+      "sync.intentiq.com",
+      "et-c-ash.33across.com",
+      "p.rfihub.com",
+      "s2s.t13.io",
+      "ct.pinterest.com",
+      "visitor.omnitagjs.com",
+      "cookies.nextmillmedia.com",
+      "cm.adgrx.com",
+      "dsp-cookie.adfarm1.adition.com",
+      "exchange.mediavine.com",
+      "rubicon-match.dotomi.com",
+      "sync.outbrain.com",
+      "tpsc-ue1.doubleverify.com",
+      "a.tribalfusion.com",
+      "rbp.mxptint.net",
+      "prebid-s2s.media.net",
+      "usr.undertone.com",
+      "sync.aniview.com",
+      "pubmatic-match.dotomi.com",
+      "pixel.onaudience.com",
+      "aa.agkn.com",
+      "e.serverbid.com",
+      "match.sync.ad.cpe.dotomi.com",
+      "s.tribalfusion.com",
+      "sync.cootlogix.com",
+      "sync.aralego.com",
+      "tracookiepixel.xyz",
+      "sg.semasio.net",
+      "su.semasio.net",
+      "d.turn.com",
+      "rtd-tm.everesttech.net",
+      "match.adsby.bidtheatre.com",
+      "sid.storygize.net",
+      "sync.smartadserver.com",
+      "um4.eqads.com",
+      "s.company-target.com",
+      "dmp.brand-display.com",
+      "rcp.c.appier.net",
+      "sync.ex.co",
+      "csync.smilewanted.com",
+      "sync.inmobi.com",
+      "amspbs.com",
+      "beacon.lynx.cognitivlabs.com",
+      "trc.taboola.com",
+      "c.clarity.ms",
+      "c.bing.com",
+      "tracking.us-east1-1.smartadserver.com",
+      "csync-global.smartadserver.com",
+      "eqt-gc.rendering.sharethrough.com",
+      "csync-us.smartadserver.com",
+      "fonts.googleapis.com",
+      "ced-ns.sascdn.com"
+    ],
+    "thirdPartyDomains": [
+      "1rx.io",
+      "2mdn.net",
+      "33across.com",
+      "360yield.com",
+      "3lift.com",
+      "a-mo.net",
+      "acuityplatform.com",
+      "adform.net",
+      "adgrx.com",
+      "adition.com",
+      "admanmedia.com",
+      "adnxs.com",
+      "ads-twitter.com",
+      "adsrvr.org",
+      "adstanding.com",
+      "adtrafficquality.google",
+      "agkn.com",
+      "amazon-adsystem.com",
+      "amspbs.com",
+      "aniview.com",
+      "appier.net",
+      "aralego.com",
+      "betweendigital.com",
+      "bfmio.com",
+      "bidr.io",
+      "bidswitch.net",
+      "bidtheatre.com",
+      "bing.com",
+      "blismedia.com",
+      "brand-display.com",
+      "bttrack.com",
+      "cadent.com",
+      "casalemedia.com",
+      "chartbeat.com",
+      "chartbeat.net",
+      "clarity.ms",
+      "cognitivlabs.com",
+      "company-target.com",
+      "connatix.com",
+      "connectad.io",
+      "contextweb.com",
+      "cootlogix.com",
+      "creative-serving.com",
+      "creativecdn.com",
+      "criteo.com",
+      "criteo.net",
+      "crwdcntrl.net",
+      "ctnsnet.com",
+      "cxense.com",
+      "deepintent.com",
+      "demdex.net",
+      "dotomi.com",
+      "doubleclick.net",
+      "doubleverify.com",
+      "dv.tech",
+      "emxdgt.com",
+      "eqads.com",
+      "everesttech.net",
+      "ex.co",
+      "facebook.com",
+      "facebook.net",
+      "fwmrm.net",
+      "google-analytics.com",
+      "google.com",
+      "googleapis.com",
+      "googlesyndication.com",
+      "googletagmanager.com",
+      "gstatic.com",
+      "gumgum.com",
+      "gvt1.com",
+      "id5-sync.com",
+      "im-apps.net",
+      "imguol.com",
+      "imguol.com.br",
+      "inmobi.com",
+      "intentiq.com",
+      "ipredictive.com",
+      "jsuol.com",
+      "jsuol.com.br",
+      "kargo.com",
+      "krushmedia.com",
+      "liadm.com",
+      "lijit.com",
+      "linkedin.com",
+      "loopme.me",
+      "mathtag.com",
+      "media.net",
+      "mediavine.com",
+      "mgaru.dev",
+      "mgid.com",
+      "minutemedia-prebid.com",
+      "mrf.io",
+      "mxptint.net",
+      "mygaru.com",
+      "newsroom.bi",
+      "nextmillmedia.com",
+      "omnitagjs.com",
+      "on.aws",
+      "onaudience.com",
+      "onetag-sys.com",
+      "openx.net",
+      "openxcdn.net",
+      "opera.com",
+      "outbrain.com",
+      "permutive.app",
+      "permutive.com",
+      "piano.io",
+      "pinterest.com",
+      "pmbmonetize.live",
+      "primis.tech",
+      "privacymanager.io",
+      "prmutv.co",
+      "pubmatic.com",
+      "quantserve.com",
+      "rfihub.com",
+      "richaudience.com",
+      "rlcdn.com",
+      "rtbhouse.com",
+      "rubiconproject.com",
+      "sascdn.com",
+      "scorecardresearch.com",
+      "seedtag.com",
+      "semasio.net",
+      "serverbid.com",
+      "sharethrough.com",
+      "shb-sync.com",
+      "simpli.fi",
+      "sitescout.com",
+      "smaato.net",
+      "smartadserver.com",
+      "smilewanted.com",
+      "sonobi.com",
+      "springserve.com",
+      "stackadapt.com",
+      "startappnetwork.com",
+      "storygize.net",
+      "syncingbridge.com",
+      "t.co",
+      "t13.io",
+      "taboola.com",
+      "tapad.com",
+      "taptapnetworks.com",
+      "technoratimedia.com",
+      "temu.com",
+      "tinypass.com",
+      "tracookiepixel.xyz",
+      "tribalfusion.com",
+      "trustedstack.com",
+      "turn.com",
+      "turner.com",
+      "twitter.com",
+      "undertone.com",
+      "unrulymedia.com",
+      "uol.com",
+      "yahoo.com",
+      "yellowblue.io",
+      "yieldmo.com",
+      "youtube.com",
+      "ytimg.com"
+    ],
+    "visited": "2026-09-29T03:05:24.146Z",
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC"
+  },
+  "ublock": {
+    "blockedCount": 41,
+    "allowedCount": 232,
+    "byDomain": {
+      "doubleclick.net": 10,
+      "jsuol.com.br": 10,
+      "youtube.com": 8,
+      "googleapis.com": 5,
+      "chartbeat.com": 3,
+      "uol.com.br": 1,
+      "imguol.com.br": 1,
+      "mrf.io": 1,
+      "scorecardresearch.com": 1,
+      "permutive.app": 1
+    }
+  },
+  "har": {
+    "entries": 257,
+    "domains": 24
+  },
+  "rows": [
+    {
+      "domain": "imguol.com.br",
+      "plugin": {
+        "seen": true,
+        "requests": 40,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": true,
+        "types": {
+          "image": 17,
+          "imageset": 23
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 1,
+        "filters": {
+          "/publicidade/*$~xhr": 1
+        }
+      },
+      "har": {
+        "count": 69,
+        "hosts": [
+          "conteudo.imguol.com.br"
+        ],
+        "types": {
+          "image/svg+xml": 16,
+          "image/webp": 43,
+          "image/png": 7,
+          "image/gif": 2,
+          "image/x-icon": 1
+        },
+        "statuses": {
+          "200": 69
+        },
+        "examples": [
+          "https://conteudo.imguol.com.br/c/home/layout/vueland/icons/brand/uol-30-anos-black.svg?v12",
+          "https://conteudo.imguol.com.br/c/home/bf/2026/09/28/10dez2025---hugo-motta-republicanos-pb-presidente-da-camara-durante-",
+          "https://conteudo.imguol.com.br/c/home/layout/vueland/icons/brand/channel-white.svg?v12"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "jsuol.com.br",
+      "plugin": {
+        "seen": true,
+        "requests": 36,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": true,
+        "types": {
+          "stylesheet": 3,
+          "script": 28,
+          "sub_frame": 1,
+          "xmlhttprequest": 4
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 48,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 10,
+        "filters": {
+          "||tm.jsuol.com.br^": 7,
+          "||jsuol.com.br/aud/$script": 3
+        }
+      },
+      "har": {
+        "count": 36,
+        "hosts": [
+          "conteudo.jsuol.com.br",
+          "h.jsuol.com.br",
+          "me.jsuol.com.br",
+          "tm.jsuol.com.br"
+        ],
+        "types": {
+          "text/css": 3,
+          "application/javascript": 13,
+          "text/javascript": 17,
+          "text/html": 1,
+          "application/json": 2
+        },
+        "statuses": {
+          "200": 36
+        },
+        "examples": [
+          "https://h.jsuol.com.br/assets/?loadComponent=Media&contentType=css&scope=assets/dist&asset=uol-icons-fonts.css",
+          "https://tm.jsuol.com.br/modules/external/Prebid.js",
+          "https://tm.jsuol.com.br/uoltm.js?id=xe9bur&version=788"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "youtube.com",
+      "plugin": {
+        "seen": true,
+        "requests": 25,
+        "tracker": "youtube.com",
+        "owner": "Google (YouTube embed)",
+        "category": "advertising",
+        "affiliated": false,
+        "types": {
+          "image": 4,
+          "script": 10,
+          "sub_frame": 2,
+          "stylesheet": 4,
+          "xmlhttprequest": 5
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 5,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 8,
+        "filters": {
+          "||youtube.com/youtubei/v1/log_event": 6,
+          "/generate_204?$image": 2
+        }
+      },
+      "har": {
+        "count": 26,
+        "hosts": [
+          "img.youtube.com",
+          "www.youtube.com"
+        ],
+        "types": {
+          "image/jpeg": 3,
+          "text/javascript": 10,
+          "text/html": 2,
+          "text/css": 4,
+          "application/json": 5,
+          "text/plain": 2
+        },
+        "statuses": {
+          "200": 24,
+          "204": 2
+        },
+        "examples": [
+          "https://img.youtube.com/vi/6ys1PK4z-yc/maxresdefault.jpg",
+          "https://img.youtube.com/vi/sUHeNIp_Uxs/maxresdefault.jpg",
+          "https://www.youtube.com/iframe_api?ima=1"
+        ],
+        "setCookie": 3
+      }
+    },
+    {
+      "domain": "newsroom.bi",
+      "plugin": {
+        "seen": true,
+        "requests": 24,
+        "tracker": "newsroom.bi",
+        "owner": "Newsroom AI",
+        "category": "analytics",
+        "affiliated": false,
+        "types": {
+          "xmlhttprequest": 24
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 27,
+        "cookies3p": 4
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 24,
+        "hosts": [
+          "events.newsroom.bi",
+          "experiences.newsroom.bi",
+          "icu.newsroom.bi"
+        ],
+        "types": {
+          "application/json": 23,
+          "application/x-unknown-content-type": 1
+        },
+        "statuses": {
+          "200": 23,
+          "204": 1
+        },
+        "examples": [
+          "https://events.newsroom.bi/ingest.php",
+          "https://icu.newsroom.bi/ingest.php",
+          "https://events.newsroom.bi/data/rfv.php"
+        ],
+        "setCookie": 15
+      }
+    },
+    {
+      "domain": "uol.com.br",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": false,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 1,
+        "filters": {
+          "||logger.uol.com.br^": 1
+        }
+      },
+      "har": {
+        "count": 36,
+        "hosts": [
+          "api.mais.uol.com.br",
+          "bs.uol.com.br",
+          "croupier.mais.uol.com.br",
+          "logger.uol.com.br",
+          "mfe.fantascope.uol.com.br",
+          "player.fantascope.uol.com.br",
+          "tm.uol.com.br",
+          "udr.uol.com.br",
+          "upc.udr.uol.com.br",
+          "video26.mais.uol.com.br",
+          "www.uol.com.br"
+        ],
+        "types": {
+          "text/html": 4,
+          "application/json": 9,
+          "text/javascript": 2,
+          "text/xml": 2,
+          "application/x-unknown-content-type": 2,
+          "application/javascript": 2,
+          "application/x-mpegurl": 10,
+          "video/mp2t": 5
+        },
+        "statuses": {
+          "200": 31,
+          "404": 1,
+          "204": 4
+        },
+        "examples": [
+          "https://www.uol.com.br/",
+          "https://tm.uol.com.br/mercurio.html",
+          "https://udr.uol.com.br/?incognitoMode=false&cb=1790652197568"
+        ],
+        "setCookie": 1
+      }
+    },
+    {
+      "domain": "uol.com",
+      "plugin": {
+        "seen": true,
+        "requests": 10,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": true,
+        "types": {
+          "font": 7,
+          "script": 3
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 10,
+        "hosts": [
+          "geoip.home.uol.com",
+          "stc.uol.com"
+        ],
+        "types": {
+          "font/woff2": 6,
+          "font/ttf": 1,
+          "application/javascript": 3
+        },
+        "statuses": {
+          "200": 10
+        },
+        "examples": [
+          "https://stc.uol.com/c/webfont/projeto-grafico/uol-font/uol-text-regular.woff2?v5",
+          "https://stc.uol.com/c/webfont/projeto-grafico/uol-font/uol-text-bold.woff2?v5",
+          "https://stc.uol.com/c/webfont/projeto-grafico/uol-font/uol-text-light.woff2?v5"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "privacymanager.io",
+      "plugin": {
+        "seen": true,
+        "requests": 6,
+        "tracker": "privacymanager.io",
+        "owner": "LiveRamp ATS / Privacy Manager",
+        "category": "identity",
+        "affiliated": false,
+        "types": {
+          "script": 3,
+          "xmlhttprequest": 3
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 6,
+        "hosts": [
+          "ats-wrapper.privacymanager.io",
+          "geo.privacymanager.io",
+          "launchpad-wrapper.privacymanager.io",
+          "launchpad.privacymanager.io"
+        ],
+        "types": {
+          "text/javascript": 1,
+          "application/x-javascript": 1,
+          "application/json": 3,
+          "application/javascript": 1
+        },
+        "statuses": {
+          "200": 6
+        },
+        "examples": [
+          "https://launchpad-wrapper.privacymanager.io/356ff445-ff19-4272-b200-d5c1dfa473ed/launchpad-liveramp.js",
+          "https://launchpad.privacymanager.io/latest/launchpad.bundle.js",
+          "https://geo.privacymanager.io/"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "doubleclick.net",
+      "plugin": {
+        "seen": true,
+        "requests": 6,
+        "tracker": "doubleclick.net",
+        "owner": "Google",
+        "category": "advertising",
+        "affiliated": false,
+        "types": {
+          "script": 3,
+          "image": 1,
+          "xmlhttprequest": 2
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 66,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 10,
+        "filters": {
+          "||doubleclick.net^": 5,
+          "||doubleclick.net/instream/ad_status.js^$script,redirect-rule=doubleclick_instream_ad_status.js:5": 2,
+          "||doubleclick.net^$xhr,redirect-rule=noop.txt": 2
+        }
+      },
+      "har": {
+        "count": 6,
+        "hosts": [
+          "cm.g.doubleclick.net",
+          "googleads.g.doubleclick.net",
+          "securepubads.g.doubleclick.net",
+          "static.doubleclick.net"
+        ],
+        "types": {
+          "application/javascript": 3,
+          "image/gif": 1,
+          "text/xml": 2
+        },
+        "statuses": {
+          "200": 6
+        },
+        "examples": [
+          "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+          "https://cm.g.doubleclick.net/pixel?google_nid=permutive_dmp&google_cm&type=ddp&k=d2934e09-3372-4691-ade8-1a2726d74798&u=",
+          "https://googleads.g.doubleclick.net/pagead/id"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "permutive.com",
+      "plugin": {
+        "seen": true,
+        "requests": 6,
+        "tracker": "permutive.com",
+        "owner": "Permutive",
+        "category": "analytics",
+        "affiliated": false,
+        "types": {
+          "xmlhttprequest": 6
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 19,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 6,
+        "hosts": [
+          "api.permutive.com",
+          "cdn.permutive.com"
+        ],
+        "types": {
+          "text/xml": 4,
+          "?": 1,
+          "application/json": 1
+        },
+        "statuses": {
+          "200": 5,
+          "0": 1
+        },
+        "examples": [
+          "https://api.permutive.com/ctx/v1/state?url=https%3A%2F%2Fwww.uol.com.br&k=d2934e09-3372-4691-ade8-1a2726d74798",
+          "https://api.permutive.com/v2.0/geoip?include=geo&include=isp&include=ip_hash&k=d2934e09-3372-4691-ade8-1a2726d74798",
+          "https://cdn.permutive.com/models/v2/4b91477e-f67b-4d81-86db-a9742bd41e9c-models.bin"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "gstatic.com",
+      "plugin": {
+        "seen": true,
+        "requests": 6,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": false,
+        "types": {
+          "script": 3,
+          "image": 1,
+          "font": 2
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 7,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 6,
+        "hosts": [
+          "fonts.gstatic.com",
+          "www.gstatic.com"
+        ],
+        "types": {
+          "text/html": 3,
+          "image/png": 1,
+          "font/woff2": 2
+        },
+        "statuses": {
+          "404": 3,
+          "200": 3
+        },
+        "examples": [
+          "https://www.gstatic.com/0emn/f/p/pub-4854083244330948.js?usqp=CA4",
+          "https://www.gstatic.com/0emn/f/p/pub-4854083244330948.js?usqp=CA4",
+          "https://www.gstatic.com/0emn/f/p/pub-4854083244330948.js?usqp=CA4"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "googleapis.com",
+      "plugin": {
+        "seen": true,
+        "requests": 6,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": false,
+        "types": {
+          "script": 3,
+          "xmlhttprequest": 3
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 6,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 5,
+        "filters": {
+          "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT": 4,
+          "||imasdk.googleapis.com^": 1
+        }
+      },
+      "har": {
+        "count": 6,
+        "hosts": [
+          "imasdk.googleapis.com",
+          "jnn-pa.googleapis.com"
+        ],
+        "types": {
+          "application/javascript": 3,
+          "application/json+protobuf": 2,
+          "text/html": 1
+        },
+        "statuses": {
+          "200": 6
+        },
+        "examples": [
+          "https://imasdk.googleapis.com/js/sdkloader/ima3.js",
+          "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
+          "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "google.com",
+      "plugin": {
+        "seen": true,
+        "requests": 5,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": false,
+        "types": {
+          "script": 4,
+          "xmlhttprequest": 1
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 16,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 5,
+        "hosts": [
+          "fundingchoicesmessages.google.com",
+          "www.google.com"
+        ],
+        "types": {
+          "?": 2,
+          "application/javascript": 1,
+          "text/javascript": 2
+        },
+        "statuses": {
+          "0": 2,
+          "200": 3
+        },
+        "examples": [
+          "https://fundingchoicesmessages.google.com/i/pub-4854083244330948?ers=1",
+          "https://fundingchoicesmessages.google.com/b/pub-4854083244330948",
+          "https://fundingchoicesmessages.google.com/el/AGSKWxXUC8WLrj8-KsvIefNICe1YAya95qkAF6aP-dmCL_sTkLbmqS0PLmEE0p7-Jljr7bxiZfd"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "mrf.io",
+      "plugin": {
+        "seen": true,
+        "requests": 3,
+        "tracker": "mrf.io",
+        "owner": "Marfeel",
+        "category": "analytics",
+        "affiliated": false,
+        "types": {
+          "script": 3
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 1,
+        "filters": {
+          "||sdk.mrf.io/statics/marfeel-sdk.js": 1
+        }
+      },
+      "har": {
+        "count": 3,
+        "hosts": [
+          "marfeelexperimentsexperienceengine.mrf.io",
+          "sdk.mrf.io"
+        ],
+        "types": {
+          "application/javascript": 3
+        },
+        "statuses": {
+          "200": 3
+        },
+        "examples": [
+          "https://sdk.mrf.io/statics/marfeel-sdk.js?id=4196",
+          "https://marfeelexperimentsexperienceengine.mrf.io/experimentsexperience/render?id=AC_kZDFA2LFQiuFz28psQN1SA&experimentTy",
+          "https://sdk.mrf.io/statics/chunks/d2959d7e1d86ef682c5c.js"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "chartbeat.com",
+      "plugin": {
+        "seen": true,
+        "requests": 2,
+        "tracker": "chartbeat.com",
+        "owner": "Chartbeat",
+        "category": "analytics",
+        "affiliated": false,
+        "types": {
+          "script": 2
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 10,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 3,
+        "filters": {
+          "||chartbeat.com^$3p": 2,
+          "||static.chartbeat.com/js/chartbeat_mab.js$script,redirect-rule=chartbeat.js": 1
+        }
+      },
+      "har": {
+        "count": 2,
+        "hosts": [
+          "static.chartbeat.com"
+        ],
+        "types": {
+          "application/javascript": 2
+        },
+        "statuses": {
+          "200": 2
+        },
+        "examples": [
+          "https://static.chartbeat.com/js/chartbeat_mab.js",
+          "https://static.chartbeat.com/js/chartbeat_video.js"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "googletagmanager.com",
+      "plugin": {
+        "seen": true,
+        "requests": 2,
+        "tracker": "googletagmanager.com",
+        "owner": "Google Analytics",
+        "category": "analytics",
+        "affiliated": false,
+        "types": {
+          "script": 2
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 4,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 2,
+        "hosts": [
+          "www.googletagmanager.com"
+        ],
+        "types": {
+          "application/javascript": 2
+        },
+        "statuses": {
+          "200": 2
+        },
+        "examples": [
+          "https://www.googletagmanager.com/gtag/js?id=G-BS4Q6LCGB1",
+          "https://www.googletagmanager.com/gtag/js?id=G-BS4Q6LCGB1"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "ytimg.com",
+      "plugin": {
+        "seen": true,
+        "requests": 2,
+        "tracker": "ytimg.com",
+        "owner": "Google (YouTube embed)",
+        "category": "advertising",
+        "affiliated": false,
+        "types": {
+          "image": 2
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 2,
+        "hosts": [
+          "i.ytimg.com"
+        ],
+        "types": {
+          "image/jpeg": 2
+        },
+        "statuses": {
+          "200": 2
+        },
+        "examples": [
+          "https://i.ytimg.com/vi/6ys1PK4z-yc/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYWSBgKGUwDw==&rs=A",
+          "https://i.ytimg.com/vi/sUHeNIp_Uxs/maxresdefault.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbAIgAKAD4oCDAgAEAEYfyBGKBMwDw="
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "adnxs.com",
+      "plugin": {
+        "seen": true,
+        "requests": 2,
+        "tracker": "adnxs.com",
+        "owner": "Xandr/AppNexus",
+        "category": "advertising",
+        "affiliated": false,
+        "types": {
+          "xmlhttprequest": 2
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 43,
+        "cookies3p": 4
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 2,
+        "hosts": [
+          "ib.adnxs.com"
+        ],
+        "types": {
+          "application/x-unknown-content-type": 1,
+          "text/xml": 1
+        },
+        "statuses": {
+          "200": 2
+        },
+        "examples": [
+          "https://ib.adnxs.com/getuidj",
+          "https://ib.adnxs.com/getuidj?gdpr=0"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "jsuol.com",
+      "plugin": {
+        "seen": true,
+        "requests": 1,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": true,
+        "types": {
+          "image": 1
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 2,
+        "hosts": [
+          "me.jsuol.com"
+        ],
+        "types": {
+          "image/svg+xml": 2
+        },
+        "statuses": {
+          "200": 2
+        },
+        "examples": [
+          "https://me.jsuol.com/x.svg",
+          "https://me.jsuol.com/x.svg"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "turner.com",
+      "plugin": {
+        "seen": true,
+        "requests": 1,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": false,
+        "types": {
+          "script": 1
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 1,
+        "hosts": [
+          "s.cdn.turner.com"
+        ],
+        "types": {
+          "application/javascript": 1
+        },
+        "statuses": {
+          "200": 1
+        },
+        "examples": [
+          "https://s.cdn.turner.com/analytics/comscore/streamsense.5.2.0.160629.min.js"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "permutive.app",
+      "plugin": {
+        "seen": true,
+        "requests": 1,
+        "tracker": "permutive.app",
+        "owner": "Permutive",
+        "category": "analytics",
+        "affiliated": false,
+        "types": {
+          "script": 1
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 7,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 1,
+        "filters": {
+          "||permutive.app^": 1
+        }
+      },
+      "har": {
+        "count": 1,
+        "hosts": [
+          "4b91477e-f67b-4d81-86db-a9742bd41e9c.edge.permutive.app"
+        ],
+        "types": {
+          "application/javascript": 1
+        },
+        "statuses": {
+          "200": 1
+        },
+        "examples": [
+          "https://4b91477e-f67b-4d81-86db-a9742bd41e9c.edge.permutive.app/4b91477e-f67b-4d81-86db-a9742bd41e9c-web.js"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "amazon-adsystem.com",
+      "plugin": {
+        "seen": true,
+        "requests": 1,
+        "tracker": "amazon-adsystem.com",
+        "owner": "Amazon",
+        "category": "advertising",
+        "affiliated": false,
+        "types": {
+          "script": 1
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 57,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 1,
+        "hosts": [
+          "c.amazon-adsystem.com"
+        ],
+        "types": {
+          "?": 1
+        },
+        "statuses": {
+          "0": 1
+        },
+        "examples": [
+          "https://c.amazon-adsystem.com/aax2/apstag.js"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "scorecardresearch.com",
+      "plugin": {
+        "seen": true,
+        "requests": 1,
+        "tracker": "scorecardresearch.com",
+        "owner": "comScore",
+        "category": "analytics",
+        "affiliated": false,
+        "types": {
+          "script": 1
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 34,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 1,
+        "filters": {
+          "||scorecardresearch.com^": 1
+        }
+      },
+      "har": {
+        "count": 1,
+        "hosts": [
+          "sb.scorecardresearch.com"
+        ],
+        "types": {
+          "application/javascript": 1
+        },
+        "statuses": {
+          "200": 1
+        },
+        "examples": [
+          "https://sb.scorecardresearch.com/cs/6036356/beacon.js"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "tinypass.com",
+      "plugin": {
+        "seen": true,
+        "requests": 1,
+        "tracker": "tinypass.com",
+        "owner": "Piano (Tinypass)",
+        "category": "analytics",
+        "affiliated": false,
+        "types": {
+          "script": 1
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 1,
+        "hosts": [
+          "cdn.tinypass.com"
+        ],
+        "types": {
+          "application/javascript": 1
+        },
+        "statuses": {
+          "200": 1
+        },
+        "examples": [
+          "https://cdn.tinypass.com/api/tinypass.min.js"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "prmutv.co",
+      "plugin": {
+        "seen": true,
+        "requests": 1,
+        "tracker": "prmutv.co",
+        "owner": "Permutive",
+        "category": "analytics",
+        "affiliated": false,
+        "types": {
+          "xmlhttprequest": 1
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 1,
+        "hosts": [
+          "4b91477e-f67b-4d81-86db-a9742bd41e9c.prmutv.co"
+        ],
+        "types": {
+          "application/json": 1
+        },
+        "statuses": {
+          "200": 1
+        },
+        "examples": [
+          "https://4b91477e-f67b-4d81-86db-a9742bd41e9c.prmutv.co/v2.0/pxid?k=d2934e09-3372-4691-ade8-1a2726d74798"
+        ],
+        "setCookie": 1
+      }
+    },
+    {
+      "domain": "tapad.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 9,
+        "cookies3p": 3
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "gumgum.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 3,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "crwdcntrl.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 4,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "liadm.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "mgaru.dev",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "seedtag.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 29,
+        "cookies3p": 4
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "outbrain.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 3,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "connectad.io",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 8,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "gvt1.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "serverbid.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "loopme.me",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 5,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "bidr.io",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 8,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "ctnsnet.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "ex.co",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "t13.io",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "yellowblue.io",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 9,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "sascdn.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "omnitagjs.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "brand-display.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "admanmedia.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "mygaru.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "demdex.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "on.aws",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "richaudience.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 3
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "taptapnetworks.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "adform.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 8,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "facebook.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "undertone.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "fwmrm.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "clarity.ms",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 11,
+        "cookies3p": 5
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "technoratimedia.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "turn.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 4,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "criteo.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 5,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "quantserve.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 4,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "mxptint.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "emxdgt.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "pinterest.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "contextweb.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 6,
+        "cookies3p": 5
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "taboola.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "openx.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 8,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "smartadserver.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 36,
+        "cookies3p": 7
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "tracookiepixel.xyz",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "cognitivlabs.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 3,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "sonobi.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 6,
+        "cookies3p": 20
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "syncingbridge.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 6
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "openxcdn.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "deepintent.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 3,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "adstanding.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "temu.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "piano.io",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "id5-sync.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 14,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "adgrx.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "krushmedia.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "everesttech.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 5,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "amspbs.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "sharethrough.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 7,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "dv.tech",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "doubleverify.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 42,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "simpli.fi",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 4,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "a-mo.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 6
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "3lift.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 3,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "connatix.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 4,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "unrulymedia.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "betweendigital.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 4
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "pubmatic.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 11,
+        "cookies3p": 17
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "onaudience.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "bttrack.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "mathtag.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "mediavine.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "adition.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "tribalfusion.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "1rx.io",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 5,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "adtrafficquality.google",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "chartbeat.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 5,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "bfmio.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 8,
+        "cookies3p": 9
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "33across.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "eqads.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "trustedstack.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "primis.tech",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "intentiq.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 5
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "cadent.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "opera.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "cootlogix.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "pmbmonetize.live",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "linkedin.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 3
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "agkn.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "2mdn.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 19,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "nextmillmedia.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 3
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "facebook.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 4,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "onetag-sys.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 3,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "aralego.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "inmobi.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 3,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "googlesyndication.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 69,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "rtbhouse.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "acuityplatform.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "media.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 5,
+        "cookies3p": 3
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "ipredictive.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 4,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "creativecdn.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 7,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "rfihub.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 3
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "smaato.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 3,
+        "cookies3p": 6
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "sitescout.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 5,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "ads-twitter.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "storygize.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "google-analytics.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "cxense.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 9,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "lijit.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 6,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "adsrvr.org",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 10,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "im-apps.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 3,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "imguol.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "springserve.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "company-target.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "kargo.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "rubiconproject.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 123,
+        "cookies3p": 5
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "yahoo.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 11,
+        "cookies3p": 3
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "yieldmo.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "creative-serving.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 3
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "bidswitch.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 16,
+        "cookies3p": 3
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "rlcdn.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 5,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "smilewanted.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "aniview.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "semasio.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 9,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "t.co",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 5,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "mgid.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "minutemedia-prebid.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "stackadapt.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 5,
+        "cookies3p": 4
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "startappnetwork.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 7
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "bidtheatre.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "dotomi.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 11,
+        "cookies3p": 3
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "360yield.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 5,
+        "cookies3p": 4
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "blismedia.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "shb-sync.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 2
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "twitter.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 6,
+        "cookies3p": 5
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "casalemedia.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 3
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "appier.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "criteo.net",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 2,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    },
+    {
+      "domain": "bing.com",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 1,
+        "cookies3p": 3
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 0
+      }
+    }
+  ]
+}

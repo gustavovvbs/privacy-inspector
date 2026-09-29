@@ -1,0 +1,356 @@
++24	/log?format=	--	accounts.google.com	3,1	post	xhr	https://play.google.com/log?format=json&hasfast=true&authuser=0
++15	/tagman/*$from=~abelssoft.de	--	www.terra.com.br	3	get	script	https://p1-cloud.trrsf.com.br/api/tagman/v2/ShowArea?key=br.homepage.home360.scoverage&area=scoverage&direct=1
++15			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/411/411/264/0/224/224/images.terra.com/2026/09/28/1772620917-79396771354.jpg
++15			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/413/413/0/0/224/224/images.terra.com/2026/09/28/imagem_2026-09-28_202041163-vbt0uqkxatki.png
++15			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/612/336/smart/images.terra.com/2026/09/29/design-sem-nome-2026-09-28t220034-116-socb8r2950l5.png
++15			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/612/336/smart/images.terra.com/2026/09/29/design-sem-nome-2026-09-28t223620-872-1iukdnq4b0ilu.png
++15			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/240/290/smart/images.terra.com/2026/09/28/716936705-sbt-negocia-contratacao-apos-saida-de-apresentador-da-band.png
++15			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/240/290/smart/images.terra.com/2026/09/28/1186830898-14e8670c-dcaa-4e65-bd9b-a4550f8f9ef1.jpg
++15			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/240/290/smart/images.terra.com/2026/09/28/1389703840-9a2e518a49c26e0d-1400x823-2.jpg
++15			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/612/712/smart/images.terra.com/2026/09/27/2042636891-woman-showing-hair-root-growth-20260927154911.jpg
++15			www.terra.com.br	3	get	image	https://s1.trrsf.com/fe/zaz-app-t360-lottery/_assets/logo_sorte-sorte_preto.png
++15			www.terra.com.br	3	get	image	https://s1.trrsf.com/fe/zaz-app-t360-lottery/_assets/logo_sorte-sorte.png
++14			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/weather/weather_4tn.svg
++14			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/weather/weather_4t.svg
++14			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/weather/weather_2r.svg
++14			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1733349909/fe/zaz-app-t360-weather/_img/logo-climatempo.png
++14			www.terra.com.br	3	get	xhr	https://p1-cloud.trrsf.com.br/api/weather-api/buscatempo?id_climatempo_advisor=3477
++14			accounts.google.com	3,3	get	font	https://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vgCIhM907w.woff2
++14	#@#+js(prevent-clipboard-write, /^ms(hta|iexec)(\.exe)? |^(bash <<<|curl -kfsSL) \$\(echo .+? base64 -d\b|^cmd \/c .*?\bcurl .+?(\.exe|\.bat)\b|^cmd .*?\bfor \/f .*?\bdelims .*?\bpow |(^|\\)powershell(\.exe)? .*?-w(indowStyle)? h(idden)?\b|(^|\\)powershell(\.exe)? .*?-w[a-z]* m[a-z]* |(^|\\)powershell(\.exe)? .*?-NoP\b|(^|\\)powershell(\.exe)? .*?-e(xecution)?p(olicy)? b(ypass)?\b|(^|\\)powershell(\.exe)? .*?-e(xecution)?p(olicy)? u(nrestricted)?\b|(^|\\)powershell(\.exe)? .*?\biex\(|(^|\\)powershell(\.exe)? .*?Invoke-Expression|(^|\\)powershell.+?Invoke-WebRequest|(^|\\)powershell.+?-UseBasicParsing|^cmd .*?\/c .+? -nop .+? iex\b|^(cmd|powershell)\b.+?recaptcha|^(cmd|powershell)\b.+?#(Verification|     )|^(cmd|powershell)\b.+?     #|^osascript .+?\bcurl http|^curl -s\b.+?\| (bash|sh|zsh)\b|^\/bin\/(bash|sh|zsh) -c\b.+?\bcurl|^bash -c\b.+?\$\(curl|^python3? -c\b.+?\b(exec|urllib|subprocess)\b|^echo .+?base64 .+?\b(bash|osascript|z?sh)\b|openssl base64 -d|^curl\b .+?chmod \+x.+?&&|^(bash|sh|osascript)\b.+?recaptcha|^(bash|sh|osascript)\b.+?#(Verification|     )|^(bash|sh|osascript)\b.+?     #|^wget .+?\| (bash|sh)\b|^curl\b.+?-o\b.+?\/tmp\/.+?&&|^nc .+?-e \/bin\/(bash|sh)\b|^\/tmp\/.+?chmod \+x.+?&&|^wget -q.+?\.(sh|py|bin|elf)\b|^cmd .+?\bcertutil .+?\b(\.exe|\.bat)\b|(^|\\)powershell(\.exe)? .+?\birm .+?\.[a-z]+\/.+?powershell|\bpcalua(\.exe)? .*?\b(curl|powershell|saps|cmd)\b|^cmd .+?\bcmdkey .+?\bschtasks|^Invoke-Command .+?Base64String|^c(onhost|md) .*?--headless |^iex\(i(rm|wr) |^\(?irm .+?\biex\b|^%COMSPEC% .*?\bstart .*?\/min\b|^cmd .*?\/c .*?%TEMP%.*?\.bat\b|\bconvert\b.*?\$env:ComSpec\b|^<#Verification|^Invoke-WebRequest .+?\bwscript(\.exe)?\b/msi, domAlert, 'Beware, uBlock Origin blocked a potential ClickFix attack: ${text}', excludeMatches, /Maintainer|Contributor|^\{|^http|^(git|import|require|use) /i)		accounts.google.com		get	scriptlet	https://accounts.google.com/gsi/button?theme=outline&text=signin_with&size=large&logo_alignment=left&width=222&is_fedcm_supported=false&client_id=66671836960-64nrh3rrhfj072r7fg23q68ekm6h9ke8.apps.googleusercontent.com&iframe_id=gsi_7620_101371&cas=kh4nkNTW2YcWkL6sBiFu%2BJqfc4oUwHf35MZLWJZAT3o&hl=pt-BR
++14	@@||accounts.google.com^$generichide	++	accounts.google.com	3,1		generichide	https://accounts.google.com/gsi/button?theme=outline&text=signin_with&size=large&logo_alignment=left&width=222&is_fedcm_supported=false&client_id=66671836960-64nrh3rrhfj072r7fg23q68ekm6h9ke8.apps.googleusercontent.com&iframe_id=gsi_7620_101371&cas=kh4nkNTW2YcWkL6sBiFu%2BJqfc4oUwHf35MZLWJZAT3o&hl=pt-BR
++14			www.terra.com.br	3	get	xhr	https://p1-cloud.trrsf.com.br/api/weather-api/getlocal?climatempo=true&lat=-23.6293&lon=-46.6351
++14			www.terra.com.br	3	get	frame	https://accounts.google.com/gsi/button?theme=outline&text=signin_with&size=large&logo_alignment=left&width=222&is_fedcm_supported=false&client_id=66671836960-64nrh3rrhfj072r7fg23q68ekm6h9ke8.apps.googleusercontent.com&iframe_id=gsi_7620_101371&cas=kh4nkNTW2YcWkL6sBiFu%2BJqfc4oUwHf35MZLWJZAT3o&hl=pt-BR
++14			www.terra.com.br	3	get	css	https://accounts.google.com/gsi/style
++14			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1786557909/fe/zaz-app-t360-generic-cards/_img/TerraServicosLogo.png
++14			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1786557909/fe/zaz-app-t360-generic-cards/_img/moon.png
++14	||tailtarget.com^$3p	--	www.terra.com.br	3	get	image	https://c.t.tailtarget.com/clk/TT-10969-0/QGO5QLRPY4/track
++14	||tailtarget.com^$3p	--	www.terra.com.br	3	get	image	https://c.t.tailtarget.com/view/TT-10969-0/QGO5QLRPY4/track
++14			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1733349909/fe/zaz-app-t360-weather/_css/theme-default.min.css
++14			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1733403908/fe/zaz-app-t360-weather/_js/app-t360-weather.min.js
++14			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/flags/flag-state-sp.svg
++14			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1785177910/fe/zaz-mod-t360-icons/_css/weather.min.css
++14			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1785177909/fe/zaz-mod-t360-icons/_css/flags.min.css
++14			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1786557909/fe/zaz-app-t360-generic-cards/_css/theme-default.min.css
++14			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1786557909/fe/zaz-app-t360-generic-cards/_js/app-t360-generic-cards.min.js
++14			www.terra.com.br	3	get	xhr	https://p1-cloud.trrsf.com.br/api/includer/include?component=app.t360.genericCards&component=app.t360.weather&component=mod.t360.icons.flags&country=br&env=prod&format=json&group=web&scheme=https
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/25/123662760-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/27/2028154111-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/26/811193443-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/26/1905256136-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/26/1240847697-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/27/1500387914-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/26/198887048-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/26/1705352536-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/26/968957552-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/25/1732567617-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/27/1236237334-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/25/683324062-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/26/642650359-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/27/462472636-maxresdefault.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/313/images.terra.com/2026/09/27/1948637558-maxresdefault.jpg
++14	##div[data-ad-placeholder]		www.terra.com.br		get	dom	https://www.terra.com.br/
++14			www.terra.com.br	1	get	xhr	https://www.terra.com.br/feeder/cards/20e07ef2795b2310VgnVCM3000009af154d0RCRD.json?site=Brasil&access_token=62023c49-29c3-44b9-b4e9-144f5af15002&limit=40&types=SHORT
++14			www.terra.com.br	3	get	script	https://accounts.google.com/gsi/client
++14	/tagman/*$from=~abelssoft.de	--	www.terra.com.br	3	get	script	https://p1-cloud.trrsf.com.br/api/tagman/v2/ShowArea?key=br.homepage.home360.user_area&area=user_area&direct=1
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/612/712/smart/images.terra.com/2026/09/28/210593480-5f25c13e78d2a75b-1400x823-1.jpg
++14			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/612/712/smart/images.terra.com/2026/09/28/217778411-cd55aa67-5fd4-40f4-bdc0-2f3c5f08f750.jpg
++14			www.terra.com.br	3	get	font	https://s1.trrsf.com/fe/zaz-ui-t360-meu-terra/_fonts/BarlowCondensed-Bold.ttf
++14			www.terra.com.br	3	get	font	https://s1.trrsf.com/fe/zaz-ui-t360-meu-terra/_fonts/BarlowCondensed-Regular.ttf
++14			www.terra.com.br	3	get	font	https://s1.trrsf.com/fe/zaz-ui-t360-meu-terra/_fonts/ArchivoNarrow-Bold.ttf
++14			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/essential-solid/fire.svg
++14			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/essential-solid/book.svg
++13			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1768592114/fe/zaz-app-t360-financial/_img/flags/pound@2x.png
++13			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1768592114/fe/zaz-app-t360-financial/_img/flags/euro@2x.png
++13			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1768592114/fe/zaz-app-t360-financial/_img/flags/dollar@2x.png
++13			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/essential-solid/sync-alt.svg
++13			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1768592114/fe/zaz-app-t360-financial/_img/vivopay.svg
++13			www.terra.com.br	3	get	xhr	https://p1-cloud.trrsf.com.br/api/top-indices
++13			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/essential-solid/bell.svg
++13			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1731441988/fe/zaz-app-t360-teams-notifications/_css/theme-default.min.css
++13			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1731441845/fe/zaz-app-t360-teams-notifications/_js/app-t360-teams-notifications.min.js
++13			www.terra.com.br	1	get	image	https://www.terra.com.br/globalSTATIC/fe/zaz-mod-t360-icons/svg/logos/tanosastros-preto-branco.svg
++13			www.terra.com.br	1	get	image	https://www.terra.com.br/globalSTATIC/fe/zaz-mod-t360-icons/svg/logos/tanosastros-preto-laranja.svg
++13			www.terra.com.br	1	get	image	https://www.terra.com.br/globalSTATIC/fe/zaz-mod-t360-icons/svg/logos/terra-horizontal-branco.svg
++13			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1768592114/fe/zaz-app-t360-financial/_css/theme-default.min.css
++13			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1768592114/fe/zaz-app-t360-financial/_js/app-t360-financial.min.js
++13			www.terra.com.br	3	get	xhr	https://p1.trrsf.com.br/api/top-indices/get-lotbar
++13			www.terra.com.br	3	get	xhr	https://p1.trrsf.com.br/api/top-indices/get-last-results
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-vitoria.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-vasco.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-saopaulo.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-santos.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-remo.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-palmeiras.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-mirassol.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-internacional.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-gremio.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-fluminense.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-flamengo.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-cruzeiro.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-coritiba.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-corinthians.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-chapecoense.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-bragantino.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-botafogo.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-bahia.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-atletico-mg.svg
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/shields/shield-atletico-pr.svg
++12			www.terra.com.br	3	get	xhr	https://p1-cloud.trrsf.com/api/musa-api/locale-team-guide?acronym=BRA&lang=pt-BR
++12			www.terra.com.br	3	get	xhr	https://p1-cloud.trrsf.com.br/api/includer/include?component=app.t360.financial&component=app.t360.teamsNotifications&country=br&env=prod&format=json&group=web&scheme=https
++12			www.terra.com.br	3	get	xhr	https://p1.trrsf.com.br/api/top-indices/get-lotbar
++12			www.terra.com.br	3	get	xhr	https://p1.trrsf.com.br/api/top-indices/get-last-results
++12			www.terra.com.br	3	get	xhr	https://p1-cloud.trrsf.com/api/musa-api/locale-team-guide?acronym=BRA&lang=pt-BR
++12	/tagman/*$from=~abelssoft.de	--	www.terra.com.br	3	get	script	https://p1-cloud.trrsf.com.br/api/tagman/v2/ShowArea?key=br.homepage.home360.s2&area=s2&direct=1
++12			www.terra.com.br	3	get	image	https://s1.trrsf.com/fe/zaz-app-financial/_img/loader.png
++8	Reloading all filter lists: done, took 232 ms	info
++8	Reloading all filter lists: start	info
++7			1d2e3f40-0000-4000-8000-ab10cc000001.moz-extension-scheme	0,3	get	xhr	https://ublockorigin.github.io/uAssetsCDN/ublock/assets.json
++6			www.terra.com.br	1	get	websocket	wss://rt-cloud.terra.com.br/client/hubs/Portal?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL3JlYWx0aW1lLXRlcnJhLXByb2Qud2VicHVic3ViLmF6dXJlLmNvbS9jbGllbnQvaHVicy9Qb3J0YWwiLCJpYXQiOjE3OTA2NTA5OTgsImV4cCI6MTc5MDczNzM5OCwicm9sZSI6WyJ3ZWJwdWJzdWIuam9pbkxlYXZlR3JvdXAuY21zLWxpdmUiXSwid2VicHVic3ViLmdyb3VwIjpbImNtcy1saXZlIl19.TbVENIFkSixol4a7-ntJiZbizeQCp5ijXO4RYocUKs8
++6			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1731442392/fe/zaz-app-t360-terratv/_css/theme-default.min.css
++6			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1750962315/fe/zaz-app-t360-terratv/_js/app-t360-terratv.min.js
++6			1d2e3f40-0000-4000-8000-ab10cc000001.moz-extension-scheme	0,3	get	xhr	https://publicsuffix.org/list/public_suffix_list.dat
++6			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1790382311/fe/zaz-app-player/_css/theme-default.min.css
++6			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1790382311/fe/zaz-app-player/_js/app-player.min.js
++5			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1751567115/fe/zaz-app-t360-special-coverage/_css/theme-default.min.css
++5			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1781129723/fe/zaz-app-t360-special-coverage/_js/app-t360-special-coverage.min.js
++5			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1789668313/fe/zaz-3rd/videojs/video.min.js
++5			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1780426525/fe/zaz-app-t360-shorts/_css/theme-default.min.css
++5			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1785870307/fe/zaz-app-t360-shorts/_js/app-t360-shorts.min.js
++5	||taboola.com^	--	www.terra.com.br	3	get	script	https://cdn.taboola.com/libtrc/terrabr/loader.js
++5			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1780423536/fe/zaz-ui-t360-meu-terra/_css/themes-swap.min.css
++5			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1781815508/fe/zaz-ui-t360-meu-terra/_css/context-cards.min.css
++5			www.terra.com.br	3	get	xhr	https://p1-cloud.trrsf.com.br/api/includer/include?component=app.t360.shorts&component=app.t360.specialCoverage&component=app.t360.terratv&component=mod.taboola&component=ui.t360.meuterra.cards&component=ui.t360.meuterra.themes-swap&country=br&env=prod&format=json&group=web&scheme=https
++5			www.terra.com.br	1	post	xhr	https://api.terra.com.br/terrauserinfo/info
++5			www.terra.com.br	1	get	xhr	https://api.terra.com.br/realtime-api/events?ch=cms-live&m=78934&s=M
++5			www.terra.com.br	1	post	xhr	https://api.terra.com.br/terrauserinfo/info
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/242/80/images.terra.com/2023/10/31/logo-receitas-dark-(1)-1iupxobgm3os7.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/242/80/images.terra.com/2023/10/31/logo-receitas-light-tocumuhxu0j8.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/300/60/images.terra.com/2023/03/24/game-on-dark-1hrri4hre4j05.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/300/60/images.terra.com/2023/03/24/game-on-light-1ibhl4wyo63c1.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/300/70/images.terra.com/2024/07/17/_apostas-1iusreatt5z5d.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/56/images.terra.com/2025/12/23/unip-azul-escuro-240px-qxw4xmv583sp.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/300/76/images.terra.com/2024/07/18/educar-rhjddfs247qv.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/44/images.terra.com/2026/08/13/logo-piraque-negativo-88v01-qxi8htupit69.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/300/62/images.terra.com/2026/03/23/logo-sonora-1-s1bnhwk22o1d.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/300/62/images.terra.com/2023/10/16/dinheiros-logonovo-t8ceb5w5yed2.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/176/images.terra.com/2026/09/24/20c_whalefall_post-estreno_yt_img_dark_cpv_br_port__1200x1200_logotipo_none_negro-1jia12vjx729f.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/164/80/images.terra.com/2024/08/06/entretelas-v4-dark-1jy87k2m2nigp.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/164/80/images.terra.com/2024/08/06/entretelas-v4-light-trz43shpo95x.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/64/images.terra.com/2026/08/18/vivo+vivinho_roxo_encontrofuturo-rl8ddvpxsg1k.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/180/80/images.terra.com/2024/07/19/byte_40-too0gbab65ph.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/230/80/images.terra.com/2024/07/17/degusta-dark-amarelo-to2bvf9siq90.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/230/80/images.terra.com/2024/07/17/degusta-1hrs17km7t3dy.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/300/44/images.terra.com/2024/03/25/mobilidade_dark-1k1u0ip6txtm9.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/300/44/images.terra.com/2024/03/25/mobilidade_light-rhaimrnct3xv.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/300/76/images.terra.com/2024/07/17/nos-1hvbksfgy2jp1.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/242/136/images.terra.com/2026/09/28/bruno-sem-txt-(2)-1ib37k1078boz.jpg
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/242/136/images.terra.com/2026/09/28/lula-sem-txt-qxtvxp2ll6wl.jpg
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/242/136/images.terra.com/2026/09/29/salles-sem-txt-qxtb9yel9cms.jpg
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/242/136/images.terra.com/2026/09/29/carol-sem-txt-(1)-1hbdpmu07wx84.jpg
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/242/136/images.terra.com/2026/09/28/mega-sem-txt-soknqdx8mbty.jpg
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/176/44/images.terra.com/2026/06/15/image-(5)-uv94mdjnsh2b.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/194/80/images.terra.com/2023/03/24/terra-voce-qe9wqjkryr7a.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/196/80/images.terra.com/2024/09/02/agora-marca-2x-uv5to8qvvy2g.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/340/80/images.terra.com/2024/07/18/esportes-1ib8p302hbwol.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/216/80/images.terra.com/2023/04/05/entrete-u82xkl235hrk.png
++5			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/300/42/s1.trrsf.com/fe/zaz-app-t360-special-coverage/_img/logo-terra-trends.png?v1
++5			www.terra.com.br	1	get	image	https://www.terra.com.br/globalSTATIC/fe/zaz-ui-t360-games/_img/crossword.png
++5			www.terra.com.br	1	get	image	https://www.terra.com.br/globalSTATIC/fe/zaz-ui-t360-games/_img/wordle.png
++5			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1/fe/zaz-app-t360-user-table/_img/not-found-interests.png
++5			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1731440948/fe/zaz-mod-datetime/zaz-datetime.min.js
++5			www.terra.com.br	3	get	xhr	https://p1-cloud.trrsf.com.br/api/includer/include?component=mod.datetime&country=br&env=prod&format=json&group=web&scheme=https
++5			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1776957313/fe/zaz-mod-t360-customer/_js/mod-t360-customer.min.js
++5			www.terra.com.br	3	get	xhr	https://geo.privacymanager.io/
++5			www.terra.com.br	1	get	xhr	https://api.terra.com.br/realtime-api/events?ch=cms-live&m=78934&s=M
++5			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1779908126/fe/zaz-app-t360-favorite-team/_css/theme-default.min.css
++5			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1779908126/fe/zaz-app-t360-favorite-team/_js/app-t360-favorite-team.min.js
++5			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1782766526/fe/zaz-mod-t360-carousel-ranges/_js/mod-t360-carousel-ranges.min.js
++5	amazon_apstag.js:5	<<	www.terra.com.br	3	get	script	https://c.amazon-adsystem.com/aax2/apstag.js
++5	||amazon-adsystem.com/*apstag.js^$redirect-rule=amazon_apstag.js:5,from=~republicbharat.com|~thelallantop.com	--	www.terra.com.br	3	get	script	https://c.amazon-adsystem.com/aax2/apstag.js
++5	||amazon-adsystem.com^	--	www.terra.com.br	3	get	script	https://c.amazon-adsystem.com/aax2/apstag.js
++5			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1742411108/fe/zaz-mod-t360-realtime/_js/mod-t360-realtime.min.js
++5			www.terra.com.br	3	get	xhr	https://p1-cloud.trrsf.com.br/api/includer/include?component=mod.aps&component=mod.prebid&country=br&env=prod&format=json&group=web&scheme=https
++5			1d2e3f40-0000-4000-8000-ab10cc000001.moz-extension-scheme	0,3	get	xhr	https://cdn.jsdelivr.net/gh/uBlockOrigin/uAssetsCDN@main/filters/badlists.txt
++5			www.terra.com.br	3	get	xhr	https://p1-cloud.trrsf.com.br/api/includer/include?component=app.t360.favoriteTeam&component=mod.gpt&component=mod.t360.carouselRanges&component=mod.t360.realtime&country=br&env=prod&format=json&group=web&scheme=https
++4	/tagman/*$from=~abelssoft.de	--	www.terra.com.br	3	get	script	https://p1-cloud.trrsf.com.br/api/tagman/v2/ShowArea?key=br.homepage.home360.floater&area=floater&direct=1
++4			www.terra.com.br	3	get	script	https://ats-wrapper.privacymanager.io/ats-modules/250901ac-8d44-4723-b4a2-2453f279569a/ats.js
++4			www.terra.com.br	1	get	xhr	https://www.terra.com.br/?html=1&ch=20e07ef2795b2310VgnVCM3000009af154d0RCRD&p=1&psz=80&cb=timeline_cb&sz=240&channel_path=Brasil&lomas=br.*.*&dflt=0&f=1&card_types=&country=br&position_web=gt3&subject_tables=2d19f517cd779310VgnVCM5000009ccceb0aRCRD|9,8a8775b4786b2310VgnVCM3000009af154d0RCRD|6,4e9775b4786b2310VgnVCM3000009af154d0RCRD|11,187775b4786b2310VgnVCM3000009af154d0RCRD|10,562f4ce4eaea4310VgnVCM3000009af154d0RCRD|24,app.t360.customNews.1649924|40,app.t360.customNews.1649923|40,app.t360.customNews.1649921|40,app.t360.customNews.1649919|40,app.t360.customNews.1649920|40,app.t360.customNews.1649922|40,app.t360.customNews.1649909|40,app.t360.customNews.1649910|40,app.t360.customNews.1649915|40,app.t360.customNews.1649913|40,app.t360.customNews.1649912|40,app.t360.customNews.1649911|40,app.t360.customNews.1649914|40,app.t360.customNews.1649843|40,app.t360.customNews.1649908|40,app.t360.customNews.1649847|40,app.t360.customNews.1649845|40,app.t360.customNews.1649844|40&special_coverage_cards=1119dbbc92cda310VgnVCM5000009ccceb0aRCRD,ebbd507fb533d6f52e4a1d7c7909cf6eolfc71pn,b8443aca7323a310VgnVCM20000099cceb0aRCRD,05b4ca652d218310VgnVCM4000009bcceb0aRCRD,6f22bd10e1c4a310VgnVCM4000009bcceb0aRCRD,830e81e5deb28fa42b3190e52b55ed75nmouchff,6ecf93beb6345d02a2cd282cecc686f59md0i07z,8896b3c59f539310VgnVCM20000099cceb0aRCRD,50999de762a7a310VgnVCM3000009acceb0aRCRD,0e20577eba149d7d712ed1d705f649b8h8sk435z,c6459cf3f1d2a310VgnVCM3000009acceb0aRCRD,1266db6f7194d26121122142d3e79e3do7sxkgtu&terra360=1&context=country=br,lang=pt,locale=pt-BR,channel=home,idItemMenu=home,countryLive=br,device=web,channelID=20e07ef2795b2310VgnVCM3000009af154d0RCRD,deliverFormat=json,channelPath=Brasil,tgmKey=br.homepage.home360,isLatestPage=false,editorialTable=editorial-1,playerHighlight=withapp-low,tableSequence=2,adRepetitionTableCount=2,nativeAd=2,isHome=true,hasLive=0,musaIdTeam=,color_page=,truvid=4e9775b4786b2310VgnVCM3000009af154d0RCRD,read_autoplay=,taboola=undefined,enableVitrineEspecial=false,subjectAutoLimit=15
++4			www.terra.com.br	3	get	xhr	https://p1-cloud.trrsf.com.br/api/includer/include?component=app.t360.favoriteTeam&component=mod.gpt&component=mod.t360.carouselRanges&component=mod.t360.realtime&country=br&env=prod&format=json&group=web&scheme=https
++4			www.terra.com.br	3	get	script	https://ats-wrapper.privacymanager.io/ats-modules/250901ac-8d44-4723-b4a2-2453f279569a/ats.js
++4			www.terra.com.br	3	options	xhr	https://geo.privacymanager.io/
++4			www.terra.com.br	3	get	xhr	https://geo.privacymanager.io/
++4			www.terra.com.br	3	get	script	https://launchpad.privacymanager.io/latest/launchpad.bundle.js
++4	||trrsf.com/*/mod-stalker.min.js	--	www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1764705914/fe/zaz-mod-stalker/_js/mod-stalker.min.js
++4	##+js(prevent-clipboard-write, /^mshta |^msiexec |^(bash <<<|curl -kfsSL) \$\(echo .+? base64 -d\b|^cmd \/c .*?\bcurl .+?(\.exe|\.bat)\b|^cmd .*?\bfor \/f .*?\bdelims .*?\bpow |(^|\\)powershell(\.exe)? .*?-w(indowStyle)? h(idden)?\b|(^|\\)powershell(\.exe)? .*?-w[a-z]* m[a-z]* |(^|\\)powershell(\.exe)? .*?-NoP\b|(^|\\)powershell(\.exe)? .*?-e(xecution)?p(olicy)? b(ypass)?\b|(^|\\)powershell(\.exe)? .*?-e(xecution)?p(olicy)? u(nrestricted)?\b|(^|\\)powershell(\.exe)? .*?\biex\(|(^|\\)powershell(\.exe)? .*?Invoke-Expression|(^|\\)powershell.+?Invoke-WebRequest|(^|\\)powershell.+?-UseBasicParsing|^cmd .*?\/c .+? -nop .+? iex\b|^(cmd|powershell)\b.+?recaptcha|^(cmd|powershell)\b.+?#(Verification|     )|^(cmd|powershell)\b.+?     #|^osascript .+?\bcurl http|^curl -s\b.+?\| (bash|sh|zsh)\b|^\/bin\/(bash|sh|zsh) -c\b.+?\bcurl|^bash -c\b.+?\$\(curl|^python3? -c\b.+?\b(exec|urllib|subprocess)\b|^echo .+?base64 .+?\b(bash|osascript|z?sh)\b|openssl base64 -d|^curl\b .+?chmod \+x.+?&&|^(bash|sh|osascript)\b.+?recaptcha|^(bash|sh|osascript)\b.+?#(Verification|     )|^(bash|sh|osascript)\b.+?     #|^wget .+?\| (bash|sh)\b|^curl\b.+?-o\b.+?\/tmp\/.+?&&|^nc .+?-e \/bin\/(bash|sh)\b|^\/tmp\/.+?chmod \+x.+?&&|^wget -q.+?\.(sh|py|bin|elf)\b|^cmd .+?\bcertutil .+?\b(\.exe|\.bat)\b|(^|\\)powershell(\.exe)? .+?\birm .+?\.[a-z]+\/.+?powershell|\bpcalua(\.exe)? .*?\b(curl|powershell|saps|cmd)\b|^cmd .+?\bcmdkey .+?\bschtasks|^Invoke-Command .+?Base64String|^c(onhost|md) .*?--headless |^iex\(i(rm|wr) |^irm .+? iex\b|^%COMSPEC% .*?\bstart .*?\/min\b/msi, domAlert, 'Beware, uBlock Origin blocked a potential ClickFix attack: ${text}', excludeMatches, /Maintainer|Contributor|^\{|^http|^(git|import|require|use) /i)		www.terra.com.br		get	scriptlet	https://www.terra.com.br/
++4	##+js(remove-cookie, X-XAct-ID)		www.terra.com.br		get	scriptlet	https://www.terra.com.br/
++4			www.terra.com.br	3	get	script	https://launchpad.privacymanager.io/latest/launchpad.bundle.js
++4	/analytics-helper.js	--	www.terra.com.br	0,3	get	script	https://s1.trrsf.com/fe/zaz-ui-t360/_js/sw-helper/analytics-helper.js
++4			www.terra.com.br	1	get	image	https://www.terra.com.br/globalSTATIC/fe/zaz-mod-t360-icons/svg/logos/terra-favicon-ventana.ico
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/fe/zaz-mod-t360-icons/svg/logos/terra-ventana-ios.png
++4			www.terra.com.br	3	get	script	https://launchpad-wrapper.privacymanager.io/9ce3b5f3-6b5e-4f2a-9ff6-230da29ea14c/launchpad-liveramp.js
++4	##.table-ad		www.terra.com.br		get	dom	https://www.terra.com.br/
++4	##.card-ad		www.terra.com.br		get	dom	https://www.terra.com.br/
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/814/814/122/0/224/224/images.terra.com/2026/09/28/design-sem-nome-2026-09-28t181423-950-1iay52pl9miia.png
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/744/744/218/0/224/224/images.terra.com/2026/09/28/whatsapp-image-2026-09-28-at-18-13-20-qhl3fglwny9g.jpeg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/880/880/150/0/224/224/images.terra.com/2026/09/28/whatsapp-image-2026-09-28-at-15-59-59-r1l3uar8jko4.jpeg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/224/224/smart/images.terra.com/2026/09/28/imagem_2026-09-28_153837781-1iukg2jsd3dx2.png
++4			www.terra.com.br	3	get	xhr	https://s1.trrsf.com/update-1731441000/fe/zaz-mod-globalstorage/zaz-globalstorage-min.js
++4			www.terra.com.br	3	get	script	https://launchpad-wrapper.privacymanager.io/9ce3b5f3-6b5e-4f2a-9ff6-230da29ea14c/launchpad-liveramp.js
++4	chartbeat.js	<<	www.terra.com.br	3	get	script	https://static.chartbeat.com/js/chartbeat.js
++4	||static.chartbeat.com/js/chartbeat.js$script,redirect-rule=chartbeat.js	--	www.terra.com.br	3	get	script	https://static.chartbeat.com/js/chartbeat.js
++4	||chartbeat.com^$3p	--	www.terra.com.br	3	get	script	https://static.chartbeat.com/js/chartbeat.js
++4	||taboola.com^	--	www.terra.com.br	3	get	script	https://c2.taboola.com/nr/terrabr/newsroom.js
++4	/prebid/*$script	--	www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js
++4	||scorecardresearch.com^	--	www.terra.com.br	3	get	script	https://sb.scorecardresearch.com/cs/3000033/beacon.js
++4	||tailtarget.com^$3p	--	www.terra.com.br	3	get	script	https://tags.t.tailtarget.com/t3m.js?i=TT-10969-0/CT-411
++4			www.terra.com.br	0,1	get	script	https://www.terra.com.br/globalSTATIC/fe/zaz-ui-t360/_js/sw.js
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/224/224/smart/images.terra.com/2026/09/28/tubarao-ubgdsosp34h2.png
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/633/633/217/0/224/224/images.terra.com/2026/09/28/whatsapp-image-2026-09-28-at-19-22-32-1jidby3sw91lw.jpeg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/224/224/smart/images.terra.com/2026/09/28/arrasca-s4mtt6b3x834.png
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/1059/1059/334/0/224/224/images.terra.com/2026/09/28/imagem_2026-09-28_195511151-uv5tqxs7n60i.png
++4			www.terra.com.br	1	get	image	https://www.terra.com.br/globalSTATIC/fe/zaz-mod-t360-icons/svg/logos/tanosastros-preto-branco.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/zodiac-solid/pisces.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/zodiac-solid/aquarius.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/zodiac-solid/capricorn.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/zodiac-solid/sagittarius.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/zodiac-solid/scorpio.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/zodiac-solid/libra.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/zodiac-solid/virgo.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/zodiac-solid/leo.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/zodiac-solid/cancer.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/zodiac-solid/gemini.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/zodiac-solid/taurus.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/zodiac-solid/aries.svg
++4			www.terra.com.br	1	get	image	https://www.terra.com.br/globalSTATIC/fe/zaz-mod-t360-icons/svg/logos/tanosastros-preto-laranja.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/essential-solid/chevron-right.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/essential-solid/chevron-left.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/essential-solid/user-account.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/essential-solid/envelope.svg
++4			www.terra.com.br	1	get	image	https://www.terra.com.br/globalSTATIC/fe/zaz-mod-t360-icons/svg/logos/terra-horizontal-branco.svg
++4			www.terra.com.br	3	get	image	https://s1.trrsf.com/update-1785177549/fe/zaz-mod-t360-icons/svg/essential-solid/bars.svg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/459/459/640/55/224/224/images.terra.com/2026/09/28/design-sem-nome-(11)-1hrbeyic9sfua.png
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/1082/1082/419/0/224/224/images.terra.com/2026/09/28/design-sem-nome-2026-09-28t193105-191-1je9uup3lnw35.png
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/487/487/190/0/224/224/images.terra.com/2026/09/29/luiz-bap,-presidente-do-flamengo,-durante-entrevista-ao-mengocast,-na-flamengo-tv-u82exuhwh7hv.png
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/224/224/smart/images.terra.com/2026/09/28/acidente-onibus-1ievhz6x3e59x.jpg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/224/224/smart/images.terra.com/2026/09/28/design-sem-nome-2026-09-28t173203-102-t84lreh41nhz.png
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/827/827/387/0/224/224/images.terra.com/2026/05/06/1280922696-latam-voo.jpeg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/554/554/215/0/224/224/images.terra.com/2026/09/28/fogo-qxzfhf47cq5g.jpeg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/814/814/98/0/224/224/images.terra.com/2026/09/29/991280301-ana-paula-renault-e-tia-milena.jpg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/688/360/smart/images.terra.com/2026/09/23/candidatos-1jy7p8kwru52t.png
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/688/360/smart/images.terra.com/2026/09/28/1560436419-whbgy57zlvhifckqzhpnprvvdi.jpg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/688/360/smart/images.terra.com/2026/09/18/daniel_vorcaro-1jefhfuzzv4o2.PNG
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/688/360/smart/images.terra.com/2026/09/29/54810244505_bfa47e6f85_o-t4yf4hfatun8.jpg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/457/457/127/0/612/608/images.terra.com/2026/09/25/35824631-b54dho3ybfejdjbafoy267vesu.jpg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/457/457/127/0/306/304/images.terra.com/2026/09/25/35824631-b54dho3ybfejdjbafoy267vesu.jpg
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1790365514/fe/zaz-ui-t360-home/_js/context.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1785866126/fe/zaz-app-t360-user-table/_js/app-t360-user-table.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1780957527/fe/zaz-app-t360-horoscope-table/_js/app-t360-horoscope-table.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1779312307/fe/zaz-app-t360-lottery/_js/app-t360-lottery.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1780957527/fe/zaz-app-t360-horoscope/_js/app-t360-horoscope.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1731442295/fe/zaz-app-t360-teams/_js/app-t360-teams.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1781873125/fe/zaz-app-t360-carousel-news/_js/app-t360-carousel-news.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1781630127/fe/zaz-app-t360-editorial-table/_js/app-t360-editorial-table.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1787591126/fe/zaz-app-t360-ticker/_js/app-t360-ticker.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1776978917/fe/zaz-app-t360-subject-table/_js/app-t360-subject-table.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1786478720/fe/zaz-app-t360-navbar/_js/app-t360-navbar.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1785521124/fe/zaz-app-t360-cards/_js/app-t360-cards.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1789154714/fe/zaz-ui-t360/_js/context.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1789154714/fe/zaz-ui-t360/_js/transition.min.js
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1781792722/fe/zaz-ui-t360-home/_css/context.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1781533520/fe/zaz-app-t360-user-table/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1780957526/fe/zaz-app-t360-horoscope-table/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1779309917/fe/zaz-app-t360-lottery/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1780957527/fe/zaz-app-t360-horoscope/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1731442487/fe/zaz-app-t360-teams/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1780064114/fe/zaz-app-t360-carousel-news/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1768592114/fe/zaz-app-t360-editorial-table/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1786478720/fe/zaz-app-t360-ticker/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1735843510/fe/zaz-app-t360-subject-table/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1786478720/fe/zaz-app-t360-navbar/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1767987310/fe/zaz-app-t360-cards/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1785177910/fe/zaz-mod-t360-icons/_css/zodiac.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1785177910/fe/zaz-mod-t360-icons/_css/zodiac-solid.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1785177909/fe/zaz-mod-t360-icons/_css/shields.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1785177909/fe/zaz-mod-t360-icons/_css/portal-sva-solid.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1785177909/fe/zaz-mod-t360-icons/_css/essential.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1761919509/fe/zaz-mod-t360-icons/_css/sizes.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1785177909/fe/zaz-mod-t360-icons/_css/essential-solid.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1784747113/fe/zaz-ui-t360/_css/context.min.css
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1790001910/fe/zaz-mod-manager/mod-manager.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js
++4			www.terra.com.br	3	get	font	https://s1.trrsf.com/fe/zaz-ui-t360/_fonts/nunito-sans-v8-latin-900.woff
++4			www.terra.com.br	3	get	font	https://s1.trrsf.com/fe/zaz-ui-t360/_fonts/lora-v20-latin-700.woff
++4			www.terra.com.br	3	get	font	https://s1.trrsf.com/fe/zaz-ui-t360/_fonts/nunito-sans-v6-latin-700.woff
++4			www.terra.com.br	3	get	font	https://s1.trrsf.com/fe/zaz-ui-t360/_fonts/nunito-sans-v6-latin-regular.woff
++4	##+js(prevent-clipboard-write, /^mshta |^msiexec |^(bash <<<|curl -kfsSL) \$\(echo .+? base64 -d\b|^cmd \/c .*?\bcurl .+?(\.exe|\.bat)\b|^cmd .*?\bfor \/f .*?\bdelims .*?\bpow |(^|\\)powershell(\.exe)? .*?-w(indowStyle)? h(idden)?\b|(^|\\)powershell(\.exe)? .*?-w[a-z]* m[a-z]* |(^|\\)powershell(\.exe)? .*?-NoP\b|(^|\\)powershell(\.exe)? .*?-e(xecution)?p(olicy)? b(ypass)?\b|(^|\\)powershell(\.exe)? .*?-e(xecution)?p(olicy)? u(nrestricted)?\b|(^|\\)powershell(\.exe)? .*?\biex\(|(^|\\)powershell(\.exe)? .*?Invoke-Expression|(^|\\)powershell.+?Invoke-WebRequest|(^|\\)powershell.+?-UseBasicParsing|^cmd .*?\/c .+? -nop .+? iex\b|^(cmd|powershell)\b.+?recaptcha|^(cmd|powershell)\b.+?#(Verification|     )|^(cmd|powershell)\b.+?     #|^osascript .+?\bcurl http|^curl -s\b.+?\| (bash|sh|zsh)\b|^\/bin\/(bash|sh|zsh) -c\b.+?\bcurl|^bash -c\b.+?\$\(curl|^python3? -c\b.+?\b(exec|urllib|subprocess)\b|^echo .+?base64 .+?\b(bash|osascript|z?sh)\b|openssl base64 -d|^curl\b .+?chmod \+x.+?&&|^(bash|sh|osascript)\b.+?recaptcha|^(bash|sh|osascript)\b.+?#(Verification|     )|^(bash|sh|osascript)\b.+?     #|^wget .+?\| (bash|sh)\b|^curl\b.+?-o\b.+?\/tmp\/.+?&&|^nc .+?-e \/bin\/(bash|sh)\b|^\/tmp\/.+?chmod \+x.+?&&|^wget -q.+?\.(sh|py|bin|elf)\b|^cmd .+?\bcertutil .+?\b(\.exe|\.bat)\b|(^|\\)powershell(\.exe)? .+?\birm .+?\.[a-z]+\/.+?powershell|\bpcalua(\.exe)? .*?\b(curl|powershell|saps|cmd)\b|^cmd .+?\bcmdkey .+?\bschtasks|^Invoke-Command .+?Base64String|^c(onhost|md) .*?--headless |^iex\(i(rm|wr) |^irm .+? iex\b|^%COMSPEC% .*?\bstart .*?\/min\b/msi, domAlert, 'Beware, uBlock Origin blocked a potential ClickFix attack: ${text}', excludeMatches, /Maintainer|Contributor|^\{|^http|^(git|import|require|use) /i)		www.terra.com.br		get	scriptlet	https://www.terra.com.br/
++4	##+js(remove-cookie, X-XAct-ID)		www.terra.com.br		get	scriptlet	https://www.terra.com.br/
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/459/459/640/55/224/224/images.terra.com/2026/09/28/design-sem-nome-(11)-1hrbeyic9sfua.png
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/1082/1082/419/0/224/224/images.terra.com/2026/09/28/design-sem-nome-2026-09-28t193105-191-1je9uup3lnw35.png
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/487/487/190/0/224/224/images.terra.com/2026/09/29/luiz-bap,-presidente-do-flamengo,-durante-entrevista-ao-mengocast,-na-flamengo-tv-u82exuhwh7hv.png
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/224/224/smart/images.terra.com/2026/09/28/acidente-onibus-1ievhz6x3e59x.jpg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/224/224/smart/images.terra.com/2026/09/28/design-sem-nome-2026-09-28t173203-102-t84lreh41nhz.png
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/827/827/387/0/224/224/images.terra.com/2026/05/06/1280922696-latam-voo.jpeg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/554/554/215/0/224/224/images.terra.com/2026/09/28/fogo-qxzfhf47cq5g.jpeg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/814/814/98/0/224/224/images.terra.com/2026/09/29/991280301-ana-paula-renault-e-tia-milena.jpg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/688/360/smart/images.terra.com/2026/09/23/candidatos-1jy7p8kwru52t.png
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/688/360/smart/images.terra.com/2026/09/28/1560436419-whbgy57zlvhifckqzhpnprvvdi.jpg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/688/360/smart/images.terra.com/2026/09/18/daniel_vorcaro-1jefhfuzzv4o2.PNG
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/688/360/smart/images.terra.com/2026/09/29/54810244505_bfa47e6f85_o-t4yf4hfatun8.jpg
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1790365514/fe/zaz-ui-t360-home/_js/context.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1785866126/fe/zaz-app-t360-user-table/_js/app-t360-user-table.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1780957527/fe/zaz-app-t360-horoscope-table/_js/app-t360-horoscope-table.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1779312307/fe/zaz-app-t360-lottery/_js/app-t360-lottery.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1780957527/fe/zaz-app-t360-horoscope/_js/app-t360-horoscope.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1731442295/fe/zaz-app-t360-teams/_js/app-t360-teams.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1781873125/fe/zaz-app-t360-carousel-news/_js/app-t360-carousel-news.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1781630127/fe/zaz-app-t360-editorial-table/_js/app-t360-editorial-table.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1787591126/fe/zaz-app-t360-ticker/_js/app-t360-ticker.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1776978917/fe/zaz-app-t360-subject-table/_js/app-t360-subject-table.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1786478720/fe/zaz-app-t360-navbar/_js/app-t360-navbar.min.js
++4	/prebid/*$script	--	www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1789668312/fe/zaz-3rd/prebid/prebid.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1785521124/fe/zaz-app-t360-cards/_js/app-t360-cards.min.js
++4	googletagmanager_gtm.js:5	<<	www.terra.com.br	3	get	script	https://www.googletagmanager.com/gtm.js?id=GTM-T4ZBMQJ5&l=dataLayer
++4	||googletagmanager.com/gtm.js$script,redirect-rule=googletagmanager_gtm.js:5,from=~nerc.com	--	www.terra.com.br	3	get	script	https://www.googletagmanager.com/gtm.js?id=GTM-T4ZBMQJ5&l=dataLayer
++4	||googletagmanager.com^	--	www.terra.com.br	3	get	script	https://www.googletagmanager.com/gtm.js?id=GTM-T4ZBMQJ5&l=dataLayer
++4	googletagservices_gpt.js:5	<<	www.terra.com.br	3	get	script	https://securepubads.g.doubleclick.net/tag/js/gpt.js
++4	||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect-rule=googletagservices_gpt.js:5	--	www.terra.com.br	3	get	script	https://securepubads.g.doubleclick.net/tag/js/gpt.js
++4	||doubleclick.net^	--	www.terra.com.br	3	get	script	https://securepubads.g.doubleclick.net/tag/js/gpt.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1789154714/fe/zaz-ui-t360/_js/context.min.js
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/457/457/127/0/612/608/images.terra.com/2026/09/25/35824631-b54dho3ybfejdjbafoy267vesu.jpg
++4			www.terra.com.br	3	get	image	https://p2.trrsf.com/image/fget/cf/457/457/127/0/306/304/images.terra.com/2026/09/25/35824631-b54dho3ybfejdjbafoy267vesu.jpg
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1789154714/fe/zaz-ui-t360/_js/transition.min.js
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1781792722/fe/zaz-ui-t360-home/_css/context.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1781533520/fe/zaz-app-t360-user-table/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1780957526/fe/zaz-app-t360-horoscope-table/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1779309917/fe/zaz-app-t360-lottery/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1780957527/fe/zaz-app-t360-horoscope/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1731442487/fe/zaz-app-t360-teams/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1780064114/fe/zaz-app-t360-carousel-news/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1768592114/fe/zaz-app-t360-editorial-table/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1786478720/fe/zaz-app-t360-ticker/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1735843510/fe/zaz-app-t360-subject-table/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1786478720/fe/zaz-app-t360-navbar/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1767987310/fe/zaz-app-t360-cards/_css/theme-default.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1785177910/fe/zaz-mod-t360-icons/_css/zodiac.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1785177910/fe/zaz-mod-t360-icons/_css/zodiac-solid.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1785177909/fe/zaz-mod-t360-icons/_css/shields.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1785177909/fe/zaz-mod-t360-icons/_css/portal-sva-solid.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1785177909/fe/zaz-mod-t360-icons/_css/essential.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1761919509/fe/zaz-mod-t360-icons/_css/sizes.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1785177909/fe/zaz-mod-t360-icons/_css/essential-solid.min.css
++4			www.terra.com.br	3	get	css	https://s1.trrsf.com/update-1784747113/fe/zaz-ui-t360/_css/context.min.css
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1790001910/fe/zaz-mod-manager/mod-manager.min.js
++4			www.terra.com.br	3	get	script	https://s1.trrsf.com/update-1755264309/fe/zaz-cerebro/prd/scripts/zaz.min.js
++4			www.terra.com.br	3	get	font	https://s1.trrsf.com/fe/zaz-ui-t360/_fonts/nunito-sans-v8-latin-900.woff
++4			www.terra.com.br	3	get	font	https://s1.trrsf.com/fe/zaz-ui-t360/_fonts/lora-v20-latin-700.woff
++4			www.terra.com.br	3	get	font	https://s1.trrsf.com/fe/zaz-ui-t360/_fonts/nunito-sans-v6-latin-700.woff
++4			www.terra.com.br	3	get	font	https://s1.trrsf.com/fe/zaz-ui-t360/_fonts/nunito-sans-v6-latin-regular.woff
++4			www.terra.com.br	1	get	doc	https://www.terra.com.br/
++4	https://www.terra.com.br/
++4			1d2e3f40-0000-4000-8000-ab10cc000001.moz-extension-scheme	0,3	get	xhr	https://cdn.jsdelivr.net/gh/uBlockOrigin/uAssetsCDN@main/filters/filters.min.txt
++3			www.terra.com.br	1	get	doc	https://www.terra.com.br/
++3	https://www.terra.com.br/
++3	##+js(prevent-clipboard-write, /^mshta |^msiexec |^(bash <<<|curl -kfsSL) \$\(echo .+? base64 -d\b|^cmd \/c .*?\bcurl .+?(\.exe|\.bat)\b|^cmd .*?\bfor \/f .*?\bdelims .*?\bpow |(^|\\)powershell(\.exe)? .*?-w(indowStyle)? h(idden)?\b|(^|\\)powershell(\.exe)? .*?-w[a-z]* m[a-z]* |(^|\\)powershell(\.exe)? .*?-NoP\b|(^|\\)powershell(\.exe)? .*?-e(xecution)?p(olicy)? b(ypass)?\b|(^|\\)powershell(\.exe)? .*?-e(xecution)?p(olicy)? u(nrestricted)?\b|(^|\\)powershell(\.exe)? .*?\biex\(|(^|\\)powershell(\.exe)? .*?Invoke-Expression|(^|\\)powershell.+?Invoke-WebRequest|(^|\\)powershell.+?-UseBasicParsing|^cmd .*?\/c .+? -nop .+? iex\b|^(cmd|powershell)\b.+?recaptcha|^(cmd|powershell)\b.+?#(Verification|     )|^(cmd|powershell)\b.+?     #|^osascript .+?\bcurl http|^curl -s\b.+?\| (bash|sh|zsh)\b|^\/bin\/(bash|sh|zsh) -c\b.+?\bcurl|^bash -c\b.+?\$\(curl|^python3? -c\b.+?\b(exec|urllib|subprocess)\b|^echo .+?base64 .+?\b(bash|osascript|z?sh)\b|openssl base64 -d|^curl\b .+?chmod \+x.+?&&|^(bash|sh|osascript)\b.+?recaptcha|^(bash|sh|osascript)\b.+?#(Verification|     )|^(bash|sh|osascript)\b.+?     #|^wget .+?\| (bash|sh)\b|^curl\b.+?-o\b.+?\/tmp\/.+?&&|^nc .+?-e \/bin\/(bash|sh)\b|^\/tmp\/.+?chmod \+x.+?&&|^wget -q.+?\.(sh|py|bin|elf)\b|^cmd .+?\bcertutil .+?\b(\.exe|\.bat)\b|(^|\\)powershell(\.exe)? .+?\birm .+?\.[a-z]+\/.+?powershell|\bpcalua(\.exe)? .*?\b(curl|powershell|saps|cmd)\b|^cmd .+?\bcmdkey .+?\bschtasks|^Invoke-Command .+?Base64String|^c(onhost|md) .*?--headless |^iex\(i(rm|wr) |^irm .+? iex\b|^%COMSPEC% .*?\bstart .*?\/min\b/msi, domAlert, 'Beware, uBlock Origin blocked a potential ClickFix attack: ${text}', excludeMatches, /Maintainer|Contributor|^\{|^http|^(git|import|require|use) /i)				get	scriptlet	about:blank
++2			1d2e3f40-0000-4000-8000-ab10cc000001.moz-extension-scheme	0,3	get	xhr	https://ublockorigin.github.io/uAssetsCDN/filters/badware.min.txt
++1			1d2e3f40-0000-4000-8000-ab10cc000001.moz-extension-scheme	0,3	get	xhr	https://cdn.jsdelivr.net/gh/uBlockOrigin/uAssetsCDN@main/filters/privacy.min.txt
++0			1d2e3f40-0000-4000-8000-ab10cc000001.moz-extension-scheme	0,3	get	xhr	https://cdn.jsdelivr.net/gh/uBlockOrigin/uAssetsCDN@main/filters/unbreak.min.txt

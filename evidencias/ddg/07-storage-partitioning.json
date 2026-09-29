@@ -2,7 +2,7 @@
   "url": "https://www.first-party.site/privacy-protections/storage-partitioning/",
   "hostname": "www.first-party.site",
   "baseDomain": "first-party.site",
-  "startedAt": 1790648398417,
+  "startedAt": 1790651263276,
   "thirdParties": {
     "privacy-test-pages.site": {
       "domain": "privacy-test-pages.site",
@@ -15,17 +15,19 @@
       },
       "tracker": null,
       "category": null,
-      "blocked": 0
+      "blocked": 0,
+      "affiliated": false
     }
   },
   "requestsTotal": 35,
   "requestsThirdParty": 3,
+  "requestsAffiliated": 0,
   "storage": {
     "localStorage": {
       "reads": 3,
       "writes": 3,
       "keys": {
-        "686976b9-6d26-44a4-8cfc-869a9c095054": 5,
+        "cffc1c69-82c5-4438-9ecf-2549b24ee1fd": 5,
         "partition_test": 1
       },
       "thirdPartyFrames": {}
@@ -60,25 +62,25 @@
         "valueLength": 36,
         "script": "https://www.first-party.site/privacy-protections/storage-partitioning/helpers/tests.js",
         "frame": "1ª parte",
-        "at": 1790648403838
+        "at": 1790651268707
       },
       {
         "api": "localStorage",
         "op": "setItem",
-        "key": "686976b9-6d26-44a4-8cfc-869a9c095054",
+        "key": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd",
         "valueLength": 5,
         "script": "https://www.first-party.site/privacy-protections/storage-partitioning/main.js",
         "frame": "1ª parte",
-        "at": 1790648404865
+        "at": 1790651269743
       },
       {
         "api": "localStorage",
         "op": "getItem",
-        "key": "686976b9-6d26-44a4-8cfc-869a9c095054",
+        "key": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd",
         "valueLength": null,
         "script": "https://www.first-party.site/privacy-protections/storage-partitioning/main.js",
         "frame": "1ª parte",
-        "at": 1790648404866
+        "at": 1790651269745
       },
       {
         "api": "localStorage",
@@ -87,7 +89,7 @@
         "valueLength": 36,
         "script": "https://www.first-party.site/privacy-protections/storage-partitioning/helpers/tests.js",
         "frame": "1ª parte",
-        "at": 1790648404363
+        "at": 1790651269244
       },
       {
         "api": "sessionStorage",
@@ -96,7 +98,7 @@
         "valueLength": 36,
         "script": "https://www.first-party.site/privacy-protections/storage-partitioning/helpers/tests.js",
         "frame": "1ª parte",
-        "at": 1790648404363
+        "at": 1790651269246
       },
       {
         "api": "indexedDB",
@@ -104,7 +106,7 @@
         "key": "partition_test",
         "script": "https://www.first-party.site/helpers/idb-wrapper.js",
         "frame": "1ª parte",
-        "at": 1790648404363
+        "at": 1790651269246
       },
       {
         "api": "cacheStorage",
@@ -112,34 +114,34 @@
         "key": "partition_test",
         "script": "https://www.first-party.site/privacy-protections/storage-partitioning/helpers/tests.js",
         "frame": "1ª parte",
-        "at": 1790648404364
+        "at": 1790651269246
       },
       {
         "api": "localStorage",
         "op": "getItem",
-        "key": "686976b9-6d26-44a4-8cfc-869a9c095054",
+        "key": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd",
         "valueLength": null,
         "script": "https://www.first-party.site/privacy-protections/storage-partitioning/main.js",
         "frame": "1ª parte",
-        "at": 1790648405957
+        "at": 1790651270790
       },
       {
         "api": "localStorage",
         "op": "getItem",
-        "key": "686976b9-6d26-44a4-8cfc-869a9c095054",
+        "key": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd",
         "valueLength": null,
         "script": "https://www.first-party.site/privacy-protections/storage-partitioning/main.js",
         "frame": "1ª parte",
-        "at": 1790648416476
+        "at": 1790651281324
       },
       {
         "api": "localStorage",
         "op": "removeItem",
-        "key": "686976b9-6d26-44a4-8cfc-869a9c095054",
+        "key": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd",
         "valueLength": null,
         "script": "https://www.first-party.site/privacy-protections/storage-partitioning/main.js",
         "frame": "1ª parte",
-        "at": 1790648416476
+        "at": 1790651281324
       }
     ]
   },
@@ -274,7 +276,7 @@
         "EventTarget.addEventListener"
       ]
     },
-    "https://www.first-party.site/privacy-protections/storage-partitioning/iframe.html?mode=store&sessionId=686976b9-6d26-44a4-8cfc-869a9c095054": {
+    "https://www.first-party.site/privacy-protections/storage-partitioning/iframe.html?mode=store&sessionId=cffc1c69-82c5-4438-9ecf-2549b24ee1fd": {
       "thirdParty": false,
       "hooked": [
         "Storage.setItem",
@@ -339,7 +341,7 @@
         "EventTarget.addEventListener"
       ]
     },
-    "https://www.first-party.site/partitioning/resource?fileType=page&key=686976b9-6d26-44a4-8cfc-869a9c095054": {
+    "https://www.first-party.site/partitioning/resource?fileType=page&key=cffc1c69-82c5-4438-9ecf-2549b24ee1fd": {
       "thirdParty": false,
       "hooked": [
         "Storage.setItem",
@@ -409,7 +411,7 @@
     "referrerPage": "https://privacy-test-pages.site/privacy-protections/storage-blocking/",
     "redirectChain": [],
     "bounces": [],
-    "dwellMs": 22009
+    "dwellMs": 21798
   },
   "cookieSync": {
     "events": [],
@@ -443,8 +445,8 @@
   "openedTabs": [
     {
       "tabId": 12,
-      "url": "https://www.first-party.site/privacy-protections/storage-partitioning/testWindow.html?sessionId=686976b9-6d26-44a4-8cfc-869a9c095054&isLocalTest=false",
-      "at": 1790648403844
+      "url": "https://www.first-party.site/privacy-protections/storage-partitioning/testWindow.html?sessionId=cffc1c69-82c5-4438-9ecf-2549b24ee1fd&isLocalTest=false",
+      "at": 1790651268714
     }
   ],
   "fingerprint": {
@@ -480,7 +482,7 @@
       {
         "name": "partition_test_http",
         "persistent": true,
-        "expiresIn": 122924396,
+        "expiresIn": 122921531,
         "domainAttr": null,
         "sameSite": "None",
         "secure": true,
@@ -488,20 +490,22 @@
         "host": "www.first-party.site",
         "domain": "first-party.site",
         "thirdParty": false,
+        "affiliated": false,
         "requestType": "xmlhttprequest",
         "url": "https://www.first-party.site/partitioning/set-cookie",
-        "at": 1790648404482
+        "at": 1790651269366
       }
     ],
     "jsSet": [
       {
         "name": "partition_test",
         "persistent": true,
-        "raw": "partition_test=686976b9-6d26-44a4-8cfc-869a9c095054; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; SameSite=none",
+        "raw": "partition_test=cffc1c69-82c5-4438-9ecf-2549b24ee1fd; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; SameSite=none",
         "script": "https://www.first-party.site/privacy-protections/storage-partitioning/helpers/tests.js",
         "thirdParty": false,
+        "affiliated": false,
         "frame": "first-party.site",
-        "at": 1790648404362
+        "at": 1790651269242
       }
     ],
     "summary": {
@@ -520,8 +524,9 @@
           "domain": "www.first-party.site",
           "path": "/privacy-protections/storage-partitioning",
           "thirdParty": false,
+          "affiliated": false,
           "session": false,
-          "expires": 1825208404361,
+          "expires": 1825211269242,
           "lifetimeDays": 400,
           "secure": true,
           "httpOnly": false,
@@ -533,8 +538,9 @@
           "domain": "www.first-party.site",
           "path": "/",
           "thirdParty": false,
+          "affiliated": false,
           "session": false,
-          "expires": 1825208404374,
+          "expires": 1825211269257,
           "lifetimeDays": 400,
           "secure": true,
           "httpOnly": false,
@@ -546,91 +552,98 @@
           "domain": "privacy-test-pages.site",
           "path": "/privacy-protections/storage-blocking",
           "thirdParty": true,
+          "affiliated": false,
           "session": false,
-          "expires": 1825208378958,
+          "expires": 1825211244004,
           "lifetimeDays": 400,
           "secure": true,
           "httpOnly": false,
           "sameSite": "lax",
-          "valueLength": 2
+          "valueLength": 3
         },
         {
           "name": "tptdata",
           "domain": "privacy-test-pages.site",
           "path": "/privacy-protections/storage-blocking",
           "thirdParty": true,
+          "affiliated": false,
           "session": false,
-          "expires": 1825208378965,
+          "expires": 1825211244007,
           "lifetimeDays": 400,
           "secure": false,
           "httpOnly": false,
           "sameSite": "unspecified",
-          "valueLength": 2
+          "valueLength": 3
         },
         {
           "name": "tpsdata",
           "domain": "privacy-test-pages.site",
           "path": "/privacy-protections/storage-blocking",
           "thirdParty": true,
+          "affiliated": false,
           "session": false,
-          "expires": 1825208378965,
+          "expires": 1825211244007,
           "lifetimeDays": 400,
           "secure": false,
           "httpOnly": false,
           "sameSite": "unspecified",
-          "valueLength": 2
+          "valueLength": 3
         },
         {
           "name": "__Host-jsdata_host",
           "domain": "privacy-test-pages.site",
           "path": "/",
           "thirdParty": true,
+          "affiliated": false,
           "session": false,
-          "expires": 1825208378958,
+          "expires": 1825211244004,
           "lifetimeDays": 400,
           "secure": true,
           "httpOnly": false,
           "sameSite": "lax",
-          "valueLength": 2
+          "valueLength": 3
         },
         {
           "name": "jsdata_no_samesite",
           "domain": "privacy-test-pages.site",
           "path": "/",
           "thirdParty": true,
+          "affiliated": false,
           "session": false,
-          "expires": 1825208378958,
+          "expires": 1825211244004,
           "lifetimeDays": 400,
           "secure": true,
           "httpOnly": false,
           "sameSite": "unspecified",
-          "valueLength": 2
+          "valueLength": 3
         },
         {
           "name": "cookiestoredata",
           "domain": "privacy-test-pages.site",
           "path": "/",
           "thirdParty": true,
+          "affiliated": false,
           "session": false,
-          "expires": 1825208378971,
+          "expires": 1825211244010,
           "lifetimeDays": 400,
           "secure": true,
           "httpOnly": false,
           "sameSite": "strict",
-          "valueLength": 2
+          "valueLength": 3
         },
         {
           "name": "top_firstparty_headerdata",
           "domain": "privacy-test-pages.site",
           "path": "/",
           "thirdParty": true,
+          "affiliated": false,
           "session": false,
-          "expires": 1791512379200,
+          "expires": 1791515244236,
           "lifetimeDays": 10,
           "secure": true,
           "httpOnly": true,
           "sameSite": "no_restriction",
-          "valueLength": 2
+          "valueLength": 3
         }
       ]
     }

@@ -1,0 +1,1133 @@
+>> 01-tracker-reporting-script
+>> 02-tracker-reporting-img
+>> 03-tracker-reporting-fetch
+>> 04-tracker-reporting-surrogate
+>> 05a-tracker-blocking-sem-bloqueio
+>> 05b-tracker-blocking-com-bloqueio
+>> 06-storage-blocking
+>> 07-storage-partitioning
+>> 08-fingerprinting
+>> 09-fingerprinting-canvas
+>> 10-bounce-tracking
+>> 11a-query-parameters-utm
+>> 11b-query-parameters-fbclid
+>> 12-js-leaks
+{
+ "01-tracker-reporting-script": {
+  "score": 92,
+  "grade": "A",
+  "thirdParties": [
+   "doubleclick.net"
+  ],
+  "trackers": [
+   "doubleclick.net"
+  ],
+  "blocked": 0,
+  "cookies": {
+   "total": 0,
+   "firstParty": 0,
+   "thirdParty": 0,
+   "session": 0,
+   "persistent": 0,
+   "longLived": 0,
+   "injectedHttp": 0,
+   "injectedHttpThirdParty": 0,
+   "injectedJs": 0
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "sessionStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "indexedDB": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "cacheStorage": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   }
+  },
+  "fingerprint": {
+   "level": "none",
+   "canvas": 0,
+   "canvasLikely": 0,
+   "webgl": 0,
+   "audio": 0,
+   "measureText": 0,
+   "enumProps": 0
+  },
+  "bounces": [],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "none",
+   "websockets": [],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 0,
+   "newGlobals": [],
+   "inputListeners3p": []
+  }
+ },
+ "02-tracker-reporting-img": {
+  "score": 88,
+  "grade": "A",
+  "thirdParties": [
+   "facebook.com"
+  ],
+  "trackers": [
+   "facebook.com"
+  ],
+  "blocked": 0,
+  "cookies": {
+   "total": 1,
+   "firstParty": 0,
+   "thirdParty": 1,
+   "session": 0,
+   "persistent": 1,
+   "longLived": 0,
+   "injectedHttp": 1,
+   "injectedHttpThirdParty": 1,
+   "injectedJs": 0
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "sessionStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "indexedDB": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "cacheStorage": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   }
+  },
+  "fingerprint": {
+   "level": "none",
+   "canvas": 0,
+   "canvasLikely": 0,
+   "webgl": 0,
+   "audio": 0,
+   "measureText": 0,
+   "enumProps": 0
+  },
+  "bounces": [],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "none",
+   "websockets": [],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 0,
+   "newGlobals": [],
+   "inputListeners3p": []
+  }
+ },
+ "03-tracker-reporting-fetch": {
+  "score": 88,
+  "grade": "A",
+  "thirdParties": [
+   "facebook.com"
+  ],
+  "trackers": [
+   "facebook.com"
+  ],
+  "blocked": 0,
+  "cookies": {
+   "total": 1,
+   "firstParty": 0,
+   "thirdParty": 1,
+   "session": 0,
+   "persistent": 1,
+   "longLived": 0,
+   "injectedHttp": 2,
+   "injectedHttpThirdParty": 2,
+   "injectedJs": 0
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "sessionStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "indexedDB": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "cacheStorage": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   }
+  },
+  "fingerprint": {
+   "level": "none",
+   "canvas": 0,
+   "canvasLikely": 0,
+   "webgl": 0,
+   "audio": 0,
+   "measureText": 0,
+   "enumProps": 0
+  },
+  "bounces": [],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "none",
+   "websockets": [],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 3,
+   "newGlobals": [
+    "callAfterDelay",
+    "init",
+    "loadTracker"
+   ],
+   "inputListeners3p": []
+  }
+ },
+ "04-tracker-reporting-surrogate": {
+  "score": 92,
+  "grade": "A",
+  "thirdParties": [
+   "doubleclick.net"
+  ],
+  "trackers": [
+   "doubleclick.net"
+  ],
+  "blocked": 0,
+  "cookies": {
+   "total": 0,
+   "firstParty": 0,
+   "thirdParty": 0,
+   "session": 0,
+   "persistent": 0,
+   "longLived": 0,
+   "injectedHttp": 0,
+   "injectedHttpThirdParty": 0,
+   "injectedJs": 0
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "sessionStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "indexedDB": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "cacheStorage": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   }
+  },
+  "fingerprint": {
+   "level": "none",
+   "canvas": 0,
+   "canvasLikely": 0,
+   "webgl": 0,
+   "audio": 0,
+   "measureText": 0,
+   "enumProps": 0
+  },
+  "bounces": [],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "none",
+   "websockets": [],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 0,
+   "newGlobals": [],
+   "inputListeners3p": []
+  }
+ },
+ "05a-tracker-blocking-sem-bloqueio": {
+  "score": 88,
+  "grade": "A",
+  "thirdParties": [
+   "bad.third-party.site"
+  ],
+  "trackers": [
+   "bad.third-party.site"
+  ],
+  "blocked": 0,
+  "cookies": {
+   "total": 0,
+   "firstParty": 0,
+   "thirdParty": 0,
+   "session": 0,
+   "persistent": 0,
+   "longLived": 0,
+   "injectedHttp": 0,
+   "injectedHttpThirdParty": 0,
+   "injectedJs": 0
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "sessionStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "indexedDB": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "cacheStorage": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   }
+  },
+  "fingerprint": {
+   "level": "none",
+   "canvas": 0,
+   "canvasLikely": 0,
+   "webgl": 0,
+   "audio": 0,
+   "measureText": 0,
+   "enumProps": 0
+  },
+  "bounces": [],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "medium",
+   "websockets": [
+    "wss://bad.third-party.site/block-me/web-socket"
+   ],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 4,
+   "newGlobals": [
+    "0",
+    "runTests",
+    "downloadTheResults",
+    "scriptLoadedCallback"
+   ],
+   "inputListeners3p": []
+  }
+ },
+ "05b-tracker-blocking-com-bloqueio": {
+  "score": 88,
+  "grade": "A",
+  "thirdParties": [
+   "bad.third-party.site"
+  ],
+  "trackers": [
+   "bad.third-party.site"
+  ],
+  "blocked": 12,
+  "cookies": {
+   "total": 0,
+   "firstParty": 0,
+   "thirdParty": 0,
+   "session": 0,
+   "persistent": 0,
+   "longLived": 0,
+   "injectedHttp": 0,
+   "injectedHttpThirdParty": 0,
+   "injectedJs": 0
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "sessionStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "indexedDB": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "cacheStorage": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   }
+  },
+  "fingerprint": {
+   "level": "none",
+   "canvas": 0,
+   "canvasLikely": 0,
+   "webgl": 0,
+   "audio": 0,
+   "measureText": 0,
+   "enumProps": 0
+  },
+  "bounces": [],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "medium",
+   "websockets": [
+    "wss://bad.third-party.site/block-me/web-socket"
+   ],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 4,
+   "newGlobals": [
+    "0",
+    "runTests",
+    "downloadTheResults",
+    "scriptLoadedCallback"
+   ],
+   "inputListeners3p": []
+  }
+ },
+ "06-storage-blocking": {
+  "score": 68,
+  "grade": "C",
+  "thirdParties": [
+   "ad-company.site",
+   "broken.third-party.site",
+   "third-party.site"
+  ],
+  "trackers": [
+   "broken.third-party.site"
+  ],
+  "blocked": 0,
+  "cookies": {
+   "total": 24,
+   "firstParty": 7,
+   "thirdParty": 17,
+   "session": 0,
+   "persistent": 24,
+   "longLived": 15,
+   "injectedHttp": 9,
+   "injectedHttpThirdParty": 8,
+   "injectedJs": 14
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 4,
+    "reads": 4,
+    "keys": [
+     "data"
+    ],
+    "thirdPartyFrames": {
+     "third-party.site": 4,
+     "ad-company.site": 2
+    }
+   },
+   "sessionStorage": {
+    "writes": 4,
+    "reads": 4,
+    "keys": [
+     "data"
+    ],
+    "thirdPartyFrames": {
+     "third-party.site": 4,
+     "ad-company.site": 2
+    }
+   },
+   "indexedDB": {
+    "writes": 6,
+    "reads": null,
+    "keys": [
+     "data"
+    ],
+    "thirdPartyFrames": {
+     "third-party.site": 4
+    }
+   },
+   "cacheStorage": {
+    "writes": 8,
+    "reads": null,
+    "keys": [
+     "data"
+    ],
+    "thirdPartyFrames": {
+     "third-party.site": 4,
+     "ad-company.site": 2
+    }
+   }
+  },
+  "fingerprint": {
+   "level": "none",
+   "canvas": 0,
+   "canvasLikely": 0,
+   "webgl": 0,
+   "audio": 0,
+   "measureText": 0,
+   "enumProps": 0
+  },
+  "bounces": [],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "none",
+   "websockets": [],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 6,
+   "newGlobals": [
+    "generateCookieHeaderTest",
+    "create3pIframeTest",
+    "storeData",
+    "retrieveData",
+    "downloadTheResults",
+    "randomNumber"
+   ],
+   "inputListeners3p": []
+  }
+ },
+ "07-storage-partitioning": {
+  "score": 79,
+  "grade": "B",
+  "thirdParties": [
+   "privacy-test-pages.site"
+  ],
+  "trackers": [],
+  "blocked": 0,
+  "cookies": {
+   "total": 9,
+   "firstParty": 2,
+   "thirdParty": 7,
+   "session": 0,
+   "persistent": 9,
+   "longLived": 8,
+   "injectedHttp": 1,
+   "injectedHttpThirdParty": 0,
+   "injectedJs": 1
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 3,
+    "reads": 3,
+    "keys": [
+     "cffc1c69-82c5-4438-9ecf-2549b24ee1fd",
+     "partition_test"
+    ],
+    "thirdPartyFrames": {}
+   },
+   "sessionStorage": {
+    "writes": 2,
+    "reads": 0,
+    "keys": [
+     "partition_test"
+    ],
+    "thirdPartyFrames": {}
+   },
+   "indexedDB": {
+    "writes": 1,
+    "reads": null,
+    "keys": [
+     "partition_test"
+    ],
+    "thirdPartyFrames": {}
+   },
+   "cacheStorage": {
+    "writes": 1,
+    "reads": null,
+    "keys": [
+     "partition_test"
+    ],
+    "thirdPartyFrames": {}
+   }
+  },
+  "fingerprint": {
+   "level": "none",
+   "canvas": 0,
+   "canvasLikely": 0,
+   "webgl": 0,
+   "audio": 0,
+   "measureText": 0,
+   "enumProps": 0
+  },
+  "bounces": [],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "none",
+   "websockets": [],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 7,
+   "newGlobals": [
+    "0",
+    "accessStorageInIframe",
+    "getURL",
+    "validateStorageAPI",
+    "validateCacheAPI",
+    "storeData",
+    "retrieveData"
+   ],
+   "inputListeners3p": []
+  }
+ },
+ "08-fingerprinting": {
+  "score": 82,
+  "grade": "B",
+  "thirdParties": [],
+  "trackers": [],
+  "blocked": 0,
+  "cookies": {
+   "total": 4,
+   "firstParty": 4,
+   "thirdParty": 0,
+   "session": 0,
+   "persistent": 4,
+   "longLived": 3,
+   "injectedHttp": 0,
+   "injectedHttpThirdParty": 0,
+   "injectedJs": 0
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 0,
+    "reads": 1,
+    "keys": [
+     "results"
+    ],
+    "thirdPartyFrames": {}
+   },
+   "sessionStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "indexedDB": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "cacheStorage": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   }
+  },
+  "fingerprint": {
+   "level": "likely",
+   "canvas": 5,
+   "canvasLikely": 3,
+   "webgl": 2,
+   "audio": 6,
+   "measureText": 692,
+   "enumProps": 23
+  },
+  "bounces": [],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "none",
+   "websockets": [],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 9,
+   "newGlobals": [
+    "DeepDiff",
+    "applyFpExampleDataToCanvas",
+    "sha256",
+    "addCanvasToPage",
+    "extractSimplePropsFromObject",
+    "applyFpExampleDataToAudio",
+    "runTests",
+    "downloadTheResults",
+    "compareResults"
+   ],
+   "inputListeners3p": []
+  }
+ },
+ "09-fingerprinting-canvas": {
+  "score": 81,
+  "grade": "B",
+  "thirdParties": [
+   "cloudflare.com"
+  ],
+  "trackers": [],
+  "blocked": 0,
+  "cookies": {
+   "total": 4,
+   "firstParty": 4,
+   "thirdParty": 0,
+   "session": 0,
+   "persistent": 4,
+   "longLived": 3,
+   "injectedHttp": 0,
+   "injectedHttpThirdParty": 0,
+   "injectedJs": 0
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "sessionStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "indexedDB": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "cacheStorage": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   }
+  },
+  "fingerprint": {
+   "level": "likely",
+   "canvas": 125,
+   "canvasLikely": 102,
+   "webgl": 0,
+   "audio": 0,
+   "measureText": 0,
+   "enumProps": 0
+  },
+  "bounces": [],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "none",
+   "websockets": [],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 11,
+   "newGlobals": [
+    "applyFpExampleDataToCanvas",
+    "createCanvas",
+    "generateDataURLWithCode",
+    "calculateDifferencesOnRandomCanvas",
+    "init",
+    "fail",
+    "pass",
+    "insertResultRow",
+    "eq",
+    "ok",
+    "initMenu"
+   ],
+   "inputListeners3p": []
+  }
+ },
+ "10-bounce-tracking": {
+  "score": 91,
+  "grade": "A",
+  "thirdParties": [],
+  "trackers": [],
+  "blocked": 0,
+  "cookies": {
+   "total": 4,
+   "firstParty": 4,
+   "thirdParty": 0,
+   "session": 0,
+   "persistent": 4,
+   "longLived": 3,
+   "injectedHttp": 0,
+   "injectedHttpThirdParty": 0,
+   "injectedJs": 0
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "sessionStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "indexedDB": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "cacheStorage": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   }
+  },
+  "fingerprint": {
+   "level": "none",
+   "canvas": 0,
+   "canvasLikely": 0,
+   "webgl": 0,
+   "audio": 0,
+   "measureText": 0,
+   "enumProps": 0
+  },
+  "bounces": [
+   {
+    "domain": "bad.third-party.site",
+    "kind": "client-side",
+    "dwellMs": 157,
+    "url": "https://bad.third-party.site/privacy-protections/bounce-tracking/bounce.html?destination=privacy-test-pages.site",
+    "trackingParams": [],
+    "landingParams": [
+     "bounceUIDlocalStorage=",
+     "bounceUIDcookie=",
+     "isNew=96"
+    ],
+    "from": "privacy-test-pages.site",
+    "to": "privacy-test-pages.site",
+    "evidence": {
+     "cookiesJs": [
+      "bounceUID=96;max-age=5184000"
+     ],
+     "cookiesHttp": [],
+     "storageKeys": [
+      "localStorage:bounceUID"
+     ],
+     "requests": 1
+    }
+   }
+  ],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "none",
+   "websockets": [],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 0,
+   "newGlobals": [],
+   "inputListeners3p": []
+  }
+ },
+ "11a-query-parameters-utm": {
+  "score": 97,
+  "grade": "A",
+  "thirdParties": [],
+  "trackers": [],
+  "blocked": 0,
+  "cookies": {
+   "total": 4,
+   "firstParty": 4,
+   "thirdParty": 0,
+   "session": 0,
+   "persistent": 4,
+   "longLived": 3,
+   "injectedHttp": 0,
+   "injectedHttpThirdParty": 0,
+   "injectedJs": 0
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "sessionStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "indexedDB": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "cacheStorage": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   }
+  },
+  "fingerprint": {
+   "level": "none",
+   "canvas": 0,
+   "canvasLikely": 0,
+   "webgl": 0,
+   "audio": 0,
+   "measureText": 0,
+   "enumProps": 0
+  },
+  "bounces": [],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [
+    "utm_source"
+   ],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "none",
+   "websockets": [],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 0,
+   "newGlobals": [],
+   "inputListeners3p": []
+  }
+ },
+ "11b-query-parameters-fbclid": {
+  "score": 97,
+  "grade": "A",
+  "thirdParties": [],
+  "trackers": [],
+  "blocked": 0,
+  "cookies": {
+   "total": 4,
+   "firstParty": 4,
+   "thirdParty": 0,
+   "session": 0,
+   "persistent": 4,
+   "longLived": 3,
+   "injectedHttp": 0,
+   "injectedHttpThirdParty": 0,
+   "injectedJs": 0
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "sessionStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "indexedDB": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "cacheStorage": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   }
+  },
+  "fingerprint": {
+   "level": "none",
+   "canvas": 0,
+   "canvasLikely": 0,
+   "webgl": 0,
+   "audio": 0,
+   "measureText": 0,
+   "enumProps": 0
+  },
+  "bounces": [],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [
+    "fbclid"
+   ],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "none",
+   "websockets": [],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 0,
+   "newGlobals": [],
+   "inputListeners3p": []
+  }
+ },
+ "12-js-leaks": {
+  "score": 90,
+  "grade": "A",
+  "thirdParties": [],
+  "trackers": [],
+  "blocked": 0,
+  "cookies": {
+   "total": 4,
+   "firstParty": 4,
+   "thirdParty": 0,
+   "session": 0,
+   "persistent": 4,
+   "longLived": 3,
+   "injectedHttp": 0,
+   "injectedHttpThirdParty": 0,
+   "injectedJs": 0
+  },
+  "storage": {
+   "localStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "sessionStorage": {
+    "writes": 0,
+    "reads": 0,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "indexedDB": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   },
+   "cacheStorage": {
+    "writes": 0,
+    "reads": null,
+    "keys": [],
+    "thirdPartyFrames": {}
+   }
+  },
+  "fingerprint": {
+   "level": "possible",
+   "canvas": 0,
+   "canvasLikely": 0,
+   "webgl": 0,
+   "audio": 0,
+   "measureText": 0,
+   "enumProps": 21
+  },
+  "bounces": [],
+  "redirectChain": [],
+  "cookieSync": [],
+  "queryParams": {
+   "onPageUrl": [],
+   "onRequests": {}
+  },
+  "hijack": {
+   "level": "none",
+   "websockets": [],
+   "polling": [],
+   "overridden": [],
+   "newGlobalsCount": 2,
+   "newGlobals": [
+    "collectedProps",
+    "results"
+   ],
+   "inputListeners3p": []
+  }
+ }
+}

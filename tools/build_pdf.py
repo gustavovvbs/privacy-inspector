@@ -8,20 +8,22 @@ import markdown
 ROOT = Path(__file__).resolve().parent.parent
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 PARTS = ['relatorio-capa.md', 'relatorio-ddg.md', 'relatorio-sites.md', 'metodologia-pontuacao.md', 'relatorio-pontuacao.md']
+SITE_FIGS = ['relatorio-pagina.png', 'relatorio-plugin-summary.png', 'relatorio-plugin-trackers.png', 'relatorio-plugin-cookies.png', 'relatorio-plugin-storage.png', 'relatorio-plugin-fingerprint.png', 'relatorio-plugin-sync.png', 'relatorio-plugin-hijack.png', 'ublock.png', 'ublock-popup.png', 'blacklight.png']
 
 CSS = """
 body { font: 10.5pt/1.4 -apple-system, Helvetica, Arial, sans-serif; color: #111; margin: 0; }
 h1 { font-size: 18pt; page-break-before: always; border-bottom: 2px solid #2b5bd7; padding-bottom: 4px; }
 h1:first-of-type { page-break-before: auto; }
 h2 { font-size: 13pt; margin-top: 18px; } h3 { font-size: 11pt; }
+h3.print, h2.print { break-before: page; page-break-before: always; }
 table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: 8pt; margin: 8px 0; page-break-inside: auto; }
 th, td { border: 1px solid #bbb; padding: 4px 5px; vertical-align: top; text-align: left; overflow-wrap: anywhere; word-break: break-word; }
 th:first-child, td:first-child { width: 22px; }
 th { background: #eef1f6; } tr { page-break-inside: avoid; }
 code { font-family: Menlo, monospace; font-size: 7.5pt; background: #f2f3f5; padding: 0 2px; white-space: pre-wrap; overflow-wrap: anywhere; }
 pre { background: #f2f3f5; padding: 8px; font-size: 8pt; white-space: pre-wrap; }
-img { max-width: 100%; border: 1px solid #ddd; page-break-inside: avoid; }
-figure { margin: 10px 0; page-break-inside: avoid; } figcaption { font-size: 8.5pt; color: #555; }
+img { max-width: 100%; max-height: 118mm; width: auto; height: auto; border: 1px solid #ddd; display: block; margin: 0 auto; }
+figure { display: inline-block; width: 49%; margin: 4px 0; vertical-align: top; page-break-inside: avoid; break-inside: avoid; } figcaption { font-size: 7.5pt; color: #555; text-align: center; word-break: break-all; }
 @page { size: A4 landscape; margin: 12mm 10mm; }
 """
 
@@ -29,6 +31,19 @@ figure { margin: 10px 0; page-break-inside: avoid; } figcaption { font-size: 8.5
 def resolve_png(rel):
     cands = [ROOT / rel, ROOT / 'evidencias' / 'ddg' / rel, *ROOT.glob(f'evidencias/sites/*/{rel}')]
     return next((c for c in cands if c.exists()), None)
+
+
+def figure(f):
+    return f'<figure><img src="file://{f}"><figcaption>{f.relative_to(ROOT)}</figcaption></figure>'
+
+
+def expand_composite(f):
+    """Para um print composto NN-nome.png, usa as partes: NN-nome-pagina.png e NN-nome-plugin-<aba>.png,
+    cada uma cabendo em uma página; se não houver partes, usa o próprio arquivo."""
+    stem = f.with_suffix('').name
+    parts = [f.parent / f'{stem}-pagina.png'] + sorted(f.parent.glob(f'{stem}-plugin-*.png'))
+    parts = [p for p in parts if p.exists()]
+    return parts or [f]
 
 
 def build():
@@ -48,9 +63,16 @@ def build():
             seen.append(rel)
             f = resolve_png(rel)
             if f:
-                body += f'<figure><img src="file://{f}"><figcaption>{f.relative_to(ROOT)}</figcaption></figure>'
+                body += f'<h3 class="print">Print — {rel}</h3>' + ''.join(figure(p) for p in expand_composite(f))
             else:
                 print('aviso: print não encontrado:', rel, file=sys.stderr)
+        if part == 'relatorio-sites.md':
+            for site in ('uol.com.br', 'terra.com.br', 'mercadolivre.com.br'):
+                body += f'<h2 class="print">Prints — {site}</h2>'
+                for fig in SITE_FIGS:
+                    f = ROOT / 'evidencias' / 'sites' / site / fig
+                    if f.exists():
+                        body += figure(f)
         html.append(body)
     html.append('</body></html>')
     out_html = ROOT / 'docs' / 'relatorio.html'

@@ -2,7 +2,7 @@
   "url": "https://privacy-test-pages.site/tracker-reporting/1major-via-script.html",
   "hostname": "privacy-test-pages.site",
   "baseDomain": "privacy-test-pages.site",
-  "startedAt": 1790648235442,
+  "startedAt": 1790651101955,
   "thirdParties": {
     "doubleclick.net": {
       "domain": "doubleclick.net",
@@ -16,11 +16,13 @@
       "tracker": "doubleclick.net",
       "category": "advertising",
       "blocked": 0,
+      "affiliated": false,
       "owner": "Google"
     }
   },
   "requestsTotal": 2,
   "requestsThirdParty": 1,
+  "requestsAffiliated": 0,
   "storage": {
     "localStorage": {
       "reads": 0,

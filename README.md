@@ -35,6 +35,23 @@ A extensão temporária é removida ao fechar o Firefox; basta repetir os passos
 Os hooks no contexto da página usam `wrappedJSObject` + `exportFunction` (API do Firefox), o que
 funciona mesmo com CSP restritiva e não exige injetar `<script>` na página.
 
+## Coleta de evidências (tools/)
+
+Scripts em Python/Selenium que abrem o Firefox real com o plugin carregado como extensão temporária
+(`.venv/bin/pip install selenium pillow markdown`):
+
+| Script | Faz |
+|---|---|
+| `tools/capture_ddg.py` | roda as 12 páginas do DDG e salva print composto + JSON do plugin + resultado da própria página em `evidencias/ddg/` |
+| `tools/capture_site.py <url>` | visita um site com o Network Monitor aberto; exporta o HAR do DevTools e o relatório do plugin (`evidencias/sites/<site>/`) |
+| `tools/capture_ublock.py <url>` | mesma visita com o uBlock Origin; exporta o Logger e parseia os bloqueios |
+| `tools/capture_blacklight.py <url>` | submete ao Blacklight e baixa o `blacklight-inspection.json` |
+| `tools/reconcile.py <site>` | cruza plugin × Blacklight × uBlock × HAR por domínio (`reconciliacao.json`) |
+| `tools/build_pdf.py` | gera `docs/relatorio.pdf` a partir dos markdowns de `docs/` |
+
+O popup pode ser aberto em aba própria (`popup/popup.html?tabId=N` ou `?url=…`, botão "Abrir em aba"); é assim
+que os prints de evidência são tirados, já que o painel do popup não aparece em capturas de tela automatizadas.
+
 ## Desenvolvimento
 
 ```bash

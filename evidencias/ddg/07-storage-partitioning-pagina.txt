@@ -13,41 +13,41 @@ Retrieved data from 21 storage mechanisms.
 
 Hide Detailed Results
 ❌ document.cookie - fail
-same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
-cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+same-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
+cross-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
 ❌ HTTP Cookie - fail
-same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
-cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+same-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
+cross-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
 ❌ Cookie Store API - fail
-same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
-cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+same-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
+cross-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
 ❌ localStorage - fail
-same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
-cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+same-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
+cross-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
 ❌ sessionStorage - fail
-same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
-cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+same-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
+cross-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
 ❌ IndexedDB - fail
-same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
-cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+same-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
+cross-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
 ✅ WebSQL - unsupported
 same-site: [ { "value": null, "error": "Unsupported" }, { "value": null, "error": "Unsupported" } ]
 cross-site: [ { "value": null, "error": "Unsupported" }, { "value": null, "error": "Unsupported" } ]
 ❌ Cache API - fail
-same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
-cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+same-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
+cross-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
 ❌ ServiceWorker - fail
-same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
-cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+same-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
+cross-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
 ❌ BroadcastChannel - fail
-same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
-cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+same-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
+cross-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
 ❌ SharedWorker - fail
-same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
-cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+same-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
+cross-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
 ❌ Web Locks API - fail
-same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
-cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+same-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
+cross-site: [ { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" }, { "value": "cffc1c69-82c5-4438-9ecf-2549b24ee1fd" } ]
 ⚠️ Fetch Cache - error
 same-site: [ { "value": 2 }, { "value": 3 } ]
 cross-site: [ { "value": 4 }, { "value": 5 } ]
@@ -67,8 +67,8 @@ cross-site: [ { "value": 4 }, { "value": 5 } ]
 same-site: [ { "value": 1 }, { "value": 1 } ]
 cross-site: [ { "value": 2 }, { "value": 2 } ]
 ⚠️ CSS cache - error
-same-site: [ { "value": "fake_05031775118566273" }, { "value": "fake_6213305008261527" } ]
-cross-site: [ { "value": "fake_7215374910028647" }, { "value": "fake_4607834007126641" } ]
+same-site: [ { "value": "fake_7054579661214622" }, { "value": "fake_6801625839513739" } ]
+cross-site: [ { "value": "fake_5089531656359041" }, { "value": "fake_2621244710451509" } ]
 ⚠️ Prefetch Cache - error
 same-site: [ { "value": 1 }, { "value": 2 } ]
 cross-site: [ { "value": 3 }, { "value": 4 } ]

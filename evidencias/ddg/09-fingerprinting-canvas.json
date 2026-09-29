@@ -2,7 +2,7 @@
   "url": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.html?run",
   "hostname": "privacy-test-pages.site",
   "baseDomain": "privacy-test-pages.site",
-  "startedAt": 1790648460154,
+  "startedAt": 1790651324932,
   "thirdParties": {
     "cloudflare.com": {
       "domain": "cloudflare.com",
@@ -15,11 +15,13 @@
       },
       "tracker": null,
       "category": null,
-      "blocked": 0
+      "blocked": 0,
+      "affiliated": false
     }
   },
   "requestsTotal": 7,
   "requestsThirdParty": 1,
+  "requestsAffiliated": 0,
   "storage": {
     "localStorage": {
       "reads": 0,
@@ -116,7 +118,7 @@
     "referrerPage": "https://privacy-test-pages.site/privacy-protections/fingerprinting/",
     "redirectChain": [],
     "bounces": [],
-    "dwellMs": 24463
+    "dwellMs": 24413
   },
   "cookieSync": {
     "events": [],
@@ -172,7 +174,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648461414
+          "at": 1790651326191
         },
         {
           "api": "canvas",
@@ -186,7 +188,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648461897
+          "at": 1790651326693
         },
         {
           "api": "canvas",
@@ -200,7 +202,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648461933
+          "at": 1790651326735
         },
         {
           "api": "canvas",
@@ -214,7 +216,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648461971
+          "at": 1790651326776
         },
         {
           "api": "canvas",
@@ -228,7 +230,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648462009
+          "at": 1790651326815
         },
         {
           "api": "canvas",
@@ -242,7 +244,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648462042
+          "at": 1790651326852
         },
         {
           "api": "canvas",
@@ -256,7 +258,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648462078
+          "at": 1790651326888
         },
         {
           "api": "canvas",
@@ -270,7 +272,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648462113
+          "at": 1790651326923
         },
         {
           "api": "canvas",
@@ -284,7 +286,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648462149
+          "at": 1790651326959
         },
         {
           "api": "canvas",
@@ -298,7 +300,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648462184
+          "at": 1790651326994
         },
         {
           "api": "canvas",
@@ -312,7 +314,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648462220
+          "at": 1790651327030
         },
         {
           "api": "canvas",
@@ -326,7 +328,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648462366
+          "at": 1790651327170
         },
         {
           "api": "canvas",
@@ -340,7 +342,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648463642
+          "at": 1790651328456
         },
         {
           "api": "canvas",
@@ -354,7 +356,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648463768
+          "at": 1790651328579
         },
         {
           "api": "canvas",
@@ -368,7 +370,7 @@
           "likely": true,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648463770
+          "at": 1790651328580
         },
         {
           "api": "canvas",
@@ -382,7 +384,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648463885
+          "at": 1790651328694
         },
         {
           "api": "canvas",
@@ -396,7 +398,7 @@
           "likely": true,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648463896
+          "at": 1790651328708
         },
         {
           "api": "canvas",
@@ -410,7 +412,7 @@
           "likely": false,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648464095
+          "at": 1790651328908
         },
         {
           "api": "canvas",
@@ -424,7 +426,7 @@
           "likely": true,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648464096
+          "at": 1790651328909
         },
         {
           "api": "canvas",
@@ -438,7 +440,7 @@
           "likely": true,
           "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
           "from": "privacy-test-pages.site",
-          "at": 1790648464097
+          "at": 1790651328911
         }
       ]
     },
@@ -482,52 +484,56 @@
           "domain": "privacy-test-pages.site",
           "path": "/",
           "thirdParty": false,
+          "affiliated": false,
           "session": false,
-          "expires": 1825208378958,
+          "expires": 1825211244004,
           "lifetimeDays": 400,
           "secure": true,
           "httpOnly": false,
           "sameSite": "lax",
-          "valueLength": 2
+          "valueLength": 3
         },
         {
           "name": "jsdata_no_samesite",
           "domain": "privacy-test-pages.site",
           "path": "/",
           "thirdParty": false,
+          "affiliated": false,
           "session": false,
-          "expires": 1825208378958,
+          "expires": 1825211244004,
           "lifetimeDays": 400,
           "secure": true,
           "httpOnly": false,
           "sameSite": "unspecified",
-          "valueLength": 2
+          "valueLength": 3
         },
         {
           "name": "cookiestoredata",
           "domain": "privacy-test-pages.site",
           "path": "/",
           "thirdParty": false,
+          "affiliated": false,
           "session": false,
-          "expires": 1825208378971,
+          "expires": 1825211244010,
           "lifetimeDays": 400,
           "secure": true,
           "httpOnly": false,
           "sameSite": "strict",
-          "valueLength": 2
+          "valueLength": 3
         },
         {
           "name": "top_firstparty_headerdata",
           "domain": "privacy-test-pages.site",
           "path": "/",
           "thirdParty": false,
+          "affiliated": false,
           "session": false,
-          "expires": 1791512379200,
+          "expires": 1791515244236,
           "lifetimeDays": 10,
           "secure": true,
           "httpOnly": true,
           "sameSite": "no_restriction",
-          "valueLength": 2
+          "valueLength": 3
         }
       ]
     }

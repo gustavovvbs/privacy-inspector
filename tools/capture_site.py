@@ -14,7 +14,7 @@ from harness import ROOT
 HAR_DIR = ROOT / 'evidencias' / '_har'
 
 
-def start_with_devtools():
+def start_with_devtools(hide_webdriver=False):
     HAR_DIR.mkdir(parents=True, exist_ok=True)
     for f in HAR_DIR.glob('*.har'):
         f.unlink()
@@ -27,6 +27,8 @@ def start_with_devtools():
         'devtools.toolbox.host': 'bottom',
         'devtools.chrome.enabled': True,
         'devtools.debugger.remote-enabled': True,
+        # Esconde navigator.webdriver (Selenium expõe true; ad servers descartam tráfego automatizado)
+        **({'dom.webdriver.enabled': False} if hide_webdriver else {}),
     })
     return d
 
@@ -47,11 +49,12 @@ def open_netmonitor(d):
 
 
 def export_har_via_console(d):
-    """Fallback: dispara a exportação do HAR pelo comando HAR.triggerExport do Network Monitor."""
+    """Obtém o HAR com tudo o que o Network Monitor registrou na visita (HarExporter.fetchHarData),
+    sem diálogo de arquivo. Retorna a string JSON do HAR ou uma mensagem de erro."""
     d.set_context('chrome')
     try:
-        d.execute_async_script("""
-          const done = arguments[0];
+        return d.execute_async_script("""
+          const done = arguments[arguments.length - 1];
           (async () => {
             const { require } = ChromeUtils.importESModule('resource://devtools/shared/loader/Loader.sys.mjs');
             const { gDevTools } = require('devtools/client/framework/devtools');
@@ -61,25 +64,40 @@ def export_har_via_console(d):
             if (!panel) return done('sem painel');
             const { HarExporter } = panel.panelWin.windowRequire('devtools/client/netmonitor/src/har/har-exporter');
             const connector = panel.panelWin.connector || panel.connector;
-            await HarExporter.save({ connector, includeResponseBodies: false, defaultLogDir: arguments[1], forceExport: true, fileName: 'export.har' });
-            done('ok');
+            const { getSortedRequests } = panel.panelWin.windowRequire('devtools/client/netmonitor/src/selectors/index');
+            const items = getSortedRequests(panel.panelWin.store.getState());
+            const data = await HarExporter.fetchHarData({ connector, items, includeResponseBodies: false, forceExport: true });
+            done(data || ('vazio: ' + items.length + ' itens'));
           })().catch((e) => done('erro: ' + e));
         """, str(HAR_DIR))
     finally:
         d.set_context('content')
 
 
-def main(url, folder=None):
+ACCEPT_JS = """
+  const re = /^(aceitar|aceito|concordo|concordar|entendi|ok|continuar|aceitar (todos|tudo)|accept( all)?|agree|got it)/i;
+  const els = [...document.querySelectorAll('button, a, [role=button]')].filter(e => re.test((e.textContent || '').trim()));
+  const visible = els.filter(e => e.offsetParent !== null);
+  (visible[0] || els[0]) && (visible[0] || els[0]).click();
+  return (visible[0] || els[0]) ? (visible[0] || els[0]).textContent.trim().slice(0, 40) : null;
+"""
+
+
+def main(url, folder=None, hide_webdriver=False, accept_consent=False):
     host = harness.hostnameOf(url) if hasattr(harness, 'hostnameOf') else url.split('/')[2]
     name = folder or host.replace('www.', '')
     out = ROOT / 'evidencias' / 'sites' / name
     out.mkdir(parents=True, exist_ok=True)
-    d = start_with_devtools()
+    d = start_with_devtools(hide_webdriver)
     try:
         d.get('about:blank')
         open_netmonitor(d)
         d.get(url)
         time.sleep(8)
+        if accept_consent:
+            clicked = d.execute_script(ACCEPT_JS)
+            print('consentimento: clicado em', repr(clicked))
+            time.sleep(6)
         # rola a página para disparar lazy-loading (aproxima o comportamento do Blacklight)
         for y in (600, 1400, 2400, 0):
             d.execute_script(f'window.scrollTo(0, {y})'); time.sleep(1.5)
@@ -87,18 +105,20 @@ def main(url, folder=None):
         r, txt = harness.capture(d, None, out, 'relatorio', settle=1, title=url,
                                  report_tabs=('summary', 'trackers', 'cookies', 'storage', 'fingerprint', 'sync', 'hijack'), report_url=url)
         (out / 'pagina.txt').write_text(txt[:20000])
-        # HAR: auto-export escreve em HAR_DIR ao final do carregamento; se não escreveu, força.
-        hars = sorted(HAR_DIR.glob('*.har'), key=lambda f: f.stat().st_mtime)
-        if not hars:
-            export_har_via_console(d); time.sleep(4)
-            hars = sorted(HAR_DIR.glob('*.har'), key=lambda f: f.stat().st_mtime)
-        if hars:
-            shutil.copy(hars[-1], out / f'{name}.har')
-            har = json.loads((out / f'{name}.har').read_text())
-            n = len(har['log']['entries'])
-            print(f'HAR: {n} entradas -> {out / (name + ".har")}')
+        # HAR: o auto-export grava ao final do carregamento (cobre só os primeiros segundos). Ao final da
+        # visita força uma nova exportação com tudo o que o Network Monitor registrou (persistlog ativo).
+        d.switch_to.window(d.window_handles[0]) if len(d.window_handles) > 1 else None
+        data = export_har_via_console(d)
+        if data and data.lstrip().startswith('{'):
+            (out / f'{name}.har').write_text(data)
+            har = json.loads(data)
+            print(f'HAR (Network Monitor, visita completa): {len(har["log"]["entries"])} entradas -> {out / (name + ".har")}')
         else:
-            print('HAR: não exportado (exporte manualmente pelo DevTools)')
+            print('HAR via fetchHarData falhou:', str(data)[:200])
+            hars = sorted(HAR_DIR.glob('*.har'), key=lambda f: f.stat().st_mtime)
+            if hars:
+                shutil.copy(hars[-1], out / f'{name}.har')
+                print('HAR (auto-export no load):', len(json.loads(hars[-1].read_text())['log']['entries']), 'entradas')
         if isinstance(r, dict):
             print('plugin:', r['score']['score'], r['score']['grade'], 'terceiros:', len(r['thirdParties']), 'rastreadores:', sum(1 for v in r['thirdParties'].values() if v['tracker']))
     finally:
@@ -106,4 +126,5 @@ def main(url, folder=None):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else None)
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    main(args[0], args[1] if len(args) > 1 else None, hide_webdriver='--hide-webdriver' in sys.argv, accept_consent='--accept-consent' in sys.argv)

@@ -3,20 +3,21 @@ body { font: 10.5pt/1.4 -apple-system, Helvetica, Arial, sans-serif; color: #111
 h1 { font-size: 18pt; page-break-before: always; border-bottom: 2px solid #2b5bd7; padding-bottom: 4px; }
 h1:first-of-type { page-break-before: auto; }
 h2 { font-size: 13pt; margin-top: 18px; } h3 { font-size: 11pt; }
+h3.print, h2.print { break-before: page; page-break-before: always; }
 table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: 8pt; margin: 8px 0; page-break-inside: auto; }
 th, td { border: 1px solid #bbb; padding: 4px 5px; vertical-align: top; text-align: left; overflow-wrap: anywhere; word-break: break-word; }
 th:first-child, td:first-child { width: 22px; }
 th { background: #eef1f6; } tr { page-break-inside: avoid; }
 code { font-family: Menlo, monospace; font-size: 7.5pt; background: #f2f3f5; padding: 0 2px; white-space: pre-wrap; overflow-wrap: anywhere; }
 pre { background: #f2f3f5; padding: 8px; font-size: 8pt; white-space: pre-wrap; }
-img { max-width: 100%; border: 1px solid #ddd; page-break-inside: avoid; }
-figure { margin: 10px 0; page-break-inside: avoid; } figcaption { font-size: 8.5pt; color: #555; }
+img { max-width: 100%; max-height: 118mm; width: auto; height: auto; border: 1px solid #ddd; display: block; margin: 0 auto; }
+figure { display: inline-block; width: 49%; margin: 4px 0; vertical-align: top; page-break-inside: avoid; break-inside: avoid; } figcaption { font-size: 7.5pt; color: #555; text-align: center; word-break: break-all; }
 @page { size: A4 landscape; margin: 12mm 10mm; }
 </style></head><body>
 <h1>Privacy Inspector — Relatório</h1>
 <p><strong>Disciplina:</strong> Segurança — Insper
 <strong>Aluno:</strong> Gustavo Valente
-<strong>Repositório:</strong> <em>(preencher com o link após o push)</em>
+<strong>Repositório:</strong> https://github.com/gustavovvbs/privacy-inspector
 <strong>Plugin:</strong> extensão Firefox (Manifest V2), carregada via <code>about:debugging</code> → "Carregar extensão temporária" → <code>src/manifest.json</code>.</p>
 <p>Este relatório contém os entregáveis 2 (DuckDuckGo Privacy Test Pages), 3 (análise de 3 sites reais) e
 4 (pontuação de privacidade). Prints, arquivos HAR e JSONs estão na pasta <code>evidencias/</code> do repositório.</p>
@@ -24,7 +25,7 @@ figure { margin: 10px 0; page-break-inside: avoid; } figcaption { font-size: 8.5
 <p><strong>Ambiente:</strong> Firefox 156.0.1 (macOS), perfil limpo criado pelo harness <code>tools/capture_ddg.py</code>, com as
 proteções nativas do Firefox desligadas (Enhanced Tracking Protection, partição de cookies/estado de rede,
 query stripping, bounce tracking protection, resistFingerprinting) para que o plugin observe o tráfego
-sem interferência do navegador. Plugin carregado como extensão temporária. Data: 28–29/09/2026.</p>
+sem interferência do navegador. Plugin carregado como extensão temporária. Data: 29/09/2026 (rerodada completa com a versão final do plugin, commit <code>51f1d76</code> ou posterior).</p>
 <p>Para cada página: o <strong>resultado esperado</strong> é o que a própria página reporta (texto na tela e, quando
 existe, o JSON gerado pelo botão "Download the result", salvo em <code>evidencias/ddg/NN-*-resultado-pagina.json</code>).
 O <strong>resultado do plugin</strong> vem do JSON exportado pelo plugin (<code>evidencias/ddg/NN-*.json</code>). O print
@@ -61,7 +62,7 @@ O <strong>resultado do plugin</strong> vem do JSON exportado pelo plugin (<code>
 <td>3</td>
 <td>Tracker Reporting — 1 major tracker via <code>fetch</code> (5 s de atraso)</td>
 <td>Após 5 s a página faz <code>fetch</code> para <code>facebook.com</code>.</td>
-<td>1 domínio de 3ª parte, <code>facebook.com</code>, tipo <code>xmlhttprequest</code> (é como o Firefox classifica <code>fetch</code> no webRequest), com <code>Set-Cookie: fr</code>. Nota 88 (A).</td>
+<td>1 domínio de 3ª parte, <code>facebook.com</code>, tipo <code>xmlhttprequest</code> (é como o Firefox classifica <code>fetch</code> no webRequest), com 2 cabeçalhos <code>Set-Cookie</code> (<code>fr</code>). Nota 88 (A).</td>
 <td>Sem divergência. O harness espera 10 s antes de ler o relatório, cobrindo o atraso de 5 s.</td>
 <td><code>03-tracker-reporting-fetch.png</code></td>
 </tr>
@@ -125,7 +126,7 @@ O <strong>resultado do plugin</strong> vem do JSON exportado pelo plugin (<code>
 <td>10</td>
 <td>Bounce tracking — link "Go to privacy-test-pages.site"</td>
 <td>A página de destino recebe <code>?bounceUIDlocalStorage=&amp;bounceUIDcookie=&amp;isNew=100</code> e mostra "ID didn't exist and was generated – 100": <code>bad.third-party.site</code> gerou um UID, tentou persistir e o repassou pela URL.</td>
-<td>Aba Bounce/Sync: 1 bounce <strong>client-side</strong> por <code>bad.third-party.site</code> (permanência 0,15 s, <code>privacy-test-pages.site → privacy-test-pages.site</code>), parâmetros repassados ao destino (<code>isNew=100</code>, …) e evidência do que a página de passagem fez: <code>document.cookie = bounceUID=100; max-age=5184000</code> (60 dias) e <code>localStorage.bounceUID</code>. Nota 94 (A).</td>
+<td>Aba Bounce/Sync: 1 bounce <strong>client-side</strong> por <code>bad.third-party.site</code> (permanência 0,15 s, <code>privacy-test-pages.site → privacy-test-pages.site</code>), parâmetros repassados ao destino (<code>isNew=100</code>, …) e evidência do que a página de passagem fez: <code>document.cookie = bounceUID=…; max-age=5184000</code> (60 dias) e <code>localStorage.bounceUID</code>. Nota 91 (A) — os 4 cookies de 1ª parte no jar vêm dos testes anteriores no mesmo perfil.</td>
 <td>Sem divergência. Detalhe técnico: o redirecionamento é feito por JavaScript (não 3xx), por isso a "cadeia de redirecionamentos" está vazia e a detecção usa o critério de permanência curta em domínio intermediário. Os eventos da página de passagem chegam ao background depois da navegação (flush no <code>pagehide</code>) e são anexados ao bounce pela URL do frame.</td>
 <td><code>10-bounce-tracking.png</code></td>
 </tr>
@@ -161,7 +162,427 @@ O <strong>resultado do plugin</strong> vem do JSON exportado pelo plugin (<code>
 <li><strong>Divergências estruturais</strong> (não são erros de detecção): o plugin é um <em>observador</em>, não um <em>bloqueador por padrão</em> — não aplica surrogates (4), não remove query parameters (11) e não particiona storage (7). O bloqueio existe apenas pela lista personalizada (5b).</li>
 <li><strong>Limite de arquitetura:</strong> relatório por aba. Testes que abrem janelas secundárias (7) espalham a evidência em dois relatórios; o plugin registra a janela aberta para permitir a correlação.</li>
 <li><strong>Limite de instrumentação:</strong> WebSocket só é visto pelo hook do construtor quando o handshake não passa pelo <code>webRequest</code> (5a); canais de persistência indiretos (<code>window.name</code>, <code>history</code>, cache HTTP) não são instrumentados (6).</li>
-</ul><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/01-tracker-reporting-script.png"><figcaption>evidencias/ddg/01-tracker-reporting-script.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/02-tracker-reporting-img.png"><figcaption>evidencias/ddg/02-tracker-reporting-img.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/03-tracker-reporting-fetch.png"><figcaption>evidencias/ddg/03-tracker-reporting-fetch.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/04-tracker-reporting-surrogate.png"><figcaption>evidencias/ddg/04-tracker-reporting-surrogate.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/05a-tracker-blocking-sem-bloqueio.png"><figcaption>evidencias/ddg/05a-tracker-blocking-sem-bloqueio.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/05b-tracker-blocking-com-bloqueio.png"><figcaption>evidencias/ddg/05b-tracker-blocking-com-bloqueio.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/06-storage-blocking.png"><figcaption>evidencias/ddg/06-storage-blocking.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/07-storage-partitioning.png"><figcaption>evidencias/ddg/07-storage-partitioning.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/08-fingerprinting.png"><figcaption>evidencias/ddg/08-fingerprinting.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/09-fingerprinting-canvas.png"><figcaption>evidencias/ddg/09-fingerprinting-canvas.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/10-bounce-tracking.png"><figcaption>evidencias/ddg/10-bounce-tracking.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/11a-query-parameters-utm.png"><figcaption>evidencias/ddg/11a-query-parameters-utm.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/11b-query-parameters-fbclid.png"><figcaption>evidencias/ddg/11b-query-parameters-fbclid.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/12-js-leaks.png"><figcaption>evidencias/ddg/12-js-leaks.png</figcaption></figure>
+</ul><h3 class="print">Print — 01-tracker-reporting-script.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/01-tracker-reporting-script-pagina.png"><figcaption>evidencias/ddg/01-tracker-reporting-script-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/01-tracker-reporting-script-plugin-summary.png"><figcaption>evidencias/ddg/01-tracker-reporting-script-plugin-summary.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/01-tracker-reporting-script-plugin-trackers.png"><figcaption>evidencias/ddg/01-tracker-reporting-script-plugin-trackers.png</figcaption></figure><h3 class="print">Print — 02-tracker-reporting-img.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/02-tracker-reporting-img-pagina.png"><figcaption>evidencias/ddg/02-tracker-reporting-img-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/02-tracker-reporting-img-plugin-summary.png"><figcaption>evidencias/ddg/02-tracker-reporting-img-plugin-summary.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/02-tracker-reporting-img-plugin-trackers.png"><figcaption>evidencias/ddg/02-tracker-reporting-img-plugin-trackers.png</figcaption></figure><h3 class="print">Print — 03-tracker-reporting-fetch.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/03-tracker-reporting-fetch-pagina.png"><figcaption>evidencias/ddg/03-tracker-reporting-fetch-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/03-tracker-reporting-fetch-plugin-summary.png"><figcaption>evidencias/ddg/03-tracker-reporting-fetch-plugin-summary.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/03-tracker-reporting-fetch-plugin-trackers.png"><figcaption>evidencias/ddg/03-tracker-reporting-fetch-plugin-trackers.png</figcaption></figure><h3 class="print">Print — 04-tracker-reporting-surrogate.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/04-tracker-reporting-surrogate-pagina.png"><figcaption>evidencias/ddg/04-tracker-reporting-surrogate-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/04-tracker-reporting-surrogate-plugin-summary.png"><figcaption>evidencias/ddg/04-tracker-reporting-surrogate-plugin-summary.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/04-tracker-reporting-surrogate-plugin-trackers.png"><figcaption>evidencias/ddg/04-tracker-reporting-surrogate-plugin-trackers.png</figcaption></figure><h3 class="print">Print — 05a-tracker-blocking-sem-bloqueio.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/05a-tracker-blocking-sem-bloqueio-pagina.png"><figcaption>evidencias/ddg/05a-tracker-blocking-sem-bloqueio-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/05a-tracker-blocking-sem-bloqueio-plugin-hijack.png"><figcaption>evidencias/ddg/05a-tracker-blocking-sem-bloqueio-plugin-hijack.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/05a-tracker-blocking-sem-bloqueio-plugin-summary.png"><figcaption>evidencias/ddg/05a-tracker-blocking-sem-bloqueio-plugin-summary.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/05a-tracker-blocking-sem-bloqueio-plugin-trackers.png"><figcaption>evidencias/ddg/05a-tracker-blocking-sem-bloqueio-plugin-trackers.png</figcaption></figure><h3 class="print">Print — 05b-tracker-blocking-com-bloqueio.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/05b-tracker-blocking-com-bloqueio-pagina.png"><figcaption>evidencias/ddg/05b-tracker-blocking-com-bloqueio-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/05b-tracker-blocking-com-bloqueio-plugin-summary.png"><figcaption>evidencias/ddg/05b-tracker-blocking-com-bloqueio-plugin-summary.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/05b-tracker-blocking-com-bloqueio-plugin-trackers.png"><figcaption>evidencias/ddg/05b-tracker-blocking-com-bloqueio-plugin-trackers.png</figcaption></figure><h3 class="print">Print — 06-storage-blocking.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/06-storage-blocking-pagina.png"><figcaption>evidencias/ddg/06-storage-blocking-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/06-storage-blocking-plugin-cookies.png"><figcaption>evidencias/ddg/06-storage-blocking-plugin-cookies.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/06-storage-blocking-plugin-storage.png"><figcaption>evidencias/ddg/06-storage-blocking-plugin-storage.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/06-storage-blocking-plugin-summary.png"><figcaption>evidencias/ddg/06-storage-blocking-plugin-summary.png</figcaption></figure><h3 class="print">Print — 07-storage-partitioning.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/07-storage-partitioning-pagina.png"><figcaption>evidencias/ddg/07-storage-partitioning-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/07-storage-partitioning-plugin-cookies.png"><figcaption>evidencias/ddg/07-storage-partitioning-plugin-cookies.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/07-storage-partitioning-plugin-storage.png"><figcaption>evidencias/ddg/07-storage-partitioning-plugin-storage.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/07-storage-partitioning-plugin-summary.png"><figcaption>evidencias/ddg/07-storage-partitioning-plugin-summary.png</figcaption></figure><h3 class="print">Print — 08-fingerprinting.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/08-fingerprinting-pagina.png"><figcaption>evidencias/ddg/08-fingerprinting-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/08-fingerprinting-plugin-fingerprint.png"><figcaption>evidencias/ddg/08-fingerprinting-plugin-fingerprint.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/08-fingerprinting-plugin-summary.png"><figcaption>evidencias/ddg/08-fingerprinting-plugin-summary.png</figcaption></figure><h3 class="print">Print — 09-fingerprinting-canvas.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/09-fingerprinting-canvas-pagina.png"><figcaption>evidencias/ddg/09-fingerprinting-canvas-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/09-fingerprinting-canvas-plugin-fingerprint.png"><figcaption>evidencias/ddg/09-fingerprinting-canvas-plugin-fingerprint.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/09-fingerprinting-canvas-plugin-summary.png"><figcaption>evidencias/ddg/09-fingerprinting-canvas-plugin-summary.png</figcaption></figure><h3 class="print">Print — 10-bounce-tracking.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/10-bounce-tracking-pagina.png"><figcaption>evidencias/ddg/10-bounce-tracking-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/10-bounce-tracking-plugin-cookies.png"><figcaption>evidencias/ddg/10-bounce-tracking-plugin-cookies.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/10-bounce-tracking-plugin-summary.png"><figcaption>evidencias/ddg/10-bounce-tracking-plugin-summary.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/10-bounce-tracking-plugin-sync.png"><figcaption>evidencias/ddg/10-bounce-tracking-plugin-sync.png</figcaption></figure><h3 class="print">Print — 11a-query-parameters-utm.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/11a-query-parameters-utm-pagina.png"><figcaption>evidencias/ddg/11a-query-parameters-utm-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/11a-query-parameters-utm-plugin-summary.png"><figcaption>evidencias/ddg/11a-query-parameters-utm-plugin-summary.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/11a-query-parameters-utm-plugin-sync.png"><figcaption>evidencias/ddg/11a-query-parameters-utm-plugin-sync.png</figcaption></figure><h3 class="print">Print — 11b-query-parameters-fbclid.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/11b-query-parameters-fbclid-pagina.png"><figcaption>evidencias/ddg/11b-query-parameters-fbclid-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/11b-query-parameters-fbclid-plugin-summary.png"><figcaption>evidencias/ddg/11b-query-parameters-fbclid-plugin-summary.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/11b-query-parameters-fbclid-plugin-sync.png"><figcaption>evidencias/ddg/11b-query-parameters-fbclid-plugin-sync.png</figcaption></figure><h3 class="print">Print — 12-js-leaks.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/12-js-leaks-pagina.png"><figcaption>evidencias/ddg/12-js-leaks-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/12-js-leaks-plugin-hijack.png"><figcaption>evidencias/ddg/12-js-leaks-plugin-hijack.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/12-js-leaks-plugin-summary.png"><figcaption>evidencias/ddg/12-js-leaks-plugin-summary.png</figcaption></figure>
+<h1>Entregável 3 — Análise de 3 sites reais</h1>
+<p><strong>Sites analisados:</strong> <code>www.uol.com.br</code> (portal de notícias), <code>www.terra.com.br</code> (portal de notícias) e
+<code>www.mercadolivre.com.br</code> (e-commerce). Como a lista sorteada por matrícula não estava disponível no momento da
+coleta, foram escolhidos três sites brasileiros de grande audiência e perfis diferentes.</p>
+<p><strong>Método (mesma visita para HAR e plugin).</strong> <code>tools/capture_site.py</code> abre o Firefox 156 com o plugin carregado e o
+Network Monitor aberto, visita a home, rola a página quatro vezes e aguarda 30 s; ao final exporta o <strong>HAR pelo
+próprio Network Monitor</strong> (<code>HarExporter.fetchHarData</code>, com todas as requisições da visita) e o relatório do plugin
+(JSON + prints das abas). Em seguida, <code>tools/capture_ublock.py</code> visita o mesmo site num Firefox com <strong>uBlock Origin
+1.75.0</strong> (listas padrão) e exporta o Logger do uBlock; e <code>tools/capture_blacklight.py</code> submete o site ao
+<strong>Blacklight</strong> (The Markup) e baixa o arquivo <code>blacklight-inspection.json</code> da inspeção. Tudo em 29/09/2026,
+00:05–00:26 (BRT). Arquivos por site em <code>evidencias/sites/&lt;site&gt;/</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th>Conteúdo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;site&gt;.har</code></td>
+<td>HAR do DevTools do Firefox (visita completa)</td>
+</tr>
+<tr>
+<td><code>relatorio.png</code>, <code>relatorio.json</code></td>
+<td>print composto (página + 7 abas do plugin) e relatório exportado</td>
+</tr>
+<tr>
+<td><code>ublock.png</code>, <code>ublock-popup.png</code>, <code>ublock-logger.txt</code>, <code>ublock.json</code></td>
+<td>Logger e painel do uBlock, export bruto e bloqueios parseados</td>
+</tr>
+<tr>
+<td><code>blacklight.png</code>, <code>blacklight.txt</code>, <code>blacklight-inspection.json</code></td>
+<td>resultado do Blacklight (tela, texto e JSON completo)</td>
+</tr>
+<tr>
+<td><code>reconciliacao.json</code></td>
+<td>cruzamento domínio a domínio das quatro fontes (<code>tools/reconcile.py</code>)</td>
+</tr>
+</tbody>
+</table>
+<h2>3.1 Visão geral</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>UOL</th>
+<th>Terra</th>
+<th>Mercado Livre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisições observadas pelo plugin (HAR)</td>
+<td>221 (257)</td>
+<td>223 (235)</td>
+<td>252 (307)</td>
+</tr>
+<tr>
+<td>… para domínios de 3ª parte / afiliados</td>
+<td>101 / 87</td>
+<td>17 / 189</td>
+<td>8 / 241</td>
+</tr>
+<tr>
+<td>Domínios de 3ª parte (não afiliados)</td>
+<td>19</td>
+<td>11</td>
+<td>3</td>
+</tr>
+<tr>
+<td>… dos quais rastreadores conhecidos</td>
+<td>15</td>
+<td>10</td>
+<td>1 (Hotjar)</td>
+</tr>
+<tr>
+<td>Domínios afiliados (mesma organização)</td>
+<td>4 (<code>jsuol.com.br</code>, <code>imguol.com.br</code>, <code>uol.com</code>, <code>jsuol.com</code>)</td>
+<td>2 (<code>trrsf.com</code>, <code>trrsf.com.br</code>)</td>
+<td>7 (<code>mlstatic.com</code>, <code>mercadolibre.com</code>, <code>mercadoclics.com</code>, <code>meli.com</code>, <code>mercadopago.com(.br)</code>, <code>mercadolivre.com</code>)</td>
+</tr>
+<tr>
+<td>Cookies no jar: total (1ª / 3ª parte)</td>
+<td>18 (8 / 10)</td>
+<td>9 (9 / 0)</td>
+<td>14 (14 / 0)</td>
+</tr>
+<tr>
+<td>Cookies injetados: <code>Set-Cookie</code> (3ª parte) + <code>document.cookie</code></td>
+<td>49 (48) + 86</td>
+<td>12 (0) + 9</td>
+<td>41 (1) + 25</td>
+</tr>
+<tr>
+<td>Fingerprinting (plugin)</td>
+<td>possível (enumeração de <code>navigator</code>/<code>screen</code> por scripts do Google/YouTube)</td>
+<td>nenhum</td>
+<td>nenhum</td>
+</tr>
+<tr>
+<td>Hijacking (plugin)</td>
+<td><strong>alto</strong>: listener <code>keydown/keyup</code> em <code>document</code> pelo SDK da Marfeel (<code>sdk.mrf.io</code>); polling a <code>events.newsroom.bi</code></td>
+<td>baixo: <code>console.log</code> sobrescrito, 88 globais novos, WebSocket 1ª parte (<code>rt-cloud.terra.com.br</code>)</td>
+<td>nenhum</td>
+</tr>
+<tr>
+<td>Bounce / cookie sync (plugin)</td>
+<td>cookie sync: id <code>k=d2934e09…</code> enviado a <code>prmutv.co</code>, <code>permutive.com</code> e <code>cm.g.doubleclick.net</code> (<code>google_nid=permutive_dmp&amp;google_cm</code>)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Nota do plugin</strong></td>
+<td><strong>0 (E)</strong></td>
+<td><strong>59 (C)</strong></td>
+<td><strong>79 (B)</strong></td>
+</tr>
+<tr>
+<td>uBlock Origin: bloqueios de rede (redirecionados)</td>
+<td>41 (6)</td>
+<td>23 (4)</td>
+<td>46 (0)</td>
+</tr>
+<tr>
+<td>Blacklight: ad trackers / cookies 3ª parte</td>
+<td>88 / 271</td>
+<td>83 / 310</td>
+<td>0 / 3</td>
+</tr>
+<tr>
+<td>Blacklight: canvas / session recording / key logging / FB pixel / GA remarketing</td>
+<td>não / não / não / <strong>sim</strong> / <strong>sim</strong></td>
+<td>não / não / não / não / <strong>sim</strong></td>
+<td>não / <strong>Hotjar</strong> / não / não / não</td>
+</tr>
+</tbody>
+</table>
+<h2>3.2 UOL — <code>www.uol.com.br</code></h2>
+<p><strong>O que o plugin viu (HAR <code>uol.com.br.har</code>, 257 entradas, 24 eTLD+1).</strong> Quinze rastreadores conhecidos:
+Google Ad Manager (<code>securepubads.g.doubleclick.net/tag/js/gpt.js</code>, <code>googleads.g.doubleclick.net/pagead/id</code>),
+Xandr (<code>ib.adnxs.com/getuidj?gdpr=0</code>, <code>secure.adnxs.com/seg?add=…</code>), Amazon (<code>c.amazon-adsystem.com/aax2/apstag.js</code>),
+comScore (<code>sb.scorecardresearch.com</code>), Chartbeat, Google Tag Manager, Permutive (<code>permutive.com</code>, <code>permutive.app</code>,
+<code>prmutv.co</code>), Marfeel (<code>sdk.mrf.io/statics/marfeel-sdk.js</code>), Newsroom AI (<code>events.newsroom.bi/multimedia.php</code>,
+24 requisições, 5 delas em polling regular), Piano/Tinypass, LiveRamp ATS (<code>ats-wrapper.privacymanager.io</code>) e dois
+embeds do YouTube (25 requisições, 5 cookies de 3ª parte, 54 escritas em <code>localStorage</code> dentro do iframe).
+Não listados: <code>google.com</code>, <code>gstatic.com</code>, <code>googleapis.com</code> (fontes/recaptcha/IMA SDK) e <code>turner.com</code>.</p>
+<p><strong>Cookie sync observado (HAR):</strong> <code>https://cm.g.doubleclick.net/pixel?google_nid=permutive_dmp&amp;google_cm&amp;type=ddp&amp;k=d2934e09-3372-4691-ade8-1a2726d74798&amp;u=…</code>
+— é o <em>cookie matching</em> do Google (<code>google_cm</code>) com a DMP Permutive; o mesmo <code>k</code> aparece em requisições a
+<code>prmutv.co</code> e <code>permutive.com</code>. O plugin classificou como "ID compartilhado" com 3 domínios.</p>
+<p><strong>uBlock Origin (41 bloqueios de rede).</strong> <code>||doubleclick.net^</code> (10), <code>||tm.jsuol.com.br^</code> e <code>||jsuol.com.br/aud/$script</code>
+(10 — o tag manager e o módulo de audiência do próprio UOL), YouTube (<code>||youtube.com/youtubei/v1/log_event</code>, 8),
+<code>||imasdk.googleapis.com^</code> (5), <code>||chartbeat.com^$3p</code> (3), <code>||sdk.mrf.io/statics/marfeel-sdk.js</code>,
+<code>||scorecardresearch.com^</code>, <code>||permutive.app^</code>, <code>/publicidade/*$~xhr</code> (em <code>conteudo.imguol.com.br</code>), <code>||logger.uol.com.br^</code>.
+Além disso 125 injeções de <em>scriptlet</em> (quase todas contra anúncios do player do YouTube) e 6 <em>redirects</em> (stubs
+neutros para <code>gpt.js</code>, <code>chartbeat_mab.js</code>, <code>ad_status.js</code>).</p>
+<p><strong>Blacklight (visita 29/09/2026 00:05 BRT, Chrome headless em Ohio).</strong> 88 ad trackers, 271 cookies de 3ª parte de
+121 domínios, 273 hosts de terceiros; FB pixel e GA remarketing presentes; sem canvas, session recording ou key logging.</p>
+<h3>Reconciliação</h3>
+<table>
+<thead>
+<tr>
+<th>Domínio / indicador</th>
+<th>Plugin</th>
+<th>Blacklight</th>
+<th>uBlock</th>
+<th>Explicação técnica (com referência ao HAR)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>doubleclick.net</code> (Google Ad Manager)</td>
+<td>rastreador, 6 req. (<code>gpt.js</code>, <code>pagead/id</code>, <code>cm.g…/pixel</code>, <code>ad_status.js</code>)</td>
+<td>66 req. de tracker, incl. 13 <code>gampad/ads</code></td>
+<td>bloqueado (10)</td>
+<td><strong>Concordam</strong> que o GAM está presente. Divergem no volume: no nosso HAR não há <strong>nenhuma</strong> requisição <code>gampad/ads</code> nem <code>googlesyndication.com</code> — o <code>gpt.js</code> carrega, mas o leilão não acontece (ver bloco abaixo).</td>
+</tr>
+<tr>
+<td><code>adnxs.com</code>, <code>amazon-adsystem.com</code> (Prebid/TAM)</td>
+<td>rastreadores, 2+1 req. (<code>getuidj</code>, <code>apstag.js</code>)</td>
+<td>43 + 57 req.</td>
+<td>não bloqueado no nosso HAR (só <code>apstag.js</code> redirecionado)</td>
+<td><code>tm.jsuol.com.br/modules/external/Prebid.js</code> carrega (HAR), mas só faz <em>user sync</em> com Xandr; não há chamadas de lance (<code>/openrtb2/auction</code>, <code>ib.adnxs.com/ut/v3</code>). No Blacklight o leilão completo rodou.</td>
+</tr>
+<tr>
+<td>136 domínios só no Blacklight (<code>rubiconproject.com</code> 123 req., <code>googlesyndication.com</code> 69, <code>smartadserver.com</code> 36, <code>seedtag.com</code> 29, <code>pubmatic.com</code>, <code>sonobi.com</code> 20 cookies…)</td>
+<td>não vistos</td>
+<td>ad trackers + cookies</td>
+<td>—</td>
+<td><strong>Divergência principal.</strong> É a cadeia programática (SSPs, DSPs, <em>cookie sync</em> <code>usync.html</code> = 181 req.) que só dispara quando o leilão do GAM/Prebid roda. Hipóteses testadas e descartadas (pastas <code>uol-sem-webdriver</code> e <code>uol-com-consentimento</code>): (1) automação — com <code>navigator.webdriver</code> oculto o HAR continua sem leilão; (2) consentimento LGPD — com o banner aceito (<code>upc.udr.uol.com.br/api/userConsent/put?consentStatus=consent</code> no HAR) idem. Explicação restante: <strong>origem do tráfego</strong>. O Blacklight conecta a partir dos EUA (envia <code>x-forwarded-for</code> com nosso IP, mas o IP de conexão é de Ohio); para tráfego internacional o UOL vende o inventário remanescente no mercado aberto (dezenas de SSPs), enquanto para visitantes brasileiros a home serve inventário próprio (<code>conteudo.imguol.com.br/publicidade/…</code>, que o uBlock bloqueia com <code>/publicidade/*$~xhr</code>). Metade das requisições do Blacklight (176) veio ainda da 2ª página visitada (<code>noticias.uol.com.br/politica/governo-lula/</code>), que o plugin não visitou.</td>
+</tr>
+<tr>
+<td><code>facebook.net</code> / FB pixel</td>
+<td>não visto</td>
+<td><strong>sim</strong> (4 req.)</td>
+<td>—</td>
+<td>Não há nenhuma requisição a <code>facebook.net</code>/<code>facebook.com</code> no HAR; o pixel foi carregado apenas no fluxo de anúncios/2ª página do Blacklight.</td>
+</tr>
+<tr>
+<td><code>permutive.com/.app</code>, <code>prmutv.co</code></td>
+<td>rastreador (DMP), cookie sync com Google</td>
+<td>19 req.</td>
+<td><code>||permutive.app^</code></td>
+<td>Concordam. O plugin adiciona a evidência do <em>cookie matching</em> (<code>cm.g.doubleclick.net/pixel?google_nid=permutive_dmp</code>).</td>
+</tr>
+<tr>
+<td><code>newsroom.bi</code></td>
+<td>rastreador, 24 req., 4 cookies 3ª parte, polling regular</td>
+<td>27 req., 4 cookies</td>
+<td>não bloqueado</td>
+<td>Concordam; o uBlock não tem filtro para o domínio (listas padrão).</td>
+</tr>
+<tr>
+<td><code>mrf.io</code> (Marfeel)</td>
+<td>rastreador; listener <code>keydown/keyup</code> em <code>document</code> → <strong>key logging / hijacking alto</strong></td>
+<td>0 req. de tracker; <strong>key logging: não</strong></td>
+<td><code>||sdk.mrf.io/statics/marfeel-sdk.js</code></td>
+<td><strong>Divergência de critério.</strong> O plugin reporta a <em>capacidade</em> (listener de teclado registrado por script de terceiro no frame principal); o Blacklight só marca <em>key logging</em> quando digita em campos e vê o texto sair em requisições. O SDK da Marfeel registra <code>keydown</code> para métricas de engajamento; não há evidência de exfiltração no HAR.</td>
+</tr>
+<tr>
+<td><code>youtube.com</code>, <code>ytimg.com</code></td>
+<td>rastreador (embed), 5 cookies, storage em iframe de 3ª parte, "fingerprinting possível"</td>
+<td>5 req. (<code>youtube.com</code>) e 5 cookies</td>
+<td>8 bloqueios (<code>log_event</code>, <code>generate_204</code>) + scriptlets</td>
+<td>Concordam na presença. O "fingerprinting possível" vem da enumeração de 14 propriedades por <code>www.google.com/js/th/…</code> (botguard) e 8 por <code>ytembeds</code>; o Blacklight não tem esse critério (só canvas/fonts). Os 20 listeners de teclado dentro do iframe do player não contam como key logging (só veem o próprio iframe).</td>
+</tr>
+<tr>
+<td><code>chartbeat.com</code>, <code>scorecardresearch.com</code>, <code>googletagmanager.com</code>, <code>tinypass.com</code>, <code>privacymanager.io</code></td>
+<td>rastreadores</td>
+<td>presentes</td>
+<td>chartbeat e comScore bloqueados; GTM e Piano não</td>
+<td>Concordam. <code>privacymanager.io</code> (CMP/ATS da LiveRamp) é classificado pelo plugin como <em>identity</em> porque o módulo ATS (<code>ats.js</code>) resolve identidades por e-mail; o uBlock não bloqueia CMPs.</td>
+</tr>
+<tr>
+<td><code>jsuol.com.br</code>, <code>imguol.com.br</code></td>
+<td><strong>afiliados</strong> (excluídos da nota)</td>
+<td>48 req. contadas como tracker (<code>tm.jsuol.com.br</code>)</td>
+<td>10 bloqueios (<code>||tm.jsuol.com.br^</code>, <code>/aud/</code>)</td>
+<td><strong>Divergência de definição.</strong> Para EasyPrivacy e para o Blacklight o tag manager/módulo de audiência do UOL é rastreador (é 3ª parte por eTLD+1); o plugin o trata como mesma organização. A escolha é discutida na pontuação.</td>
+</tr>
+<tr>
+<td>Cookies de 3ª parte</td>
+<td>10 (YouTube 5, Newsroom 4, Permutive 1)</td>
+<td>271</td>
+<td>—</td>
+<td>Consequência direta do leilão não ter ocorrido: os 271 cookies do Blacklight vêm de 121 domínios de ad-tech (<code>sonobi.com</code> 20, <code>pubmatic.com</code> 17…), nenhum contactado no nosso HAR.</td>
+</tr>
+</tbody>
+</table>
+<h2>3.3 Terra — <code>www.terra.com.br</code></h2>
+<p><strong>Plugin (HAR <code>terra.com.br.har</code>, 235 entradas, 14 eTLD+1).</strong> Dez rastreadores: GAM (<code>gpt.js</code>), GTM, Tail
+(<code>tags.t.tailtarget.com</code>, <code>c.t.tailtarget.com</code>), comScore, Chartbeat, Criteo (<code>gum.criteo.com/sid/json?origin=prebid…</code>),
+LiveRamp (<code>rlcdn.com</code>) e LiveRamp ATS/CMP (<code>privacymanager.io</code>, 6 req.), Amazon (<code>apstag.js</code>), Taboola. 189 das 223
+requisições vão para os CDNs afiliados <code>trrsf.com</code>/<code>trrsf.com.br</code> (<code>s1.trrsf.com/…/zaz-3rd/prebid/prebid.js</code>,
+<code>p1-cloud.trrsf.com.br/api/includer/include?component=mod.aps&amp;component=mod.prebid…</code>). Cookies: 9, todos de 1ª parte.
+Hijacking baixo: <code>console.log</code> sobrescrito (silenciamento do console), 88 globais novos (<code>zaz-*</code>), WebSocket de
+1ª parte <code>wss://rt-cloud.terra.com.br/client/hubs/Portal</code>.</p>
+<p><strong>uBlock (23 bloqueios de rede, 4 redirects):</strong> <code>/prebid/*$script</code> e <code>||trrsf.com/*/mod-stalker.min.js</code> (o Prebid e
+um módulo "stalker" do próprio Terra), <code>/tagman/*</code> em <code>p1-cloud.trrsf.com.br</code> (4), <code>||tailtarget.com^$3p</code> (3),
+<code>||taboola.com^</code> (2), <code>||amazon-adsystem.com^</code>, <code>||chartbeat.com^$3p</code>, <code>||googletagmanager.com^</code>,
+<code>||securepubads.g.doubleclick.net/tag/js/gpt.js$…redirect</code>, <code>||scorecardresearch.com^</code>.</p>
+<p><strong>Blacklight:</strong> 83 ad trackers, 310 cookies de 3ª parte (118 domínios), 257 hosts; GA remarketing sim; FB pixel não.</p>
+<h3>Reconciliação</h3>
+<table>
+<thead>
+<tr>
+<th>Domínio / indicador</th>
+<th>Plugin</th>
+<th>Blacklight</th>
+<th>uBlock</th>
+<th>Explicação técnica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>doubleclick.net</code>, <code>amazon-adsystem.com</code>, <code>criteo.com</code>, <code>tailtarget.com</code>, <code>taboola.com</code></td>
+<td>rastreadores, 1–2 req. cada</td>
+<td>89 / 71 / 30 / 30 / 6 req.</td>
+<td>bloqueados</td>
+<td>Mesmo padrão do UOL: <code>prebid.js</code> e <code>apstag.js</code> carregam e fazem <em>sync</em> (<code>gum.criteo.com/sid/json?origin=prebid</code>), mas não há <code>gampad/ads</code> nem <code>googlesyndication.com</code> no HAR; no Blacklight, 15 <code>gampad</code> e 70 <code>googlesyndication</code>. A Tail (<code>tailtarget.com</code>, DMP brasileira) recebeu 30 req. no Blacklight contra 1 aqui — reforça que o leilão inteiro (incl. segmentação) só rodou lá.</td>
+</tr>
+<tr>
+<td>138 domínios só no Blacklight (<code>rubiconproject.com</code> 61, <code>bidswitch.net</code> 36, <code>smartadserver.com</code> 35, <code>id5-sync.com</code> 21, <code>a-mo.net</code> 24 cookies, <code>tappx.com</code> 22 cookies…)</td>
+<td>não vistos</td>
+<td>ad trackers/cookies</td>
+<td>—</td>
+<td>Cadeia programática + <em>cookie sync</em> (<code>/3192/CookieSync.html</code> 79 req., <code>/sync</code> 54, <code>usync.html</code> 51 no Blacklight). Mesma explicação de origem do tráfego; 122 requisições vieram da 2ª página (<code>terra.com.br/noticias/eleicoes/…</code>).</td>
+</tr>
+<tr>
+<td><code>trrsf.com</code>, <code>trrsf.com.br</code></td>
+<td>afiliados (176 + 13 req.)</td>
+<td>4 + 10 req. como tracker</td>
+<td>8 bloqueios (<code>prebid</code>, <code>mod-stalker</code>, <code>tagman</code>)</td>
+<td>Divergência de definição, como no UOL: o Prebid e o tag manager do Terra vivem no CDN afiliado. Note que o uBlock bloqueia o <code>prebid.js</code> na origem, o que impede todo o leilão.</td>
+</tr>
+<tr>
+<td><code>rlcdn.com</code>, <code>privacymanager.io</code> (LiveRamp)</td>
+<td>rastreadores (<em>identity</em>)</td>
+<td><code>rlcdn.com</code> 7 req.</td>
+<td>não bloqueados</td>
+<td>Concordam em <code>rlcdn.com</code>. O CMP (<code>privacymanager.io</code>) não é rastreador para o uBlock/Blacklight; o plugin o marca por causa do módulo ATS.</td>
+</tr>
+<tr>
+<td>GA remarketing</td>
+<td>GAM/<code>doubleclick.net</code> presente (−4)</td>
+<td>sim</td>
+<td>—</td>
+<td>Concordam (critério equivalente: <code>doubleclick.net</code>/<code>googlesyndication</code>).</td>
+</tr>
+<tr>
+<td>Cookies de 3ª parte</td>
+<td>0</td>
+<td>310</td>
+<td>—</td>
+<td>O HAR não contém nenhum <code>Set-Cookie</code> de terceiro (<code>injectedHttpThirdParty = 0</code>): sem leilão, sem cookies de SSPs.</td>
+</tr>
+<tr>
+<td>Hijacking baixo</td>
+<td><code>console.log</code> sobrescrito; 88 globais; WebSocket 1ª parte</td>
+<td>—</td>
+<td><code>mod-stalker.min.js</code> bloqueado</td>
+<td>Não há equivalente no Blacklight. O WebSocket é de 1ª parte (notificações em tempo real) e não pontua; <code>console.log</code> sobrescrito é prática comum de silenciamento e pesa como "baixo".</td>
+</tr>
+</tbody>
+</table>
+<h2>3.4 Mercado Livre — <code>www.mercadolivre.com.br</code></h2>
+<p><strong>Plugin (HAR <code>mercadolivre.com.br.har</code>, 307 entradas, 11 eTLD+1).</strong> Apenas 8 de 252 requisições vão a terceiros não
+afiliados: Hotjar (<code>static.hotjar.com/c/hotjar-….js</code> — gravação de sessão), <code>accounts.google.com/gsi/iframe/select</code>
+(Sign in with Google, em iframe) e <code>gstatic.com</code>. 241 requisições vão a domínios do grupo (<code>mlstatic.com</code> 182,
+<code>api.mercadolibre.com</code> 24, <code>meli.com</code> 17, <code>print1.mercadoclics.com/display/prints/MLB/count</code> 15, pixels <code>melidata</code>
+em <code>mercadopago.com(.br)</code>/<code>mercadolivre.com</code>/<code>mercadolibre.com</code>). Cookies: 14, todos de 1ª parte, 5 com validade</p>
+<blockquote>
+<p>1 ano. Sem fingerprinting, sem hijacking (os 3 listeners de teclado estão dentro do iframe do Google).</p>
+</blockquote>
+<p><strong>uBlock (46 bloqueios):</strong> <code>||mercadoclics.com^$3p</code> (39 — EasyPrivacy), <code>/pixel.gif?</code> nos quatro hosts <code>melidata</code>,
+<code>||hotjar.com^</code>, <code>||matt.mercadolivre.com.br^</code>, <code>/log?format=</code> (play.google.com).</p>
+<p><strong>Blacklight:</strong> "0 ad trackers" na página de resultado, mas o JSON lista 20 requisições a <code>mercadoclics.com</code> e 3 a
+<code>hotjar.com</code> como <em>TrackingRequest</em> (EasyPrivacy); 3 cookies de 3ª parte (<code>mercadoclics.com</code>, <code>mercadolibre.com</code>,
+<code>meli.com</code>); <strong>session recorder: Hotjar</strong>; sem key logging, canvas, FB ou GA remarketing.</p>
+<h3>Reconciliação</h3>
+<table>
+<thead>
+<tr>
+<th>Domínio / indicador</th>
+<th>Plugin</th>
+<th>Blacklight</th>
+<th>uBlock</th>
+<th>Explicação técnica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hotjar.com</code></td>
+<td>rastreador <em>session-recording</em> (−10)</td>
+<td>session recorder (<code>script.hotjar.com</code>, <code>static.hotjar.com</code>)</td>
+<td><code>||hotjar.com^</code></td>
+<td><strong>Concordam as três fontes.</strong></td>
+</tr>
+<tr>
+<td><code>mercadoclics.com</code></td>
+<td>afiliado (15 req. de <code>print1.mercadoclics.com/display/prints/MLB/count</code>)</td>
+<td>20 req. como tracker (filtro <code>||mercadoclics.com^$third-party</code>, EasyPrivacy); 1 cookie 3ª parte (<code>_d2id</code>, 1 ano)</td>
+<td>39 bloqueios</td>
+<td><strong>Divergência de definição.</strong> <code>mercadoclics.com</code> é a plataforma de anúncios do próprio Mercado Livre (Mercado Ads): é 3ª parte por eTLD+1 e rastreia o usuário entre os sites do grupo, por isso EasyPrivacy a bloqueia; o plugin a trata como mesma organização. O cookie <code>_d2id</code> de 1 ano confirma que há identificação persistente — o plugin o exibe como "afiliado", mas não pontua.</td>
+</tr>
+<tr>
+<td><code>melidata</code> (<code>mercadolibre.com</code>, <code>mercadopago.com(.br)</code>, <code>mercadolivre.com</code>)</td>
+<td>afiliados; pixels <code>/pixel.gif?</code></td>
+<td>2 cookies 3ª parte (<code>mercadolibre.com</code>, <code>meli.com</code>)</td>
+<td>4 bloqueios <code>/pixel.gif?</code></td>
+<td>Mesma divergência: telemetria própria distribuída em vários eTLD+1 do grupo. O uBlock bloqueia pelo padrão genérico de pixel.</td>
+</tr>
+<tr>
+<td><code>accounts.google.com</code>, <code>gstatic.com</code></td>
+<td>não listados (2 domínios, −2)</td>
+<td><code>accounts.google.com</code> contactado</td>
+<td><code>/log?format=</code> bloqueado</td>
+<td>Concordam; é o botão "Entrar com Google" dentro de iframe.</td>
+</tr>
+<tr>
+<td>Ad trackers</td>
+<td>1</td>
+<td>0 (texto) / 2 domínios (JSON)</td>
+<td>46 bloqueios, 39 no <code>mercadoclics</code></td>
+<td>Os três concordam que <strong>não há rede de anúncios de terceiros</strong>; toda a diferença está em como classificar os domínios do próprio grupo.</td>
+</tr>
+<tr>
+<td>Cookies de 3ª parte</td>
+<td>0 (3 marcados como afiliados)</td>
+<td>3</td>
+<td>—</td>
+<td>Idem.</td>
+</tr>
+<tr>
+<td>Key logging</td>
+<td>não (3 listeners em iframe do Google, descartados)</td>
+<td>não</td>
+<td>—</td>
+<td>Concordam — e o descarte dos listeners em iframe evitou um falso positivo.</td>
+</tr>
+</tbody>
+</table>
+<h2>3.5 Síntese da reconciliação</h2>
+<ol>
+<li><strong>Onde as fontes concordam:</strong> presença/ausência de gravação de sessão (Hotjar no ML), de GAM/Google remarketing
+   (UOL, Terra), dos rastreadores de analytics (comScore, Chartbeat, Newsroom, Permutive) e a ausência de
+   fingerprinting por canvas nos três sites.</li>
+<li><strong>Divergência de volume (UOL, Terra):</strong> o Blacklight viu o leilão programático completo (80+ SSPs/DSPs, 270–310
+   cookies); o nosso Firefox carregou GPT/Prebid mas o leilão não rodou. Automação e consentimento foram testados e
+   descartados com HARs próprios; a explicação restante é a <strong>origem do tráfego</strong> (EUA × Brasil) somada à <strong>2ª página</strong>
+   visitada pelo Blacklight.</li>
+<li><strong>Divergência de definição (os três):</strong> domínios do próprio grupo (<code>jsuol.com.br</code>, <code>trrsf.com</code>, <code>mercadoclics.com</code>,
+   <code>melidata</code>) são rastreadores para EasyPrivacy/Blacklight e afiliados para o plugin.</li>
+<li><strong>Divergência de critério (UOL):</strong> o plugin marca <em>key logging</em> pela capacidade (listener de teclado de terceiro no
+   frame principal); o Blacklight, pela exfiltração observada. O caso Marfeel ilustra a diferença.</li>
+<li><strong>Só o plugin vê:</strong> cookie sync explícito (<code>google_cm</code> Permutive↔Google), polling regular (<code>events.newsroom.bi</code>),
+   storage em iframes de 3ª parte (YouTube), sobrescrita de nativos e novos globais (Terra).</li>
+<li><strong>Só o uBlock vê:</strong> bloqueios por <em>scriptlet</em> (anúncios do player do YouTube) e <em>redirects</em> para stubs, que não são
+   requisições e por isso não aparecem no HAR nem no plugin.</li>
+</ol><h3 class="print">Print — relatorio.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-pagina.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-cookies.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-cookies.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-fingerprint.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-fingerprint.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-hijack.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-hijack.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-storage.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-storage.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-summary.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-summary.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-sync.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-sync.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-trackers.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-trackers.png</figcaption></figure><h3 class="print">Print — ublock.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/ublock.png"><figcaption>evidencias/sites/mercadolivre.com.br/ublock.png</figcaption></figure><h3 class="print">Print — ublock-popup.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/ublock-popup.png"><figcaption>evidencias/sites/mercadolivre.com.br/ublock-popup.png</figcaption></figure><h3 class="print">Print — blacklight.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/blacklight.png"><figcaption>evidencias/sites/mercadolivre.com.br/blacklight.png</figcaption></figure><h2 class="print">Prints — uol.com.br</h2><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/uol.com.br/relatorio-pagina.png"><figcaption>evidencias/sites/uol.com.br/relatorio-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/uol.com.br/relatorio-plugin-summary.png"><figcaption>evidencias/sites/uol.com.br/relatorio-plugin-summary.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/uol.com.br/relatorio-plugin-trackers.png"><figcaption>evidencias/sites/uol.com.br/relatorio-plugin-trackers.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/uol.com.br/relatorio-plugin-cookies.png"><figcaption>evidencias/sites/uol.com.br/relatorio-plugin-cookies.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/uol.com.br/relatorio-plugin-storage.png"><figcaption>evidencias/sites/uol.com.br/relatorio-plugin-storage.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/uol.com.br/relatorio-plugin-fingerprint.png"><figcaption>evidencias/sites/uol.com.br/relatorio-plugin-fingerprint.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/uol.com.br/relatorio-plugin-sync.png"><figcaption>evidencias/sites/uol.com.br/relatorio-plugin-sync.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/uol.com.br/relatorio-plugin-hijack.png"><figcaption>evidencias/sites/uol.com.br/relatorio-plugin-hijack.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/uol.com.br/ublock.png"><figcaption>evidencias/sites/uol.com.br/ublock.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/uol.com.br/ublock-popup.png"><figcaption>evidencias/sites/uol.com.br/ublock-popup.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/uol.com.br/blacklight.png"><figcaption>evidencias/sites/uol.com.br/blacklight.png</figcaption></figure><h2 class="print">Prints — terra.com.br</h2><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/terra.com.br/relatorio-pagina.png"><figcaption>evidencias/sites/terra.com.br/relatorio-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/terra.com.br/relatorio-plugin-summary.png"><figcaption>evidencias/sites/terra.com.br/relatorio-plugin-summary.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/terra.com.br/relatorio-plugin-trackers.png"><figcaption>evidencias/sites/terra.com.br/relatorio-plugin-trackers.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/terra.com.br/relatorio-plugin-cookies.png"><figcaption>evidencias/sites/terra.com.br/relatorio-plugin-cookies.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/terra.com.br/relatorio-plugin-storage.png"><figcaption>evidencias/sites/terra.com.br/relatorio-plugin-storage.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/terra.com.br/relatorio-plugin-fingerprint.png"><figcaption>evidencias/sites/terra.com.br/relatorio-plugin-fingerprint.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/terra.com.br/relatorio-plugin-sync.png"><figcaption>evidencias/sites/terra.com.br/relatorio-plugin-sync.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/terra.com.br/relatorio-plugin-hijack.png"><figcaption>evidencias/sites/terra.com.br/relatorio-plugin-hijack.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/terra.com.br/ublock.png"><figcaption>evidencias/sites/terra.com.br/ublock.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/terra.com.br/ublock-popup.png"><figcaption>evidencias/sites/terra.com.br/ublock-popup.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/terra.com.br/blacklight.png"><figcaption>evidencias/sites/terra.com.br/blacklight.png</figcaption></figure><h2 class="print">Prints — mercadolivre.com.br</h2><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-pagina.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-pagina.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-summary.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-summary.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-trackers.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-trackers.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-cookies.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-cookies.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-storage.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-storage.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-fingerprint.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-fingerprint.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-sync.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-sync.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-hijack.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-hijack.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/ublock.png"><figcaption>evidencias/sites/mercadolivre.com.br/ublock.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/ublock-popup.png"><figcaption>evidencias/sites/mercadolivre.com.br/ublock-popup.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/blacklight.png"><figcaption>evidencias/sites/mercadolivre.com.br/blacklight.png</figcaption></figure>
 <h1>Metodologia da pontuação de privacidade</h1>
 <p>A nota parte de <strong>100 pontos</strong> e sofre deduções por critério. Cada critério tem um <strong>teto</strong>, para que um
 único eixo (ex.: um site com 40 domínios de anúncios) não zere a nota sozinho e para que sites com
@@ -311,4 +732,196 @@ média dos 100 mil sites mais populares (Tranco). A comparação, portanto, é f
 <li><strong>Momento.</strong> Os scripts de terceiros mudam ao longo dos dias; os dois relatórios devem ser
    produzidos na mesma data sempre que possível.</li>
 </ol>
+<h1>Entregável 4 — Pontuação de privacidade aplicada aos 3 sites</h1>
+<p>A metodologia (critérios, pesos, tetos e justificativas) está na seção anterior. Abaixo, a composição da nota de
+cada site (aba "Resumo" do plugin, arquivo <code>relatorio-plugin-summary.png</code> em <code>evidencias/sites/</code> de cada site) e a comparação
+crítica com o Blacklight.</p>
+<table>
+<thead>
+<tr>
+<th>Critério (teto)</th>
+<th>UOL</th>
+<th>Terra</th>
+<th>Mercado Livre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rastreadores conhecidos, 4/domínio (32)</td>
+<td>15 → <strong>−32</strong></td>
+<td>10 → <strong>−32</strong></td>
+<td>1 → −4</td>
+</tr>
+<tr>
+<td>Outros domínios de 3ª parte, 1/domínio (8)</td>
+<td>4 → −4</td>
+<td>1 → −1</td>
+<td>2 → −2</td>
+</tr>
+<tr>
+<td>Cookies de 3ª parte, 2/cookie (16)</td>
+<td>10 → <strong>−16</strong></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Cookies persistentes &gt; 1 ano, 1/cookie (6)</td>
+<td>1 → −1</td>
+<td>1 → −1</td>
+<td>5 → −5</td>
+</tr>
+<tr>
+<td>Fingerprinting (15/7)</td>
+<td>possível → −7</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Gravação de sessão (10)</td>
+<td>0</td>
+<td>0</td>
+<td>Hotjar → <strong>−10</strong></td>
+</tr>
+<tr>
+<td>Captura de teclado por rastreador (10)</td>
+<td>Marfeel → <strong>−10</strong></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Pixel do Facebook (6)</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Remarketing Google (4)</td>
+<td>−4</td>
+<td>−4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Cookie sync (8/4)</td>
+<td>Permutive↔Google → <strong>−8</strong></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Bounce tracking (6)</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Storage em frame de 3ª parte (4)</td>
+<td>YouTube → −4</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Hijacking (15/8/3)</td>
+<td>alto → <strong>−15</strong></td>
+<td>baixo → −3</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Soma das deduções</strong></td>
+<td>101</td>
+<td>41</td>
+<td>21</td>
+</tr>
+<tr>
+<td><strong>Nota / conceito</strong></td>
+<td><strong>0 — E</strong></td>
+<td><strong>59 — C</strong></td>
+<td><strong>79 — B</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>Comparação crítica com o Blacklight</h2>
+<p>O Blacklight não dá nota; lista indicadores e os compara com a média dos 100 mil sites mais populares. A comparação
+é feita indicador a indicador:</p>
+<table>
+<thead>
+<tr>
+<th>Indicador</th>
+<th>UOL (plugin × Blacklight)</th>
+<th>Terra</th>
+<th>Mercado Livre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ad trackers</td>
+<td>15 × <strong>88</strong></td>
+<td>10 × <strong>83</strong></td>
+<td>1 × 0 (2 domínios no JSON)</td>
+</tr>
+<tr>
+<td>Cookies de 3ª parte</td>
+<td>10 × <strong>271</strong></td>
+<td>0 × <strong>310</strong></td>
+<td>0 × 3</td>
+</tr>
+<tr>
+<td>Canvas fingerprinting</td>
+<td>não × não</td>
+<td>não × não</td>
+<td>não × não</td>
+</tr>
+<tr>
+<td>Session recording</td>
+<td>não × não</td>
+<td>não × não</td>
+<td><strong>Hotjar × Hotjar</strong></td>
+</tr>
+<tr>
+<td>Key logging</td>
+<td><strong>sim (Marfeel) × não</strong></td>
+<td>não × não</td>
+<td>não × não</td>
+</tr>
+<tr>
+<td>FB pixel</td>
+<td><strong>não × sim</strong></td>
+<td>não × não</td>
+<td>não × não</td>
+</tr>
+<tr>
+<td>GA remarketing</td>
+<td>sim × sim</td>
+<td>sim × sim</td>
+<td>não × não</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Onde concordam.</strong> Nos indicadores qualitativos de maior peso — gravação de sessão, canvas, remarketing Google — as
+duas ferramentas chegam ao mesmo veredito nos três sites. A ordenação também coincide: UOL e Terra são muito mais
+invasivos que o Mercado Livre em ambas.</p>
+<p><strong>Onde divergem e por quê.</strong></p>
+<ol>
+<li><em>Volume de rastreadores e cookies (UOL, Terra).</em> A diferença de uma ordem de grandeza (15 × 88; 10 × 271) não é
+   de detecção: os 136/138 domínios que só o Blacklight viu não estão no HAR. O leilão programático não rodou na
+   nossa visita (seção 3.2), e o Blacklight ainda visita uma segunda página. <strong>Consequência para a nota:</strong> o plugin
+   já dá 0 (E) ao UOL com o que viu; com o tráfego do Blacklight a dedução por rastreadores e cookies já estaria no
+   teto de qualquer forma — os tetos por critério fazem a nota saturar cedo. Para o Terra, o mesmo tráfego levaria a
+   nota de 59 (C) para cerca de 40 (D), pelos 16 pontos de cookies de 3ª parte que hoje são zero.</li>
+<li><em>Key logging (UOL).</em> Critérios diferentes: capacidade (plugin) × exfiltração observada (Blacklight). O plugin é
+   mais sensível e menos específico; por isso o peso (10) só se aplica quando o script é um rastreador conhecido no
+   frame principal — o que ainda assim pune a Marfeel por um listener de engajamento. É a dedução mais discutível
+   da nota do UOL; sem ela, e sem o "hijacking alto" que ela dispara (15), o UOL teria 25 (E) — o conceito não muda.</li>
+<li><em>FB pixel (UOL).</em> O Blacklight viu <code>facebook.net</code>; o HAR não tem. É parte do mesmo fluxo de anúncios/2ª página.</li>
+<li><em>Afiliados (Mercado Livre).</em> O Blacklight conta <code>mercadoclics.com</code>, <code>mercadolibre.com</code> e <code>meli.com</code> como
+   terceiros (3 cookies); o plugin os trata como mesma organização e o ML fica com 0 cookies de 3ª parte. Se a
+   convenção do Blacklight fosse adotada, o ML perderia 6 pontos (3 cookies) e mais 4 (mercadoclics como rastreador),
+   caindo para 69 (C). A escolha do plugin é deliberada: a nota mede rastreamento <em>entre organizações</em>; o
+   rastreamento <em>dentro</em> do grupo continua visível na interface (rótulo "afiliado"), mas não pontua.</li>
+<li><em>O que o Blacklight não mede.</em> Cookie sync explícito, polling, storage em iframes e alterações no ambiente JS
+   (hijacking) entram só na nota do plugin. No UOL respondem por 27 dos 101 pontos deduzidos.</li>
+</ol>
+<p><strong>Limites da metodologia.</strong> (a) A nota depende do que a visita disparou — sem leilão de anúncios, sites de mídia
+parecem menos invasivos do que são para um visitante estrangeiro. (b) A lista interna de rastreadores é curada e
+menor que a do DuckDuckGo/EasyPrivacy usada pelo Blacklight e pelo uBlock; domínios "não listados" pontuam pouco
+(1 ponto). (c) Os tetos evitam que um único eixo domine, mas fazem a escala saturar: o UOL chega a 0 com folga, e
+não é possível distinguir "muito invasivo" de "extremamente invasivo" abaixo desse ponto.</p><h3 class="print">Print — relatorio-plugin-summary.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-summary.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-summary.png</figcaption></figure>
 </body></html>

@@ -2,7 +2,7 @@
   "url": "https://privacy-test-pages.site/tracker-reporting/1major-with-surrogate.html",
   "hostname": "privacy-test-pages.site",
   "baseDomain": "privacy-test-pages.site",
-  "startedAt": 1790648288884,
+  "startedAt": 1790651154792,
   "thirdParties": {
     "doubleclick.net": {
       "domain": "doubleclick.net",
@@ -16,11 +16,13 @@
       "tracker": "doubleclick.net",
       "category": "advertising",
       "blocked": 0,
+      "affiliated": false,
       "owner": "Google"
     }
   },
   "requestsTotal": 2,
   "requestsThirdParty": 1,
+  "requestsAffiliated": 0,
   "storage": {
     "localStorage": {
       "reads": 0,
@@ -117,7 +119,7 @@
     "referrerPage": "https://privacy-test-pages.site/tracker-reporting/1major-via-fetch.html",
     "redirectChain": [],
     "bounces": [],
-    "dwellMs": 20142
+    "dwellMs": 20161
   },
   "cookieSync": {
     "events": [],

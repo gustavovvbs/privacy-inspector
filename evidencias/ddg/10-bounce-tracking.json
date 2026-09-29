@@ -1,11 +1,12 @@
 {
-  "url": "https://privacy-test-pages.site/privacy-protections/bounce-tracking/?bounceUIDlocalStorage=&bounceUIDcookie=&isNew=100",
+  "url": "https://privacy-test-pages.site/privacy-protections/bounce-tracking/?bounceUIDlocalStorage=&bounceUIDcookie=&isNew=96",
   "hostname": "privacy-test-pages.site",
   "baseDomain": "privacy-test-pages.site",
-  "startedAt": 1790648613378,
+  "startedAt": 1790651348951,
   "thirdParties": {},
   "requestsTotal": 1,
   "requestsThirdParty": 0,
+  "requestsAffiliated": 0,
   "storage": {
     "localStorage": {
       "reads": 0,
@@ -32,7 +33,7 @@
     "events": []
   },
   "frames": {
-    "https://privacy-test-pages.site/privacy-protections/bounce-tracking/?bounceUIDlocalStorage=&bounceUIDcookie=&isNew=100": {
+    "https://privacy-test-pages.site/privacy-protections/bounce-tracking/?bounceUIDlocalStorage=&bounceUIDcookie=&isNew=96": {
       "thirdParty": false,
       "hooked": [
         "Storage.setItem",
@@ -105,29 +106,29 @@
       {
         "domain": "bad.third-party.site",
         "kind": "client-side",
-        "dwellMs": 151,
+        "dwellMs": 157,
         "url": "https://bad.third-party.site/privacy-protections/bounce-tracking/bounce.html?destination=privacy-test-pages.site",
         "trackingParams": [],
         "landingParams": [
           "bounceUIDlocalStorage=",
           "bounceUIDcookie=",
-          "isNew=100"
+          "isNew=96"
         ],
         "from": "privacy-test-pages.site",
         "to": "privacy-test-pages.site",
         "evidence": {
           "cookiesJs": [
-            "bounceUID=100;max-age=5184000"
+            "bounceUID=96;max-age=5184000"
           ],
           "cookiesHttp": [],
           "storageKeys": [
-            "bounceUID"
+            "localStorage:bounceUID"
           ],
           "requests": 1
         }
       }
     ],
-    "dwellMs": 151
+    "dwellMs": 157
   },
   "cookieSync": {
     "events": [],
@@ -183,20 +184,77 @@
     "setHeaders": [],
     "jsSet": [],
     "summary": {
-      "total": 0,
-      "firstParty": 0,
+      "total": 4,
+      "firstParty": 4,
       "thirdParty": 0,
       "session": 0,
-      "persistent": 0,
-      "longLived": 0,
+      "persistent": 4,
+      "longLived": 3,
       "injectedHttp": 0,
       "injectedHttpThirdParty": 0,
       "injectedJs": 0,
-      "list": []
+      "list": [
+        {
+          "name": "__Host-jsdata_host",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": false,
+          "affiliated": false,
+          "session": false,
+          "expires": 1825211244004,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "lax",
+          "valueLength": 3
+        },
+        {
+          "name": "jsdata_no_samesite",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": false,
+          "affiliated": false,
+          "session": false,
+          "expires": 1825211244004,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 3
+        },
+        {
+          "name": "cookiestoredata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": false,
+          "affiliated": false,
+          "session": false,
+          "expires": 1825211244010,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "strict",
+          "valueLength": 3
+        },
+        {
+          "name": "top_firstparty_headerdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": false,
+          "affiliated": false,
+          "session": false,
+          "expires": 1791515244236,
+          "lifetimeDays": 10,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "valueLength": 3
+        }
+      ]
     }
   },
   "score": {
-    "score": 94,
+    "score": 91,
     "grade": "A",
     "breakdown": [
       {
@@ -220,7 +278,7 @@
       {
         "id": "longLivedCookies",
         "label": "Cookies persistentes > 1 ano",
-        "penalty": 0,
+        "penalty": 3,
         "cap": 6
       },
       {
@@ -282,7 +340,7 @@
       "trackers": 0,
       "thirdParties": 0,
       "thirdPartyCookies": 0,
-      "longLived": 0,
+      "longLived": 3,
       "keylog": 0,
       "syncStrong": 0,
       "syncWeak": 0,

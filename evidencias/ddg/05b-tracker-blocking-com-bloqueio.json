@@ -2,7 +2,7 @@
   "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
   "hostname": "privacy-test-pages.site",
   "baseDomain": "privacy-test-pages.site",
-  "startedAt": 1790648341381,
+  "startedAt": 1790651206694,
   "thirdParties": {
     "bad.third-party.site": {
       "domain": "bad.third-party.site",
@@ -12,8 +12,8 @@
       "requests": 11,
       "types": {
         "script": 1,
-        "object": 1,
         "stylesheet": 2,
+        "object": 1,
         "sub_frame": 1,
         "image": 2,
         "imageset": 1,
@@ -23,11 +23,13 @@
       "tracker": "bad.third-party.site",
       "category": "test",
       "blocked": 11,
+      "affiliated": false,
       "owner": "DDG Privacy Test Pages"
     }
   },
   "requestsTotal": 14,
   "requestsThirdParty": 11,
+  "requestsAffiliated": 0,
   "storage": {
     "localStorage": {
       "reads": 0,
@@ -124,7 +126,7 @@
     "referrerPage": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
     "redirectChain": [],
     "bounces": [],
-    "dwellMs": 35924
+    "dwellMs": 35544
   },
   "cookieSync": {
     "events": [],
@@ -144,7 +146,7 @@
         "script": "https://privacy-test-pages.site/privacy-protections/request-blocking/main.js",
         "via": "content",
         "blocked": true,
-        "at": 1790648343799
+        "at": 1790651208952
       }
     ],
     "eventsources": [],

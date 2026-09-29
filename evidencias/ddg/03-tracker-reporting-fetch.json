@@ -2,25 +2,27 @@
   "url": "https://privacy-test-pages.site/tracker-reporting/1major-via-fetch.html",
   "hostname": "privacy-test-pages.site",
   "baseDomain": "privacy-test-pages.site",
-  "startedAt": 1790648268742,
+  "startedAt": 1790651134631,
   "thirdParties": {
     "facebook.com": {
       "domain": "facebook.com",
       "hosts": {
-        "facebook.com": 1
+        "facebook.com": 2
       },
-      "requests": 1,
+      "requests": 2,
       "types": {
-        "xmlhttprequest": 1
+        "xmlhttprequest": 2
       },
       "tracker": "facebook.com",
       "category": "social",
       "blocked": 0,
+      "affiliated": false,
       "owner": "Meta (Facebook pixel)"
     }
   },
-  "requestsTotal": 3,
-  "requestsThirdParty": 1,
+  "requestsTotal": 4,
+  "requestsThirdParty": 2,
+  "requestsAffiliated": 0,
   "storage": {
     "localStorage": {
       "reads": 0,
@@ -117,7 +119,7 @@
     "referrerPage": "https://privacy-test-pages.site/tracker-reporting/1major-via-img.html",
     "redirectChain": [],
     "bounces": [],
-    "dwellMs": 16118
+    "dwellMs": 16143
   },
   "cookieSync": {
     "events": [],
@@ -186,9 +188,26 @@
         "host": "facebook.com",
         "domain": "facebook.com",
         "thirdParty": true,
+        "affiliated": false,
         "requestType": "xmlhttprequest",
         "url": "https://facebook.com/tr",
-        "at": 1790648268911
+        "at": 1790651134791
+      },
+      {
+        "name": "fr",
+        "persistent": true,
+        "expiresIn": 7775999,
+        "domainAttr": ".facebook.com",
+        "sameSite": null,
+        "secure": true,
+        "httpOnly": true,
+        "host": "facebook.com",
+        "domain": "facebook.com",
+        "thirdParty": true,
+        "affiliated": false,
+        "requestType": "xmlhttprequest",
+        "url": "https://facebook.com/tr",
+        "at": 1790651134796
       }
     ],
     "jsSet": [],
@@ -199,8 +218,8 @@
       "session": 0,
       "persistent": 1,
       "longLived": 0,
-      "injectedHttp": 1,
-      "injectedHttpThirdParty": 1,
+      "injectedHttp": 2,
+      "injectedHttpThirdParty": 2,
       "injectedJs": 0,
       "list": [
         {
@@ -208,8 +227,9 @@
           "domain": "facebook.com",
           "path": "/",
           "thirdParty": true,
+          "affiliated": false,
           "session": false,
-          "expires": 1798424252682,
+          "expires": 1798427118570,
           "lifetimeDays": 90,
           "secure": true,
           "httpOnly": true,

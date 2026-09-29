@@ -1,0 +1,422 @@
+Investigations and Tools
+Amazon’s Advantage
+Organ Failure
+Blacklight
+Pixel Hunt
+Citizen Browser
+Privacy
+Languages of Misinformation
+Still Loading
+Machine Learning
+Working for an Algorithm
+Search term
+About Us
+Donate
+Awards
+Have a Tip?
+Team
+Show Your Work
+Jobs
+Newsletters
+Events
+ GitHub
+ Bluesky
+ RSS Feed
+ Facebook
+ Instagram
+ X
+ Mastodon
+Skip navigation
+Menu 
+The Markup
+About Us
+Donate
+A Real-Time Website Privacy Inspector
+
+Who is peeking over your shoulder while you work, watch videos, learn, explore, and shop on the internet? Enter the address of any website, and Blacklight will scan it and reveal the specific user-tracking technologies on the site—and who’s getting your data. You may be surprised at what you learn.
+
+Enter a URL for Blacklight to scan
+Options
+
+Location
+
+ Ohio, U.S.
+ California, U.S.
+ Europe
+
+Device
+
+ Mobile
+ Desktop
+
+Inspection Caching
+
+ Use cached results
+ Force request, no caching
+Scan Site
+Blacklight is currently testing for …
+
+Blacklight normally takes between 30 seconds and one minute to finish all tests.
+
+
+Ad trackers
+
+Is this website sending data about users to advertising companies?
+
+Third-party cookies
+
+Is this website using cookies that track users around the web?
+
+Tracking that evades cookie blockers
+
+Is this website invisibly identifying your browser?
+
+Session-monitoring scripts
+
+Blacklight looks for scripts that record how a user interacts with a page.
+
+Keystroke capturing
+
+Is this website logging text typed by users, before they hit submit?
+
+Facebook
+
+Is this website sending data about users to Facebook?
+
+TikTok
+
+Is this website sending data about users to TikTok?
+
+Twitter/X
+
+Is this website sending data about users to Twitter/X?
+
+Google Analytics
+
+Is this website sending data to Google so it can advertise to its visitors?
+
+Visited www.terra.com.br on Sep. 28, 2026, 23:06 ET
+Learn more 
+
+Blacklight visited www.terra.com.br with a headless browser, running custom software built by The Markup. The request came from a server hosted in the Columbus Metro Area in Ohio, USA. Our software emulated a desktop browser with a screen size of 1440×790. For this test …
+
+Blacklight visited the home page …
+
+… and this randomly selected page.
+
+The screenshots you are seeing were taken when Blacklight visited the pages. You can also download an archive of the results.
+
+Blacklight Inspection Result
+
+Blacklight works by visiting each website with a headless browser running custom software built by The Markup. To learn more, read our methodology.
+
+83
+Ad trackers found on this site.
+This is more than the average of seven that we found on popular sites
+
+Websites containing advertising tracking technology load JavaScript code or small invisible images that are used to either build your advertising profile or to identify you for ad targeting on this site. These techniques are often used in addition to cookies to profile you.
+
+Blacklight detected trackers on this page sending data to companies involved in online advertising. Blacklight detected scripts belonging to PubMatic, Inc., OpenX Technologies Inc, and seventy-one other companies.
+
+How We Define This
+Survey of Popular Websites
+310
+Third-party cookies found.
+This is more than the average of three that we found on popular sites
+
+These are commonly used by advertising tracking companies to profile you based on your internet usage.
+
+Blacklight detected 310 third-party cookies on this site. Blacklight detected cookies set for eyeota Limited, Smartadserver S.A.S and and seventy-nine others
+
+How We Define This
+Survey of Popular Websites
+Tracking that evades cookie blockers wasn't found.
+
+Canvas fingerprinting was not detected on this website. This technique is designed to identify users even if they block third-party cookies. It can be used to track users across sites. It secretly draws an image on your browser when you visit websites that use it, for the purpose of identifying your device. This technique was used by six percent of popular sites when we scanned them in September 2020.
+
+How We Define This
+Session recording services not found on this website.
+
+Blacklight did not detect the use of a session recorder, which tracks user mouse movement, clicks, taps, scrolls, or even network activity. Websites that use the technique compile this data into videos and heat maps that website owners can watch to see how users interact with the site. Research has shown these practices are insecure and make sensitive user data such as passwords and credit card information more vulnerable to leaks. This technique was used by fifteen percent of popular websites when we scanned them in September 2020.
+
+How We Define This
+We did not find this website capturing keystrokes.
+
+Key logging is when a website captures the text that you type into a web page before you hit the submit button. This technique has been used to identify anonymous web users by matching them to postal addresses and real names. This technique was used by four percent of popular websites when we scanned them in September 2020.
+
+How We Define This
+Facebook Pixel not found on this website.
+
+The Facebook pixel is a snippet of code that sends data back to Facebook about people who visit this site and allows the site operator to later target them with ads on Facebook. A Facebook spokesperson told The Markup that the company set up this system so that a user doesn’t have to be “simultaneously logged into Facebook and viewing a third-party website for our business tools to function.” Common actions that can be tracked via pixel include viewing a page or specific content, adding payment information, or making a purchase. The Facebook pixel appeared in thirty percent of popular websites when we scanned them in September 2020.
+
+How We Define This
+TikTok Pixel not found on this website.
+
+The TikTok pixel is a snippet of code that sends data back to TikTok about people who visit this site and allows the site operator to later target them with ads on TikTok. A user doesn’t have to be “simultaneously logged into TikTok and viewing a third-party website for our business tools to function.” Common actions that can be tracked via pixel include viewing a page or specific content, adding payment information, or making a purchase.
+
+X Pixel not found on this website.
+
+The X pixel is a snippet of code that sends data back to X (previously known as Twitter) about people who visit this site and allows the site operator to later target them with ads on X. A user doesn’t have to be “simultaneously logged into X and viewing a third-party website for our business tools to function.” Common actions that can be tracked via pixel include viewing a page or specific content, adding payment information, or making a purchase.
+
+This site allows Google Analytics to follow you across the internet.
+
+This site uses Google Analytics and seems to use its ”remarketing audiences” feature that enables user tracking for targeted advertising across the internet. This feature allows a website to build custom audiences based on how a user interacts with this particular site and then follow those users across the internet and target them with advertising on other sites using Google Ads and Display & Video 360. A Google spokesperson told The Markup that site operators are supposed to inform visitors when data collected with this feature is used to connect this browsing data with someone’s real-world identity. You know when those shoes you were looking at follow you around the internet? This is one of the trackers leading to that. This feature appeared in fifty percent of popular websites when we scanned them in September 2020.
+
+How We Define This
+Some of the ad-tech companies this website interacted with:
+
+The inspected website contacted some well known actors in the ad-tech industry. Not all of these loaded trackers, so they may be different from those listed in the tests section above. For more information on each company, what it does, and which of its domains Blacklight found during the inspection, click the arrow. Reading this can give you a better idea of how the ad-tech industry works.
+
+Adobe
+
+Blacklight detected the inspected website sending user data to Adobe. While Adobe is primarily associated with creative design products, a company spokesperson told The Markup that it also offers a suite of digital marketing products. Of the Adobe trackers that appeared in our scan of popular websites in September 2020, the most common were Adobe Audience Manager and Adobe Advertising Cloud. Audience Manager helps advertisers build profiles of consumers based on their web browsing history and other data to target both ads and content on their own websites. Advertising Cloud sells ads on websites, streaming video, or TV, and tracks their performance.
+
+The site sent information to the following domains demdex.net, everesttech.net.
+
+Company description accurate on Sept. 3, 2020
+Read Adobe's Privacy Policy
+Alphabet
+
+Blacklight detected this website sending user data to Alphabet, the technology conglomerate that encompasses Google and associated companies like Nest. The Silicon Valley giant collects data from twice the number of websites as its closest competitor, Facebook. An Alphabet spokesperson told The Markup that internet users can go here if they want to opt out of the company showing them targeted ads based on their browsing history.
+
+The site sent information to the following domains 2mdn.net, doubleclick.net, google-analytics.com, google.com, googlesyndication.com, googletagmanager.com.
+
+Company description accurate on Sept. 3, 2020
+Read Google's Privacy Policy
+Amazon
+
+Blacklight detected the inspected website sending user data to Amazon, which has a wide variety of business units. The most commonly appearing Amazon trackers in our scan of popular sites in September 2020 were those for CloudFront and its marketing research arm, Alexa, which helps marketers improve their search engine performance and provides site operators insights about the popularity of their websites. (This Alexa is unrelated to Amazon’s virtual assistant of the same name.) Representatives from Amazon did not respond to multiple requests for comment.
+
+The site sent information to the following domain amazon-adsystem.com.
+
+Company description accurate on Sept. 3, 2020
+Read Amazon's Privacy Policy
+Comscore
+
+Blacklight detected the inspected website sending user data to Comscore, a company that monitors traffic on millions of websites to create market research data on how people use the internet, which it sells to advertisers, according to The Guardian. The company’s analytics also incorporate user data collected from its dozens of corporate partners, such as Facebook, Oracle, and Salesforce, according to its own website. Representatives from Comscore did not respond to multiple requests for comment.
+
+The site sent information to the following domain scorecardresearch.com.
+
+Company description accurate on Oct. 5, 2011
+Read comScore's Privacy Policy
+Criteo
+
+Blacklight detected the inspected website sending user data to the advertising technology company Criteo, which a company spokesperson told The Markup specializes in what are called “retargeting campaigns,” targeting advertisements across the internet at people who have already visited the advertiser's digital properties. Decisions about which previous site visitors to target are made with profiles compiled by the company about consumers’ interests and previous shopping behavior. Speaking in July 2020, CEO Megan Clarken said that the company had data on “2.5 billion unique users globally, of which 98 percent had persistent identifiers beyond cookies.”
+
+The site sent information to the following domains criteo.com, criteo.net.
+
+Company description accurate on Oct. 5, 2011
+Read Criteo's Privacy Policy
+IPONWEB
+
+Blacklight detected the inspected website sending user data to the ad tech company IPONWEB. The company’s Bidswitch subsidiary functions as an interchange between the platforms where publishers sell advertising space and the platforms where advertisers buy ads. An IPONWEB spokesperson told The Markup that the company also builds bespoke online platforms for other companies involved in digital advertising. Digiday called IPONWEB’s founder “the Godfather of Ad Tech.”
+
+The site sent information to the following domains bidswitch.net, mfadsrvr.com.
+
+Company description accurate on Sept. 3, 2020
+Read IPONWEB's Privacy Policy
+LinkedIn
+
+Blacklight detected the inspected website sending user data to LinkedIn, which is owned by Microsoft. Primarily known as a career-focused social network, the company has branched out more broadly into advertising. In 2019, it purchased Drawbridge, which a company spokesperson told The Markup allows LinkedIn to “infer a member’s association to their devices” in what’s called an “identity graph.” At the time of the acquisition, a LinkedIn executive told Ad Exchanger the company hoped Drawbridge will fill in some of the blind spots LinkedIn has on its users.
+
+The site sent information to the following domain linkedin.com.
+
+Company description accurate on Sept. 3, 2020
+Read LinkedIn's Privacy Policy
+Lotame
+
+Blacklight detected the inspected website sending user data to Lotame. Lotame operates a warehouse of user information, including the different devices likely used by a person, that marketers can append to user profiles they’ve assembled. The company also operates what it says is the world’s largest marketplace where companies can directly buy and sell user data. In 2017, a Lotame executive told DMN that the company had four billion user profiles. Representatives from Lotame did not respond to multiple requests for comment.
+
+The site sent information to the following domain crwdcntrl.net.
+
+Company description accurate on Sept. 3, 2020
+Read Lotame's Privacy Policy
+MediaMath
+
+Blacklight detected the inspected website sending user data to MediaMath. MediaMath runs a “demand-side platform,” which lets advertisers place ads on sites across the internet through an online portal. The company assembles profiles based on the user's previous browsing history. The company allows advertisers to target people or websites based on “aggregated, observed data on what users are browsing” on sites across the internet. A MediaMath spokesperson told The Markup that the company’s service also allows advertisers to combine their data about potential customers with information collected by other ad tech companies and data brokers for more accurate ad targeting.
+
+The site sent information to the following domain mathtag.com.
+
+Company description accurate on Sept. 3, 2020
+Read MediaMath's Privacy Policy
+OpenX
+
+Blacklight detected the inspected website sending user data to OpenX, an online advertising exchange. Ad exchanges are online marketplaces where advertisers can bid against each other to place ads on various websites. OpenX specializes in real-time bidding, according to its website, which is when ads are targeted at individual web users based on profiles assembled about their demographics and prior behavior. It also says on its website that ads placed by the exchange reach more than 240 million U.S. consumers each month. Representatives from OpenX did not respond to multiple requests for comment.
+
+The site sent information to the following domain openx.net.
+
+Company description accurate on Sept. 3, 2020
+Read OpenX's Privacy Policy
+PubMatic
+
+Blacklight detected the inspected website sending user data to the online advertising company Pubmatic. Pubmatic is a portal for site operators to offer space on their website for sale to advertisers. The company also runs an “identity hub” that, a PubMatic spokesperson told The Markup, helps advertisers use the data they’ve acquired from a third party— a data broker, for example—to target ads to the specific interests of someone visiting a website.
+
+The site sent information to the following domain pubmatic.com.
+
+Company description accurate on Sept. 3, 2020
+Read PubMatic's Privacy Policy
+Quantcast
+
+Blacklight detected the inspected website sending user data to the analytics company Quantcast. A Quantcast spokesperson told The Markup that the company collects data about a website’s visitors and “provides it in aggregated, de-identified form to publishers based on the overall demographics of the collection of user cookies based on visits to their websites.” Quantcast builds “psychographic” metrics of the types of people who visit a given site, which are enhanced with third-party data about web users from the company’s corporate partners. The company claims to have data about the audience visiting more than 100 million mobile and web destinations.
+
+The site sent information to the following domain quantserve.com.
+
+Company description accurate on Sept. 3, 2020
+Read Quantcast's Privacy Policy
+Magnite
+
+Blacklight detected the inspected website sending user data to Magnite. Created by the 2020 merger of ad tech companies Rubicon Project and Telaria, Magnite places advertisements on more than million websites and apps. The company claims to have reached more than a billion consumers with ads placed on websites, mobile apps, and streaming videos. Representatives from Magnite did not respond to multiple requests for comment.
+
+The site sent information to the following domain rubiconproject.com.
+
+Company description accurate on Sept. 3, 2020
+Read Rubicon Project's Privacy Policy
+Salesforce
+
+Blacklight detected the inspected website sending user data to Salesforce. Salesforce offers services that utilize user tracking, ranging from a platform for site operators to chat with website visitors to marketing databases filled with user information that can be purchased from Salesforce’s corporate partners and combined with an advertiser's preexisting data about a given user. A Salesforce spokesperson declined to answer specific questions about how the company uses the data it collects from websites.
+
+The site sent information to the following domain krxd.net.
+
+Company description accurate on Sept. 3, 2020
+Read Salesforce's Privacy Policy
+Sovrn
+
+Blacklight detected the inspected website sending user data to Sovrn, which helps publishers monetize "affiliate links". When a user clicks on a link and then buys the product or service, the site operator gets a cut of the proceeds. A Sovrn spokesperson told The Markup that its tracking technology is used to ensure the site operators receive their commissions. Sovrn also assists site operators in selling advertisers the de-identified data the sites collect about visitors.
+
+The site sent information to the following domain lijit.com.
+
+Company description accurate on Sept. 3, 2020
+Read Sovrn's Privacy Policy
+Taboola
+
+Blacklight detected the inspected website sending user data to Taboola, a company that places collections of suggested article links, along with some advertisements, on publishers’ pages in exchange for a direct payment, according to its website. Taboola’s “one weird trick” became derisively labeled as a “chumbox” for the low- and clickbait-quality of many of its links. Representatives from Taboola did not respond to multiple requests for comment.
+
+The site sent information to the following domain taboola.com.
+
+Company description accurate on Sept. 3, 2020
+Read Taboola's Privacy Policy
+TowerData
+
+Blacklight detected the inspected website sending user data to Tower Data, an ad tech company that creates profiles of web users anchored to their email address, according to its website. It also sells data about voters to political campaigns. Representatives from Tower Data did not respond to multiple requests for comment.
+
+The site sent information to the following domain rlcdn.com.
+
+Company description accurate on Sept. 3, 2020
+Read TowerData's Privacy Policy
+Verizon
+
+Blacklight detected the inspected website sending user data to Verizon. While best known for providing cellphone and broadband service, Verizon has gained a significant presence in online advertising through acquisitions of ad-focused companies like AOL and Yahoo!, which offer advertising services in addition to content. Domains associated with Yahoo! and AOL (specifically, advertising.com, which was part of AOL before Verizon’s purchase of the company) appeared the most frequently among the many Verizon-controlled trackers appearing in our scan of popular websites in September 2020. Representatives from Verizon did not respond to multiple requests for comment.
+
+The site sent information to the following domain yahoo.com.
+
+Company description accurate on Sept. 3, 2020
+Read Verizon's Privacy Policy
+Zeta Global
+
+Blacklight detected this website sending user data to the digital marketing company Zeta Global. Zeta’s products include Disqus, a platform for hosting and moderating user comments that frequently introduces a bevy of third-party trackers on websites. The company also runs a service allowing advertisers to combine their data about potential customers with information purchased from data brokers or other ad tech companies to target ads. It also runs a platform on which advertisers can buy advertising space on websites.
+
+The site sent information to the following domain rfihub.com.
+
+Company description accurate on Sept. 3, 2020
+Read Zeta Global's Privacy Policy
+See Something Worrying?
+Tell us about it 
+
+If you see something that you didn't expect and think we should know about it, tell us using the email link below. You can also download an archive of the above results.
+
+Something doesn't seem right here? Send us an Email!
+
+Blacklight results should not be taken as the final word on potential privacy violations by a given website. Rather, they should be treated as an initial automated inspection that requires further investigation before a definitive claim can be made.
+
+DuckDuckGo's Tracker Radar last updated Mar. 20, 2024. For more information on how we use it, read our methodology.
+
+Concept and development
+
+Surya Mattu
+
+Design and front-end development
+
+Sam Morris
+
+Infrastructure and security
+
+Simon Fondrie-Teitler
+
+Research and reporting
+
+Aaron Sankin
+
+Original editing
+
+Evelyn Larrubia
+
+Copy editing
+
+Jill Jaroff
+
+Initial platform development
+
+Yotam Mann
+
+Chris Deaner
+
+Product Director
+
+Ramsey Isler
+
+Additional development
+
+Miles Hilton
+
+Bach Le
+
+Jerome Paulos
+
+Dan Phiffer
+
+Varun Subramanyan
+
+More on Blacklight
+Launching Blacklight Query, a Tool to Scan Websites for Privacy at Scale
+
+Inspect batches of websites for user-tracking tech with our new open-source command-line tool
+
+October 16, 2024 08:00 ET
+The High Privacy Cost of a ‘Free’ Website
+
+Trackers piggybacking on website tools leave some site operators in the dark about who is watching or what marketers do with the data
+
+September 22, 2020 08:00 ET
+
+Show Your Work
+
+How We Built a Real-Time Privacy Inspector
+
+Blacklight catalogs the many ways any website tracks visitors: from cookies to capturing every user keystroke and mouse movement
+
+September 22, 2020 08:00 ET
+Return to The Markup's homepage
+
+Your contributions help us investigate how technology influences our society.
+
+Donate
+About Us
+Our Donors
+Ethics Policy
+Events
+Governance
+Jobs
+Team
+Have a Tip?
+Newsletters
+A Letter from the President
+Awards
+Privacy Policy
+Terms of Use
+ GitHub
+ Bluesky
+ RSS Feed
+ Facebook
+ Instagram
+ X
+ Mastodon

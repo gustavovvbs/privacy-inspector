@@ -1,0 +1,290 @@
+Investigations and Tools
+Amazon’s Advantage
+Organ Failure
+Blacklight
+Pixel Hunt
+Citizen Browser
+Privacy
+Languages of Misinformation
+Still Loading
+Machine Learning
+Working for an Algorithm
+Search term
+About Us
+Donate
+Awards
+Have a Tip?
+Team
+Show Your Work
+Jobs
+Newsletters
+Events
+ GitHub
+ Bluesky
+ RSS Feed
+ Facebook
+ Instagram
+ X
+ Mastodon
+Skip navigation
+Menu 
+The Markup
+About Us
+Donate
+A Real-Time Website Privacy Inspector
+
+Who is peeking over your shoulder while you work, watch videos, learn, explore, and shop on the internet? Enter the address of any website, and Blacklight will scan it and reveal the specific user-tracking technologies on the site—and who’s getting your data. You may be surprised at what you learn.
+
+Enter a URL for Blacklight to scan
+Options
+
+Location
+
+ Ohio, U.S.
+ California, U.S.
+ Europe
+
+Device
+
+ Mobile
+ Desktop
+
+Inspection Caching
+
+ Use cached results
+ Force request, no caching
+Scan Site
+Blacklight is currently testing for …
+
+Blacklight normally takes between 30 seconds and one minute to finish all tests.
+
+
+Ad trackers
+
+Is this website sending data about users to advertising companies?
+
+Third-party cookies
+
+Is this website using cookies that track users around the web?
+
+Tracking that evades cookie blockers
+
+Is this website invisibly identifying your browser?
+
+Session-monitoring scripts
+
+Blacklight looks for scripts that record how a user interacts with a page.
+
+Keystroke capturing
+
+Is this website logging text typed by users, before they hit submit?
+
+Facebook
+
+Is this website sending data about users to Facebook?
+
+TikTok
+
+Is this website sending data about users to TikTok?
+
+Twitter/X
+
+Is this website sending data about users to Twitter/X?
+
+Google Analytics
+
+Is this website sending data to Google so it can advertise to its visitors?
+
+Visited www.mercadolivre.com.br on Sep. 28, 2026, 23:07 ET
+Learn more 
+
+Blacklight visited www.mercadolivre.com.br with a headless browser, running custom software built by The Markup. The request came from a server hosted in the Columbus Metro Area in Ohio, USA. Our software emulated a desktop browser with a screen size of 1440×790. For this test …
+
+Blacklight visited the home page …
+
+… and this randomly selected page.
+
+The screenshots you are seeing were taken when Blacklight visited the pages. You can also download an archive of the results.
+
+Blacklight Inspection Result
+
+Blacklight works by visiting each website with a headless browser running custom software built by The Markup. To learn more, read our methodology.
+
+0
+No ad trackers found on this site.
+We found an average of seven on popular sites.
+
+Websites containing advertising tracking technology load JavaScript code or small invisible images that are used to either build your advertising profile or to identify you for ad targeting on this site. These techniques are often used in addition to cookies to profile you.
+
+How We Define This
+Survey of Popular Websites
+3
+Third-party cookies found.
+This is the same as the average of three that we found on popular sites
+
+These are commonly used by advertising tracking companies to profile you based on your internet usage.
+
+Blacklight detected 3 third-party cookies on this site. Blacklight detected a cookie set for MercadoLibre Inc.
+
+How We Define This
+Survey of Popular Websites
+Tracking that evades cookie blockers wasn't found.
+
+Canvas fingerprinting was not detected on this website. This technique is designed to identify users even if they block third-party cookies. It can be used to track users across sites. It secretly draws an image on your browser when you visit websites that use it, for the purpose of identifying your device. This technique was used by six percent of popular sites when we scanned them in September 2020.
+
+How We Define This
+This website could be monitoring your keystrokes and mouse clicks.
+
+Blacklight detected the use of a session recorder, which tracks user mouse movement, clicks, taps, scrolls, or even network activity. This data is compiled into videos and heat maps that website owners can watch to see how users interact with the site. Research has shown these practices can be insecure and make sensitive user data such as passwords and credit card information more vulnerable to leaks. This technique was used by fifteen percent of popular websites when we scanned them in September 2020.
+
+Blacklight detected a script belonging to the company Hotjar Ltd doing this on this site.
+
+However...
+
+While Blacklight can detect whether a session recorder was loaded, it cannot determine exactly how the collected data is being used.
+
+How We Define This
+We did not find this website capturing keystrokes.
+
+Key logging is when a website captures the text that you type into a web page before you hit the submit button. This technique has been used to identify anonymous web users by matching them to postal addresses and real names. This technique was used by four percent of popular websites when we scanned them in September 2020.
+
+How We Define This
+Facebook Pixel not found on this website.
+
+The Facebook pixel is a snippet of code that sends data back to Facebook about people who visit this site and allows the site operator to later target them with ads on Facebook. A Facebook spokesperson told The Markup that the company set up this system so that a user doesn’t have to be “simultaneously logged into Facebook and viewing a third-party website for our business tools to function.” Common actions that can be tracked via pixel include viewing a page or specific content, adding payment information, or making a purchase. The Facebook pixel appeared in thirty percent of popular websites when we scanned them in September 2020.
+
+How We Define This
+TikTok Pixel not found on this website.
+
+The TikTok pixel is a snippet of code that sends data back to TikTok about people who visit this site and allows the site operator to later target them with ads on TikTok. A user doesn’t have to be “simultaneously logged into TikTok and viewing a third-party website for our business tools to function.” Common actions that can be tracked via pixel include viewing a page or specific content, adding payment information, or making a purchase.
+
+X Pixel not found on this website.
+
+The X pixel is a snippet of code that sends data back to X (previously known as Twitter) about people who visit this site and allows the site operator to later target them with ads on X. A user doesn’t have to be “simultaneously logged into X and viewing a third-party website for our business tools to function.” Common actions that can be tracked via pixel include viewing a page or specific content, adding payment information, or making a purchase.
+
+Google Analytics' "remarketing audiences" feature not found.
+
+The Google Analytics "remarketing audiences" feature enables user tracking for targeted advertising across the internet. This feature allows a website to build custom audiences based on how a user interacts with this particular site and then follow those users across the internet and target them with advertising on other sites using Google Ads and Display & Video 360. A Google spokesperson told The Markup that site operators are supposed to inform visitors when data collected with this feature is used to connect this browsing data with someone’s real-world identity. You know when those shoes you were looking at follow you around the internet? This is one of the trackers leading to that. This feature appeared in fifty percent of popular websites when we scanned them in September 2020.
+
+How We Define This
+Some of the ad-tech companies this website interacted with:
+
+The inspected website contacted some well known actors in the ad-tech industry. Not all of these loaded trackers, so they may be different from those listed in the tests section above. For more information on each company, what it does, and which of its domains Blacklight found during the inspection, click the arrow. Reading this can give you a better idea of how the ad-tech industry works.
+
+Alphabet
+
+Blacklight detected this website sending user data to Alphabet, the technology conglomerate that encompasses Google and associated companies like Nest. The Silicon Valley giant collects data from twice the number of websites as its closest competitor, Facebook. An Alphabet spokesperson told The Markup that internet users can go here if they want to opt out of the company showing them targeted ads based on their browsing history.
+
+The site sent information to the following domain google.com.
+
+Company description accurate on Sept. 3, 2020
+Read Google's Privacy Policy
+HotJar
+
+Blacklight detected the inspected website sending user data to the behavioral analytics company HotJar. A HotJar spokesperson told The Markup that the company helps website operators better understand how users interact with their websites. HotJar offers things like heatmaps (showing where on a page users have clicked or moved their mouse cursor), session recordings (that play back videos of a user’s actions while on the website), as well as polls and surveys (querying users directly about their experiences on a site).
+
+The site sent information to the following domain hotjar.com.
+
+Company description accurate on Sept. 3, 2020
+Read Hotjar's Privacy Policy
+See Something Worrying?
+Tell us about it 
+
+If you see something that you didn't expect and think we should know about it, tell us using the email link below. You can also download an archive of the above results.
+
+Something doesn't seem right here? Send us an Email!
+
+Blacklight results should not be taken as the final word on potential privacy violations by a given website. Rather, they should be treated as an initial automated inspection that requires further investigation before a definitive claim can be made.
+
+DuckDuckGo's Tracker Radar last updated Mar. 20, 2024. For more information on how we use it, read our methodology.
+
+Concept and development
+
+Surya Mattu
+
+Design and front-end development
+
+Sam Morris
+
+Infrastructure and security
+
+Simon Fondrie-Teitler
+
+Research and reporting
+
+Aaron Sankin
+
+Original editing
+
+Evelyn Larrubia
+
+Copy editing
+
+Jill Jaroff
+
+Initial platform development
+
+Yotam Mann
+
+Chris Deaner
+
+Product Director
+
+Ramsey Isler
+
+Additional development
+
+Miles Hilton
+
+Bach Le
+
+Jerome Paulos
+
+Dan Phiffer
+
+Varun Subramanyan
+
+More on Blacklight
+Launching Blacklight Query, a Tool to Scan Websites for Privacy at Scale
+
+Inspect batches of websites for user-tracking tech with our new open-source command-line tool
+
+October 16, 2024 08:00 ET
+The High Privacy Cost of a ‘Free’ Website
+
+Trackers piggybacking on website tools leave some site operators in the dark about who is watching or what marketers do with the data
+
+September 22, 2020 08:00 ET
+
+Show Your Work
+
+How We Built a Real-Time Privacy Inspector
+
+Blacklight catalogs the many ways any website tracks visitors: from cookies to capturing every user keystroke and mouse movement
+
+September 22, 2020 08:00 ET
+Return to The Markup's homepage
+
+Your contributions help us investigate how technology influences our society.
+
+Donate
+About Us
+Our Donors
+Ethics Policy
+Events
+Governance
+Jobs
+Team
+Have a Tip?
+Newsletters
+A Letter from the President
+Awards
+Privacy Policy
+Terms of Use
+ GitHub
+ Bluesky
+ RSS Feed
+ Facebook
+ Instagram
+ X
+ Mastodon

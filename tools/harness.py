@@ -21,6 +21,14 @@ FIREFOX_BIN = '/Applications/Firefox.app/Contents/MacOS/firefox'
 DOWNLOAD_DIR = ROOT / 'evidencias' / '_downloads'
 
 
+MULTI = {'com.br','net.br','org.br','gov.br','edu.br','co.uk','org.uk','com.au','com.ar','com.mx','co.jp','com.pt','com.es','github.io','cloudfront.net','amazonaws.com'}
+def baseDomain(host):
+    if not host: return ''
+    p = host.split('.')
+    if len(p) <= 2: return host
+    return '.'.join(p[-3:]) if '.'.join(p[-2:]) in MULTI else '.'.join(p[-2:])
+
+
 def hostnameOf(url):
     from urllib.parse import urlparse
     return urlparse(url).hostname or ''

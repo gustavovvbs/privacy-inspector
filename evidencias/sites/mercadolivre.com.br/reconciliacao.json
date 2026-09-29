@@ -1,0 +1,688 @@
+{
+  "site": "mercadolivre.com.br",
+  "plugin": {
+    "score": {
+      "score": 79,
+      "grade": "B",
+      "breakdown": [
+        {
+          "id": "trackers",
+          "label": "Rastreadores conhecidos (3ª parte)",
+          "penalty": 4,
+          "cap": 32
+        },
+        {
+          "id": "thirdParties",
+          "label": "Outros domínios de 3ª parte",
+          "penalty": 2,
+          "cap": 8
+        },
+        {
+          "id": "thirdPartyCookies",
+          "label": "Cookies de 3ª parte",
+          "penalty": 0,
+          "cap": 16
+        },
+        {
+          "id": "longLivedCookies",
+          "label": "Cookies persistentes > 1 ano",
+          "penalty": 5,
+          "cap": 6
+        },
+        {
+          "id": "fingerprinting",
+          "label": "Fingerprinting (provável 15 / possível 7)",
+          "penalty": 0,
+          "cap": 15
+        },
+        {
+          "id": "sessionRecording",
+          "label": "Gravação de sessão / heatmap",
+          "penalty": 10,
+          "cap": 10
+        },
+        {
+          "id": "keyLogging",
+          "label": "Captura de teclado por 3ª parte",
+          "penalty": 0,
+          "cap": 10
+        },
+        {
+          "id": "facebookPixel",
+          "label": "Pixel do Facebook/Meta",
+          "penalty": 0,
+          "cap": 6
+        },
+        {
+          "id": "googleAds",
+          "label": "Remarketing Google (DoubleClick/Ads)",
+          "penalty": 0,
+          "cap": 4
+        },
+        {
+          "id": "cookieSync",
+          "label": "Cookie sync / vazamento de identificador",
+          "penalty": 0,
+          "cap": 8
+        },
+        {
+          "id": "bounceTracking",
+          "label": "Bounce tracking",
+          "penalty": 0,
+          "cap": 6
+        },
+        {
+          "id": "thirdPartyStorage",
+          "label": "Storage HTML5 em frames de 3ª parte",
+          "penalty": 0,
+          "cap": 4
+        },
+        {
+          "id": "hijacking",
+          "label": "Indicadores de hijacking (alto 15 / médio 8 / baixo 3)",
+          "penalty": 0,
+          "cap": 15
+        }
+      ],
+      "counts": {
+        "trackers": 1,
+        "thirdParties": 3,
+        "thirdPartyCookies": 0,
+        "longLived": 5,
+        "keylog": 0,
+        "syncStrong": 0,
+        "syncWeak": 0,
+        "storage3p": 0
+      }
+    },
+    "requestsTotal": 252,
+    "thirdPartyDomains": [
+      "hotjar.com",
+      "google.com",
+      "gstatic.com"
+    ],
+    "affiliatedDomains": [
+      "mlstatic.com",
+      "mercadoclics.com",
+      "mercadolibre.com",
+      "mercadolivre.com",
+      "mercadopago.com",
+      "mercadopago.com.br",
+      "meli.com"
+    ],
+    "trackers": [
+      "hotjar.com"
+    ],
+    "cookies": {
+      "total": 14,
+      "firstParty": 14,
+      "thirdParty": 0,
+      "session": 1,
+      "persistent": 13,
+      "longLived": 5,
+      "injectedHttp": 41,
+      "injectedHttpThirdParty": 1,
+      "injectedJs": 25
+    },
+    "fingerprint": "none",
+    "hijack": "none",
+    "keylog3p": [],
+    "polling": [],
+    "websockets": [],
+    "cookieSync": []
+  },
+  "blacklight": {
+    "adTrackersPage": null,
+    "thirdPartyCookiesPage": 3,
+    "trackerDomains": {
+      "mercadoclics.com": 20,
+      "hotjar.com": 3
+    },
+    "cookies3pByDomain": {
+      "mercadoclics.com": 1,
+      "mercadolibre.com": 1,
+      "meli.com": 1
+    },
+    "cookies3pCount": 3,
+    "canvasFingerprinters": [],
+    "fontFingerprinting": false,
+    "keyLogging": [],
+    "sessionRecorders": [
+      "script.hotjar.com",
+      "static.hotjar.com"
+    ],
+    "fbPixel": false,
+    "gaRemarketing": false,
+    "thirdPartyHosts": [
+      "http2.mlstatic.com",
+      "print1.mercadoclics.com",
+      "static.hotjar.com",
+      "accounts.google.com",
+      "script.hotjar.com",
+      "api.mercadolibre.com",
+      "placements.mercadolibre.com",
+      "o11y-proxy-otel-frontend.meli.com",
+      "trailer-mpkg-mms-01-vod.play.mlstatic.com"
+    ],
+    "thirdPartyDomains": [
+      "google.com",
+      "hotjar.com",
+      "meli.com",
+      "mercadoclics.com",
+      "mercadolibre.com",
+      "mlstatic.com"
+    ],
+    "visited": "2026-09-29T03:07:19.083Z",
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC"
+  },
+  "ublock": {
+    "blockedCount": 46,
+    "allowedCount": 391,
+    "byDomain": {
+      "mercadoclics.com": 39,
+      "google.com": 1,
+      "mercadopago.com.br": 1,
+      "mercadopago.com": 1,
+      "mercadolivre.com": 1,
+      "mercadolibre.com": 1,
+      "mercadolivre.com.br": 1,
+      "hotjar.com": 1
+    }
+  },
+  "har": {
+    "entries": 307,
+    "domains": 11
+  },
+  "rows": [
+    {
+      "domain": "mlstatic.com",
+      "plugin": {
+        "seen": true,
+        "requests": 182,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": true,
+        "types": {
+          "stylesheet": 3,
+          "script": 80,
+          "image": 74,
+          "font": 6,
+          "imageset": 12,
+          "other": 1,
+          "xmlhttprequest": 6
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 233,
+        "hosts": [
+          "http2.mlstatic.com",
+          "trailer-mpkg-mms-01-vod.play.mlstatic.com"
+        ],
+        "types": {
+          "text/css": 4,
+          "text/javascript": 61,
+          "application/javascript": 19,
+          "image/webp": 89,
+          "image/svg+xml": 17,
+          "image/jpeg": 6,
+          "font/woff2": 6,
+          "image/png": 25,
+          "image/gif": 1,
+          "application/dash+xml": 1,
+          "application/octet-stream": 2,
+          "video/mp4": 2
+        },
+        "statuses": {
+          "200": 233
+        },
+        "examples": [
+          "https://http2.mlstatic.com/frontend-assets/homes-palpatine/home.desktop.4e34c3bb.css",
+          "https://http2.mlstatic.com/frontend-assets/homes-palpatine/recommendations-fe-desktop.2907a4cf.css",
+          "https://http2.mlstatic.com/frontend-assets/cookies-consent-banner-builder/1.2.1/cookie-consent-banner-opt-out/default-de"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "mercadolibre.com",
+      "plugin": {
+        "seen": true,
+        "requests": 24,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": true,
+        "types": {
+          "image": 4,
+          "xmlhttprequest": 20
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 1,
+        "filters": {
+          "/pixel.gif?": 1
+        }
+      },
+      "har": {
+        "count": 25,
+        "hosts": [
+          "api.mercadolibre.com",
+          "melidata.mercadolibre.com",
+          "placements.mercadolibre.com"
+        ],
+        "types": {
+          "image/gif": 1,
+          "application/json": 21,
+          "text/plain": 3
+        },
+        "statuses": {
+          "200": 22,
+          "204": 3
+        },
+        "examples": [
+          "https://melidata.mercadolibre.com/pixel.gif?name=_d2id&value=94e5e6b1-917a-4016-91c0-ba4a65cda97d&max_age=94608000&domai",
+          "https://api.mercadolibre.com/melidata/tracks",
+          "https://placements.mercadolibre.com/metrics/canary/increment?name=omid_injection&bucket=legacy"
+        ],
+        "setCookie": 1
+      }
+    },
+    {
+      "domain": "meli.com",
+      "plugin": {
+        "seen": true,
+        "requests": 17,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": true,
+        "types": {
+          "xmlhttprequest": 17
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 19,
+        "hosts": [
+          "o11y-proxy-otel-frontend.meli.com"
+        ],
+        "types": {
+          "application/json": 17,
+          "application/x-unknown-content-type": 2
+        },
+        "statuses": {
+          "200": 17,
+          "204": 2
+        },
+        "examples": [
+          "https://o11y-proxy-otel-frontend.meli.com/v1/metrics",
+          "https://o11y-proxy-otel-frontend.meli.com/v1/metrics",
+          "https://o11y-proxy-otel-frontend.meli.com/v1/metrics"
+        ],
+        "setCookie": 19
+      }
+    },
+    {
+      "domain": "mercadoclics.com",
+      "plugin": {
+        "seen": true,
+        "requests": 15,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": true,
+        "types": {
+          "image": 4,
+          "xmlhttprequest": 11
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 20,
+        "cookies3p": 1
+      },
+      "ublock": {
+        "blocked": 39,
+        "filters": {
+          "||mercadoclics.com^$3p": 39
+        }
+      },
+      "har": {
+        "count": 15,
+        "hosts": [
+          "print1.mercadoclics.com"
+        ],
+        "types": {
+          "text/plain": 6,
+          "application/x-unknown-content-type": 9
+        },
+        "statuses": {
+          "204": 15
+        },
+        "examples": [
+          "https://print1.mercadoclics.com/display/prints/MLB/count?d=Cgh-VrZrG5K50a8Alv4gELBGS-FcGI1_cmkruzKY0qg5GE19Dn6JqB61gf6FU",
+          "https://print1.mercadoclics.com/display/prints/MLB/count?d=jA-kuei17dsA2QDjCeJc7xBzd61-QlgwJ-iiANTlzZxIhkyp9ymObDL2kmZ3V",
+          "https://print1.mercadoclics.com/display/prints/MLB/count?d=Cgh-VrZrG5K50a8Alv4gELBGS-FcGI1_cmkruzKY0qg5GE19Dn6JqB61gf6FU"
+        ],
+        "setCookie": 15
+      }
+    },
+    {
+      "domain": "google.com",
+      "plugin": {
+        "seen": true,
+        "requests": 6,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": false,
+        "types": {
+          "script": 1,
+          "stylesheet": 1,
+          "xmlhttprequest": 3,
+          "sub_frame": 1
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 1,
+        "filters": {
+          "/log?format=": 1
+        }
+      },
+      "har": {
+        "count": 6,
+        "hosts": [
+          "accounts.google.com",
+          "play.google.com"
+        ],
+        "types": {
+          "application/javascript": 1,
+          "text/css": 1,
+          "application/json": 1,
+          "text/html": 1,
+          "text/plain": 2
+        },
+        "statuses": {
+          "200": 6
+        },
+        "examples": [
+          "https://accounts.google.com/gsi/client",
+          "https://accounts.google.com/gsi/style",
+          "https://accounts.google.com/gsi/status?client_id=40539626724-5esp9461tkg03pec1rhp50ol07ap3ou6.apps.googleusercontent.com"
+        ],
+        "setCookie": 1
+      }
+    },
+    {
+      "domain": "mercadolivre.com.br",
+      "plugin": {
+        "seen": false
+      },
+      "blacklight": {
+        "contacted": false,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 1,
+        "filters": {
+          "||matt.mercadolivre.com.br^": 1
+        }
+      },
+      "har": {
+        "count": 4,
+        "hosts": [
+          "matt.mercadolivre.com.br",
+          "www.mercadolivre.com.br"
+        ],
+        "types": {
+          "text/html": 1,
+          "application/javascript": 1,
+          "text/plain": 1,
+          "application/json": 1
+        },
+        "statuses": {
+          "200": 3,
+          "204": 1
+        },
+        "examples": [
+          "https://www.mercadolivre.com.br/",
+          "https://www.mercadolivre.com.br/v3/security.js",
+          "https://matt.mercadolivre.com.br/"
+        ],
+        "setCookie": 1
+      }
+    },
+    {
+      "domain": "gstatic.com",
+      "plugin": {
+        "seen": true,
+        "requests": 1,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": false,
+        "types": {
+          "font": 1
+        }
+      },
+      "blacklight": {
+        "contacted": false,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 0,
+        "filters": {}
+      },
+      "har": {
+        "count": 1,
+        "hosts": [
+          "fonts.gstatic.com"
+        ],
+        "types": {
+          "font/woff2": 1
+        },
+        "statuses": {
+          "200": 1
+        },
+        "examples": [
+          "https://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vgCIhM907w.woff2"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "hotjar.com",
+      "plugin": {
+        "seen": true,
+        "requests": 1,
+        "tracker": "hotjar.com",
+        "owner": "Hotjar",
+        "category": "session-recording",
+        "affiliated": false,
+        "types": {
+          "script": 1
+        }
+      },
+      "blacklight": {
+        "contacted": true,
+        "trackerRequests": 3,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 1,
+        "filters": {
+          "||hotjar.com^": 1
+        }
+      },
+      "har": {
+        "count": 1,
+        "hosts": [
+          "static.hotjar.com"
+        ],
+        "types": {
+          "application/javascript": 1
+        },
+        "statuses": {
+          "200": 1
+        },
+        "examples": [
+          "https://static.hotjar.com/c/hotjar-720738.js?sv=5"
+        ],
+        "setCookie": 0
+      }
+    },
+    {
+      "domain": "mercadopago.com.br",
+      "plugin": {
+        "seen": true,
+        "requests": 1,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": true,
+        "types": {
+          "image": 1
+        }
+      },
+      "blacklight": {
+        "contacted": false,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 1,
+        "filters": {
+          "/pixel.gif?": 1
+        }
+      },
+      "har": {
+        "count": 1,
+        "hosts": [
+          "melidata.mercadopago.com.br"
+        ],
+        "types": {
+          "image/gif": 1
+        },
+        "statuses": {
+          "200": 1
+        },
+        "examples": [
+          "https://melidata.mercadopago.com.br/pixel.gif?name=_d2id&value=94e5e6b1-917a-4016-91c0-ba4a65cda97d&max_age=94608000&dom"
+        ],
+        "setCookie": 1
+      }
+    },
+    {
+      "domain": "mercadopago.com",
+      "plugin": {
+        "seen": true,
+        "requests": 1,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": true,
+        "types": {
+          "image": 1
+        }
+      },
+      "blacklight": {
+        "contacted": false,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 1,
+        "filters": {
+          "/pixel.gif?": 1
+        }
+      },
+      "har": {
+        "count": 1,
+        "hosts": [
+          "melidata.mercadopago.com"
+        ],
+        "types": {
+          "image/gif": 1
+        },
+        "statuses": {
+          "200": 1
+        },
+        "examples": [
+          "https://melidata.mercadopago.com/pixel.gif?name=_d2id&value=94e5e6b1-917a-4016-91c0-ba4a65cda97d&max_age=94608000&domain"
+        ],
+        "setCookie": 1
+      }
+    },
+    {
+      "domain": "mercadolivre.com",
+      "plugin": {
+        "seen": true,
+        "requests": 1,
+        "tracker": null,
+        "owner": null,
+        "category": null,
+        "affiliated": true,
+        "types": {
+          "image": 1
+        }
+      },
+      "blacklight": {
+        "contacted": false,
+        "trackerRequests": 0,
+        "cookies3p": 0
+      },
+      "ublock": {
+        "blocked": 1,
+        "filters": {
+          "/pixel.gif?": 1
+        }
+      },
+      "har": {
+        "count": 1,
+        "hosts": [
+          "melidata.mercadolivre.com"
+        ],
+        "types": {
+          "image/gif": 1
+        },
+        "statuses": {
+          "200": 1
+        },
+        "examples": [
+          "https://melidata.mercadolivre.com/pixel.gif?name=_d2id&value=94e5e6b1-917a-4016-91c0-ba4a65cda97d&max_age=94608000&domai"
+        ],
+        "setCookie": 1
+      }
+    }
+  ]
+}

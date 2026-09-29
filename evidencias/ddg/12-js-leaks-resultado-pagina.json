@@ -1,6 +1,6 @@
 {
   "page": "security-js-leaks",
-  "date": "Tue, 29 Sep 2026 02:22:17 GMT",
+  "date": "Tue, 29 Sep 2026 03:10:01 GMT",
   "reference_engine": "firefox_92",
   "added": [
     {
@@ -7893,7 +7893,7 @@
     },
     {
       "name": "window.localStorage.data",
-      "value": "39",
+      "value": "544",
       "writable": true,
       "enumerable": true,
       "configurable": true,
@@ -8310,7 +8310,7 @@
     },
     {
       "name": "window.sessionStorage.data",
-      "value": "39",
+      "value": "544",
       "writable": true,
       "enumerable": true,
       "configurable": true,
