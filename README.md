@@ -18,11 +18,35 @@ Trabalho da disciplina de Segurança — Insper.
 
 A extensão temporária é removida ao fechar o Firefox; basta repetir os passos.
 
+## O que o plugin detecta
+
+| Eixo | Como |
+|---|---|
+| Domínios de 3ª parte | `webRequest.onBeforeRequest`, eTLD+1 comparado ao da aba; classificação por lista curada (`src/data/trackers.js`) |
+| Cookies | `Set-Cookie` em `onHeadersReceived` (HTTP) + hook do setter de `document.cookie` (JS); snapshot via `cookies.getAll` classificando 1ª/3ª parte e sessão/persistente |
+| Storage HTML5 | Hooks em `Storage`, `IDBFactory.open`, `CacheStorage.open` em todos os frames, marcando frames de 3ª parte |
+| Fingerprinting | Canvas (heurística Englehardt/Blacklight), WebGL (vendor/renderer desmascarado), áudio, `measureText`, enumeração de `navigator`/`screen` |
+| Bounce tracking | Cadeia 3xx da navegação de topo (`onBeforeRedirect`) e redirecionamento client-side com permanência < 4 s |
+| Cookie sync | Valor de cookie de 1ª parte em query de terceiro; mesmo ID enviado a ≥ 2 terceiros; parâmetros típicos de sync; 3xx entre terceiros |
+| Hijacking | WebSocket/EventSource para terceiros; polling regular ao mesmo endpoint; funções nativas sobrescritas (`Function.prototype.toString`); novos globais; listeners de teclado de 3ª parte |
+| Pontuação | `src/score.js` — metodologia em `docs/metodologia-pontuacao.md` |
+| Bloqueio | Lista personalizada em `storage.local`, aplicada com `webRequestBlocking` (aba "Bloqueio" do popup) |
+
+Os hooks no contexto da página usam `wrappedJSObject` + `exportFunction` (API do Firefox), o que
+funciona mesmo com CSP restritiva e não exige injetar `<script>` na página.
+
+## Desenvolvimento
+
+```bash
+npx web-ext lint --source-dir src   # validação do manifest e das APIs
+npx web-ext run  --source-dir src   # abre um Firefox de teste com o plugin carregado
+```
+
 ## Estrutura
 
 ```
 src/               código da extensão (manifest.json, background, content script, popup)
-docs/              metodologia de pontuação, modelo de relatório
+docs/              metodologia de pontuação (metodologia-pontuacao.md) e modelo de relatório (relatorio-modelo.md)
 evidencias/ddg     prints da execução nas DuckDuckGo Privacy Test Pages
 evidencias/sites   arquivos HAR e prints dos 3 sites reais
 ```
