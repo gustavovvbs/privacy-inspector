@@ -7,7 +7,7 @@ import markdown
 
 ROOT = Path(__file__).resolve().parent.parent
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-PARTS = ['relatorio-capa.md', 'relatorio-ddg.md', 'relatorio-sites.md', 'metodologia-pontuacao.md', 'relatorio-pontuacao.md']
+PARTS = ['relatorio-capa.md', 'relatorio-ddg.md', 'relatorio-sites.md', 'metodologia-pontuacao.md', 'relatorio-pontuacao.md', 'relatorio-apendice-reconciliacao.md']
 SITE_FIGS = ['relatorio-pagina.png', 'relatorio-plugin-summary.png', 'relatorio-plugin-trackers.png', 'relatorio-plugin-cookies.png', 'relatorio-plugin-storage.png', 'relatorio-plugin-fingerprint.png', 'relatorio-plugin-sync.png', 'relatorio-plugin-hijack.png', 'ublock.png', 'ublock-popup.png', 'blacklight.png']
 
 CSS = """
@@ -17,8 +17,10 @@ h1:first-of-type { page-break-before: auto; }
 h2 { font-size: 13pt; margin-top: 18px; } h3 { font-size: 11pt; }
 h3.print, h2.print { break-before: page; page-break-before: always; }
 table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: 8pt; margin: 8px 0; page-break-inside: auto; }
+table.appendix th, table.appendix td { font-size: 6.8pt; padding: 2px 3px; }
 th, td { border: 1px solid #bbb; padding: 4px 5px; vertical-align: top; text-align: left; overflow-wrap: anywhere; word-break: break-word; }
-th:first-child, td:first-child { width: 22px; }
+table:not(.appendix) th:first-child, table:not(.appendix) td:first-child { width: 22px; }
+table.appendix th:first-child, table.appendix td:first-child { width: 120px; }
 th { background: #eef1f6; } tr { page-break-inside: avoid; }
 code { font-family: Menlo, monospace; font-size: 7.5pt; background: #f2f3f5; padding: 0 2px; white-space: pre-wrap; overflow-wrap: anywhere; }
 pre { background: #f2f3f5; padding: 8px; font-size: 8pt; white-space: pre-wrap; }
@@ -54,6 +56,8 @@ def build():
             continue
         md = p.read_text()
         body = markdown.markdown(md, extensions=['tables', 'fenced_code'])
+        if part.startswith('relatorio-apendice'):
+            body = body.replace('<table>', '<table class="appendix">')
         # Cada print citado entre crases (`nome.png` ou `evidencias/.../nome.png`) é anexado como figura
         # após o texto da seção, na ordem em que aparece.
         seen = []

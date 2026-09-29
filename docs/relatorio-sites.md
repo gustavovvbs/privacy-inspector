@@ -139,6 +139,8 @@ em `mercadopago.com(.br)`/`mercadolivre.com`/`mercadolibre.com`). Cookies: 14, t
 
 ## 3.5 Síntese da reconciliação
 
+A tabela completa, domínio a domínio (322 linhas nos três sites), está no **Apêndice** ao final do relatório.
+
 1. **Onde as fontes concordam:** presença/ausência de gravação de sessão (Hotjar no ML), de GAM/Google remarketing
    (UOL, Terra), dos rastreadores de analytics (comScore, Chartbeat, Newsroom, Permutive) e a ausência de
    fingerprinting por canvas nos três sites.

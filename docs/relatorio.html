@@ -5,8 +5,10 @@ h1:first-of-type { page-break-before: auto; }
 h2 { font-size: 13pt; margin-top: 18px; } h3 { font-size: 11pt; }
 h3.print, h2.print { break-before: page; page-break-before: always; }
 table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: 8pt; margin: 8px 0; page-break-inside: auto; }
+table.appendix th, table.appendix td { font-size: 6.8pt; padding: 2px 3px; }
 th, td { border: 1px solid #bbb; padding: 4px 5px; vertical-align: top; text-align: left; overflow-wrap: anywhere; word-break: break-word; }
-th:first-child, td:first-child { width: 22px; }
+table:not(.appendix) th:first-child, table:not(.appendix) td:first-child { width: 22px; }
+table.appendix th:first-child, table.appendix td:first-child { width: 120px; }
 th { background: #eef1f6; } tr { page-break-inside: avoid; }
 code { font-family: Menlo, monospace; font-size: 7.5pt; background: #f2f3f5; padding: 0 2px; white-space: pre-wrap; overflow-wrap: anywhere; }
 pre { background: #f2f3f5; padding: 8px; font-size: 8pt; white-space: pre-wrap; }
@@ -566,6 +568,7 @@ em <code>mercadopago.com(.br)</code>/<code>mercadolivre.com</code>/<code>mercado
 </tbody>
 </table>
 <h2>3.5 Síntese da reconciliação</h2>
+<p>A tabela completa, domínio a domínio (322 linhas nos três sites), está no <strong>Apêndice</strong> ao final do relatório.</p>
 <ol>
 <li><strong>Onde as fontes concordam:</strong> presença/ausência de gravação de sessão (Hotjar no ML), de GAM/Google remarketing
    (UOL, Terra), dos rastreadores de analytics (comScore, Chartbeat, Newsroom, Permutive) e a ausência de
@@ -924,4 +927,2629 @@ parecem menos invasivos do que são para um visitante estrangeiro. (b) A lista i
 menor que a do DuckDuckGo/EasyPrivacy usada pelo Blacklight e pelo uBlock; domínios "não listados" pontuam pouco
 (1 ponto). (c) Os tetos evitam que um único eixo domine, mas fazem a escala saturar: o UOL chega a 0 com folga, e
 não é possível distinguir "muito invasivo" de "extremamente invasivo" abaixo desse ponto.</p><h3 class="print">Print — relatorio-plugin-summary.png</h3><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/sites/mercadolivre.com.br/relatorio-plugin-summary.png"><figcaption>evidencias/sites/mercadolivre.com.br/relatorio-plugin-summary.png</figcaption></figure>
+<h1>Apêndice — Reconciliação domínio a domínio</h1>
+<p>Uma linha por eTLD+1 observado por qualquer das fontes (plugin, Blacklight, uBlock Origin, HAR). "BL req." = requisições que o Blacklight classificou como <em>TrackingRequest</em>; "BL ck" = cookies de 3ª parte desse domínio no Blacklight; "uBO" = bloqueios de rede do uBlock; "HAR" = entradas no HAR da visita do plugin. Gerado por <code>tools/build_appendix.py</code> a partir de <code>reconciliacao.json</code>.</p>
+<p><strong>Nota A (leilão programático).</strong> Os domínios marcados "Só BL … nota A" não têm nenhuma requisição no HAR da visita do plugin: são SSPs, DSPs, verificadores e serviços de cookie sync que só são contactados quando o leilão do Google Ad Manager/Prebid roda. No Blacklight o leilão rodou (UOL: 13 <code>gampad/ads</code>, 69 <code>googlesyndication.com</code>, 181 req. em <code>usync.html</code>; Terra: 15 <code>gampad/ads</code>, 70 <code>googlesyndication.com</code>, 79 em <code>CookieSync.html</code>); no nosso Firefox o <code>gpt.js</code> e o <code>prebid.js</code> carregam mas nenhum <code>gampad/ads</code> é emitido, com ou sem <code>navigator.webdriver</code> oculto e com ou sem consentimento aceito (HARs em <code>uol-sem-webdriver/</code> e <code>uol-com-consentimento/</code>). Ver seção 3.2.</p>
+<p><strong>Nota B (afiliados).</strong> Domínios do mesmo grupo empresarial da página (CDN, tag manager, telemetria, ad server próprio). Para EasyPrivacy (uBlock, Blacklight) são 3ª parte por eTLD+1; o plugin os rotula "afiliado" e não os pontua (seção 4).</p>
+<h2>uol.com.br — 160 domínios</h2>
+<table class="appendix">
+<thead>
+<tr>
+<th>Domínio</th>
+<th>Plugin</th>
+<th>BL req. / ck</th>
+<th>uBO</th>
+<th>HAR</th>
+<th>Explicação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imguol.com.br</code></td>
+<td>40 req. (afiliado)</td>
+<td>2 / 0</td>
+<td>1</td>
+<td>69</td>
+<td>Afiliado (CDN/serviço do grupo); não pontua. BL/uBO tratam como 3ª parte (eTLD+1); nota B.</td>
+</tr>
+<tr>
+<td><code>jsuol.com.br</code></td>
+<td>36 req. (afiliado)</td>
+<td>48 / 1</td>
+<td>10</td>
+<td>36</td>
+<td>Afiliado (CDN/serviço do grupo); não pontua. BL/uBO tratam como 3ª parte (eTLD+1); nota B.</td>
+</tr>
+<tr>
+<td><code>youtube.com</code></td>
+<td>25 req., advertising</td>
+<td>5 / 0</td>
+<td>8</td>
+<td>26</td>
+<td>Concordam. HAR: 26 req. (image/jpeg 3, text/javascript 10). embed do YouTube.</td>
+</tr>
+<tr>
+<td><code>newsroom.bi</code></td>
+<td>24 req., analytics</td>
+<td>27 / 4</td>
+<td>0</td>
+<td>24</td>
+<td>Concordam. HAR: 24 req. (application/json 23, application/x-unknown-content-type 1). uBO sem filtro. analytics Newsroom AI.</td>
+</tr>
+<tr>
+<td><code>uol.com.br</code></td>
+<td>—</td>
+<td>0 / 0 (não contactado)</td>
+<td>1</td>
+<td>36</td>
+<td><strong>Só o uBlock.</strong> Bloqueado antes de sair (não há requisição no HAR do plugin).</td>
+</tr>
+<tr>
+<td><code>uol.com</code></td>
+<td>10 req. (afiliado)</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>10</td>
+<td>Afiliado (CDN/serviço do grupo); não pontua. BL e uBO não marcam.</td>
+</tr>
+<tr>
+<td><code>privacymanager.io</code></td>
+<td>6 req., identity</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>6</td>
+<td>Concordam. HAR: 6 req. (text/javascript 1, application/x-javascript 1). uBO sem filtro. CMP/ATS LiveRamp.</td>
+</tr>
+<tr>
+<td><code>doubleclick.net</code></td>
+<td>6 req., advertising</td>
+<td>66 / 1</td>
+<td>10</td>
+<td>6</td>
+<td>Concordam. HAR: 6 req. (application/javascript 3, image/gif 1). Google Ad Manager.</td>
+</tr>
+<tr>
+<td><code>permutive.com</code></td>
+<td>6 req., analytics</td>
+<td>19 / 0</td>
+<td>0</td>
+<td>6</td>
+<td>Concordam. HAR: 6 req. (text/xml 4, ? 1). uBO sem filtro. DMP Permutive.</td>
+</tr>
+<tr>
+<td><code>gstatic.com</code></td>
+<td>6 req.</td>
+<td>7 / 0</td>
+<td>0</td>
+<td>6</td>
+<td>Concordam. HAR: 6 req. (text/html 3, image/png 1). Não listado no plugin (1 pt).</td>
+</tr>
+<tr>
+<td><code>googleapis.com</code></td>
+<td>6 req.</td>
+<td>6 / 0</td>
+<td>5</td>
+<td>6</td>
+<td>Concordam. HAR: 6 req. (application/javascript 3, application/json+protobuf 2). Não listado no plugin (1 pt).</td>
+</tr>
+<tr>
+<td><code>google.com</code></td>
+<td>5 req.</td>
+<td>16 / 0</td>
+<td>0</td>
+<td>5</td>
+<td>Concordam. HAR: 5 req. (? 2, application/javascript 1). Não listado no plugin (1 pt).</td>
+</tr>
+<tr>
+<td><code>mrf.io</code></td>
+<td>3 req., analytics</td>
+<td>0 / 0</td>
+<td>1</td>
+<td>3</td>
+<td>Concordam. HAR: 3 req. (application/javascript 3). SDK Marfeel.</td>
+</tr>
+<tr>
+<td><code>chartbeat.com</code></td>
+<td>2 req., analytics</td>
+<td>10 / 0</td>
+<td>3</td>
+<td>2</td>
+<td>Concordam. HAR: 2 req. (application/javascript 2). analytics Chartbeat.</td>
+</tr>
+<tr>
+<td><code>googletagmanager.com</code></td>
+<td>2 req., analytics</td>
+<td>4 / 0</td>
+<td>0</td>
+<td>2</td>
+<td>Concordam. HAR: 2 req. (application/javascript 2). uBO sem filtro. Google Tag Manager.</td>
+</tr>
+<tr>
+<td><code>ytimg.com</code></td>
+<td>2 req., advertising</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>2</td>
+<td>Concordam. HAR: 2 req. (image/jpeg 2). uBO sem filtro.</td>
+</tr>
+<tr>
+<td><code>adnxs.com</code></td>
+<td>2 req., advertising</td>
+<td>43 / 4</td>
+<td>0</td>
+<td>2</td>
+<td>Concordam. HAR: 2 req. (application/x-unknown-content-type 1, text/xml 1). uBO sem filtro. Xandr (Prebid).</td>
+</tr>
+<tr>
+<td><code>jsuol.com</code></td>
+<td>1 req. (afiliado)</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>2</td>
+<td>Afiliado (CDN/serviço do grupo); não pontua. BL e uBO não marcam.</td>
+</tr>
+<tr>
+<td><code>turner.com</code></td>
+<td>1 req.</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/javascript 1). Não listado no plugin (1 pt).</td>
+</tr>
+<tr>
+<td><code>permutive.app</code></td>
+<td>1 req., analytics</td>
+<td>7 / 0</td>
+<td>1</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/javascript 1).</td>
+</tr>
+<tr>
+<td><code>amazon-adsystem.com</code></td>
+<td>1 req., advertising</td>
+<td>57 / 2</td>
+<td>0</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (? 1). uBO sem filtro. Amazon TAM (apstag).</td>
+</tr>
+<tr>
+<td><code>scorecardresearch.com</code></td>
+<td>1 req., analytics</td>
+<td>34 / 2</td>
+<td>1</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/javascript 1). comScore.</td>
+</tr>
+<tr>
+<td><code>tinypass.com</code></td>
+<td>1 req., analytics</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/javascript 1). uBO sem filtro. Piano.</td>
+</tr>
+<tr>
+<td><code>prmutv.co</code></td>
+<td>1 req., analytics</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/json 1). uBO sem filtro.</td>
+</tr>
+<tr>
+<td><code>tapad.com</code></td>
+<td>—</td>
+<td>9 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ID graph Tapad + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>gumgum.com</code></td>
+<td>—</td>
+<td>3 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>crwdcntrl.net</code></td>
+<td>—</td>
+<td>4 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — DMP Lotame + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>liadm.com</code></td>
+<td>—</td>
+<td>2 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — LiveIntent (identidade); nota A</td>
+</tr>
+<tr>
+<td><code>mgaru.dev</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>seedtag.com</code></td>
+<td>—</td>
+<td>29 / 4</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP contextual + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>outbrain.com</code></td>
+<td>—</td>
+<td>3 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>connectad.io</code></td>
+<td>—</td>
+<td>8 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>gvt1.com</code></td>
+<td>—</td>
+<td>2 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>serverbid.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>loopme.me</code></td>
+<td>—</td>
+<td>5 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>bidr.io</code></td>
+<td>—</td>
+<td>8 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>ctnsnet.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>ex.co</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>t13.io</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>yellowblue.io</code></td>
+<td>—</td>
+<td>9 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>sascdn.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>omnitagjs.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>brand-display.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>admanmedia.com</code></td>
+<td>—</td>
+<td>2 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>mygaru.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>demdex.net</code></td>
+<td>—</td>
+<td>2 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — DMP Adobe + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>on.aws</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>richaudience.com</code></td>
+<td>—</td>
+<td>2 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>taptapnetworks.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adform.net</code></td>
+<td>—</td>
+<td>8 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>facebook.com</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>undertone.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>fwmrm.net</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>clarity.ms</code></td>
+<td>—</td>
+<td>11 / 5</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — Microsoft Clarity (gravação de sessão) + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>technoratimedia.com</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>turn.com</code></td>
+<td>—</td>
+<td>4 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>criteo.com</code></td>
+<td>—</td>
+<td>5 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — Criteo (Prebid) + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>quantserve.com</code></td>
+<td>—</td>
+<td>4 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — Quantcast + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>mxptint.net</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>emxdgt.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>pinterest.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>contextweb.com</code></td>
+<td>—</td>
+<td>6 / 5</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>taboola.com</code></td>
+<td>—</td>
+<td>0 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — recomendação paga + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>openx.net</code></td>
+<td>—</td>
+<td>8 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP OpenX + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>smartadserver.com</code></td>
+<td>—</td>
+<td>36 / 7</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Equativ + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>tracookiepixel.xyz</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>cognitivlabs.com</code></td>
+<td>—</td>
+<td>3 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>sonobi.com</code></td>
+<td>—</td>
+<td>6 / 20</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Sonobi + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>syncingbridge.com</code></td>
+<td>—</td>
+<td>0 / 6</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>openxcdn.net</code></td>
+<td>—</td>
+<td>2 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>deepintent.com</code></td>
+<td>—</td>
+<td>3 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adstanding.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>temu.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>piano.io</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>id5-sync.com</code></td>
+<td>—</td>
+<td>14 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ID universal (cookie sync) + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adgrx.com</code></td>
+<td>—</td>
+<td>2 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>krushmedia.com</code></td>
+<td>—</td>
+<td>0 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>everesttech.net</code></td>
+<td>—</td>
+<td>5 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — Adobe Advertising + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>amspbs.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>sharethrough.com</code></td>
+<td>—</td>
+<td>7 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Sharethrough + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>dv.tech</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>doubleverify.com</code></td>
+<td>—</td>
+<td>42 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — verificação de anúncios; nota A</td>
+</tr>
+<tr>
+<td><code>simpli.fi</code></td>
+<td>—</td>
+<td>4 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>a-mo.net</code></td>
+<td>—</td>
+<td>1 / 6</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP AMO + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>3lift.com</code></td>
+<td>—</td>
+<td>3 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP TripleLift + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>connatix.com</code></td>
+<td>—</td>
+<td>4 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>unrulymedia.com</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>betweendigital.com</code></td>
+<td>—</td>
+<td>2 / 4</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>pubmatic.com</code></td>
+<td>—</td>
+<td>11 / 17</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP PubMatic + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>onaudience.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>bttrack.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>mathtag.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>mediavine.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>adition.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>tribalfusion.com</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>1rx.io</code></td>
+<td>—</td>
+<td>5 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adtrafficquality.google</code></td>
+<td>—</td>
+<td>2 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>chartbeat.net</code></td>
+<td>—</td>
+<td>5 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>bfmio.com</code></td>
+<td>—</td>
+<td>8 / 9</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Beachfront + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>33across.com</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>eqads.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>trustedstack.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>primis.tech</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>intentiq.com</code></td>
+<td>—</td>
+<td>0 / 5</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>cadent.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>opera.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>cootlogix.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>pmbmonetize.live</code></td>
+<td>—</td>
+<td>0 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>linkedin.com</code></td>
+<td>—</td>
+<td>2 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — LinkedIn Insight + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>agkn.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — Neustar (identidade); nota A</td>
+</tr>
+<tr>
+<td><code>2mdn.net</code></td>
+<td>—</td>
+<td>19 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>nextmillmedia.com</code></td>
+<td>—</td>
+<td>0 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>facebook.net</code></td>
+<td>—</td>
+<td>4 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — pixel do Facebook; nota A</td>
+</tr>
+<tr>
+<td><code>onetag-sys.com</code></td>
+<td>—</td>
+<td>3 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>aralego.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>inmobi.com</code></td>
+<td>—</td>
+<td>3 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad network InMobi + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>googlesyndication.com</code></td>
+<td>—</td>
+<td>69 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — entrega de anúncios do GAM (gampad/ads); nota A</td>
+</tr>
+<tr>
+<td><code>rtbhouse.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>acuityplatform.com</code></td>
+<td>—</td>
+<td>2 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>media.net</code></td>
+<td>—</td>
+<td>5 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>ipredictive.com</code></td>
+<td>—</td>
+<td>4 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>creativecdn.com</code></td>
+<td>—</td>
+<td>7 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>rfihub.com</code></td>
+<td>—</td>
+<td>2 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>smaato.net</code></td>
+<td>—</td>
+<td>3 / 6</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Smaato + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>sitescout.com</code></td>
+<td>—</td>
+<td>5 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>ads-twitter.com</code></td>
+<td>—</td>
+<td>2 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — pixel do X; nota A</td>
+</tr>
+<tr>
+<td><code>storygize.net</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>google-analytics.com</code></td>
+<td>—</td>
+<td>2 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — Google Analytics; nota A</td>
+</tr>
+<tr>
+<td><code>cxense.com</code></td>
+<td>—</td>
+<td>9 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>lijit.com</code></td>
+<td>—</td>
+<td>6 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Sovrn + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adsrvr.org</code></td>
+<td>—</td>
+<td>10 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — DSP The Trade Desk + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>im-apps.net</code></td>
+<td>—</td>
+<td>3 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>imguol.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>springserve.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>company-target.com</code></td>
+<td>—</td>
+<td>1 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>kargo.com</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>rubiconproject.com</code></td>
+<td>—</td>
+<td>123 / 5</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Magnite (leilão + usync.html) + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>yahoo.com</code></td>
+<td>—</td>
+<td>11 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>yieldmo.com</code></td>
+<td>—</td>
+<td>2 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>creative-serving.com</code></td>
+<td>—</td>
+<td>2 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>bidswitch.net</code></td>
+<td>—</td>
+<td>16 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — intermediação SSP↔DSP (cookie sync) + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>rlcdn.com</code></td>
+<td>—</td>
+<td>5 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — LiveRamp (identidade) + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>smilewanted.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>aniview.com</code></td>
+<td>—</td>
+<td>1 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>semasio.net</code></td>
+<td>—</td>
+<td>9 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>t.co</code></td>
+<td>—</td>
+<td>5 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>mgid.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>minutemedia-prebid.com</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>stackadapt.com</code></td>
+<td>—</td>
+<td>5 / 4</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>startappnetwork.com</code></td>
+<td>—</td>
+<td>0 / 7</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad network Start.io + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>bidtheatre.com</code></td>
+<td>—</td>
+<td>2 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>dotomi.com</code></td>
+<td>—</td>
+<td>11 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — DSP Epsilon/Conversant + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>360yield.com</code></td>
+<td>—</td>
+<td>5 / 4</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>blismedia.com</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>shb-sync.com</code></td>
+<td>—</td>
+<td>0 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>twitter.com</code></td>
+<td>—</td>
+<td>6 / 5</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>casalemedia.com</code></td>
+<td>—</td>
+<td>2 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Index Exchange + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>appier.net</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>criteo.net</code></td>
+<td>—</td>
+<td>2 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>bing.com</code></td>
+<td>—</td>
+<td>1 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+</tbody>
+</table>
+<h2>terra.com.br — 151 domínios</h2>
+<table class="appendix">
+<thead>
+<tr>
+<th>Domínio</th>
+<th>Plugin</th>
+<th>BL req. / ck</th>
+<th>uBO</th>
+<th>HAR</th>
+<th>Explicação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>trrsf.com</code></td>
+<td>176 req. (afiliado)</td>
+<td>4 / 0</td>
+<td>4</td>
+<td>185</td>
+<td>Afiliado (CDN/serviço do grupo); não pontua. BL/uBO tratam como 3ª parte (eTLD+1); nota B.</td>
+</tr>
+<tr>
+<td><code>trrsf.com.br</code></td>
+<td>13 req. (afiliado)</td>
+<td>10 / 0</td>
+<td>4</td>
+<td>13</td>
+<td>Afiliado (CDN/serviço do grupo); não pontua. BL/uBO tratam como 3ª parte (eTLD+1); nota B.</td>
+</tr>
+<tr>
+<td><code>privacymanager.io</code></td>
+<td>6 req., identity</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>6</td>
+<td>Concordam. HAR: 6 req. (text/javascript 1, application/x-javascript 1). uBO sem filtro. CMP/ATS LiveRamp.</td>
+</tr>
+<tr>
+<td><code>criteo.com</code></td>
+<td>2 req., advertising</td>
+<td>30 / 2</td>
+<td>0</td>
+<td>2</td>
+<td>Concordam. HAR: 2 req. (application/x-unknown-content-type 2). uBO sem filtro. Criteo (Prebid).</td>
+</tr>
+<tr>
+<td><code>tailtarget.com</code></td>
+<td>1 req., advertising</td>
+<td>30 / 8</td>
+<td>3</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/javascript 1). DMP Tail (BR).</td>
+</tr>
+<tr>
+<td><code>chartbeat.com</code></td>
+<td>1 req., analytics</td>
+<td>4 / 0</td>
+<td>2</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/javascript 1). analytics Chartbeat.</td>
+</tr>
+<tr>
+<td><code>taboola.com</code></td>
+<td>1 req., advertising</td>
+<td>6 / 2</td>
+<td>2</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/javascript 1). recomendação paga.</td>
+</tr>
+<tr>
+<td><code>amazon-adsystem.com</code></td>
+<td>1 req., advertising</td>
+<td>71 / 2</td>
+<td>2</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (? 1). Amazon TAM (apstag).</td>
+</tr>
+<tr>
+<td><code>scorecardresearch.com</code></td>
+<td>1 req., analytics</td>
+<td>14 / 2</td>
+<td>1</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/javascript 1). comScore.</td>
+</tr>
+<tr>
+<td><code>googletagmanager.com</code></td>
+<td>1 req., analytics</td>
+<td>16 / 0</td>
+<td>2</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/javascript 1). Google Tag Manager.</td>
+</tr>
+<tr>
+<td><code>doubleclick.net</code></td>
+<td>1 req., advertising</td>
+<td>89 / 1</td>
+<td>2</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/javascript 1). Google Ad Manager.</td>
+</tr>
+<tr>
+<td><code>rlcdn.com</code></td>
+<td>1 req., identity</td>
+<td>7 / 2</td>
+<td>0</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/x-unknown-content-type 1). uBO sem filtro. LiveRamp (identidade).</td>
+</tr>
+<tr>
+<td><code>google.com</code></td>
+<td>1 req.</td>
+<td>21 / 0</td>
+<td>1</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/javascript 1). Não listado no plugin (1 pt).</td>
+</tr>
+<tr>
+<td><code>tapad.com</code></td>
+<td>—</td>
+<td>14 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ID graph Tapad + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>gumgum.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>crwdcntrl.net</code></td>
+<td>—</td>
+<td>4 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — DMP Lotame; nota A</td>
+</tr>
+<tr>
+<td><code>seedtag.com</code></td>
+<td>—</td>
+<td>2 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP contextual + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>wp.pl</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>outbrain.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>connectad.io</code></td>
+<td>—</td>
+<td>8 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>presage.io</code></td>
+<td>—</td>
+<td>2 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>lkqd.net</code></td>
+<td>—</td>
+<td>2 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>loopme.me</code></td>
+<td>—</td>
+<td>9 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>visx.net</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>bidr.io</code></td>
+<td>—</td>
+<td>8 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>liftdsp.com</code></td>
+<td>—</td>
+<td>0 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>ctnsnet.com</code></td>
+<td>—</td>
+<td>3 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>a-mx.com</code></td>
+<td>—</td>
+<td>0 / 4</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>yellowblue.io</code></td>
+<td>—</td>
+<td>13 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>jsdelivr.net</code></td>
+<td>—</td>
+<td>2 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>sascdn.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>omnitagjs.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>admanmedia.com</code></td>
+<td>—</td>
+<td>7 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>demdex.net</code></td>
+<td>—</td>
+<td>3 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — DMP Adobe + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>richaudience.com</code></td>
+<td>—</td>
+<td>6 / 4</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>gamoshi.io</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>adform.net</code></td>
+<td>—</td>
+<td>10 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>advolve.io</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>mfadsrvr.com</code></td>
+<td>—</td>
+<td>2 / 4</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>fwmrm.net</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>technoratimedia.com</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>turn.com</code></td>
+<td>—</td>
+<td>6 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>quantserve.com</code></td>
+<td>—</td>
+<td>6 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — Quantcast + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>mediagotechnology.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>emxdgt.com</code></td>
+<td>—</td>
+<td>5 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>contextweb.com</code></td>
+<td>—</td>
+<td>6 / 5</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>openx.net</code></td>
+<td>—</td>
+<td>18 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP OpenX + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>smartadserver.com</code></td>
+<td>—</td>
+<td>35 / 6</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Equativ + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>sonobi.com</code></td>
+<td>—</td>
+<td>6 / 20</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Sonobi + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>syncingbridge.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>openxcdn.net</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>deepintent.com</code></td>
+<td>—</td>
+<td>4 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adstanding.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>temu.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>id5-sync.com</code></td>
+<td>—</td>
+<td>21 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ID universal (cookie sync) + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adentifi.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>krushmedia.com</code></td>
+<td>—</td>
+<td>0 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>marketiq.com</code></td>
+<td>—</td>
+<td>0 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>everesttech.net</code></td>
+<td>—</td>
+<td>8 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — Adobe Advertising + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>sharethrough.com</code></td>
+<td>—</td>
+<td>15 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Sharethrough + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>simpli.fi</code></td>
+<td>—</td>
+<td>5 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>a-mo.net</code></td>
+<td>—</td>
+<td>10 / 24</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP AMO + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>3lift.com</code></td>
+<td>—</td>
+<td>7 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP TripleLift + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adroll.com</code></td>
+<td>—</td>
+<td>6 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>sparteo.com</code></td>
+<td>—</td>
+<td>0 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>connatix.com</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>unrulymedia.com</code></td>
+<td>—</td>
+<td>10 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>teads.tv</code></td>
+<td>—</td>
+<td>8 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adotmob.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>ymmobi.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>pubmatic.com</code></td>
+<td>—</td>
+<td>18 / 13</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP PubMatic + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>bttrack.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>mathtag.com</code></td>
+<td>—</td>
+<td>3 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adition.com</code></td>
+<td>—</td>
+<td>2 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>tribalfusion.com</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>rtb-oveeo.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>1rx.io</code></td>
+<td>—</td>
+<td>23 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adtrafficquality.google</code></td>
+<td>—</td>
+<td>3 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>chartbeat.net</code></td>
+<td>—</td>
+<td>4 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>bfmio.com</code></td>
+<td>—</td>
+<td>6 / 8</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Beachfront + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>33across.com</code></td>
+<td>—</td>
+<td>6 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>digitaleast.mobi</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>trustedstack.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>cloudflare.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>cadent.com</code></td>
+<td>—</td>
+<td>0 / 4</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>opera.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>cootlogix.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>iqm.com</code></td>
+<td>—</td>
+<td>1 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>thecas.xyz</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>pmbmonetize.live</code></td>
+<td>—</td>
+<td>0 / 5</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>linkedin.com</code></td>
+<td>—</td>
+<td>3 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — LinkedIn Insight + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>2mdn.net</code></td>
+<td>—</td>
+<td>2 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>nextmillmedia.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>onetag-sys.com</code></td>
+<td>—</td>
+<td>4 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>googlesyndication.com</code></td>
+<td>—</td>
+<td>70 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — entrega de anúncios do GAM (gampad/ads); nota A</td>
+</tr>
+<tr>
+<td><code>rtbhouse.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>anyrtb.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>acuityplatform.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>media.net</code></td>
+<td>—</td>
+<td>5 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>ipredictive.com</code></td>
+<td>—</td>
+<td>3 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>eskimi.com</code></td>
+<td>—</td>
+<td>3 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>creativecdn.com</code></td>
+<td>—</td>
+<td>6 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>rfihub.com</code></td>
+<td>—</td>
+<td>3 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>smaato.net</code></td>
+<td>—</td>
+<td>7 / 10</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Smaato + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>ads-tinyorbit.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>moloco.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>sitescout.com</code></td>
+<td>—</td>
+<td>9 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>google-analytics.com</code></td>
+<td>—</td>
+<td>7 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — Google Analytics; nota A</td>
+</tr>
+<tr>
+<td><code>tynt.com</code></td>
+<td>—</td>
+<td>2 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adsmovil.com</code></td>
+<td>—</td>
+<td>0 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>disqus.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>lijit.com</code></td>
+<td>—</td>
+<td>12 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Sovrn + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adsrvr.org</code></td>
+<td>—</td>
+<td>22 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — DSP The Trade Desk + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>smartclip.net</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>sportradarserving.com</code></td>
+<td>—</td>
+<td>2 / 5</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>springserve.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>company-target.com</code></td>
+<td>—</td>
+<td>3 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>kargo.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>rtbwise.com</code></td>
+<td>—</td>
+<td>0 / 4</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>rubiconproject.com</code></td>
+<td>—</td>
+<td>61 / 5</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Magnite (leilão + usync.html) + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>yahoo.com</code></td>
+<td>—</td>
+<td>9 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>altitude-arena.com</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>yieldmo.com</code></td>
+<td>—</td>
+<td>3 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>gstatic.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>bidswitch.net</code></td>
+<td>—</td>
+<td>36 / 4</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — intermediação SSP↔DSP (cookie sync) + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adtelligent.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>chocolateplatform.com</code></td>
+<td>—</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>semasio.net</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>mgid.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>eyeota.net</code></td>
+<td>—</td>
+<td>4 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>lunamedia.live</code></td>
+<td>—</td>
+<td>0 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adkernel.com</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>minutemedia-prebid.com</code></td>
+<td>—</td>
+<td>2 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>uncn.jp</code></td>
+<td>—</td>
+<td>1 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>adnxs.com</code></td>
+<td>—</td>
+<td>30 / 5</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — Xandr (Prebid) + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>stackadapt.com</code></td>
+<td>—</td>
+<td>8 / 4</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>startappnetwork.com</code></td>
+<td>—</td>
+<td>0 / 8</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad network Start.io + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>com.tr</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>googleapis.com</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>measureadv.com</code></td>
+<td>—</td>
+<td>0 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>krxd.net</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>smartytouch.co</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>audima.co</code></td>
+<td>—</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>dotomi.com</code></td>
+<td>—</td>
+<td>18 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — DSP Epsilon/Conversant + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>360yield.com</code></td>
+<td>—</td>
+<td>12 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>blismedia.com</code></td>
+<td>—</td>
+<td>5 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>tappx.com</code></td>
+<td>—</td>
+<td>0 / 22</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Tappx + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>casalemedia.com</code></td>
+<td>—</td>
+<td>19 / 3</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — SSP Index Exchange + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>appier.net</code></td>
+<td>—</td>
+<td>1 / 2</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+<tr>
+<td><code>criteo.net</code></td>
+<td>—</td>
+<td>1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech; nota A</td>
+</tr>
+<tr>
+<td><code>rqtrk.eu</code></td>
+<td>—</td>
+<td>1 / 1</td>
+<td>0</td>
+<td>0</td>
+<td>Só BL, 0 no HAR — ad-tech + cookies; nota A</td>
+</tr>
+</tbody>
+</table>
+<h2>mercadolivre.com.br — 11 domínios</h2>
+<table class="appendix">
+<thead>
+<tr>
+<th>Domínio</th>
+<th>Plugin</th>
+<th>BL req. / ck</th>
+<th>uBO</th>
+<th>HAR</th>
+<th>Explicação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mlstatic.com</code></td>
+<td>182 req. (afiliado)</td>
+<td>0 / 0</td>
+<td>0</td>
+<td>233</td>
+<td>Afiliado (CDN/serviço do grupo); não pontua. BL e uBO não marcam.</td>
+</tr>
+<tr>
+<td><code>mercadolibre.com</code></td>
+<td>24 req. (afiliado)</td>
+<td>0 / 1</td>
+<td>1</td>
+<td>25</td>
+<td>Afiliado (CDN/serviço do grupo); não pontua. BL/uBO tratam como 3ª parte (eTLD+1); nota B.</td>
+</tr>
+<tr>
+<td><code>meli.com</code></td>
+<td>17 req. (afiliado)</td>
+<td>0 / 1</td>
+<td>0</td>
+<td>19</td>
+<td>Afiliado (CDN/serviço do grupo); não pontua. BL e uBO não marcam.</td>
+</tr>
+<tr>
+<td><code>mercadoclics.com</code></td>
+<td>15 req. (afiliado)</td>
+<td>20 / 1</td>
+<td>39</td>
+<td>15</td>
+<td>Afiliado (Mercado Ads (grupo ML)); não pontua. BL/uBO tratam como 3ª parte (eTLD+1); nota B.</td>
+</tr>
+<tr>
+<td><code>google.com</code></td>
+<td>6 req.</td>
+<td>0 / 0</td>
+<td>1</td>
+<td>6</td>
+<td>Concordam. HAR: 6 req. (application/javascript 1, text/css 1). Não listado no plugin (1 pt).</td>
+</tr>
+<tr>
+<td><code>mercadolivre.com.br</code></td>
+<td>—</td>
+<td>0 / 0 (não contactado)</td>
+<td>1</td>
+<td>4</td>
+<td><strong>Só o uBlock.</strong> Bloqueado antes de sair (não há requisição no HAR do plugin).</td>
+</tr>
+<tr>
+<td><code>gstatic.com</code></td>
+<td>1 req.</td>
+<td>0 / 0 (não contactado)</td>
+<td>0</td>
+<td>1</td>
+<td>Só plugin/HAR (1 req.); BL não contactou (variação entre visitas).</td>
+</tr>
+<tr>
+<td><code>hotjar.com</code></td>
+<td>1 req., session-recording</td>
+<td>3 / 0</td>
+<td>1</td>
+<td>1</td>
+<td>Concordam. HAR: 1 req. (application/javascript 1). Hotjar (gravação de sessão).</td>
+</tr>
+<tr>
+<td><code>mercadopago.com.br</code></td>
+<td>1 req. (afiliado)</td>
+<td>0 / 0 (não contactado)</td>
+<td>1</td>
+<td>1</td>
+<td>Afiliado (CDN/serviço do grupo); não pontua. BL/uBO tratam como 3ª parte (eTLD+1); nota B.</td>
+</tr>
+<tr>
+<td><code>mercadopago.com</code></td>
+<td>1 req. (afiliado)</td>
+<td>0 / 0 (não contactado)</td>
+<td>1</td>
+<td>1</td>
+<td>Afiliado (CDN/serviço do grupo); não pontua. BL/uBO tratam como 3ª parte (eTLD+1); nota B.</td>
+</tr>
+<tr>
+<td><code>mercadolivre.com</code></td>
+<td>1 req. (afiliado)</td>
+<td>0 / 0 (não contactado)</td>
+<td>1</td>
+<td>1</td>
+<td>Afiliado (CDN/serviço do grupo); não pontua. BL/uBO tratam como 3ª parte (eTLD+1); nota B.</td>
+</tr>
+</tbody>
+</table>
 </body></html>

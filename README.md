@@ -6,7 +6,7 @@ armazenamento HTML5, fingerprinting (canvas, WebGL, áudio), bounce tracking / c
 indicadores de hijacking (WebSocket persistente, polling para terceiros, hooks em objetos globais).
 Calcula uma pontuação de privacidade e permite uma lista de bloqueio personalizada.
 
-Trabalho da disciplina de Segurança — Insper.
+Trabalho da disciplina de Cybersec — Insper.
 
 ## Carregando no Firefox (about:debugging)
 
