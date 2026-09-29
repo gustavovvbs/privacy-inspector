@@ -20,6 +20,14 @@ function newReport(url) {
       events: [],
     },
     frames: {},         // frameUrl -> { thirdParty }
+    fingerprint: {
+      canvas: { reads: 0, likely: 0, scripts: {}, samples: [] },
+      webgl: { calls: 0, unmasked: 0, scripts: {}, methods: {} },
+      audio: { calls: 0, scripts: {}, methods: {} },
+      fonts: { measureText: 0, scripts: {} },
+      enumeration: { props: {}, scripts: {} },
+      level: 'none', // none | possible | likely
+    },
     cookies: {
       setHeaders: [],      // cookies injetados via Set-Cookie (HTTP)
       jsSet: [],           // cookies injetados via document.cookie (JS)
@@ -191,7 +199,43 @@ function handleStorageEvent(r, ev, frameUrl, third) {
   if (st.events.length < 500) st.events.push({ ...d, frame: third ? baseDomain(hostnameOf(frameUrl)) : '1ª parte', at: ev.at });
 }
 
+function handleFingerprintEvent(r, ev, frameUrl, third) {
+  const d = ev.detail;
+  const fp = r.fingerprint;
+  const src = d.script ? baseDomain(hostnameOf(d.script)) : (third ? baseDomain(hostnameOf(frameUrl)) : r.baseDomain);
+  const bump = (obj, key) => { obj[key] = (obj[key] || 0) + 1; };
+  switch (d.api) {
+    case 'canvas':
+      fp.canvas.reads++;
+      if (d.likely) fp.canvas.likely++;
+      bump(fp.canvas.scripts, d.script || src);
+      if (fp.canvas.samples.length < 20) fp.canvas.samples.push({ ...d, from: src, at: ev.at });
+      break;
+    case 'webgl':
+      fp.webgl.calls++;
+      if (d.method.startsWith('getParameter') || d.method.startsWith('getExtension')) fp.webgl.unmasked++;
+      bump(fp.webgl.methods, d.method); bump(fp.webgl.scripts, d.script || src);
+      break;
+    case 'audio':
+      fp.audio.calls++; bump(fp.audio.methods, d.method); bump(fp.audio.scripts, d.script || src);
+      break;
+    case 'fonts':
+      fp.fonts.measureText++; bump(fp.fonts.scripts, d.script || src);
+      break;
+    case 'enumeration':
+      bump(fp.enumeration.props, d.method);
+      { const s = fp.enumeration.scripts[d.script || src] || (fp.enumeration.scripts[d.script || src] = {}); bump(s, d.method); }
+      break;
+  }
+  // Nível agregado
+  const enumMax = Math.max(0, ...Object.values(fp.enumeration.scripts).map((s) => Object.keys(s).length));
+  const audioFp = fp.audio.methods['createOscillator'] && fp.audio.methods['createDynamicsCompressor'] && fp.audio.methods['getChannelData'];
+  if (fp.canvas.likely > 0 || audioFp || (fp.webgl.unmasked > 0 && enumMax >= 6)) fp.level = 'likely';
+  else if (fp.canvas.reads > 0 || fp.webgl.unmasked > 0 || fp.fonts.measureText > 30 || enumMax >= 8) fp.level = 'possible';
+}
+
 const contentHandlers = {
+  fingerprint: handleFingerprintEvent,
   frame(r, ev, frameUrl, third) {
     r.frames[frameUrl] = { thirdParty: third, hooked: ev.detail.hooked };
   },

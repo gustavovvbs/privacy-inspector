@@ -102,5 +102,91 @@
     },
   }, 'Document.cookie');
 
+  // -------------------------------------------------------------------------
+  // Fingerprinting
+  // -------------------------------------------------------------------------
+  // Canvas — heurística de Englehardt & Narayanan (usada pelo Blacklight):
+  // fingerprint provável se houve fillText/strokeText e depois uma leitura (toDataURL,
+  // toBlob, getImageData) de área >= 16x16. Canvas fora do DOM reforça a suspeita.
+  const canvasState = new WeakMap(); // canvas -> { text, draws }
+  function canvasOf(ctx) { try { return unwrap(ctx).canvas; } catch (e) { return null; } }
+  function markDraw(ctx, text) {
+    const c = canvasOf(ctx); if (!c) return;
+    const st = canvasState.get(c) || { text: 0, draws: 0 };
+    st.draws++; if (text) st.text++;
+    canvasState.set(c, st);
+  }
+  for (const m of ['fillText', 'strokeText']) {
+    hookMethod(page.CanvasRenderingContext2D && page.CanvasRenderingContext2D.prototype, m, (self) => markDraw(self, true), 'Canvas2D.' + m);
+  }
+  for (const m of ['fillRect', 'arc', 'bezierCurveTo', 'drawImage', 'fill']) {
+    hookMethod(page.CanvasRenderingContext2D && page.CanvasRenderingContext2D.prototype, m, (self) => markDraw(self, false), 'Canvas2D.' + m);
+  }
+  function canvasRead(canvas, method, area) {
+    const c = unwrap(canvas); if (!c) return;
+    const st = canvasState.get(c) || { text: 0, draws: 0 };
+    const w = c.width || 0, h = c.height || 0;
+    const readArea = area != null ? area : w * h;
+    const attached = !!(c.isConnected);
+    const likely = st.text > 0 && readArea >= 256;
+    report('fingerprint', { api: 'canvas', method, width: w, height: h, readArea, textDrawn: st.text, draws: st.draws,
+      attached, likely, script: callerScript() });
+  }
+  hookMethod(page.HTMLCanvasElement && page.HTMLCanvasElement.prototype, 'toDataURL', (self) => canvasRead(self, 'toDataURL'), 'Canvas.toDataURL');
+  hookMethod(page.HTMLCanvasElement && page.HTMLCanvasElement.prototype, 'toBlob', (self) => canvasRead(self, 'toBlob'), 'Canvas.toBlob');
+  hookMethod(page.CanvasRenderingContext2D && page.CanvasRenderingContext2D.prototype, 'getImageData', (self, args) => {
+    const c = canvasOf(self); if (c) canvasRead(c, 'getImageData', Math.abs((args[2] || 0) * (args[3] || 0)));
+  }, 'Canvas2D.getImageData');
+  hookMethod(page.CanvasRenderingContext2D && page.CanvasRenderingContext2D.prototype, 'measureText', () => {
+    report('fingerprint', { api: 'fonts', method: 'measureText', script: callerScript() });
+  }, 'Canvas2D.measureText');
+
+  // WebGL — leitura de vendor/renderer "desmascarados", extensões e pixels.
+  const UNMASKED = new Set([0x9245, 0x9246]); // UNMASKED_VENDOR_WEBGL, UNMASKED_RENDERER_WEBGL
+  for (const ctxName of ['WebGLRenderingContext', 'WebGL2RenderingContext']) {
+    const proto = page[ctxName] && page[ctxName].prototype;
+    hookMethod(proto, 'getParameter', (self, args) => {
+      if (UNMASKED.has(args[0])) report('fingerprint', { api: 'webgl', method: 'getParameter(UNMASKED_*)', script: callerScript() });
+    }, ctxName + '.getParameter');
+    hookMethod(proto, 'getExtension', (self, args) => {
+      if (String(args[0]) === 'WEBGL_debug_renderer_info') report('fingerprint', { api: 'webgl', method: 'getExtension(debug_renderer_info)', script: callerScript() });
+    }, ctxName + '.getExtension');
+    hookMethod(proto, 'getSupportedExtensions', () => report('fingerprint', { api: 'webgl', method: 'getSupportedExtensions', script: callerScript() }), ctxName + '.getSupportedExtensions');
+    hookMethod(proto, 'readPixels', () => report('fingerprint', { api: 'webgl', method: 'readPixels', script: callerScript() }), ctxName + '.readPixels');
+    hookMethod(proto, 'getShaderPrecisionFormat', () => report('fingerprint', { api: 'webgl', method: 'getShaderPrecisionFormat', script: callerScript() }), ctxName + '.getShaderPrecisionFormat');
+  }
+
+  // Áudio — padrão clássico: OfflineAudioContext + oscilador + compressor + leitura do buffer.
+  if (page.OfflineAudioContext) {
+    const OrigOffline = page.OfflineAudioContext;
+    HOOKED.add('OfflineAudioContext');
+    const Wrapped = exportFunction(function (...args) {
+      report('fingerprint', { api: 'audio', method: 'new OfflineAudioContext', script: callerScript() });
+      return Reflect.construct(OrigOffline, args, new.target || OrigOffline);
+    }, page, { defineAs: 'OfflineAudioContext' });
+    try { Wrapped.prototype = OrigOffline.prototype; } catch (e) {}
+  }
+  hookMethod(page.BaseAudioContext && page.BaseAudioContext.prototype, 'createOscillator', () => report('fingerprint', { api: 'audio', method: 'createOscillator', script: callerScript() }), 'Audio.createOscillator');
+  hookMethod(page.BaseAudioContext && page.BaseAudioContext.prototype, 'createDynamicsCompressor', () => report('fingerprint', { api: 'audio', method: 'createDynamicsCompressor', script: callerScript() }), 'Audio.createDynamicsCompressor');
+  hookMethod(page.AudioBuffer && page.AudioBuffer.prototype, 'getChannelData', () => report('fingerprint', { api: 'audio', method: 'getChannelData', script: callerScript() }), 'AudioBuffer.getChannelData');
+  hookMethod(page.AnalyserNode && page.AnalyserNode.prototype, 'getFloatFrequencyData', () => report('fingerprint', { api: 'audio', method: 'getFloatFrequencyData', script: callerScript() }), 'Analyser.getFloatFrequencyData');
+
+  // Enumeração de navigator/screen — cada acesso é contado por propriedade e por script.
+  const NAV_PROPS = ['userAgent', 'platform', 'language', 'languages', 'hardwareConcurrency', 'deviceMemory',
+    'plugins', 'mimeTypes', 'doNotTrack', 'maxTouchPoints', 'webdriver', 'vendor', 'oscpu', 'buildID', 'productSub', 'cookieEnabled'];
+  const SCREEN_PROPS = ['width', 'height', 'availWidth', 'availHeight', 'colorDepth', 'pixelDepth'];
+  const propCounts = {};
+  function countProp(obj, prop) {
+    const key = obj + '.' + prop;
+    propCounts[key] = (propCounts[key] || 0) + 1;
+    if (propCounts[key] <= 3) report('fingerprint', { api: 'enumeration', method: key, script: callerScript() });
+  }
+  for (const p of NAV_PROPS) hookAccessor(page.Navigator && page.Navigator.prototype, p, { onGet: () => countProp('navigator', p) }, 'navigator.' + p);
+  for (const p of SCREEN_PROPS) hookAccessor(page.Screen && page.Screen.prototype, p, { onGet: () => countProp('screen', p) }, 'screen.' + p);
+  hookMethod(page.Date && page.Date.prototype, 'getTimezoneOffset', () => countProp('Date', 'getTimezoneOffset'), 'Date.getTimezoneOffset');
+  hookMethod(page.MediaDevices && page.MediaDevices.prototype, 'enumerateDevices', () => report('fingerprint', { api: 'enumeration', method: 'mediaDevices.enumerateDevices', script: callerScript() }), 'enumerateDevices');
+  hookMethod(page.SpeechSynthesis && page.SpeechSynthesis.prototype, 'getVoices', () => report('fingerprint', { api: 'enumeration', method: 'speechSynthesis.getVoices', script: callerScript() }), 'getVoices');
+  hookMethod(page.Navigator && page.Navigator.prototype, 'getBattery', () => report('fingerprint', { api: 'enumeration', method: 'navigator.getBattery', script: callerScript() }), 'getBattery');
+
   report('frame', { hooked: [...HOOKED] });
 })();
