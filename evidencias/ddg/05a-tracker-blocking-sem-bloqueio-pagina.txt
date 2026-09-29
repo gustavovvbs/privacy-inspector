@@ -1,0 +1,41 @@
+[Home] ↣ [Privacy Protections Tests] ↣ [Request Blocking Test Page]
+
+This page tests if different types of requests, made using various browser mechanisms, are getting blocked.
+
+To test your request blocking solution please add bad.third-party.site domain to your blocklist.
+
+Start the test Download the results
+HTML
+ - script - Try loading a JavaScript file using <script> element.
+ - style - Try loading a CSS file using <link> element.
+ - img - Try loading an image using <img> element.
+ - picture - Try loading an image using <picture> element.
+ - object - Try loading an image using <object> element.
+ - audio - Try loading an audio file using <audio> element.
+ - video - Try loading a video file using <video> element.
+ - iframe - Try loading a frame using <iframe> element.
+CSS
+ - import - Try loading a CSS file using @import url(…).
+ - font - Try loading a font file using @font-face {src: url(…)}.
+ - background - Try loading an image using background: url(…).
+JS
+ - websocket - Try connecting to a WebSocket.
+Other
+
+Legend:
+
+ - request has loaded
+ - request hasn't loaded
+ - request failed (e.g. due to being blocked)
+Debug data:
+html - style
+html - img 
+html - picture 
+html - object 
+html - audio
+html - video 
+html - iframe 
+css - import
+css - font
+text
+css - background

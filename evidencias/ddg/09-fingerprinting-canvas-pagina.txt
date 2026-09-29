@@ -1,0 +1,43 @@
+[Home] ↣ [Privacy Protections Tests] ↣ [Fingerprinting Test Page]
+
+These checks verify the correctness and performance of canvas rendering. This is to ensure the browser behaves as specified and is used in various identity sites. Canvas drawing is used to visually verify the correctness.
+
+Status	Notes
+resistance	layering comparison
+fail	Sanity check on pixels that match the reference data
+pass	Sanity check on counts matching
+fail	Should have more than 20% of eligiblePixels that are changed across multiple canvases
+performance	random noise performance
+pass	Getting image data must be under 300ms (9)
+pass	Getting image data must be under 300ms (22)
+pass	Data in image must not be blank
+performance	fp example performance
+pass	Getting image data must be under 200ms (1)
+pass	Data in image must be blank
+pass	Drawing image data must be under 200ms (0)
+pass	Getting image data must be under 200ms (13)
+pass	Data in image must not be blank
+performance	fp example heavy draw performance
+pass	Getting image data must be under 250ms (0)
+pass	Data in image must be blank
+pass	Drawing image data 1000 times must be under 1249ms (11)
+pass	Getting image data must be under 250ms (98)
+pass	Data in image must not be blank
+performance	fp example performance getImageData heavy
+pass	Getting image data must be under 200ms (1)
+pass	Data in image must be blank
+pass	Drawing image data must be under 200ms (0)
+pass	Getting image data 100 times must be under 645.5ms (28)
+pass	Data in image must not be blank
+correctness	known pixel render
+pass	Expect value '18' to equal '18'
+pass	Expect value '18' to equal '18'
+pass	Expect value '255' to equal '255'
+pass	Expect value '255' to equal '255'
+pass	Getting image data must be under 25ms (1)
+fail	Output conversion has expected values
+correctness	read canvas into image and back into canvas
+pass	Triggered callback must pass correct key
+correctness	known string render
+fail	Generated code should return expected response: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAWklEQVQ4T2NMY2AQec7AwMDDwMBwi4GBQYoBAkB8EPszFIPAFwYGBkkGBoazUDmQGkaQATAFyAY8Y2BgcIBqBlkAEzNGE2P8z8AgAmWTBUYNGA2D0XRApbwAAMsYHdwEDvqVAAAAEGRlQkc0MjA1OTkyMzIxMUZFRTlGMutMnQAAAABJRU5ErkJggg==
+☰

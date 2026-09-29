@@ -1,0 +1,489 @@
+{
+  "url": "https://privacy-test-pages.site/privacy-protections/fingerprinting/",
+  "hostname": "privacy-test-pages.site",
+  "baseDomain": "privacy-test-pages.site",
+  "startedAt": 1790648435691,
+  "thirdParties": {},
+  "requestsTotal": 8,
+  "requestsThirdParty": 0,
+  "storage": {
+    "localStorage": {
+      "reads": 1,
+      "writes": 0,
+      "keys": {
+        "results": 1
+      },
+      "thirdPartyFrames": {}
+    },
+    "sessionStorage": {
+      "reads": 0,
+      "writes": 0,
+      "keys": {},
+      "thirdPartyFrames": {}
+    },
+    "indexedDB": {
+      "opens": 0,
+      "databases": {},
+      "thirdPartyFrames": {}
+    },
+    "cacheStorage": {
+      "opens": 0,
+      "caches": {},
+      "thirdPartyFrames": {}
+    },
+    "events": [
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "results",
+        "valueLength": null,
+        "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/main.js",
+        "frame": "1ª parte",
+        "at": 1790648438531
+      }
+    ]
+  },
+  "frames": {
+    "https://privacy-test-pages.site/privacy-protections/fingerprinting/": {
+      "thirdParty": false,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    }
+  },
+  "navigation": {
+    "referrerPage": "https://www.first-party.site/privacy-protections/storage-partitioning/",
+    "redirectChain": [],
+    "bounces": [],
+    "dwellMs": 37274
+  },
+  "cookieSync": {
+    "events": [],
+    "identifiers": {},
+    "redirects": []
+  },
+  "queryParams": {
+    "onPageUrl": [],
+    "onRequests": {}
+  },
+  "hijack": {
+    "websockets": [],
+    "eventsources": [],
+    "polling": [],
+    "inputListeners": [
+      {
+        "event": "change",
+        "target": "element",
+        "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/main.js",
+        "scriptDomain": "privacy-test-pages.site",
+        "thirdParty": false,
+        "at": 1790648436316
+      }
+    ],
+    "motionListeners": {},
+    "overridden": [],
+    "newGlobals": [
+      "DeepDiff",
+      "applyFpExampleDataToCanvas",
+      "sha256",
+      "addCanvasToPage",
+      "extractSimplePropsFromObject",
+      "applyFpExampleDataToAudio",
+      "runTests",
+      "downloadTheResults",
+      "compareResults"
+    ],
+    "newGlobalsCount": 9,
+    "level": "none",
+    "integrityPhase": "load+3s"
+  },
+  "openedTabs": [],
+  "fingerprint": {
+    "canvas": {
+      "reads": 5,
+      "likely": 3,
+      "scripts": {
+        "https://privacy-test-pages.site/privacy-protections/fingerprinting/helpers/tests.js": 5
+      },
+      "samples": [
+        {
+          "api": "canvas",
+          "method": "toDataURL",
+          "width": 2000,
+          "height": 200,
+          "readArea": 400000,
+          "textDrawn": 2,
+          "draws": 12,
+          "attached": false,
+          "likely": true,
+          "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/helpers/tests.js",
+          "from": "privacy-test-pages.site",
+          "at": 1790648438448
+        },
+        {
+          "api": "canvas",
+          "method": "getImageData",
+          "width": 2000,
+          "height": 200,
+          "readArea": 400000,
+          "textDrawn": 2,
+          "draws": 12,
+          "attached": true,
+          "likely": true,
+          "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/helpers/tests.js",
+          "from": "privacy-test-pages.site",
+          "at": 1790648438485
+        },
+        {
+          "api": "canvas",
+          "method": "toDataURL",
+          "width": 2000,
+          "height": 200,
+          "readArea": 400000,
+          "textDrawn": 2,
+          "draws": 12,
+          "attached": true,
+          "likely": true,
+          "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/helpers/tests.js",
+          "from": "privacy-test-pages.site",
+          "at": 1790648438487
+        },
+        {
+          "api": "canvas",
+          "method": "toDataURL",
+          "width": 2000,
+          "height": 200,
+          "readArea": 400000,
+          "textDrawn": 0,
+          "draws": 1,
+          "attached": true,
+          "likely": false,
+          "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/helpers/tests.js",
+          "from": "privacy-test-pages.site",
+          "at": 1790648438512
+        },
+        {
+          "api": "canvas",
+          "method": "toDataURL",
+          "width": 2000,
+          "height": 200,
+          "readArea": 400000,
+          "textDrawn": 0,
+          "draws": 0,
+          "attached": false,
+          "likely": false,
+          "script": "https://privacy-test-pages.site/privacy-protections/fingerprinting/helpers/tests.js",
+          "from": "privacy-test-pages.site",
+          "at": 1790648438527
+        }
+      ]
+    },
+    "webgl": {
+      "calls": 2,
+      "unmasked": 0,
+      "scripts": {
+        "https://privacy-test-pages.site/privacy-protections/fingerprinting/helpers/tests.js": 2
+      },
+      "methods": {
+        "getSupportedExtensions": 1,
+        "getShaderPrecisionFormat": 1
+      }
+    },
+    "audio": {
+      "calls": 6,
+      "scripts": {
+        "https://privacy-test-pages.site/privacy-protections/fingerprinting/helpers/tests.js": 6
+      },
+      "methods": {
+        "new OfflineAudioContext": 6
+      }
+    },
+    "fonts": {
+      "measureText": 692,
+      "scripts": {
+        "https://privacy-test-pages.site/privacy-protections/fingerprinting/helpers/tests.js": 692
+      }
+    },
+    "enumeration": {
+      "props": {
+        "navigator.userAgent": 1,
+        "navigator.hardwareConcurrency": 1,
+        "navigator.productSub": 1,
+        "navigator.language": 1,
+        "navigator.languages": 1,
+        "navigator.platform": 1,
+        "navigator.vendor": 1,
+        "navigator.mimeTypes": 1,
+        "navigator.cookieEnabled": 1,
+        "navigator.doNotTrack": 1,
+        "navigator.maxTouchPoints": 1,
+        "navigator.plugins": 1,
+        "navigator.buildID": 1,
+        "navigator.webdriver": 1,
+        "mediaDevices.enumerateDevices": 1,
+        "screen.width": 1,
+        "screen.height": 1,
+        "screen.availWidth": 1,
+        "screen.availHeight": 1,
+        "screen.colorDepth": 1,
+        "screen.pixelDepth": 1,
+        "Date.getTimezoneOffset": 1,
+        "speechSynthesis.getVoices": 2
+      },
+      "scripts": {
+        "https://privacy-test-pages.site/privacy-protections/fingerprinting/helpers/tests.js": {
+          "navigator.userAgent": 1,
+          "navigator.hardwareConcurrency": 1,
+          "navigator.productSub": 1,
+          "navigator.language": 1,
+          "navigator.languages": 1,
+          "navigator.platform": 1,
+          "navigator.vendor": 1,
+          "navigator.mimeTypes": 1,
+          "navigator.cookieEnabled": 1,
+          "navigator.doNotTrack": 1,
+          "navigator.maxTouchPoints": 1,
+          "navigator.plugins": 1,
+          "navigator.buildID": 1,
+          "navigator.webdriver": 1,
+          "mediaDevices.enumerateDevices": 1,
+          "screen.width": 1,
+          "screen.height": 1,
+          "screen.availWidth": 1,
+          "screen.availHeight": 1,
+          "screen.colorDepth": 1,
+          "screen.pixelDepth": 1,
+          "Date.getTimezoneOffset": 1,
+          "speechSynthesis.getVoices": 2
+        }
+      }
+    },
+    "level": "likely"
+  },
+  "cookies": {
+    "setHeaders": [],
+    "jsSet": [],
+    "summary": {
+      "total": 4,
+      "firstParty": 4,
+      "thirdParty": 0,
+      "session": 0,
+      "persistent": 4,
+      "longLived": 3,
+      "injectedHttp": 0,
+      "injectedHttpThirdParty": 0,
+      "injectedJs": 0,
+      "list": [
+        {
+          "name": "__Host-jsdata_host",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": false,
+          "session": false,
+          "expires": 1825208378958,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "lax",
+          "valueLength": 2
+        },
+        {
+          "name": "jsdata_no_samesite",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": false,
+          "session": false,
+          "expires": 1825208378958,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 2
+        },
+        {
+          "name": "cookiestoredata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": false,
+          "session": false,
+          "expires": 1825208378971,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "strict",
+          "valueLength": 2
+        },
+        {
+          "name": "top_firstparty_headerdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": false,
+          "session": false,
+          "expires": 1791512379200,
+          "lifetimeDays": 10,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        }
+      ]
+    }
+  },
+  "score": {
+    "score": 82,
+    "grade": "B",
+    "breakdown": [
+      {
+        "id": "trackers",
+        "label": "Rastreadores conhecidos (3ª parte)",
+        "penalty": 0,
+        "cap": 32
+      },
+      {
+        "id": "thirdParties",
+        "label": "Outros domínios de 3ª parte",
+        "penalty": 0,
+        "cap": 8
+      },
+      {
+        "id": "thirdPartyCookies",
+        "label": "Cookies de 3ª parte",
+        "penalty": 0,
+        "cap": 16
+      },
+      {
+        "id": "longLivedCookies",
+        "label": "Cookies persistentes > 1 ano",
+        "penalty": 3,
+        "cap": 6
+      },
+      {
+        "id": "fingerprinting",
+        "label": "Fingerprinting (provável 15 / possível 7)",
+        "penalty": 15,
+        "cap": 15
+      },
+      {
+        "id": "sessionRecording",
+        "label": "Gravação de sessão / heatmap",
+        "penalty": 0,
+        "cap": 10
+      },
+      {
+        "id": "keyLogging",
+        "label": "Captura de teclado por 3ª parte",
+        "penalty": 0,
+        "cap": 10
+      },
+      {
+        "id": "facebookPixel",
+        "label": "Pixel do Facebook/Meta",
+        "penalty": 0,
+        "cap": 6
+      },
+      {
+        "id": "googleAds",
+        "label": "Remarketing Google (DoubleClick/Ads)",
+        "penalty": 0,
+        "cap": 4
+      },
+      {
+        "id": "cookieSync",
+        "label": "Cookie sync / vazamento de identificador",
+        "penalty": 0,
+        "cap": 8
+      },
+      {
+        "id": "bounceTracking",
+        "label": "Bounce tracking",
+        "penalty": 0,
+        "cap": 6
+      },
+      {
+        "id": "thirdPartyStorage",
+        "label": "Storage HTML5 em frames de 3ª parte",
+        "penalty": 0,
+        "cap": 4
+      },
+      {
+        "id": "hijacking",
+        "label": "Indicadores de hijacking (alto 15 / médio 8 / baixo 3)",
+        "penalty": 0,
+        "cap": 15
+      }
+    ],
+    "counts": {
+      "trackers": 0,
+      "thirdParties": 0,
+      "thirdPartyCookies": 0,
+      "longLived": 3,
+      "keylog": 0,
+      "syncStrong": 0,
+      "syncWeak": 0,
+      "storage3p": 0
+    }
+  },
+  "settings": {
+    "blocklist": [],
+    "blockKnownTrackers": false
+  }
+}

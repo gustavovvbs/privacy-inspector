@@ -1,0 +1,10 @@
+[Home] ↣ [Privacy Protections Tests] ↣ [Query Parameters]
+
+This page is a landing page for the query parameters tests. It is not intended to be used directly.
+
+Results
+
+"utm_source=something&q=other"
+
+[window.results]
+{}

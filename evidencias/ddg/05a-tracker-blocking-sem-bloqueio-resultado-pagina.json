@@ -1,0 +1,66 @@
+{
+  "page": "request-blocking",
+  "results": [
+    {
+      "id": "script",
+      "category": "html",
+      "status": "loaded"
+    },
+    {
+      "id": "style",
+      "category": "html",
+      "status": "loaded"
+    },
+    {
+      "id": "img",
+      "category": "html",
+      "status": "loaded"
+    },
+    {
+      "id": "picture",
+      "category": "html",
+      "status": "loaded"
+    },
+    {
+      "id": "object",
+      "category": "html",
+      "status": "loaded"
+    },
+    {
+      "id": "audio",
+      "category": "html",
+      "status": "loaded"
+    },
+    {
+      "id": "video",
+      "category": "html",
+      "status": "loaded"
+    },
+    {
+      "id": "iframe",
+      "category": "html",
+      "status": "loaded"
+    },
+    {
+      "id": "import",
+      "category": "css",
+      "status": "loaded"
+    },
+    {
+      "id": "font",
+      "category": "css",
+      "status": "loaded"
+    },
+    {
+      "id": "background",
+      "category": "css",
+      "status": "loaded"
+    },
+    {
+      "id": "websocket",
+      "category": "js",
+      "status": "not loaded"
+    }
+  ],
+  "date": "Tue, 29 Sep 2026 02:18:27 GMT"
+}

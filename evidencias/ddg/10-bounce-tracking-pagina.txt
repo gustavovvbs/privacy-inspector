@@ -1,0 +1,13 @@
+[Home] ↣ [Privacy Protections Tests] ↣ [Bounce Tracking Test Page]
+
+Below links allow to bounce of bad.third-party.site to different locations. bad.third-party.site will pass its local UID to the destination via URL param.
+
+Go to good.third-party.site
+
+Go to first-party.site
+
+Go to privacy-test-pages.site
+
+Go to www.publisher-company.site
+
+ID didn't exist and was generated - "100".

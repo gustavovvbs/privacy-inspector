@@ -1,0 +1,10 @@
+[Home] ↣ [Privacy Protections Tests] ↣ [Query Parameters]
+
+This page is a landing page for the query parameters tests. It is not intended to be used directly.
+
+Results
+
+"fbclid=12345&fb_source=someting&u=14"
+
+[window.results]
+{}

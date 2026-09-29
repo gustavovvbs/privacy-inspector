@@ -1,0 +1,79 @@
+[Home] ↣ [Privacy Protections Tests] ↣ [Storage Partitioning Test Page]
+
+This page will determine whether various storage APIs are parititoned or blocked across origins.
+
+NOTE: These tests will return incorrect results if:
+
+you have multiple copies of the test page open
+you run the tests after force reloading the page, as this bypasses Service Workers
+
+Run Tests
+
+Retrieved data from 21 storage mechanisms.
+
+Hide Detailed Results
+❌ document.cookie - fail
+same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+❌ HTTP Cookie - fail
+same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+❌ Cookie Store API - fail
+same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+❌ localStorage - fail
+same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+❌ sessionStorage - fail
+same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+❌ IndexedDB - fail
+same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+✅ WebSQL - unsupported
+same-site: [ { "value": null, "error": "Unsupported" }, { "value": null, "error": "Unsupported" } ]
+cross-site: [ { "value": null, "error": "Unsupported" }, { "value": null, "error": "Unsupported" } ]
+❌ Cache API - fail
+same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+❌ ServiceWorker - fail
+same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+❌ BroadcastChannel - fail
+same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+❌ SharedWorker - fail
+same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+❌ Web Locks API - fail
+same-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+cross-site: [ { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" }, { "value": "686976b9-6d26-44a4-8cfc-869a9c095054" } ]
+⚠️ Fetch Cache - error
+same-site: [ { "value": 2 }, { "value": 3 } ]
+cross-site: [ { "value": 4 }, { "value": 5 } ]
+⚠️ XMLHttpRequest Cache - error
+same-site: [ { "value": 2 }, { "value": 3 } ]
+cross-site: [ { "value": 4 }, { "value": 5 } ]
+⚠️ Iframe Cache - error
+same-site: [ { "value": 2 }, { "value": 3 } ]
+cross-site: [ { "value": 4 }, { "value": 5 } ]
+⚠️ Image Cache - error
+same-site: [ { "value": 2 }, { "value": 3 } ]
+cross-site: [ { "value": 4 }, { "value": 5 } ]
+⚠️ Favicon Cache - error
+same-site: [ { "value": 2 }, { "value": 3 } ]
+cross-site: [ { "value": 4 }, { "value": 5 } ]
+✅ Font Cache - pass
+same-site: [ { "value": 1 }, { "value": 1 } ]
+cross-site: [ { "value": 2 }, { "value": 2 } ]
+⚠️ CSS cache - error
+same-site: [ { "value": "fake_05031775118566273" }, { "value": "fake_6213305008261527" } ]
+cross-site: [ { "value": "fake_7215374910028647" }, { "value": "fake_4607834007126641" } ]
+⚠️ Prefetch Cache - error
+same-site: [ { "value": 1 }, { "value": 2 } ]
+cross-site: [ { "value": 3 }, { "value": 4 } ]
+✅ HSTS - pass
+same-site: [ { "value": "http" }, { "value": "http" } ]
+cross-site: [ { "value": "http" }, { "value": "http" } ]
+
+Download the result

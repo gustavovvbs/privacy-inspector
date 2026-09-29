@@ -1,0 +1,9 @@
+[Home] ↣ [Privacy Protections Tests] ↣ [Storage Blocking Test Page]
+
+This page will try to store, and then retrieve, a random number using various storage mechanisms in the browser.
+
+Store data Retrieve data
+
+Retrieved data from 23 storage mechanisms (2 failed). Click for details.
+
+Download the result

@@ -1,0 +1,320 @@
+{
+  "url": "https://privacy-test-pages.site/tracker-reporting/1major-via-fetch.html",
+  "hostname": "privacy-test-pages.site",
+  "baseDomain": "privacy-test-pages.site",
+  "startedAt": 1790648268742,
+  "thirdParties": {
+    "facebook.com": {
+      "domain": "facebook.com",
+      "hosts": {
+        "facebook.com": 1
+      },
+      "requests": 1,
+      "types": {
+        "xmlhttprequest": 1
+      },
+      "tracker": "facebook.com",
+      "category": "social",
+      "blocked": 0,
+      "owner": "Meta (Facebook pixel)"
+    }
+  },
+  "requestsTotal": 3,
+  "requestsThirdParty": 1,
+  "storage": {
+    "localStorage": {
+      "reads": 0,
+      "writes": 0,
+      "keys": {},
+      "thirdPartyFrames": {}
+    },
+    "sessionStorage": {
+      "reads": 0,
+      "writes": 0,
+      "keys": {},
+      "thirdPartyFrames": {}
+    },
+    "indexedDB": {
+      "opens": 0,
+      "databases": {},
+      "thirdPartyFrames": {}
+    },
+    "cacheStorage": {
+      "opens": 0,
+      "caches": {},
+      "thirdPartyFrames": {}
+    },
+    "events": []
+  },
+  "frames": {
+    "https://privacy-test-pages.site/tracker-reporting/1major-via-fetch.html": {
+      "thirdParty": false,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    }
+  },
+  "navigation": {
+    "referrerPage": "https://privacy-test-pages.site/tracker-reporting/1major-via-img.html",
+    "redirectChain": [],
+    "bounces": [],
+    "dwellMs": 16118
+  },
+  "cookieSync": {
+    "events": [],
+    "identifiers": {},
+    "redirects": []
+  },
+  "queryParams": {
+    "onPageUrl": [],
+    "onRequests": {}
+  },
+  "hijack": {
+    "websockets": [],
+    "eventsources": [],
+    "polling": [],
+    "inputListeners": [],
+    "motionListeners": {},
+    "overridden": [],
+    "newGlobals": [
+      "callAfterDelay",
+      "init",
+      "loadTracker"
+    ],
+    "newGlobalsCount": 3,
+    "level": "none",
+    "integrityPhase": "load+3s"
+  },
+  "openedTabs": [],
+  "fingerprint": {
+    "canvas": {
+      "reads": 0,
+      "likely": 0,
+      "scripts": {},
+      "samples": []
+    },
+    "webgl": {
+      "calls": 0,
+      "unmasked": 0,
+      "scripts": {},
+      "methods": {}
+    },
+    "audio": {
+      "calls": 0,
+      "scripts": {},
+      "methods": {}
+    },
+    "fonts": {
+      "measureText": 0,
+      "scripts": {}
+    },
+    "enumeration": {
+      "props": {},
+      "scripts": {}
+    },
+    "level": "none"
+  },
+  "cookies": {
+    "setHeaders": [
+      {
+        "name": "fr",
+        "persistent": true,
+        "expiresIn": 7775999,
+        "domainAttr": ".facebook.com",
+        "sameSite": null,
+        "secure": true,
+        "httpOnly": true,
+        "host": "facebook.com",
+        "domain": "facebook.com",
+        "thirdParty": true,
+        "requestType": "xmlhttprequest",
+        "url": "https://facebook.com/tr",
+        "at": 1790648268911
+      }
+    ],
+    "jsSet": [],
+    "summary": {
+      "total": 1,
+      "firstParty": 0,
+      "thirdParty": 1,
+      "session": 0,
+      "persistent": 1,
+      "longLived": 0,
+      "injectedHttp": 1,
+      "injectedHttpThirdParty": 1,
+      "injectedJs": 0,
+      "list": [
+        {
+          "name": "fr",
+          "domain": "facebook.com",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1798424252682,
+          "lifetimeDays": 90,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "unspecified",
+          "valueLength": 66
+        }
+      ]
+    }
+  },
+  "score": {
+    "score": 88,
+    "grade": "A",
+    "breakdown": [
+      {
+        "id": "trackers",
+        "label": "Rastreadores conhecidos (3ª parte)",
+        "penalty": 4,
+        "cap": 32
+      },
+      {
+        "id": "thirdParties",
+        "label": "Outros domínios de 3ª parte",
+        "penalty": 0,
+        "cap": 8
+      },
+      {
+        "id": "thirdPartyCookies",
+        "label": "Cookies de 3ª parte",
+        "penalty": 2,
+        "cap": 16
+      },
+      {
+        "id": "longLivedCookies",
+        "label": "Cookies persistentes > 1 ano",
+        "penalty": 0,
+        "cap": 6
+      },
+      {
+        "id": "fingerprinting",
+        "label": "Fingerprinting (provável 15 / possível 7)",
+        "penalty": 0,
+        "cap": 15
+      },
+      {
+        "id": "sessionRecording",
+        "label": "Gravação de sessão / heatmap",
+        "penalty": 0,
+        "cap": 10
+      },
+      {
+        "id": "keyLogging",
+        "label": "Captura de teclado por 3ª parte",
+        "penalty": 0,
+        "cap": 10
+      },
+      {
+        "id": "facebookPixel",
+        "label": "Pixel do Facebook/Meta",
+        "penalty": 6,
+        "cap": 6
+      },
+      {
+        "id": "googleAds",
+        "label": "Remarketing Google (DoubleClick/Ads)",
+        "penalty": 0,
+        "cap": 4
+      },
+      {
+        "id": "cookieSync",
+        "label": "Cookie sync / vazamento de identificador",
+        "penalty": 0,
+        "cap": 8
+      },
+      {
+        "id": "bounceTracking",
+        "label": "Bounce tracking",
+        "penalty": 0,
+        "cap": 6
+      },
+      {
+        "id": "thirdPartyStorage",
+        "label": "Storage HTML5 em frames de 3ª parte",
+        "penalty": 0,
+        "cap": 4
+      },
+      {
+        "id": "hijacking",
+        "label": "Indicadores de hijacking (alto 15 / médio 8 / baixo 3)",
+        "penalty": 0,
+        "cap": 15
+      }
+    ],
+    "counts": {
+      "trackers": 1,
+      "thirdParties": 1,
+      "thirdPartyCookies": 1,
+      "longLived": 0,
+      "keylog": 0,
+      "syncStrong": 0,
+      "syncWeak": 0,
+      "storage3p": 0
+    }
+  },
+  "settings": {
+    "blocklist": [],
+    "blockKnownTrackers": false
+  }
+}

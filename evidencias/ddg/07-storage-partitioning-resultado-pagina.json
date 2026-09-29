@@ -1,0 +1,90 @@
+{
+  "page": "storage-partitioning",
+  "date": "Tue, 29 Sep 2026 02:20:16 GMT",
+  "results": [
+    {
+      "id": "document.cookie",
+      "value": "fail"
+    },
+    {
+      "id": "HTTP Cookie",
+      "value": "fail"
+    },
+    {
+      "id": "Cookie Store API",
+      "value": "fail"
+    },
+    {
+      "id": "localStorage",
+      "value": "fail"
+    },
+    {
+      "id": "sessionStorage",
+      "value": "fail"
+    },
+    {
+      "id": "IndexedDB",
+      "value": "fail"
+    },
+    {
+      "id": "WebSQL",
+      "value": "unsupported"
+    },
+    {
+      "id": "Cache API",
+      "value": "fail"
+    },
+    {
+      "id": "ServiceWorker",
+      "value": "fail"
+    },
+    {
+      "id": "BroadcastChannel",
+      "value": "fail"
+    },
+    {
+      "id": "SharedWorker",
+      "value": "fail"
+    },
+    {
+      "id": "Web Locks API",
+      "value": "fail"
+    },
+    {
+      "id": "Fetch Cache",
+      "value": "error"
+    },
+    {
+      "id": "XMLHttpRequest Cache",
+      "value": "error"
+    },
+    {
+      "id": "Iframe Cache",
+      "value": "error"
+    },
+    {
+      "id": "Image Cache",
+      "value": "error"
+    },
+    {
+      "id": "Favicon Cache",
+      "value": "error"
+    },
+    {
+      "id": "Font Cache",
+      "value": "pass"
+    },
+    {
+      "id": "CSS cache",
+      "value": "error"
+    },
+    {
+      "id": "Prefetch Cache",
+      "value": "error"
+    },
+    {
+      "id": "HSTS",
+      "value": "pass"
+    }
+  ]
+}

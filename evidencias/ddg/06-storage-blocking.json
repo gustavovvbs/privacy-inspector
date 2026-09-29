@@ -1,0 +1,1623 @@
+{
+  "url": "https://privacy-test-pages.site/privacy-protections/storage-blocking/",
+  "hostname": "privacy-test-pages.site",
+  "baseDomain": "privacy-test-pages.site",
+  "startedAt": 1790648376408,
+  "thirdParties": {
+    "broken.third-party.site": {
+      "domain": "broken.third-party.site",
+      "hosts": {
+        "broken.third-party.site": 20
+      },
+      "requests": 20,
+      "types": {
+        "script": 9,
+        "sub_frame": 2,
+        "xmlhttprequest": 9
+      },
+      "tracker": "broken.third-party.site",
+      "category": "test",
+      "blocked": 0,
+      "owner": "DDG Privacy Test Pages"
+    },
+    "third-party.site": {
+      "domain": "third-party.site",
+      "hosts": {
+        "good.third-party.site": 20
+      },
+      "requests": 20,
+      "types": {
+        "script": 9,
+        "sub_frame": 2,
+        "xmlhttprequest": 9
+      },
+      "tracker": null,
+      "category": null,
+      "blocked": 0
+    },
+    "ad-company.site": {
+      "domain": "ad-company.site",
+      "hosts": {
+        "convert.ad-company.site": 12
+      },
+      "requests": 12,
+      "types": {
+        "sub_frame": 2,
+        "script": 8,
+        "xmlhttprequest": 2
+      },
+      "tracker": null,
+      "category": null,
+      "blocked": 0
+    }
+  },
+  "requestsTotal": 67,
+  "requestsThirdParty": 52,
+  "storage": {
+    "localStorage": {
+      "reads": 4,
+      "writes": 4,
+      "keys": {
+        "data": 8
+      },
+      "thirdPartyFrames": {
+        "third-party.site": 4,
+        "ad-company.site": 2
+      }
+    },
+    "sessionStorage": {
+      "reads": 4,
+      "writes": 4,
+      "keys": {
+        "data": 8
+      },
+      "thirdPartyFrames": {
+        "third-party.site": 4,
+        "ad-company.site": 2
+      }
+    },
+    "indexedDB": {
+      "opens": 6,
+      "databases": {
+        "data": 6
+      },
+      "thirdPartyFrames": {
+        "third-party.site": 4
+      }
+    },
+    "cacheStorage": {
+      "opens": 8,
+      "caches": {
+        "data": 8
+      },
+      "thirdPartyFrames": {
+        "third-party.site": 4,
+        "ad-company.site": 2
+      }
+    },
+    "events": [
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "data",
+        "valueLength": 2,
+        "script": "https://privacy-test-pages.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "1ª parte",
+        "at": 1790648378959
+      },
+      {
+        "api": "sessionStorage",
+        "op": "setItem",
+        "key": "data",
+        "valueLength": 2,
+        "script": "https://privacy-test-pages.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "1ª parte",
+        "at": 1790648378965
+      },
+      {
+        "api": "indexedDB",
+        "op": "open",
+        "key": "data",
+        "script": "https://privacy-test-pages.site/helpers/idb-wrapper.js",
+        "frame": "1ª parte",
+        "at": 1790648378965
+      },
+      {
+        "api": "cacheStorage",
+        "op": "open",
+        "key": "data",
+        "script": "https://privacy-test-pages.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "1ª parte",
+        "at": 1790648378966
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "data",
+        "valueLength": 2,
+        "script": "https://broken.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "third-party.site",
+        "at": 1790648379482
+      },
+      {
+        "api": "sessionStorage",
+        "op": "setItem",
+        "key": "data",
+        "valueLength": 2,
+        "script": "https://broken.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "third-party.site",
+        "at": 1790648379483
+      },
+      {
+        "api": "indexedDB",
+        "op": "open",
+        "key": "data",
+        "script": "https://broken.third-party.site/helpers/idb-wrapper.js",
+        "frame": "third-party.site",
+        "at": 1790648379483
+      },
+      {
+        "api": "cacheStorage",
+        "op": "open",
+        "key": "data",
+        "script": "https://broken.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "third-party.site",
+        "at": 1790648379483
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "data",
+        "valueLength": 2,
+        "script": "https://good.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "third-party.site",
+        "at": 1790648379607
+      },
+      {
+        "api": "sessionStorage",
+        "op": "setItem",
+        "key": "data",
+        "valueLength": 2,
+        "script": "https://good.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "third-party.site",
+        "at": 1790648379608
+      },
+      {
+        "api": "indexedDB",
+        "op": "open",
+        "key": "data",
+        "script": "https://good.third-party.site/helpers/idb-wrapper.js",
+        "frame": "third-party.site",
+        "at": 1790648379608
+      },
+      {
+        "api": "cacheStorage",
+        "op": "open",
+        "key": "data",
+        "script": "https://good.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "third-party.site",
+        "at": 1790648379608
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "data",
+        "valueLength": 2,
+        "script": "https://convert.ad-company.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "ad-company.site",
+        "at": 1790648379717
+      },
+      {
+        "api": "sessionStorage",
+        "op": "setItem",
+        "key": "data",
+        "valueLength": 2,
+        "script": "https://convert.ad-company.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "ad-company.site",
+        "at": 1790648379717
+      },
+      {
+        "api": "cacheStorage",
+        "op": "open",
+        "key": "data",
+        "script": "https://convert.ad-company.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "ad-company.site",
+        "at": 1790648379717
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "data",
+        "valueLength": null,
+        "script": "https://privacy-test-pages.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "1ª parte",
+        "at": 1790648382895
+      },
+      {
+        "api": "sessionStorage",
+        "op": "getItem",
+        "key": "data",
+        "valueLength": null,
+        "script": "https://privacy-test-pages.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "1ª parte",
+        "at": 1790648382896
+      },
+      {
+        "api": "indexedDB",
+        "op": "open",
+        "key": "data",
+        "script": "https://privacy-test-pages.site/helpers/idb-wrapper.js",
+        "frame": "1ª parte",
+        "at": 1790648382896
+      },
+      {
+        "api": "cacheStorage",
+        "op": "open",
+        "key": "data",
+        "script": "https://privacy-test-pages.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "1ª parte",
+        "at": 1790648382896
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "data",
+        "valueLength": null,
+        "script": "https://good.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "third-party.site",
+        "at": 1790648383167
+      },
+      {
+        "api": "sessionStorage",
+        "op": "getItem",
+        "key": "data",
+        "valueLength": null,
+        "script": "https://good.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "third-party.site",
+        "at": 1790648383167
+      },
+      {
+        "api": "indexedDB",
+        "op": "open",
+        "key": "data",
+        "script": "https://good.third-party.site/helpers/idb-wrapper.js",
+        "frame": "third-party.site",
+        "at": 1790648383167
+      },
+      {
+        "api": "cacheStorage",
+        "op": "open",
+        "key": "data",
+        "script": "https://good.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "third-party.site",
+        "at": 1790648383168
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "data",
+        "valueLength": null,
+        "script": "https://broken.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "third-party.site",
+        "at": 1790648383173
+      },
+      {
+        "api": "sessionStorage",
+        "op": "getItem",
+        "key": "data",
+        "valueLength": null,
+        "script": "https://broken.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "third-party.site",
+        "at": 1790648383173
+      },
+      {
+        "api": "indexedDB",
+        "op": "open",
+        "key": "data",
+        "script": "https://broken.third-party.site/helpers/idb-wrapper.js",
+        "frame": "third-party.site",
+        "at": 1790648383173
+      },
+      {
+        "api": "cacheStorage",
+        "op": "open",
+        "key": "data",
+        "script": "https://broken.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "third-party.site",
+        "at": 1790648383174
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "data",
+        "valueLength": null,
+        "script": "https://convert.ad-company.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "ad-company.site",
+        "at": 1790648383166
+      },
+      {
+        "api": "sessionStorage",
+        "op": "getItem",
+        "key": "data",
+        "valueLength": null,
+        "script": "https://convert.ad-company.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "ad-company.site",
+        "at": 1790648383167
+      },
+      {
+        "api": "cacheStorage",
+        "op": "open",
+        "key": "data",
+        "script": "https://convert.ad-company.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "frame": "ad-company.site",
+        "at": 1790648383167
+      }
+    ]
+  },
+  "frames": {
+    "https://privacy-test-pages.site/privacy-protections/storage-blocking/": {
+      "thirdParty": false,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    },
+    "https://good.third-party.site/privacy-protections/storage-blocking/iframe.html?data=39": {
+      "thirdParty": true,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    },
+    "https://broken.third-party.site/privacy-protections/storage-blocking/iframe.html?data=39": {
+      "thirdParty": true,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    },
+    "https://convert.ad-company.site/privacy-protections/storage-blocking/iframe.html?data=39": {
+      "thirdParty": true,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    },
+    "https://good.third-party.site/privacy-protections/storage-blocking/iframe.html": {
+      "thirdParty": true,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    },
+    "https://broken.third-party.site/privacy-protections/storage-blocking/iframe.html": {
+      "thirdParty": true,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    },
+    "https://convert.ad-company.site/privacy-protections/storage-blocking/iframe.html": {
+      "thirdParty": true,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    }
+  },
+  "navigation": {
+    "referrerPage": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+    "redirectChain": [],
+    "bounces": [],
+    "dwellMs": 35027
+  },
+  "cookieSync": {
+    "events": [],
+    "identifiers": {
+      "top_thirdparty_headerdata": {
+        "param": "name",
+        "domains": [
+          "third-party.site"
+        ]
+      },
+      "top_tracker_headerdata": {
+        "param": "name",
+        "domains": [
+          "broken.third-party.site"
+        ]
+      },
+      "thirdpartytracker_firstparty_headerdata": {
+        "param": "name",
+        "domains": [
+          "broken.third-party.site"
+        ]
+      },
+      "thirdpartytracker_thirdparty_headerdata": {
+        "param": "name",
+        "domains": [
+          "third-party.site"
+        ]
+      },
+      "thirdparty_firstparty_headerdata": {
+        "param": "name",
+        "domains": [
+          "third-party.site"
+        ]
+      },
+      "thirdparty_tracker_headerdata": {
+        "param": "name",
+        "domains": [
+          "broken.third-party.site"
+        ]
+      },
+      "thirdpartyAd_firstparty_headerdata": {
+        "param": "name",
+        "domains": [
+          "ad-company.site"
+        ]
+      },
+      "thirdpartyAd_thirdparty_headerdata": {
+        "param": "name",
+        "domains": [
+          "third-party.site"
+        ]
+      },
+      "thirdpartyAd_tracker_headerdata": {
+        "param": "name",
+        "domains": [
+          "broken.third-party.site"
+        ]
+      }
+    },
+    "redirects": []
+  },
+  "queryParams": {
+    "onPageUrl": [],
+    "onRequests": {}
+  },
+  "hijack": {
+    "websockets": [],
+    "eventsources": [],
+    "polling": [],
+    "inputListeners": [],
+    "motionListeners": {},
+    "overridden": [],
+    "newGlobals": [
+      "0",
+      "generateCookieHeaderTest",
+      "create3pIframeTest",
+      "storeData",
+      "retrieveData",
+      "downloadTheResults",
+      "randomNumber"
+    ],
+    "newGlobalsCount": 7,
+    "level": "none",
+    "integrityPhase": "load+3s"
+  },
+  "openedTabs": [],
+  "fingerprint": {
+    "canvas": {
+      "reads": 0,
+      "likely": 0,
+      "scripts": {},
+      "samples": []
+    },
+    "webgl": {
+      "calls": 0,
+      "unmasked": 0,
+      "scripts": {},
+      "methods": {}
+    },
+    "audio": {
+      "calls": 0,
+      "scripts": {},
+      "methods": {}
+    },
+    "fonts": {
+      "measureText": 0,
+      "scripts": {}
+    },
+    "enumeration": {
+      "props": {},
+      "scripts": {}
+    },
+    "level": "none"
+  },
+  "cookies": {
+    "setHeaders": [
+      {
+        "name": "top_firstparty_headerdata",
+        "persistent": true,
+        "expiresIn": 864000,
+        "domainAttr": null,
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": true,
+        "host": "privacy-test-pages.site",
+        "domain": "privacy-test-pages.site",
+        "thirdParty": false,
+        "requestType": "xmlhttprequest",
+        "url": "https://privacy-test-pages.site/set-cookie",
+        "at": 1790648379218
+      },
+      {
+        "name": "top_tracker_headerdata",
+        "persistent": true,
+        "expiresIn": 864000,
+        "domainAttr": null,
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": true,
+        "host": "broken.third-party.site",
+        "domain": "third-party.site",
+        "thirdParty": true,
+        "requestType": "xmlhttprequest",
+        "url": "https://broken.third-party.site/set-cookie",
+        "at": 1790648379218
+      },
+      {
+        "name": "top_thirdparty_headerdata",
+        "persistent": true,
+        "expiresIn": 864000,
+        "domainAttr": null,
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": true,
+        "host": "good.third-party.site",
+        "domain": "third-party.site",
+        "thirdParty": true,
+        "requestType": "xmlhttprequest",
+        "url": "https://good.third-party.site/set-cookie",
+        "at": 1790648379220
+      },
+      {
+        "name": "thirdpartytracker_firstparty_headerdata",
+        "persistent": true,
+        "expiresIn": 863999,
+        "domainAttr": null,
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": true,
+        "host": "broken.third-party.site",
+        "domain": "third-party.site",
+        "thirdParty": true,
+        "requestType": "xmlhttprequest",
+        "url": "https://broken.third-party.site/set-cookie",
+        "at": 1790648379602
+      },
+      {
+        "name": "thirdpartytracker_thirdparty_headerdata",
+        "persistent": true,
+        "expiresIn": 863999,
+        "domainAttr": null,
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": true,
+        "host": "good.third-party.site",
+        "domain": "third-party.site",
+        "thirdParty": true,
+        "requestType": "xmlhttprequest",
+        "url": "https://good.third-party.site/set-cookie",
+        "at": 1790648379605
+      },
+      {
+        "name": "thirdparty_firstparty_headerdata",
+        "persistent": true,
+        "expiresIn": 863999,
+        "domainAttr": null,
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": true,
+        "host": "good.third-party.site",
+        "domain": "third-party.site",
+        "thirdParty": true,
+        "requestType": "xmlhttprequest",
+        "url": "https://good.third-party.site/set-cookie",
+        "at": 1790648379814
+      },
+      {
+        "name": "thirdparty_tracker_headerdata",
+        "persistent": true,
+        "expiresIn": 863999,
+        "domainAttr": null,
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": true,
+        "host": "broken.third-party.site",
+        "domain": "third-party.site",
+        "thirdParty": true,
+        "requestType": "xmlhttprequest",
+        "url": "https://broken.third-party.site/set-cookie",
+        "at": 1790648379814
+      },
+      {
+        "name": "thirdpartyAd_thirdparty_headerdata",
+        "persistent": true,
+        "expiresIn": 863999,
+        "domainAttr": null,
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": true,
+        "host": "good.third-party.site",
+        "domain": "third-party.site",
+        "thirdParty": true,
+        "requestType": "xmlhttprequest",
+        "url": "https://good.third-party.site/set-cookie",
+        "at": 1790648379839
+      },
+      {
+        "name": "thirdpartyAd_tracker_headerdata",
+        "persistent": true,
+        "expiresIn": 863999,
+        "domainAttr": null,
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": true,
+        "host": "broken.third-party.site",
+        "domain": "third-party.site",
+        "thirdParty": true,
+        "requestType": "xmlhttprequest",
+        "url": "https://broken.third-party.site/set-cookie",
+        "at": 1790648379839
+      }
+    ],
+    "jsSet": [
+      {
+        "name": "jsdata",
+        "persistent": true,
+        "raw": "jsdata=39; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; SameSite=Lax",
+        "script": "https://privacy-test-pages.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "thirdParty": false,
+        "frame": "privacy-test-pages.site",
+        "at": 1790648378959
+      },
+      {
+        "name": "__Host-jsdata_host",
+        "persistent": true,
+        "raw": "__Host-jsdata_host=39; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; SameSite=Lax; Path=/",
+        "script": "https://privacy-test-pages.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "thirdParty": false,
+        "frame": "privacy-test-pages.site",
+        "at": 1790648378959
+      },
+      {
+        "name": "jsdata_no_samesite",
+        "persistent": true,
+        "raw": "jsdata_no_samesite=39; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; Path=/",
+        "script": "https://privacy-test-pages.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "thirdParty": false,
+        "frame": "privacy-test-pages.site",
+        "at": 1790648378959
+      },
+      {
+        "name": "tptdata",
+        "persistent": true,
+        "raw": "tptdata=39; expires= Wed, 21 Aug 2030 20:00:00 UTC;",
+        "script": "https://broken.third-party.site/privacy-protections/storage-blocking/3rdparty.js",
+        "thirdParty": false,
+        "frame": "privacy-test-pages.site",
+        "at": 1790648378966
+      },
+      {
+        "name": "tpsdata",
+        "persistent": true,
+        "raw": "tpsdata=39; expires= Wed, 21 Aug 2030 20:00:00 UTC;",
+        "script": "https://good.third-party.site/privacy-protections/storage-blocking/3rdparty.js",
+        "thirdParty": false,
+        "frame": "privacy-test-pages.site",
+        "at": 1790648378966
+      },
+      {
+        "name": "jsdata",
+        "persistent": true,
+        "raw": "jsdata=39; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; SameSite=None",
+        "script": "https://broken.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "thirdParty": true,
+        "frame": "third-party.site",
+        "at": 1790648379482
+      },
+      {
+        "name": "__Host-jsdata_host",
+        "persistent": true,
+        "raw": "__Host-jsdata_host=39; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; SameSite=None; Path=/",
+        "script": "https://broken.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "thirdParty": true,
+        "frame": "third-party.site",
+        "at": 1790648379482
+      },
+      {
+        "name": "jsdata_no_samesite",
+        "persistent": true,
+        "raw": "jsdata_no_samesite=39; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; Path=/",
+        "script": "https://broken.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "thirdParty": true,
+        "frame": "third-party.site",
+        "at": 1790648379482
+      },
+      {
+        "name": "jsdata",
+        "persistent": true,
+        "raw": "jsdata=39; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; SameSite=None",
+        "script": "https://good.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "thirdParty": true,
+        "frame": "third-party.site",
+        "at": 1790648379607
+      },
+      {
+        "name": "__Host-jsdata_host",
+        "persistent": true,
+        "raw": "__Host-jsdata_host=39; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; SameSite=None; Path=/",
+        "script": "https://good.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "thirdParty": true,
+        "frame": "third-party.site",
+        "at": 1790648379607
+      },
+      {
+        "name": "jsdata_no_samesite",
+        "persistent": true,
+        "raw": "jsdata_no_samesite=39; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; Path=/",
+        "script": "https://good.third-party.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "thirdParty": true,
+        "frame": "third-party.site",
+        "at": 1790648379607
+      },
+      {
+        "name": "jsdata",
+        "persistent": true,
+        "raw": "jsdata=39; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; SameSite=None",
+        "script": "https://convert.ad-company.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "thirdParty": true,
+        "frame": "ad-company.site",
+        "at": 1790648379716
+      },
+      {
+        "name": "__Host-jsdata_host",
+        "persistent": true,
+        "raw": "__Host-jsdata_host=39; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; SameSite=None; Path=/",
+        "script": "https://convert.ad-company.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "thirdParty": true,
+        "frame": "ad-company.site",
+        "at": 1790648379717
+      },
+      {
+        "name": "jsdata_no_samesite",
+        "persistent": true,
+        "raw": "jsdata_no_samesite=39; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; Path=/",
+        "script": "https://convert.ad-company.site/privacy-protections/storage-blocking/helpers/commonTests.js",
+        "thirdParty": true,
+        "frame": "ad-company.site",
+        "at": 1790648379717
+      }
+    ],
+    "summary": {
+      "total": 24,
+      "firstParty": 7,
+      "thirdParty": 17,
+      "session": 0,
+      "persistent": 24,
+      "longLived": 15,
+      "injectedHttp": 9,
+      "injectedHttpThirdParty": 8,
+      "injectedJs": 14,
+      "list": [
+        {
+          "name": "jsdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "thirdParty": false,
+          "session": false,
+          "expires": 1825208378958,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "lax",
+          "valueLength": 2
+        },
+        {
+          "name": "tptdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "thirdParty": false,
+          "session": false,
+          "expires": 1825208378965,
+          "lifetimeDays": 400,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 2
+        },
+        {
+          "name": "tpsdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "thirdParty": false,
+          "session": false,
+          "expires": 1825208378965,
+          "lifetimeDays": 400,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 2
+        },
+        {
+          "name": "__Host-jsdata_host",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": false,
+          "session": false,
+          "expires": 1825208378958,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "lax",
+          "valueLength": 2
+        },
+        {
+          "name": "jsdata_no_samesite",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": false,
+          "session": false,
+          "expires": 1825208378958,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 2
+        },
+        {
+          "name": "cookiestoredata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": false,
+          "session": false,
+          "expires": 1825208378971,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "strict",
+          "valueLength": 2
+        },
+        {
+          "name": "top_firstparty_headerdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": false,
+          "session": false,
+          "expires": 1791512379200,
+          "lifetimeDays": 10,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "jsdata",
+          "domain": "broken.third-party.site",
+          "path": "/privacy-protections/storage-blocking",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208379482,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "jsdata",
+          "domain": "good.third-party.site",
+          "path": "/privacy-protections/storage-blocking",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208379606,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "top_tracker_headerdata",
+          "domain": "broken.third-party.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1791512379201,
+          "lifetimeDays": 10,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "top_thirdparty_headerdata",
+          "domain": "good.third-party.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1791512379201,
+          "lifetimeDays": 10,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "__Host-jsdata_host",
+          "domain": "broken.third-party.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208379482,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "jsdata_no_samesite",
+          "domain": "broken.third-party.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208379482,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 2
+        },
+        {
+          "name": "thirdpartytracker_firstparty_headerdata",
+          "domain": "broken.third-party.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1791512379600,
+          "lifetimeDays": 10,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "thirdpartytracker_thirdparty_headerdata",
+          "domain": "good.third-party.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1791512379603,
+          "lifetimeDays": 10,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "__Host-jsdata_host",
+          "domain": "good.third-party.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208379606,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "jsdata_no_samesite",
+          "domain": "good.third-party.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208379606,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 2
+        },
+        {
+          "name": "thirdparty_firstparty_headerdata",
+          "domain": "good.third-party.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1791512379812,
+          "lifetimeDays": 10,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "thirdparty_tracker_headerdata",
+          "domain": "broken.third-party.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1791512379812,
+          "lifetimeDays": 10,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "thirdpartyAd_thirdparty_headerdata",
+          "domain": "good.third-party.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1791512379837,
+          "lifetimeDays": 10,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "thirdpartyAd_tracker_headerdata",
+          "domain": "broken.third-party.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1791512379837,
+          "lifetimeDays": 10,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "jsdata",
+          "domain": "convert.ad-company.site",
+          "path": "/privacy-protections/storage-blocking",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208379716,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "__Host-jsdata_host",
+          "domain": "convert.ad-company.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208379716,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        },
+        {
+          "name": "jsdata_no_samesite",
+          "domain": "convert.ad-company.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208379716,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 2
+        }
+      ]
+    }
+  },
+  "score": {
+    "score": 68,
+    "grade": "C",
+    "breakdown": [
+      {
+        "id": "trackers",
+        "label": "Rastreadores conhecidos (3ª parte)",
+        "penalty": 4,
+        "cap": 32
+      },
+      {
+        "id": "thirdParties",
+        "label": "Outros domínios de 3ª parte",
+        "penalty": 2,
+        "cap": 8
+      },
+      {
+        "id": "thirdPartyCookies",
+        "label": "Cookies de 3ª parte",
+        "penalty": 16,
+        "cap": 16
+      },
+      {
+        "id": "longLivedCookies",
+        "label": "Cookies persistentes > 1 ano",
+        "penalty": 6,
+        "cap": 6
+      },
+      {
+        "id": "fingerprinting",
+        "label": "Fingerprinting (provável 15 / possível 7)",
+        "penalty": 0,
+        "cap": 15
+      },
+      {
+        "id": "sessionRecording",
+        "label": "Gravação de sessão / heatmap",
+        "penalty": 0,
+        "cap": 10
+      },
+      {
+        "id": "keyLogging",
+        "label": "Captura de teclado por 3ª parte",
+        "penalty": 0,
+        "cap": 10
+      },
+      {
+        "id": "facebookPixel",
+        "label": "Pixel do Facebook/Meta",
+        "penalty": 0,
+        "cap": 6
+      },
+      {
+        "id": "googleAds",
+        "label": "Remarketing Google (DoubleClick/Ads)",
+        "penalty": 0,
+        "cap": 4
+      },
+      {
+        "id": "cookieSync",
+        "label": "Cookie sync / vazamento de identificador",
+        "penalty": 0,
+        "cap": 8
+      },
+      {
+        "id": "bounceTracking",
+        "label": "Bounce tracking",
+        "penalty": 0,
+        "cap": 6
+      },
+      {
+        "id": "thirdPartyStorage",
+        "label": "Storage HTML5 em frames de 3ª parte",
+        "penalty": 4,
+        "cap": 4
+      },
+      {
+        "id": "hijacking",
+        "label": "Indicadores de hijacking (alto 15 / médio 8 / baixo 3)",
+        "penalty": 0,
+        "cap": 15
+      }
+    ],
+    "counts": {
+      "trackers": 1,
+      "thirdParties": 3,
+      "thirdPartyCookies": 17,
+      "longLived": 15,
+      "keylog": 0,
+      "syncStrong": 0,
+      "syncWeak": 0,
+      "storage3p": 7
+    }
+  },
+  "settings": {
+    "blocklist": [],
+    "blockKnownTrackers": false
+  }
+}

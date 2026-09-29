@@ -1,0 +1,222 @@
+{
+  "page": "storage-blocking",
+  "date": "Tue, 29 Sep 2026 02:19:42 GMT",
+  "results": [
+    {
+      "id": "JS cookie",
+      "value": "39"
+    },
+    {
+      "id": "JS cookie (__Host)",
+      "value": "39"
+    },
+    {
+      "id": "JS cookie (no SameSite attribute)",
+      "value": "39"
+    },
+    {
+      "id": "localStorage",
+      "value": "39"
+    },
+    {
+      "id": "sessionStorage",
+      "value": "39"
+    },
+    {
+      "id": "WebSQL",
+      "value": null
+    },
+    {
+      "id": "JS cookie (3rd party tracking script)",
+      "value": "39"
+    },
+    {
+      "id": "JS cookie (3rd party safe script)",
+      "value": "39"
+    },
+    {
+      "id": "memory",
+      "value": "39"
+    },
+    {
+      "id": "window.name",
+      "value": "39"
+    },
+    {
+      "id": "history",
+      "value": "39"
+    },
+    {
+      "id": "CookieStore",
+      "value": "39"
+    },
+    {
+      "id": "IndexedDB",
+      "value": "39"
+    },
+    {
+      "id": "service worker cookieStore",
+      "value": null
+    },
+    {
+      "id": "service worker",
+      "value": "39"
+    },
+    {
+      "id": "Cache API",
+      "value": "39"
+    },
+    {
+      "id": "first party header cookie",
+      "value": "39"
+    },
+    {
+      "id": "safe third party header cookie",
+      "value": "39"
+    },
+    {
+      "id": "tracking third party header cookie",
+      "value": "39"
+    },
+    {
+      "id": "browser cache",
+      "value": "494"
+    },
+    {
+      "id": "safe third party iframe - first party header cookie",
+      "value": "39"
+    },
+    {
+      "id": "safe third party iframe - tracking third party header cookie",
+      "value": "39"
+    },
+    {
+      "id": "safe third party iframe - JS cookie",
+      "value": "39"
+    },
+    {
+      "id": "safe third party iframe - JS cookie (__Host)",
+      "value": "39"
+    },
+    {
+      "id": "safe third party iframe - JS cookie (no SameSite attribute)",
+      "value": "39"
+    },
+    {
+      "id": "safe third party iframe - localStorage",
+      "value": "39"
+    },
+    {
+      "id": "safe third party iframe - sessionStorage",
+      "value": null
+    },
+    {
+      "id": "safe third party iframe - IndexedDB",
+      "value": "39"
+    },
+    {
+      "id": "safe third party iframe - WebSQL",
+      "value": null
+    },
+    {
+      "id": "safe third party iframe - Cache API",
+      "value": "39"
+    },
+    {
+      "id": "safe third party iframe - CookieStore",
+      "value": null
+    },
+    {
+      "id": "ad third party iframe - first party header cookie",
+      "value": null
+    },
+    {
+      "id": "ad third party iframe - safe third party header cookie",
+      "value": "39"
+    },
+    {
+      "id": "ad third party iframe - tracking third party header cookie",
+      "value": "39"
+    },
+    {
+      "id": "ad third party iframe - JS cookie",
+      "value": "39"
+    },
+    {
+      "id": "ad third party iframe - JS cookie (__Host)",
+      "value": "39"
+    },
+    {
+      "id": "ad third party iframe - JS cookie (no SameSite attribute)",
+      "value": "39"
+    },
+    {
+      "id": "ad third party iframe - localStorage",
+      "value": "39"
+    },
+    {
+      "id": "ad third party iframe - sessionStorage",
+      "value": "39"
+    },
+    {
+      "id": "ad third party iframe - IndexedDB",
+      "value": null
+    },
+    {
+      "id": "ad third party iframe - WebSQL",
+      "value": null
+    },
+    {
+      "id": "ad third party iframe - Cache API",
+      "value": "39"
+    },
+    {
+      "id": "ad third party iframe - CookieStore",
+      "value": null
+    },
+    {
+      "id": "tracking third party iframe - first party header cookie",
+      "value": "39"
+    },
+    {
+      "id": "tracking third party iframe - safe third party header cookie",
+      "value": "39"
+    },
+    {
+      "id": "tracking third party iframe - JS cookie",
+      "value": "39"
+    },
+    {
+      "id": "tracking third party iframe - JS cookie (__Host)",
+      "value": "39"
+    },
+    {
+      "id": "tracking third party iframe - JS cookie (no SameSite attribute)",
+      "value": "39"
+    },
+    {
+      "id": "tracking third party iframe - localStorage",
+      "value": "39"
+    },
+    {
+      "id": "tracking third party iframe - sessionStorage",
+      "value": "39"
+    },
+    {
+      "id": "tracking third party iframe - IndexedDB",
+      "value": "39"
+    },
+    {
+      "id": "tracking third party iframe - WebSQL",
+      "value": null
+    },
+    {
+      "id": "tracking third party iframe - Cache API",
+      "value": "39"
+    },
+    {
+      "id": "tracking third party iframe - CookieStore",
+      "value": null
+    }
+  ]
+}

@@ -120,6 +120,7 @@ browser.webNavigation.onCommitted.addListener(async (details) => {
   if (details.frameId !== 0) return;
   const now = Date.now();
   const prev = lastPage.get(details.tabId) || null;
+  const prevReport = reports.get(details.tabId) || null;
   const r = newReport(details.url);
   reports.set(details.tabId, r);
   r.navigation.redirectChain = pendingChains.get(details.tabId) || [];
@@ -144,8 +145,15 @@ browser.webNavigation.onCommitted.addListener(async (details) => {
     const mid = baseDomain(hostnameOf(prev.url));
     const src = baseDomain(hostnameOf(prev.referrerPage));
     if (mid && mid !== dest && mid !== src && !chainDomains.includes(mid)) {
+      // Evidência do que a página de passagem fez (cookies via JS, storage) antes de redirecionar.
+      const evidence = prevReport ? {
+        cookiesJs: prevReport.cookies.jsSet.map((c) => c.raw),
+        cookiesHttp: prevReport.cookies.setHeaders.map((c) => c.name),
+        storageKeys: [...Object.keys(prevReport.storage.localStorage.keys), ...Object.keys(prevReport.storage.sessionStorage.keys)],
+        requests: prevReport.requestsTotal,
+      } : null;
       r.navigation.bounces.push({ domain: hostnameOf(prev.url), kind: 'client-side', dwellMs: r.navigation.dwellMs, url: prev.url,
-        trackingParams: trackingParamsOf(prev.url), landingParams, from: src, to: dest });
+        trackingParams: trackingParamsOf(prev.url), landingParams, from: src, to: dest, evidence });
     }
   }
   lastPage.set(details.tabId, { url: details.url, committedAt: now, referrerPage: prev ? prev.url : null });
@@ -518,6 +526,17 @@ browser.runtime.onMessage.addListener((msg, sender) => {
   if (!r) return;
   const frameUrl = sender.url || '';
   const third = frameIsThirdParty(r, frameUrl);
+  if (sender.frameId === 0 && third) {
+    const b = r.navigation.bounces.find((x) => x.url === frameUrl);
+    if (b) {
+      b.evidence = b.evidence || { cookiesJs: [], cookiesHttp: [], storageKeys: [], requests: 0 };
+      for (const ev of msg.events) {
+        if (ev.kind === 'cookieJs') b.evidence.cookiesJs.push(ev.detail.raw);
+        if (ev.kind === 'storage' && ev.detail.key && ev.detail.op !== 'getItem') b.evidence.storageKeys.push(ev.detail.api + ':' + ev.detail.key);
+      }
+      return;
+    }
+  }
   for (const ev of msg.events) {
     const h = contentHandlers[ev.kind];
     if (h) h(r, ev, frameUrl, third);

@@ -1,0 +1,26 @@
+[Home] ↣ [Privacy Protections Tests] ↣ [Fingerprinting Test Page]
+
+This page collects various datapoints from your browser that can be used for fingerprinting.
+
+⚠️ Please note that:
+
+not all of the properties listed here have to be modified to succesfully prevent fingerprining,
+depending on the brower some properties may change randomly on every page reload or test run,
+some data is duplicated, but it's retrieved using different methods,
+this page has to be loaded over https for all tests to work correctly (some APIs are not available over http).
+
+Start the test
+
+ Include all headers and all properties of window, navigator and screen objects
+ Collect information from events (you will have to invoke those events)
+Collected 124 datapoints (20 failed). Click for details.
+
+Download the result
+
+Save result in localStorage
+
+Compare current result with result from localStorage
+
+Compare current result with result loaded from a file 
+
+Canvas visual check

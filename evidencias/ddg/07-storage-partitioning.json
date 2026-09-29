@@ -1,0 +1,736 @@
+{
+  "url": "https://www.first-party.site/privacy-protections/storage-partitioning/",
+  "hostname": "www.first-party.site",
+  "baseDomain": "first-party.site",
+  "startedAt": 1790648398417,
+  "thirdParties": {
+    "privacy-test-pages.site": {
+      "domain": "privacy-test-pages.site",
+      "hosts": {
+        "privacy-test-pages.site": 3
+      },
+      "requests": 3,
+      "types": {
+        "image": 3
+      },
+      "tracker": null,
+      "category": null,
+      "blocked": 0
+    }
+  },
+  "requestsTotal": 35,
+  "requestsThirdParty": 3,
+  "storage": {
+    "localStorage": {
+      "reads": 3,
+      "writes": 3,
+      "keys": {
+        "686976b9-6d26-44a4-8cfc-869a9c095054": 5,
+        "partition_test": 1
+      },
+      "thirdPartyFrames": {}
+    },
+    "sessionStorage": {
+      "reads": 0,
+      "writes": 2,
+      "keys": {
+        "partition_test": 2
+      },
+      "thirdPartyFrames": {}
+    },
+    "indexedDB": {
+      "opens": 1,
+      "databases": {
+        "partition_test": 1
+      },
+      "thirdPartyFrames": {}
+    },
+    "cacheStorage": {
+      "opens": 1,
+      "caches": {
+        "partition_test": 1
+      },
+      "thirdPartyFrames": {}
+    },
+    "events": [
+      {
+        "api": "sessionStorage",
+        "op": "setItem",
+        "key": "partition_test",
+        "valueLength": 36,
+        "script": "https://www.first-party.site/privacy-protections/storage-partitioning/helpers/tests.js",
+        "frame": "1ª parte",
+        "at": 1790648403838
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "686976b9-6d26-44a4-8cfc-869a9c095054",
+        "valueLength": 5,
+        "script": "https://www.first-party.site/privacy-protections/storage-partitioning/main.js",
+        "frame": "1ª parte",
+        "at": 1790648404865
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "686976b9-6d26-44a4-8cfc-869a9c095054",
+        "valueLength": null,
+        "script": "https://www.first-party.site/privacy-protections/storage-partitioning/main.js",
+        "frame": "1ª parte",
+        "at": 1790648404866
+      },
+      {
+        "api": "localStorage",
+        "op": "setItem",
+        "key": "partition_test",
+        "valueLength": 36,
+        "script": "https://www.first-party.site/privacy-protections/storage-partitioning/helpers/tests.js",
+        "frame": "1ª parte",
+        "at": 1790648404363
+      },
+      {
+        "api": "sessionStorage",
+        "op": "setItem",
+        "key": "partition_test",
+        "valueLength": 36,
+        "script": "https://www.first-party.site/privacy-protections/storage-partitioning/helpers/tests.js",
+        "frame": "1ª parte",
+        "at": 1790648404363
+      },
+      {
+        "api": "indexedDB",
+        "op": "open",
+        "key": "partition_test",
+        "script": "https://www.first-party.site/helpers/idb-wrapper.js",
+        "frame": "1ª parte",
+        "at": 1790648404363
+      },
+      {
+        "api": "cacheStorage",
+        "op": "open",
+        "key": "partition_test",
+        "script": "https://www.first-party.site/privacy-protections/storage-partitioning/helpers/tests.js",
+        "frame": "1ª parte",
+        "at": 1790648404364
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "686976b9-6d26-44a4-8cfc-869a9c095054",
+        "valueLength": null,
+        "script": "https://www.first-party.site/privacy-protections/storage-partitioning/main.js",
+        "frame": "1ª parte",
+        "at": 1790648405957
+      },
+      {
+        "api": "localStorage",
+        "op": "getItem",
+        "key": "686976b9-6d26-44a4-8cfc-869a9c095054",
+        "valueLength": null,
+        "script": "https://www.first-party.site/privacy-protections/storage-partitioning/main.js",
+        "frame": "1ª parte",
+        "at": 1790648416476
+      },
+      {
+        "api": "localStorage",
+        "op": "removeItem",
+        "key": "686976b9-6d26-44a4-8cfc-869a9c095054",
+        "valueLength": null,
+        "script": "https://www.first-party.site/privacy-protections/storage-partitioning/main.js",
+        "frame": "1ª parte",
+        "at": 1790648416476
+      }
+    ]
+  },
+  "frames": {
+    "https://www.first-party.site/privacy-protections/storage-partitioning/": {
+      "thirdParty": false,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    },
+    "about:blank": {
+      "thirdParty": false,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    },
+    "https://www.first-party.site/privacy-protections/storage-partitioning/iframe.html?mode=store&sessionId=686976b9-6d26-44a4-8cfc-869a9c095054": {
+      "thirdParty": false,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    },
+    "https://www.first-party.site/partitioning/resource?fileType=page&key=686976b9-6d26-44a4-8cfc-869a9c095054": {
+      "thirdParty": false,
+      "hooked": [
+        "Storage.setItem",
+        "Storage.getItem",
+        "Storage.removeItem",
+        "Storage.clear",
+        "IDBFactory.open",
+        "CacheStorage.open",
+        "Document.cookie",
+        "Canvas2D.fillText",
+        "Canvas2D.strokeText",
+        "Canvas2D.fillRect",
+        "Canvas2D.arc",
+        "Canvas2D.bezierCurveTo",
+        "Canvas2D.drawImage",
+        "Canvas2D.fill",
+        "Canvas.toDataURL",
+        "Canvas.toBlob",
+        "Canvas2D.getImageData",
+        "Canvas2D.measureText",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.getExtension",
+        "WebGLRenderingContext.getSupportedExtensions",
+        "WebGLRenderingContext.readPixels",
+        "WebGLRenderingContext.getShaderPrecisionFormat",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.getExtension",
+        "WebGL2RenderingContext.getSupportedExtensions",
+        "WebGL2RenderingContext.readPixels",
+        "WebGL2RenderingContext.getShaderPrecisionFormat",
+        "OfflineAudioContext",
+        "Audio.createOscillator",
+        "Audio.createDynamicsCompressor",
+        "AudioBuffer.getChannelData",
+        "Analyser.getFloatFrequencyData",
+        "navigator.userAgent",
+        "navigator.platform",
+        "navigator.language",
+        "navigator.languages",
+        "navigator.hardwareConcurrency",
+        "navigator.plugins",
+        "navigator.mimeTypes",
+        "navigator.doNotTrack",
+        "navigator.maxTouchPoints",
+        "navigator.webdriver",
+        "navigator.vendor",
+        "navigator.oscpu",
+        "navigator.buildID",
+        "navigator.productSub",
+        "navigator.cookieEnabled",
+        "screen.width",
+        "screen.height",
+        "screen.availWidth",
+        "screen.availHeight",
+        "screen.colorDepth",
+        "screen.pixelDepth",
+        "Date.getTimezoneOffset",
+        "enumerateDevices",
+        "getVoices",
+        "WebSocket",
+        "EventSource",
+        "EventTarget.addEventListener"
+      ]
+    }
+  },
+  "navigation": {
+    "referrerPage": "https://privacy-test-pages.site/privacy-protections/storage-blocking/",
+    "redirectChain": [],
+    "bounces": [],
+    "dwellMs": 22009
+  },
+  "cookieSync": {
+    "events": [],
+    "identifiers": {},
+    "redirects": []
+  },
+  "queryParams": {
+    "onPageUrl": [],
+    "onRequests": {}
+  },
+  "hijack": {
+    "websockets": [],
+    "eventsources": [],
+    "polling": [],
+    "inputListeners": [],
+    "motionListeners": {},
+    "overridden": [],
+    "newGlobals": [
+      "0",
+      "accessStorageInIframe",
+      "getURL",
+      "validateStorageAPI",
+      "validateCacheAPI",
+      "storeData",
+      "retrieveData"
+    ],
+    "newGlobalsCount": 7,
+    "level": "none",
+    "integrityPhase": "load+3s"
+  },
+  "openedTabs": [
+    {
+      "tabId": 12,
+      "url": "https://www.first-party.site/privacy-protections/storage-partitioning/testWindow.html?sessionId=686976b9-6d26-44a4-8cfc-869a9c095054&isLocalTest=false",
+      "at": 1790648403844
+    }
+  ],
+  "fingerprint": {
+    "canvas": {
+      "reads": 0,
+      "likely": 0,
+      "scripts": {},
+      "samples": []
+    },
+    "webgl": {
+      "calls": 0,
+      "unmasked": 0,
+      "scripts": {},
+      "methods": {}
+    },
+    "audio": {
+      "calls": 0,
+      "scripts": {},
+      "methods": {}
+    },
+    "fonts": {
+      "measureText": 0,
+      "scripts": {}
+    },
+    "enumeration": {
+      "props": {},
+      "scripts": {}
+    },
+    "level": "none"
+  },
+  "cookies": {
+    "setHeaders": [
+      {
+        "name": "partition_test_http",
+        "persistent": true,
+        "expiresIn": 122924396,
+        "domainAttr": null,
+        "sameSite": "None",
+        "secure": true,
+        "httpOnly": true,
+        "host": "www.first-party.site",
+        "domain": "first-party.site",
+        "thirdParty": false,
+        "requestType": "xmlhttprequest",
+        "url": "https://www.first-party.site/partitioning/set-cookie",
+        "at": 1790648404482
+      }
+    ],
+    "jsSet": [
+      {
+        "name": "partition_test",
+        "persistent": true,
+        "raw": "partition_test=686976b9-6d26-44a4-8cfc-869a9c095054; expires= Wed, 21 Aug 2030 20:00:00 UTC; Secure; SameSite=none",
+        "script": "https://www.first-party.site/privacy-protections/storage-partitioning/helpers/tests.js",
+        "thirdParty": false,
+        "frame": "first-party.site",
+        "at": 1790648404362
+      }
+    ],
+    "summary": {
+      "total": 9,
+      "firstParty": 2,
+      "thirdParty": 7,
+      "session": 0,
+      "persistent": 9,
+      "longLived": 8,
+      "injectedHttp": 1,
+      "injectedHttpThirdParty": 0,
+      "injectedJs": 1,
+      "list": [
+        {
+          "name": "partition_test",
+          "domain": "www.first-party.site",
+          "path": "/privacy-protections/storage-partitioning",
+          "thirdParty": false,
+          "session": false,
+          "expires": 1825208404361,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "no_restriction",
+          "valueLength": 36
+        },
+        {
+          "name": "partition_test",
+          "domain": "www.first-party.site",
+          "path": "/",
+          "thirdParty": false,
+          "session": false,
+          "expires": 1825208404374,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "no_restriction",
+          "valueLength": 36
+        },
+        {
+          "name": "jsdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208378958,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "lax",
+          "valueLength": 2
+        },
+        {
+          "name": "tptdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208378965,
+          "lifetimeDays": 400,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 2
+        },
+        {
+          "name": "tpsdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208378965,
+          "lifetimeDays": 400,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 2
+        },
+        {
+          "name": "__Host-jsdata_host",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208378958,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "lax",
+          "valueLength": 2
+        },
+        {
+          "name": "jsdata_no_samesite",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208378958,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "valueLength": 2
+        },
+        {
+          "name": "cookiestoredata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1825208378971,
+          "lifetimeDays": 400,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "strict",
+          "valueLength": 2
+        },
+        {
+          "name": "top_firstparty_headerdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "thirdParty": true,
+          "session": false,
+          "expires": 1791512379200,
+          "lifetimeDays": 10,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "valueLength": 2
+        }
+      ]
+    }
+  },
+  "score": {
+    "score": 79,
+    "grade": "B",
+    "breakdown": [
+      {
+        "id": "trackers",
+        "label": "Rastreadores conhecidos (3ª parte)",
+        "penalty": 0,
+        "cap": 32
+      },
+      {
+        "id": "thirdParties",
+        "label": "Outros domínios de 3ª parte",
+        "penalty": 1,
+        "cap": 8
+      },
+      {
+        "id": "thirdPartyCookies",
+        "label": "Cookies de 3ª parte",
+        "penalty": 14,
+        "cap": 16
+      },
+      {
+        "id": "longLivedCookies",
+        "label": "Cookies persistentes > 1 ano",
+        "penalty": 6,
+        "cap": 6
+      },
+      {
+        "id": "fingerprinting",
+        "label": "Fingerprinting (provável 15 / possível 7)",
+        "penalty": 0,
+        "cap": 15
+      },
+      {
+        "id": "sessionRecording",
+        "label": "Gravação de sessão / heatmap",
+        "penalty": 0,
+        "cap": 10
+      },
+      {
+        "id": "keyLogging",
+        "label": "Captura de teclado por 3ª parte",
+        "penalty": 0,
+        "cap": 10
+      },
+      {
+        "id": "facebookPixel",
+        "label": "Pixel do Facebook/Meta",
+        "penalty": 0,
+        "cap": 6
+      },
+      {
+        "id": "googleAds",
+        "label": "Remarketing Google (DoubleClick/Ads)",
+        "penalty": 0,
+        "cap": 4
+      },
+      {
+        "id": "cookieSync",
+        "label": "Cookie sync / vazamento de identificador",
+        "penalty": 0,
+        "cap": 8
+      },
+      {
+        "id": "bounceTracking",
+        "label": "Bounce tracking",
+        "penalty": 0,
+        "cap": 6
+      },
+      {
+        "id": "thirdPartyStorage",
+        "label": "Storage HTML5 em frames de 3ª parte",
+        "penalty": 0,
+        "cap": 4
+      },
+      {
+        "id": "hijacking",
+        "label": "Indicadores de hijacking (alto 15 / médio 8 / baixo 3)",
+        "penalty": 0,
+        "cap": 15
+      }
+    ],
+    "counts": {
+      "trackers": 0,
+      "thirdParties": 1,
+      "thirdPartyCookies": 7,
+      "longLived": 8,
+      "keylog": 0,
+      "syncStrong": 0,
+      "syncWeak": 0,
+      "storage3p": 0
+    }
+  },
+  "settings": {
+    "blocklist": [],
+    "blockKnownTrackers": false
+  }
+}

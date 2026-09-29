@@ -1,0 +1,96 @@
+{
+  "10-bounce-tracking": {
+    "score": 94,
+    "grade": "A",
+    "thirdParties": [],
+    "trackers": [],
+    "blocked": 0,
+    "cookies": {
+      "total": 0,
+      "firstParty": 0,
+      "thirdParty": 0,
+      "session": 0,
+      "persistent": 0,
+      "longLived": 0,
+      "injectedHttp": 0,
+      "injectedHttpThirdParty": 0,
+      "injectedJs": 0
+    },
+    "storage": {
+      "localStorage": {
+        "writes": 0,
+        "reads": 0,
+        "keys": [],
+        "thirdPartyFrames": {}
+      },
+      "sessionStorage": {
+        "writes": 0,
+        "reads": 0,
+        "keys": [],
+        "thirdPartyFrames": {}
+      },
+      "indexedDB": {
+        "writes": 0,
+        "reads": null,
+        "keys": [],
+        "thirdPartyFrames": {}
+      },
+      "cacheStorage": {
+        "writes": 0,
+        "reads": null,
+        "keys": [],
+        "thirdPartyFrames": {}
+      }
+    },
+    "fingerprint": {
+      "level": "none",
+      "canvas": 0,
+      "canvasLikely": 0,
+      "webgl": 0,
+      "audio": 0,
+      "measureText": 0,
+      "enumProps": 0
+    },
+    "bounces": [
+      {
+        "domain": "bad.third-party.site",
+        "kind": "client-side",
+        "dwellMs": 151,
+        "url": "https://bad.third-party.site/privacy-protections/bounce-tracking/bounce.html?destination=privacy-test-pages.site",
+        "trackingParams": [],
+        "landingParams": [
+          "bounceUIDlocalStorage=",
+          "bounceUIDcookie=",
+          "isNew=100"
+        ],
+        "from": "privacy-test-pages.site",
+        "to": "privacy-test-pages.site",
+        "evidence": {
+          "cookiesJs": [
+            "bounceUID=100;max-age=5184000"
+          ],
+          "cookiesHttp": [],
+          "storageKeys": [
+            "bounceUID"
+          ],
+          "requests": 1
+        }
+      }
+    ],
+    "redirectChain": [],
+    "cookieSync": [],
+    "queryParams": {
+      "onPageUrl": [],
+      "onRequests": {}
+    },
+    "hijack": {
+      "level": "none",
+      "websockets": [],
+      "polling": [],
+      "overridden": [],
+      "newGlobalsCount": 0,
+      "newGlobals": [],
+      "inputListeners3p": []
+    }
+  }
+}
