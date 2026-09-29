@@ -12,6 +12,14 @@ function newReport(url) {
     thirdParties: {},   // domínio -> { requests, types, tracker, category, blocked }
     requestsTotal: 0,
     requestsThirdParty: 0,
+    storage: {
+      localStorage: { reads: 0, writes: 0, keys: {}, thirdPartyFrames: {} },
+      sessionStorage: { reads: 0, writes: 0, keys: {}, thirdPartyFrames: {} },
+      indexedDB: { opens: 0, databases: {}, thirdPartyFrames: {} },
+      cacheStorage: { opens: 0, caches: {}, thirdPartyFrames: {} },
+      events: [],
+    },
+    frames: {},         // frameUrl -> { thirdParty }
     cookies: {
       setHeaders: [],      // cookies injetados via Set-Cookie (HTTP)
       jsSet: [],           // cookies injetados via document.cookie (JS)
@@ -157,6 +165,53 @@ async function snapshotCookies(r) {
   };
   return r.cookies.summary;
 }
+
+// ---------------------------------------------------------------------------
+// Eventos do content script (storage, cookies via JS, fingerprinting, hijacking)
+// ---------------------------------------------------------------------------
+function frameIsThirdParty(r, frameUrl) {
+  if (!frameUrl || frameUrl === 'about:blank' || frameUrl.startsWith('about:')) return false;
+  return isThirdParty(frameUrl, r.url);
+}
+
+function handleStorageEvent(r, ev, frameUrl, third) {
+  const d = ev.detail;
+  const st = r.storage;
+  const bucket = st[d.api] || st.localStorage;
+  if (d.api === 'indexedDB') { bucket.opens++; bucket.databases[d.key] = (bucket.databases[d.key] || 0) + 1; }
+  else if (d.api === 'cacheStorage') { bucket.opens++; bucket.caches[d.key] = (bucket.caches[d.key] || 0) + 1; }
+  else {
+    if (d.op === 'getItem') bucket.reads++; else bucket.writes++;
+    if (d.key) bucket.keys[d.key] = (bucket.keys[d.key] || 0) + 1;
+  }
+  if (third) {
+    const dom = baseDomain(hostnameOf(frameUrl));
+    bucket.thirdPartyFrames[dom] = (bucket.thirdPartyFrames[dom] || 0) + 1;
+  }
+  if (st.events.length < 500) st.events.push({ ...d, frame: third ? baseDomain(hostnameOf(frameUrl)) : '1ª parte', at: ev.at });
+}
+
+const contentHandlers = {
+  frame(r, ev, frameUrl, third) {
+    r.frames[frameUrl] = { thirdParty: third, hooked: ev.detail.hooked };
+  },
+  storage: handleStorageEvent,
+  cookieJs(r, ev, frameUrl, third) {
+    r.cookies.jsSet.push({ ...ev.detail, thirdParty: third, frame: baseDomain(hostnameOf(frameUrl)), at: ev.at });
+  },
+};
+
+browser.runtime.onMessage.addListener((msg, sender) => {
+  if (msg.type !== 'contentEvents' || !sender.tab) return;
+  const r = reports.get(sender.tab.id);
+  if (!r) return;
+  const frameUrl = sender.url || '';
+  const third = sender.frameId !== 0 && frameIsThirdParty(r, frameUrl);
+  for (const ev of msg.events) {
+    const h = contentHandlers[ev.kind];
+    if (h) h(r, ev, frameUrl, third);
+  }
+});
 
 // API para o popup.
 browser.runtime.onMessage.addListener((msg, sender) => {
