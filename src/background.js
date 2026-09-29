@@ -187,8 +187,39 @@ function recordRequest(details) {
   return entry;
 }
 
+// ---------------------------------------------------------------------------
+// Lista de bloqueio personalizada (storage.local)
+// ---------------------------------------------------------------------------
+const settings = { blocklist: [], blockKnownTrackers: false };
+async function loadSettings() {
+  const st = await browser.storage.local.get(['blocklist', 'blockKnownTrackers']);
+  settings.blocklist = Array.isArray(st.blocklist) ? st.blocklist : [];
+  settings.blockKnownTrackers = !!st.blockKnownTrackers;
+}
+loadSettings();
+browser.storage.onChanged.addListener(loadSettings);
+
+function isBlocklisted(host) {
+  const parts = host.split('.');
+  for (let i = 0; i < parts.length - 1; i++) {
+    if (settings.blocklist.includes(parts.slice(i).join('.'))) return true;
+  }
+  return false;
+}
+
 browser.webRequest.onBeforeRequest.addListener(
-  (details) => { recordRequest(details); },
+  (details) => {
+    const entry = recordRequest(details);
+    if (!entry || details.type === 'main_frame') return;
+    const host = hostnameOf(details.url);
+    const blockIt = isBlocklisted(host) || (settings.blockKnownTrackers && entry.tracker);
+    if (blockIt) {
+      entry.blocked++;
+      const r = reports.get(details.tabId);
+      if (r) r.blockedTotal = (r.blockedTotal || 0) + 1;
+      return { cancel: true };
+    }
+  },
   { urls: ['<all_urls>'] },
   ['blocking']
 );
@@ -476,6 +507,18 @@ browser.runtime.onMessage.addListener((msg, sender) => {
   if (msg.type === 'getReport') {
     const r = reports.get(msg.tabId);
     if (!r) return Promise.resolve(null);
-    return snapshotCookies(r).then(() => r);
+    return snapshotCookies(r).then(() => {
+      r.score = computeScore(r);
+      r.settings = { ...settings };
+      const { _timeline, _cookieValues, ...publicReport } = r;
+      return publicReport;
+    });
+  }
+  if (msg.type === 'getSettings') return Promise.resolve({ ...settings });
+  if (msg.type === 'saveSettings') {
+    return browser.storage.local.set({
+      blocklist: (msg.blocklist || []).map((d) => d.trim().toLowerCase()).filter(Boolean),
+      blockKnownTrackers: !!msg.blockKnownTrackers,
+    });
   }
 });
