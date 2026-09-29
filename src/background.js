@@ -35,6 +35,18 @@ function newReport(url) {
       onPageUrl: [],        // parâmetros de rastreamento na URL da própria página
       onRequests: {},       // param -> contagem em requisições de terceiros
     },
+    hijack: {
+      websockets: [],       // { url, domain, thirdParty, script, via }
+      eventsources: [],
+      polling: [],          // { url, domain, count, avgIntervalMs, regularity }
+      inputListeners: [],   // { event, target, script, thirdParty }
+      motionListeners: {},  // script -> count
+      overridden: [],       // funções nativas sobrescritas por scripts
+      newGlobals: [],
+      newGlobalsCount: 0,
+      level: 'none',
+    },
+    _timeline: {},          // urlSemQuery -> [timestamps] (uso interno para polling)
     _cookieValues: {},      // valor de cookie -> nome (uso interno para cookie sync)
     fingerprint: {
       canvas: { reads: 0, likely: 0, scripts: {}, samples: [] },
@@ -166,6 +178,12 @@ function recordRequest(details) {
     if (t) { entry.tracker = t.domain; entry.category = t.category; entry.owner = t.owner; }
   }
   inspectQueryForSync(r, details.url, dom);
+  if (details.type === 'websocket') {
+    r.hijack.websockets.push({ url: details.url.slice(0, 200), domain: dom, thirdParty: true, via: 'webRequest', at: Date.now() });
+    updateHijackLevel(r);
+  } else if (details.type === 'xmlhttprequest' || details.type === 'beacon' || details.type === 'image' || details.type === 'ping') {
+    trackPolling(r, details.url, dom);
+  }
   return entry;
 }
 
@@ -174,6 +192,42 @@ browser.webRequest.onBeforeRequest.addListener(
   { urls: ['<all_urls>'] },
   ['blocking']
 );
+
+// ---------------------------------------------------------------------------
+// Hijacking: polling persistente para terceiros
+// ---------------------------------------------------------------------------
+// Agrupa requisições ao mesmo endpoint (URL sem query) e considera polling quando há
+// >= 5 chamadas com intervalos regulares (coeficiente de variação < 0.5) ou >= 12 chamadas em 2 min.
+function trackPolling(r, url, dom) {
+  const key = url.split('?')[0].split('#')[0];
+  const t = r._timeline[key] || (r._timeline[key] = []);
+  t.push(Date.now());
+  if (t.length > 50) t.shift();
+  if (t.length < 5) return;
+  const intervals = [];
+  for (let i = 1; i < t.length; i++) intervals.push(t[i] - t[i - 1]);
+  const avg = intervals.reduce((a, b) => a + b, 0) / intervals.length;
+  const sd = Math.sqrt(intervals.reduce((a, b) => a + (b - avg) ** 2, 0) / intervals.length);
+  const cv = avg ? sd / avg : 1;
+  const span = t[t.length - 1] - t[0];
+  const regular = cv < 0.5 && avg >= 500;
+  const heavy = t.length >= 12 && span <= 120000;
+  if (!regular && !heavy) return;
+  let entry = r.hijack.polling.find((p) => p.url === key);
+  if (!entry) { entry = { url: key, domain: dom, count: 0, avgIntervalMs: 0, regularity: 0 }; r.hijack.polling.push(entry); }
+  entry.count = t.length; entry.avgIntervalMs = Math.round(avg); entry.regularity = +(1 - Math.min(cv, 1)).toFixed(2);
+  entry.tracker = classifyTracker(hostnameOf(url)) ? true : false;
+  updateHijackLevel(r);
+}
+
+function updateHijackLevel(r) {
+  const h = r.hijack;
+  const thirdPartyKeyloggers = h.inputListeners.filter((l) => l.thirdParty && l.target === 'document').length;
+  if (h.overridden.length > 0 || thirdPartyKeyloggers > 0 || (h.websockets.some((w) => w.thirdParty) && h.polling.length > 0)) h.level = 'high';
+  else if (h.websockets.some((w) => w.thirdParty) || h.polling.length > 0 || h.inputListeners.some((l) => l.thirdParty)) h.level = 'medium';
+  else if (h.newGlobalsCount > 40 || h.eventsources.length) h.level = 'low';
+  else h.level = 'none';
+}
 
 // ---------------------------------------------------------------------------
 // Cookie sync: identificadores em query strings de requisições a terceiros
@@ -357,7 +411,44 @@ function handleFingerprintEvent(r, ev, frameUrl, third) {
   else if (fp.canvas.reads > 0 || fp.webgl.unmasked > 0 || fp.fonts.measureText > 30 || enumMax >= 8) fp.level = 'possible';
 }
 
+function handleHijackEvent(r, ev, frameUrl, third) {
+  const d = ev.detail;
+  const h = r.hijack;
+  const scriptDomain = d.script ? baseDomain(hostnameOf(d.script)) : null;
+  const scriptThird = scriptDomain ? scriptDomain !== r.baseDomain : third;
+  switch (d.kind) {
+    case 'websocket': {
+      const dom = baseDomain(hostnameOf(d.url.replace(/^ws/, 'http')));
+      if (!h.websockets.some((w) => w.url === d.url)) h.websockets.push({ url: d.url, domain: dom, thirdParty: dom !== r.baseDomain, script: d.script, via: 'content', at: ev.at });
+      break;
+    }
+    case 'eventsource': {
+      const dom = baseDomain(hostnameOf(d.url));
+      h.eventsources.push({ url: d.url, domain: dom, thirdParty: dom !== r.baseDomain, script: d.script, at: ev.at });
+      break;
+    }
+    case 'input-listener':
+      if (h.inputListeners.length < 200) h.inputListeners.push({ event: d.event, target: d.target, script: d.script || (third ? frameUrl : '(inline)'), scriptDomain, thirdParty: scriptThird, at: ev.at });
+      break;
+    case 'motion-listener': {
+      const k = d.script || (third ? frameUrl : '(inline)');
+      h.motionListeners[k] = (h.motionListeners[k] || 0) + 1;
+      break;
+    }
+    case 'integrity':
+      if (!third) { // integridade só do frame principal
+        h.overridden = d.overridden;
+        h.newGlobals = d.newGlobals;
+        h.newGlobalsCount = d.newGlobalsCount;
+        h.integrityPhase = d.phase;
+      }
+      break;
+  }
+  updateHijackLevel(r);
+}
+
 const contentHandlers = {
+  hijack: handleHijackEvent,
   fingerprint: handleFingerprintEvent,
   frame(r, ev, frameUrl, third) {
     r.frames[frameUrl] = { thirdParty: third, hooked: ev.detail.hooked };

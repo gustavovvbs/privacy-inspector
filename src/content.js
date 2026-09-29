@@ -188,5 +188,78 @@
   hookMethod(page.SpeechSynthesis && page.SpeechSynthesis.prototype, 'getVoices', () => report('fingerprint', { api: 'enumeration', method: 'speechSynthesis.getVoices', script: callerScript() }), 'getVoices');
   hookMethod(page.Navigator && page.Navigator.prototype, 'getBattery', () => report('fingerprint', { api: 'enumeration', method: 'navigator.getBattery', script: callerScript() }), 'getBattery');
 
+  // -------------------------------------------------------------------------
+  // Indicadores de hijacking / hooks
+  // -------------------------------------------------------------------------
+  // Canais persistentes abertos pela página (o background também vê o handshake via webRequest).
+  function wrapConstructor(name, onConstruct) {
+    const Orig = page[name];
+    if (typeof Orig !== 'function') return;
+    HOOKED.add(name);
+    const Wrapped = exportFunction(function (...args) {
+      try { onConstruct(args); } catch (e) {}
+      return Reflect.construct(Orig, args, new.target || Orig);
+    }, page, { defineAs: name });
+    try { Wrapped.prototype = Orig.prototype; } catch (e) {}
+    try { Object.defineProperty(Orig.prototype, 'constructor', { value: Wrapped, writable: true, configurable: true }); } catch (e) {}
+  }
+  wrapConstructor('WebSocket', (args) => report('hijack', { kind: 'websocket', url: String(args[0]).slice(0, 200), script: callerScript() }));
+  wrapConstructor('EventSource', (args) => report('hijack', { kind: 'eventsource', url: String(args[0]).slice(0, 200), script: callerScript() }));
+
+  // Listeners de entrada registrados por scripts: base para "key logging" e gravação de sessão.
+  const INPUT_EVENTS = new Set(['keydown', 'keyup', 'keypress', 'input', 'change', 'paste']);
+  const MOTION_EVENTS = new Set(['mousemove', 'scroll', 'touchmove', 'pointermove', 'wheel']);
+  hookMethod(page.EventTarget && page.EventTarget.prototype, 'addEventListener', (self, args) => {
+    const type = String(args[0]);
+    if (!INPUT_EVENTS.has(type) && !MOTION_EVENTS.has(type)) return;
+    const raw = unwrap(self);
+    let target = 'element';
+    if (raw === page || raw === page.document || raw === page.document.documentElement || raw === page.document.body) target = 'document';
+    report('hijack', { kind: INPUT_EVENTS.has(type) ? 'input-listener' : 'motion-listener', event: type, target, script: callerScript() });
+  }, 'EventTarget.addEventListener');
+
+  // Snapshot dos globais e verificação de integridade de funções nativas críticas.
+  const nativeToString = page.Function.prototype.toString; // capturado antes de qualquer script da página
+  const initialGlobals = new Set(Object.getOwnPropertyNames(page));
+  const CRITICAL = [
+    ['window', 'fetch'], ['window', 'setTimeout'], ['window', 'setInterval'], ['window', 'eval'], ['window', 'open'],
+    ['XMLHttpRequest.prototype', 'open'], ['XMLHttpRequest.prototype', 'send'], ['XMLHttpRequest.prototype', 'setRequestHeader'],
+    ['Navigator.prototype', 'sendBeacon'], ['History.prototype', 'pushState'], ['History.prototype', 'replaceState'],
+    ['Node.prototype', 'appendChild'], ['Node.prototype', 'insertBefore'], ['Element.prototype', 'setAttribute'],
+    ['Document.prototype', 'createElement'], ['Document.prototype', 'write'],
+    ['HTMLFormElement.prototype', 'submit'], ['JSON', 'parse'], ['JSON', 'stringify'],
+    ['Object', 'defineProperty'], ['Promise.prototype', 'then'], ['Array.prototype', 'push'], ['String.prototype', 'replace'],
+    ['console', 'log'], ['window', 'postMessage'], ['window', 'Function'],
+  ];
+  function resolve(path) {
+    let o = page;
+    if (path !== 'window') for (const part of path.split('.')) { o = o && o[part]; }
+    return o;
+  }
+  function integrityCheck(phase) {
+    const overridden = [];
+    for (const [path, name] of CRITICAL) {
+      try {
+        const obj = resolve(path);
+        const fn = obj && obj[name];
+        if (typeof fn !== 'function') continue;
+        const src = Reflect.apply(nativeToString, fn, []);
+        if (!/\[native code\]/.test(src)) overridden.push({ target: (path === 'window' ? '' : path + '.') + name, source: src.slice(0, 160) });
+      } catch (e) { /* alguns protótipos podem não existir */ }
+    }
+    // Accessors de document.cookie / localStorage substituídos por getters não nativos
+    const accessors = [['Document.prototype', 'cookie'], ['Storage.prototype', 'length']];
+    for (const [path, name] of accessors) {
+      try {
+        const desc = Object.getOwnPropertyDescriptor(resolve(path), name);
+        if (desc && desc.get && !/\[native code\]/.test(Reflect.apply(nativeToString, desc.get, []))) overridden.push({ target: path + '.' + name + ' (getter)', source: '' });
+      } catch (e) {}
+    }
+    const nowGlobals = Object.getOwnPropertyNames(page).filter((g) => !initialGlobals.has(g));
+    report('hijack', { kind: 'integrity', phase, overridden, newGlobals: nowGlobals.slice(0, 300), newGlobalsCount: nowGlobals.length });
+  }
+  window.addEventListener('DOMContentLoaded', () => integrityCheck('DOMContentLoaded'));
+  window.addEventListener('load', () => setTimeout(() => integrityCheck('load+3s'), 3000));
+
   report('frame', { hooked: [...HOOKED] });
 })();
