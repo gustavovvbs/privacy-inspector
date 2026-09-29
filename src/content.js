@@ -197,13 +197,28 @@
     if (typeof Orig !== 'function') return;
     HOOKED.add(name);
     const Wrapped = exportFunction(function (...args) {
-      try { onConstruct(args); } catch (e) {}
+      onConstruct(args); // pode lançar (bloqueio)
       return Reflect.construct(Orig, args, new.target || Orig);
     }, page, { defineAs: name });
     try { Wrapped.prototype = Orig.prototype; } catch (e) {}
     try { Object.defineProperty(Orig.prototype, 'constructor', { value: Wrapped, writable: true, configurable: true }); } catch (e) {}
   }
-  wrapConstructor('WebSocket', (args) => report('hijack', { kind: 'websocket', url: String(args[0]).slice(0, 200), script: callerScript() }));
+  // Lista de bloqueio: o handshake WebSocket nem sempre passa pelo webRequest com aba associada,
+  // então hosts bloqueados também são recusados aqui, antes de abrir a conexão.
+  let blocklist = [];
+  try { browser.storage.local.get('blocklist').then((st) => { blocklist = Array.isArray(st.blocklist) ? st.blocklist : []; }); } catch (e) {}
+  function blocklisted(url) {
+    let host; try { host = new URL(url).hostname; } catch (e) { return false; }
+    const parts = host.split('.');
+    for (let i = 0; i < parts.length - 1; i++) if (blocklist.includes(parts.slice(i).join('.'))) return true;
+    return false;
+  }
+  wrapConstructor('WebSocket', (args) => {
+    const url = String(args[0]).slice(0, 200);
+    const blocked = blocklisted(url);
+    report('hijack', { kind: 'websocket', url, blocked, script: callerScript() });
+    if (blocked) throw new page.DOMException('Privacy Inspector: host na lista de bloqueio', 'SecurityError');
+  });
   wrapConstructor('EventSource', (args) => report('hijack', { kind: 'eventsource', url: String(args[0]).slice(0, 200), script: callerScript() }));
 
   // Listeners de entrada registrados por scripts: base para "key logging" e gravação de sessão.

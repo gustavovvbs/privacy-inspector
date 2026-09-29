@@ -46,6 +46,7 @@ function newReport(url) {
       newGlobalsCount: 0,
       level: 'none',
     },
+    openedTabs: [],         // abas/popups abertos por esta página (window.open) — têm relatório próprio
     _timeline: {},          // urlSemQuery -> [timestamps] (uso interno para polling)
     _cookieValues: {},      // valor de cookie -> nome (uso interno para cookie sync)
     fingerprint: {
@@ -106,7 +107,7 @@ browser.webRequest.onBeforeRedirect.addListener((d) => {
     return;
   }
   // Redirecionamentos entre terceiros em sub-recursos (pixel → pixel) são o mecanismo clássico de cookie sync.
-  const r = reports.get(d.tabId);
+  const r = reportForRequest(d);
   if (!r) return;
   if (hop.fromDomain !== hop.toDomain && isThirdParty(d.url, r.url) && isThirdParty(d.redirectUrl, r.url)) {
     hop.syncParams = [...new URL(d.redirectUrl).searchParams.keys()].filter((k) => SYNC_PARAM_NAMES.test(k));
@@ -131,10 +132,11 @@ browser.webNavigation.onCommitted.addListener(async (details) => {
   const origin = prev ? baseDomain(hostnameOf(prev.url)) : null;
   // (a) bounce por HTTP: hop intermediário em domínio ≠ origem e ≠ destino.
   const chainDomains = r.navigation.redirectChain.map((h) => h.fromDomain);
+  const landingParams = (() => { try { return [...new URL(details.url).searchParams].map(([k, v]) => `${k}=${v}`); } catch (e) { return []; } })();
   for (const h of r.navigation.redirectChain) {
     if (h.fromDomain && h.fromDomain !== dest && h.fromDomain !== origin) {
-      r.navigation.bounces.push({ domain: h.fromDomain, kind: 'http-redirect', status: h.status, url: h.from,
-        trackingParams: trackingParamsOf(h.from), from: origin, to: dest });
+      r.navigation.bounces.push({ domain: hostnameOf(h.from), kind: 'http-redirect', status: h.status, url: h.from,
+        trackingParams: trackingParamsOf(h.from), landingParams, from: origin, to: dest });
     }
   }
   // (b) bounce por JS/meta refresh: página anterior em domínio ≠ origem dela e ≠ destino, com permanência curta.
@@ -142,8 +144,8 @@ browser.webNavigation.onCommitted.addListener(async (details) => {
     const mid = baseDomain(hostnameOf(prev.url));
     const src = baseDomain(hostnameOf(prev.referrerPage));
     if (mid && mid !== dest && mid !== src && !chainDomains.includes(mid)) {
-      r.navigation.bounces.push({ domain: mid, kind: 'client-side', dwellMs: r.navigation.dwellMs, url: prev.url,
-        trackingParams: trackingParamsOf(prev.url), from: src, to: dest });
+      r.navigation.bounces.push({ domain: hostnameOf(prev.url), kind: 'client-side', dwellMs: r.navigation.dwellMs, url: prev.url,
+        trackingParams: trackingParamsOf(prev.url), landingParams, from: src, to: dest });
     }
   }
   lastPage.set(details.tabId, { url: details.url, committedAt: now, referrerPage: prev ? prev.url : null });
@@ -158,25 +160,45 @@ browser.webNavigation.onCommitted.addListener(async (details) => {
 
 browser.tabs.onRemoved.addListener((tabId) => reports.delete(tabId));
 
+browser.tabs.onCreated.addListener((tab) => {
+  if (tab.openerTabId == null) return;
+  const r = reports.get(tab.openerTabId);
+  if (r) r.openedTabs.push({ tabId: tab.id, url: tab.url || '', at: Date.now() });
+});
+browser.tabs.onUpdated.addListener((tabId, info) => {
+  if (!info.url) return;
+  for (const r of reports.values()) for (const t of r.openedTabs) if (t.tabId === tabId && !t.url.startsWith('http')) t.url = info.url;
+});
+
+// Requisições sem aba (tabId = -1: WebSocket, service worker, prefetch) são atribuídas à aba mais
+// recente cuja página tem o mesmo eTLD+1 da originUrl/documentUrl.
+function reportForRequest(details) {
+  if (details.tabId >= 0) return reports.get(details.tabId);
+  const origin = details.documentUrl || details.originUrl;
+  if (!origin) return null;
+  const dom = baseDomain(hostnameOf(origin));
+  let best = null;
+  for (const r of reports.values()) if (r.baseDomain === dom && (!best || r.startedAt > best.startedAt)) best = r;
+  return best;
+}
+
 function recordRequest(details) {
-  if (details.tabId < 0) return;
-  const r = reports.get(details.tabId);
+  const r = reportForRequest(details);
   if (!r) return;
   r.requestsTotal++;
   const host = hostnameOf(details.url);
   if (!host || !isThirdParty(details.url, r.url)) return;
   r.requestsThirdParty++;
-  const dom = baseDomain(host);
+  const tracker = classifyTracker(host);
+  // Agrupa por eTLD+1, exceto quando a lista identifica um subdomínio específico (ex.: bad.third-party.site).
+  const dom = tracker && tracker.domain.length > baseDomain(host).length ? tracker.domain : baseDomain(host);
   const entry = r.thirdParties[dom] || (r.thirdParties[dom] = {
     domain: dom, hosts: {}, requests: 0, types: {}, tracker: null, category: null, blocked: 0,
   });
   entry.requests++;
   entry.hosts[host] = (entry.hosts[host] || 0) + 1;
   entry.types[details.type] = (entry.types[details.type] || 0) + 1;
-  if (!entry.tracker) {
-    const t = classifyTracker(host);
-    if (t) { entry.tracker = t.domain; entry.category = t.category; entry.owner = t.owner; }
-  }
+  if (!entry.tracker && tracker) { entry.tracker = tracker.domain; entry.category = tracker.category; entry.owner = tracker.owner; }
   inspectQueryForSync(r, details.url, dom);
   if (details.type === 'websocket') {
     r.hijack.websockets.push({ url: details.url.slice(0, 200), domain: dom, thirdParty: true, via: 'webRequest', at: Date.now() });
@@ -215,7 +237,7 @@ browser.webRequest.onBeforeRequest.addListener(
     const blockIt = isBlocklisted(host) || (settings.blockKnownTrackers && entry.tracker);
     if (blockIt) {
       entry.blocked++;
-      const r = reports.get(details.tabId);
+      const r = reportForRequest(details);
       if (r) r.blockedTotal = (r.blockedTotal || 0) + 1;
       return { cancel: true };
     }
@@ -322,8 +344,7 @@ function parseSetCookie(value) {
 
 browser.webRequest.onHeadersReceived.addListener(
   (details) => {
-    if (details.tabId < 0) return;
-    const r = reports.get(details.tabId);
+    const r = reportForRequest(details);
     if (!r) return;
     const host = hostnameOf(details.url);
     const third = isThirdParty(details.url, r.url);
@@ -450,7 +471,8 @@ function handleHijackEvent(r, ev, frameUrl, third) {
   switch (d.kind) {
     case 'websocket': {
       const dom = baseDomain(hostnameOf(d.url.replace(/^ws/, 'http')));
-      if (!h.websockets.some((w) => w.url === d.url)) h.websockets.push({ url: d.url, domain: dom, thirdParty: dom !== r.baseDomain, script: d.script, via: 'content', at: ev.at });
+      if (!h.websockets.some((w) => w.url === d.url)) h.websockets.push({ url: d.url, domain: dom, thirdParty: dom !== r.baseDomain, script: d.script, via: 'content', blocked: !!d.blocked, at: ev.at });
+      if (d.blocked) r.blockedTotal = (r.blockedTotal || 0) + 1;
       break;
     }
     case 'eventsource': {
@@ -495,7 +517,7 @@ browser.runtime.onMessage.addListener((msg, sender) => {
   const r = reports.get(sender.tab.id);
   if (!r) return;
   const frameUrl = sender.url || '';
-  const third = sender.frameId !== 0 && frameIsThirdParty(r, frameUrl);
+  const third = frameIsThirdParty(r, frameUrl);
   for (const ev of msg.events) {
     const h = contentHandlers[ev.kind];
     if (h) h(r, ev, frameUrl, third);

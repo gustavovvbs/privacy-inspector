@@ -142,7 +142,8 @@ function render(tab) {
   $('#tab-sync').innerHTML = `
     <h3>Bounce tracking</h3>
     <p class="hint">Página anterior: ${esc(nav.referrerPage || '—')} · permanência: ${nav.dwellMs != null ? Math.round(nav.dwellMs / 1000) + 's' : '—'}</p>
-    ${table(['Domínio intermediário', 'Mecanismo', 'De → Para', 'Parâmetros'], nav.bounces.map((b) => [`<b>${esc(b.domain)}</b><div class="hint">${esc(b.url.slice(0, 100))}</div>`, b.kind === 'http-redirect' ? chip(`HTTP ${b.status}`, 'bad') : chip(`client-side · ${Math.round(b.dwellMs / 1000)}s`, 'bad'), `${esc(b.from || '?')} → ${esc(b.to)}`, (b.trackingParams || []).map((p) => chip(p, 'warn')).join('') || '—']))}
+    ${table(['Domínio intermediário', 'Mecanismo', 'De → Para', 'Parâmetros repassados ao destino'], nav.bounces.map((b) => [`<b>${esc(b.domain)}</b><div class="hint">${esc(b.url.slice(0, 100))}</div>`, b.kind === 'http-redirect' ? chip(`HTTP ${b.status}`, 'bad') : chip(`client-side · ${(b.dwellMs / 1000).toFixed(1)}s`, 'bad'), `${esc(b.from || '?')} → ${esc(b.to)}`, [...(b.trackingParams || []).map((p) => chip(p, 'warn')), ...(b.landingParams || []).map((p) => chip(p))].join('') || '—']))}
+    ${r.openedTabs && r.openedTabs.length ? `<h3>Abas/popups abertos por esta página (${r.openedTabs.length})</h3><p class="hint">Cada uma tem relatório próprio (o plugin observa por aba).</p>${table(['URL'], r.openedTabs.map((t) => [esc(t.url.slice(0, 120))]))}` : ''}
     <details><summary>Cadeia de redirecionamentos desta navegação (${nav.redirectChain.length})</summary>${table(['Status', 'De', 'Para'], nav.redirectChain.map((h) => [h.status, esc(h.from.slice(0, 90)), esc(h.to.slice(0, 90))]))}</details>
     <h3>Cookie sync</h3>
     ${table(['Tipo', 'Parâmetro', 'Destino', 'Detalhe'], r.cookieSync.events.map((e) => [
@@ -159,7 +160,7 @@ function render(tab) {
   $('#tab-hijack').innerHTML = `
     <p>Nível: <span class="level ${h.level}">${{ none: 'nenhum indício', low: 'baixo', medium: 'médio', high: 'alto' }[h.level]}</span></p>
     <h3>Canais persistentes</h3>
-    ${table(['Tipo', 'Destino', 'Parte', 'Script'], [...h.websockets.map((w) => ['WebSocket', esc(w.url.slice(0, 90)), w.thirdParty ? chip('3ª parte', 'bad') : chip('1ª parte', 'ok'), esc((w.script || w.via || '').replace(/^https?:\/\//, '').slice(0, 50))]),
+    ${table(['Tipo', 'Destino', 'Parte', 'Script'], [...h.websockets.map((w) => ['WebSocket' + (w.blocked ? ' ' + chip('bloqueado', 'ok') : ''), esc(w.url.slice(0, 90)), w.thirdParty ? chip('3ª parte', 'bad') : chip('1ª parte', 'ok'), esc((w.script || w.via || '').replace(/^https?:\/\//, '').slice(0, 50))]),
       ...h.eventsources.map((w) => ['EventSource', esc(w.url.slice(0, 90)), w.thirdParty ? chip('3ª parte', 'bad') : chip('1ª parte', 'ok'), esc((w.script || '').slice(0, 50))])])}
     <h3>Polling persistente para terceiros</h3>
     ${table(['Endpoint', '#Chamadas', '#Intervalo', 'Regularidade'], h.polling.map((p) => [`${esc(p.url.slice(0, 90))} ${p.tracker ? chip('rastreador', 'bad') : ''}`, p.count, Math.round(p.avgIntervalMs / 1000) + 's', Math.round(p.regularity * 100) + '%']))}
