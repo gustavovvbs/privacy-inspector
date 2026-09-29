@@ -21,6 +21,11 @@ FIREFOX_BIN = '/Applications/Firefox.app/Contents/MacOS/firefox'
 DOWNLOAD_DIR = ROOT / 'evidencias' / '_downloads'
 
 
+def hostnameOf(url):
+    from urllib.parse import urlparse
+    return urlparse(url).hostname or ''
+
+
 def start(headless=False, width=1000, height=1000, profile_prefs=None):
     DOWNLOAD_DIR.mkdir(parents=True, exist_ok=True)
     opts = Options()
