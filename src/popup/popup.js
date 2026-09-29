@@ -12,11 +12,37 @@ const fmtDate = (ms) => ms ? new Date(ms).toLocaleDateString('pt-BR') : '—';
 const CAT_PT = { advertising: 'anúncios', analytics: 'analytics', social: 'social', 'session-recording': 'gravação de sessão', fingerprinting: 'fingerprinting', identity: 'identidade', test: 'teste (DDG)' };
 const catChip = (c) => c ? chip(CAT_PT[c] || c, c === 'session-recording' || c === 'fingerprinting' ? 'bad' : 'warn') : '';
 
-async function load() {
+// A página do relatório pode ser aberta em uma aba própria (?tabId=N ou ?url=<url da página>),
+// útil para prints de evidência e para relatórios longos.
+async function targetTab() {
+  const params = new URLSearchParams(location.search);
+  if (params.get('tabId')) {
+    try { return await browser.tabs.get(Number(params.get('tabId'))); } catch (e) { /* aba fechada */ }
+  }
+  if (params.get('url')) {
+    const tabs = await browser.tabs.query({});
+    const want = params.get('url');
+    const hit = tabs.find((t) => t.url === want) || tabs.find((t) => t.url && t.url.startsWith(want));
+    if (hit) return hit;
+  }
   const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
+  return tab;
+}
+
+async function load() {
+  const tab = await targetTab();
   tabId = tab.id;
   report = await browser.runtime.sendMessage({ type: 'getReport', tabId });
   render(tab);
+  if (new URLSearchParams(location.search).has('tabId') || new URLSearchParams(location.search).has('url')) {
+    document.body.classList.add('standalone');
+    $('#footerHint').textContent = 'relatório da aba: ' + (tab.url || '').slice(0, 80);
+  }
+}
+
+function openInTab() {
+  if (tabId == null) return;
+  browser.tabs.create({ url: browser.runtime.getURL('popup/popup.html') + '?tabId=' + tabId });
 }
 
 function render(tab) {
@@ -182,6 +208,7 @@ document.querySelectorAll('nav button').forEach((b) => b.addEventListener('click
 }));
 $('#refresh').addEventListener('click', load);
 $('#export').addEventListener('click', exportJson);
+$('#openTab').addEventListener('click', openInTab);
 $('#saveBlocklist').addEventListener('click', saveSettings);
 
 load();

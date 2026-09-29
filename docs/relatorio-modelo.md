@@ -1,10 +1,6 @@
-# Modelo do relatório (entregáveis 2, 3 e 4)
-
-> Preencher e exportar para PDF. Todos os prints ficam em `evidencias/` e são referenciados aqui.
-
 ## 1. Identificação
 
-- Aluno, matrícula, turma.
+- Gustavo Victor Valente Braga e Souza
 - Versão do Firefox e commit do plugin usado nos testes (`git rev-parse --short HEAD`).
 
 ## 2. DuckDuckGo Privacy Test Pages
