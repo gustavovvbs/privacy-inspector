@@ -3,14 +3,15 @@ body { font: 10.5pt/1.4 -apple-system, Helvetica, Arial, sans-serif; color: #111
 h1 { font-size: 18pt; page-break-before: always; border-bottom: 2px solid #2b5bd7; padding-bottom: 4px; }
 h1:first-of-type { page-break-before: auto; }
 h2 { font-size: 13pt; margin-top: 18px; } h3 { font-size: 11pt; }
-table { border-collapse: collapse; width: 100%; font-size: 8.5pt; margin: 8px 0; page-break-inside: auto; }
-th, td { border: 1px solid #bbb; padding: 4px 5px; vertical-align: top; text-align: left; }
+table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: 8pt; margin: 8px 0; page-break-inside: auto; }
+th, td { border: 1px solid #bbb; padding: 4px 5px; vertical-align: top; text-align: left; overflow-wrap: anywhere; word-break: break-word; }
+th:first-child, td:first-child { width: 22px; }
 th { background: #eef1f6; } tr { page-break-inside: avoid; }
-code { font-family: Menlo, monospace; font-size: 8pt; background: #f2f3f5; padding: 0 2px; }
+code { font-family: Menlo, monospace; font-size: 7.5pt; background: #f2f3f5; padding: 0 2px; white-space: pre-wrap; overflow-wrap: anywhere; }
 pre { background: #f2f3f5; padding: 8px; font-size: 8pt; white-space: pre-wrap; }
 img { max-width: 100%; border: 1px solid #ddd; page-break-inside: avoid; }
 figure { margin: 10px 0; page-break-inside: avoid; } figcaption { font-size: 8.5pt; color: #555; }
-@page { size: A4; margin: 14mm 12mm; }
+@page { size: A4 landscape; margin: 12mm 10mm; }
 </style></head><body>
 <h1>Privacy Inspector — Relatório</h1>
 <p><strong>Disciplina:</strong> Segurança — Insper
@@ -160,7 +161,7 @@ O <strong>resultado do plugin</strong> vem do JSON exportado pelo plugin (<code>
 <li><strong>Divergências estruturais</strong> (não são erros de detecção): o plugin é um <em>observador</em>, não um <em>bloqueador por padrão</em> — não aplica surrogates (4), não remove query parameters (11) e não particiona storage (7). O bloqueio existe apenas pela lista personalizada (5b).</li>
 <li><strong>Limite de arquitetura:</strong> relatório por aba. Testes que abrem janelas secundárias (7) espalham a evidência em dois relatórios; o plugin registra a janela aberta para permitir a correlação.</li>
 <li><strong>Limite de instrumentação:</strong> WebSocket só é visto pelo hook do construtor quando o handshake não passa pelo <code>webRequest</code> (5a); canais de persistência indiretos (<code>window.name</code>, <code>history</code>, cache HTTP) não são instrumentados (6).</li>
-</ul>evidencias/ddg/NN-*.png
+</ul><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/01-tracker-reporting-script.png"><figcaption>evidencias/ddg/01-tracker-reporting-script.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/02-tracker-reporting-img.png"><figcaption>evidencias/ddg/02-tracker-reporting-img.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/03-tracker-reporting-fetch.png"><figcaption>evidencias/ddg/03-tracker-reporting-fetch.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/04-tracker-reporting-surrogate.png"><figcaption>evidencias/ddg/04-tracker-reporting-surrogate.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/05a-tracker-blocking-sem-bloqueio.png"><figcaption>evidencias/ddg/05a-tracker-blocking-sem-bloqueio.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/05b-tracker-blocking-com-bloqueio.png"><figcaption>evidencias/ddg/05b-tracker-blocking-com-bloqueio.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/06-storage-blocking.png"><figcaption>evidencias/ddg/06-storage-blocking.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/07-storage-partitioning.png"><figcaption>evidencias/ddg/07-storage-partitioning.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/08-fingerprinting.png"><figcaption>evidencias/ddg/08-fingerprinting.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/09-fingerprinting-canvas.png"><figcaption>evidencias/ddg/09-fingerprinting-canvas.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/10-bounce-tracking.png"><figcaption>evidencias/ddg/10-bounce-tracking.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/11a-query-parameters-utm.png"><figcaption>evidencias/ddg/11a-query-parameters-utm.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/11b-query-parameters-fbclid.png"><figcaption>evidencias/ddg/11b-query-parameters-fbclid.png</figcaption></figure><figure><img src="file:///Users/gustavovalente/Documents/insper/privacy-inspector/evidencias/ddg/12-js-leaks.png"><figcaption>evidencias/ddg/12-js-leaks.png</figcaption></figure>
 <h1>Metodologia da pontuação de privacidade</h1>
 <p>A nota parte de <strong>100 pontos</strong> e sofre deduções por critério. Cada critério tem um <strong>teto</strong>, para que um
 único eixo (ex.: um site com 40 domínios de anúncios) não zere a nota sozinho e para que sites com
