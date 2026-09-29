@@ -10,7 +10,8 @@
 const TRACKER_GROUPS = {
   advertising: {
     'Google': ['doubleclick.net', 'googlesyndication.com', 'googleadservices.com', 'adservice.google.com',
-      'googletagservices.com', 'g.doubleclick.net', '2mdn.net', 'admob.com'],
+      'googletagservices.com', '2mdn.net', 'admob.com'],
+    'Google (YouTube embed)': ['youtube.com', 'ytimg.com', 'youtube-nocookie.com'],
     'Amazon': ['amazon-adsystem.com'],
     'Microsoft': ['bat.bing.com', 'ads.linkedin.com', 'snap.licdn.com', 'px.ads.linkedin.com'],
     'Criteo': ['criteo.com', 'criteo.net'],
@@ -56,7 +57,10 @@ const TRACKER_GROUPS = {
     'New Relic': ['newrelic.com', 'nr-data.net'],
     'Yandex Metrica': ['mc.yandex.ru', 'yandex.ru'],
     'Matomo': ['matomo.cloud'],
-    'Hotjar (analytics)': ['static.hotjar.com'],
+    'Marfeel': ['mrf.io', 'marfeel.com'],
+    'Piano (Tinypass)': ['tinypass.com', 'piano.io'],
+    'Newsroom AI': ['newsroom.bi'],
+    'Permutive': ['permutive.com', 'permutive.app', 'prmutv.co'],
     'Optimizely': ['optimizely.com'],
     'Branch': ['branch.io', 'app.link'],
     'AppsFlyer': ['appsflyer.com'],
@@ -105,6 +109,7 @@ const TRACKER_GROUPS = {
   },
   identity: {
     'LiveRamp': ['rlcdn.com', 'liveramp.com', 'pippio.com'],
+    'LiveRamp ATS / Privacy Manager': ['privacymanager.io'],
     'LiveIntent': ['liadm.com'],
     'ID5': ['id5-sync.com'],
     'Tapad': ['tapad.com'],

@@ -54,11 +54,13 @@ function render(tab) {
   }
   const r = report;
   $('#site').textContent = r.hostname || r.url;
-  $('#meta').textContent = `${r.requestsTotal} requisições, ${r.requestsThirdParty} para terceiros · ${Math.round((Date.now() - r.startedAt) / 1000)}s observados` + (r.blockedTotal ? ` · ${r.blockedTotal} bloqueadas` : '');
+  $('#meta').textContent = `${r.requestsTotal} requisições, ${r.requestsThirdParty - (r.requestsAffiliated || 0)} para terceiros${r.requestsAffiliated ? `, ${r.requestsAffiliated} para afiliados` : ''} · ${Math.round((Date.now() - r.startedAt) / 1000)}s observados` + (r.blockedTotal ? ` · ${r.blockedTotal} bloqueadas` : '');
   $('#grade').textContent = r.score.grade; $('#grade').className = 'grade ' + r.score.grade;
   $('#points').textContent = r.score.score + '/100';
 
-  const tp = Object.values(r.thirdParties).sort((a, b) => (b.tracker ? 1 : 0) - (a.tracker ? 1 : 0) || b.requests - a.requests);
+  const tpAll = Object.values(r.thirdParties).sort((a, b) => (b.tracker ? 1 : 0) - (a.tracker ? 1 : 0) || (a.affiliated ? 1 : 0) - (b.affiliated ? 1 : 0) || b.requests - a.requests);
+  const tp = tpAll.filter((t) => !t.affiliated);
+  const affiliated = tpAll.filter((t) => t.affiliated);
   const trackers = tp.filter((t) => t.tracker);
   const ck = r.cookies.summary || {};
   const st = r.storage;
@@ -87,17 +89,17 @@ function render(tab) {
 
   // Rastreadores
   $('#tab-trackers').innerHTML = `
-    <h3>Domínios de terceira parte (${tp.length})</h3>
-    ${table(['Domínio', 'Empresa / categoria', '#Req.', '#Bloq.', ''], tp.map((t) => [
+    <h3>Domínios de terceira parte (${tp.length})${affiliated.length ? ` <span class="hint">+ ${affiliated.length} afiliados da própria organização, listados ao final</span>` : ''}</h3>
+    ${table(['Domínio', 'Empresa / categoria', '#Req.', '#Bloq.', ''], tpAll.map((t) => [
       `<b>${esc(t.domain)}</b><div class="hint">${Object.keys(t.hosts).slice(0, 3).map(esc).join(', ')}${Object.keys(t.hosts).length > 3 ? '…' : ''}<br>${Object.entries(t.types).map(([k, v]) => `${esc(k)}:${v}`).join(' ')}</div>`,
-      t.tracker ? `${esc(t.owner || '')}<br>${catChip(t.category)}` : chip('não listado'),
+      t.affiliated ? chip('afiliado (mesma organização)', 'ok') : t.tracker ? `${esc(t.owner || '')}<br>${catChip(t.category)}` : chip('não listado'),
       t.requests, t.blocked || 0,
       `<button class="mini block-btn" data-domain="${esc(t.domain)}">bloquear</button>`]))}`;
 
   // Cookies
   const cookieRows = (ck.list || []).sort((a, b) => (b.thirdParty ? 1 : 0) - (a.thirdParty ? 1 : 0) || (a.session ? 1 : 0) - (b.session ? 1 : 0)).map((c) => [
     `<b>${esc(c.name)}</b><div class="hint">${esc(c.domain)}</div>`,
-    c.thirdParty ? chip('3ª parte', 'bad') : chip('1ª parte', 'ok'),
+    c.thirdParty ? chip('3ª parte', 'bad') : c.affiliated ? chip('afiliado', 'ok') : chip('1ª parte', 'ok'),
     c.session ? chip('sessão') : chip(`persistente · ${c.lifetimeDays}d`, c.lifetimeDays > 365 ? 'warn' : ''),
     fmtDate(c.expires),
     [c.secure && 'Secure', c.httpOnly && 'HttpOnly', c.sameSite && c.sameSite !== 'no_restriction' && `SameSite=${c.sameSite}`].filter(Boolean).map((x) => chip(x)).join('')]);
@@ -169,7 +171,7 @@ function render(tab) {
     <h3>Novos objetos globais (${h.newGlobalsCount})</h3>
     <p>${h.newGlobals.slice(0, 60).map((g) => chip(g)).join('')}${h.newGlobalsCount > 60 ? ' …' : ''}</p>
     <h3>Listeners de teclado/entrada por scripts de 3ª parte (${keylog.length})</h3>
-    ${table(['Evento', 'Alvo', 'Script'], keylog.slice(0, 40).map((l) => [esc(l.event), l.target === 'document' ? chip('document/window', 'bad') : chip('elemento'), esc((l.script || '').replace(/^https?:\/\//, '').slice(0, 70))]))}
+    ${table(['Evento', 'Alvo', 'Script'], keylog.slice(0, 40).map((l) => [esc(l.event), l.target === 'document' ? chip('document/window', 'bad') : chip('elemento'), `${esc((l.script || '').replace(/^https?:\/\//, '').slice(0, 70))} ${l.tracker ? chip('rastreador', 'bad') : ''}`]))}
     <details><summary>Listeners de movimento (mousemove/scroll) por script</summary>${table(['Script', '#Listeners'], Object.entries(h.motionListeners).map(([s, n]) => [esc(s.replace(/^https?:\/\//, '').slice(0, 90)), n]))}</details>`;
 
   for (const b of document.querySelectorAll('.block-btn')) b.addEventListener('click', () => addToBlocklist(b.dataset.domain));

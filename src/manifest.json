@@ -27,6 +27,7 @@
     "scripts": [
       "domain.js",
       "data/trackers.js",
+      "data/entities.js",
       "score.js",
       "background.js"
     ],

@@ -12,6 +12,7 @@ function newReport(url) {
     thirdParties: {},   // domínio -> { requests, types, tracker, category, blocked }
     requestsTotal: 0,
     requestsThirdParty: 0,
+    requestsAffiliated: 0,
     storage: {
       localStorage: { reads: 0, writes: 0, keys: {}, thirdPartyFrames: {} },
       sessionStorage: { reads: 0, writes: 0, keys: {}, thirdPartyFrames: {} },
@@ -202,11 +203,14 @@ function recordRequest(details) {
   const dom = tracker && tracker.domain.length > baseDomain(host).length ? tracker.domain : baseDomain(host);
   const entry = r.thirdParties[dom] || (r.thirdParties[dom] = {
     domain: dom, hosts: {}, requests: 0, types: {}, tracker: null, category: null, blocked: 0,
+    affiliated: sameEntity(r.baseDomain, dom),
   });
   entry.requests++;
+  if (entry.affiliated) r.requestsAffiliated++;
   entry.hosts[host] = (entry.hosts[host] || 0) + 1;
   entry.types[details.type] = (entry.types[details.type] || 0) + 1;
   if (!entry.tracker && tracker) { entry.tracker = tracker.domain; entry.category = tracker.category; entry.owner = tracker.owner; }
+  if (entry.affiliated) return entry; // CDN/serviço da própria organização: não é rastreamento entre sites
   inspectQueryForSync(r, details.url, dom);
   if (details.type === 'websocket') {
     r.hijack.websockets.push({ url: details.url.slice(0, 200), domain: dom, thirdParty: true, via: 'webRequest', at: Date.now() });
@@ -281,12 +285,16 @@ function trackPolling(r, url, dom) {
   updateHijackLevel(r);
 }
 
+const LOW_RISK_OVERRIDES = new Set(['console.log']); // sites silenciam o console com frequência
 function updateHijackLevel(r) {
   const h = r.hijack;
-  const thirdPartyKeyloggers = h.inputListeners.filter((l) => l.thirdParty && l.target === 'document').length;
-  if (h.overridden.length > 0 || thirdPartyKeyloggers > 0 || (h.websockets.some((w) => w.thirdParty) && h.polling.length > 0)) h.level = 'high';
-  else if (h.websockets.some((w) => w.thirdParty) || h.polling.length > 0 || h.inputListeners.some((l) => l.thirdParty)) h.level = 'medium';
-  else if (h.newGlobalsCount > 40 || h.eventsources.length) h.level = 'low';
+  const keyloggersDoc = h.inputListeners.filter((l) => l.thirdParty && l.target === 'document');
+  const trackerKeylogger = keyloggersDoc.some((l) => l.tracker);
+  const seriousOverrides = h.overridden.filter((o) => !LOW_RISK_OVERRIDES.has(o.target));
+  const ws3p = h.websockets.some((w) => w.thirdParty);
+  if (seriousOverrides.length > 0 || trackerKeylogger || (ws3p && h.polling.length > 0)) h.level = 'high';
+  else if (ws3p || h.polling.length > 0 || keyloggersDoc.length > 0) h.level = 'medium';
+  else if (h.newGlobalsCount > 40 || h.eventsources.length || h.overridden.length || h.inputListeners.some((l) => l.thirdParty)) h.level = 'low';
   else h.level = 'none';
 }
 
@@ -365,7 +373,7 @@ browser.webRequest.onHeadersReceived.addListener(
         const val = line.split(';')[0].split('=').slice(1).join('=').trim();
         if (!third && val.length >= 8) r._cookieValues[val] = c.name;
         r.cookies.setHeaders.push({
-          ...c, host, domain: baseDomain(host), thirdParty: third,
+          ...c, host, domain: baseDomain(host), thirdParty: third && !sameEntity(r.baseDomain, baseDomain(host)), affiliated: third && sameEntity(r.baseDomain, baseDomain(host)),
           requestType: details.type, url: details.url.split('?')[0], at: Date.now(),
         });
       }
@@ -380,7 +388,9 @@ browser.webRequest.onHeadersReceived.addListener(
 async function snapshotCookies(r) {
   const summarize = (list, thirdParty) => list.map((c) => ({
     name: c.name, domain: c.domain.replace(/^\./, ''), path: c.path,
-    thirdParty, session: c.session,
+    thirdParty: thirdParty && !sameEntity(r.baseDomain, baseDomain(c.domain.replace(/^\./, ''))),
+    affiliated: thirdParty && sameEntity(r.baseDomain, baseDomain(c.domain.replace(/^\./, ''))),
+    session: c.session,
     expires: c.session ? null : c.expirationDate * 1000,
     lifetimeDays: c.session ? 0 : Math.round((c.expirationDate * 1000 - Date.now()) / 86400000),
     secure: c.secure, httpOnly: c.httpOnly, sameSite: c.sameSite,
@@ -416,7 +426,8 @@ async function snapshotCookies(r) {
 // ---------------------------------------------------------------------------
 function frameIsThirdParty(r, frameUrl) {
   if (!frameUrl || frameUrl === 'about:blank' || frameUrl.startsWith('about:')) return false;
-  return isThirdParty(frameUrl, r.url);
+  const dom = baseDomain(hostnameOf(frameUrl));
+  return dom !== r.baseDomain && !sameEntity(r.baseDomain, dom);
 }
 
 function handleStorageEvent(r, ev, frameUrl, third) {
@@ -475,21 +486,22 @@ function handleHijackEvent(r, ev, frameUrl, third) {
   const d = ev.detail;
   const h = r.hijack;
   const scriptDomain = d.script ? baseDomain(hostnameOf(d.script)) : null;
-  const scriptThird = scriptDomain ? scriptDomain !== r.baseDomain : third;
+  const scriptThird = scriptDomain ? (scriptDomain !== r.baseDomain && !sameEntity(r.baseDomain, scriptDomain)) : third;
+  const scriptTracker = scriptDomain ? !!classifyTracker(hostnameOf(d.script)) : false;
   switch (d.kind) {
     case 'websocket': {
       const dom = baseDomain(hostnameOf(d.url.replace(/^ws/, 'http')));
-      if (!h.websockets.some((w) => w.url === d.url)) h.websockets.push({ url: d.url, domain: dom, thirdParty: dom !== r.baseDomain, script: d.script, via: 'content', blocked: !!d.blocked, at: ev.at });
+      if (!h.websockets.some((w) => w.url === d.url)) h.websockets.push({ url: d.url, domain: dom, thirdParty: dom !== r.baseDomain && !sameEntity(r.baseDomain, dom), script: d.script, via: 'content', blocked: !!d.blocked, at: ev.at });
       if (d.blocked) r.blockedTotal = (r.blockedTotal || 0) + 1;
       break;
     }
     case 'eventsource': {
       const dom = baseDomain(hostnameOf(d.url));
-      h.eventsources.push({ url: d.url, domain: dom, thirdParty: dom !== r.baseDomain, script: d.script, at: ev.at });
+      h.eventsources.push({ url: d.url, domain: dom, thirdParty: dom !== r.baseDomain && !sameEntity(r.baseDomain, dom), script: d.script, at: ev.at });
       break;
     }
     case 'input-listener':
-      if (h.inputListeners.length < 200) h.inputListeners.push({ event: d.event, target: d.target, script: d.script || (third ? frameUrl : '(inline)'), scriptDomain, thirdParty: scriptThird, at: ev.at });
+      if (h.inputListeners.length < 200) h.inputListeners.push({ event: d.event, target: d.target, script: d.script || (third ? frameUrl : '(inline)'), scriptDomain, thirdParty: scriptThird, tracker: scriptTracker, at: ev.at });
       break;
     case 'motion-listener': {
       const k = d.script || (third ? frameUrl : '(inline)');
@@ -516,7 +528,7 @@ const contentHandlers = {
   },
   storage: handleStorageEvent,
   cookieJs(r, ev, frameUrl, third) {
-    r.cookies.jsSet.push({ ...ev.detail, thirdParty: third, frame: baseDomain(hostnameOf(frameUrl)), at: ev.at });
+    r.cookies.jsSet.push({ ...ev.detail, thirdParty: third, affiliated: !third && baseDomain(hostnameOf(frameUrl)) !== r.baseDomain, frame: baseDomain(hostnameOf(frameUrl)), at: ev.at });
   },
 };
 

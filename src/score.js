@@ -25,12 +25,12 @@ function gradeFor(score) {
 }
 
 function computeScore(r) {
-  const tp = Object.values(r.thirdParties);
+  const tp = Object.values(r.thirdParties).filter((t) => !t.affiliated); // afiliados não pontuam
   const trackers = tp.filter((t) => t.tracker);
   const cookies = r.cookies.summary || { thirdParty: 0, longLived: 0 };
   const hasCat = (cat) => trackers.some((t) => t.category === cat);
   const hasOwner = (re) => trackers.some((t) => re.test(t.owner || ''));
-  const keylog = r.hijack.inputListeners.filter((l) => l.thirdParty && l.target === 'document').length;
+  const keylog = r.hijack.inputListeners.filter((l) => l.thirdParty && l.target === 'document' && l.tracker).length;
   const syncStrong = r.cookieSync.events.filter((e) => e.kind === 'cookie-leak' || e.kind === 'shared-id').length;
   const syncWeak = r.cookieSync.events.filter((e) => e.kind === 'sync-param').length + r.cookieSync.redirects.length;
   const storage3p = ['localStorage', 'sessionStorage', 'indexedDB', 'cacheStorage']
